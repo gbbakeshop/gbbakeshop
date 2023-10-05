@@ -1,0 +1,1 @@
+import{a as r}from"./app-46232a11.js";import{A as o}from"./administrator-layout-f17f1b44.js";import"./iconBase-b4a26522.js";import"./index.esm-d0729178.js";import"./index.esm-8bdc4c6e.js";import"./index.esm-81514a8d.js";import"./index.esm-eaae5888.js";function e(t){return r(o,{children:"BranchAccountsPage"})}export{e as default};
