@@ -3,6 +3,7 @@ import moment from "moment/moment";
 import { FaEdit,FaTrashAlt } from "react-icons/fa";
 import { AiFillWarning } from "react-icons/ai";
 import {BsCheckCircleFill } from "react-icons/bs";
+import BranchRawMaterialsUpdate from "./branch-raw-materials-update";
 export default function BranchRawMaterialsTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
@@ -27,22 +28,22 @@ export default function BranchRawMaterialsTableComponent({ data }) {
     
     return (
         <div className="bg-white container mx-auto mt-5 rounded-lg overflow-hidden shadow-lg p-10">
-            {selected.length !== 0 && (
+            {/* {selected.length !== 0 && (
                 <button className="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
                     Button
                 </button>
-            )}
+            )} */}
 
             <table className="w-full ">
                 <thead>
                     <tr className="flex flex-row border-b border-slate-300">
-                        <th className="flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
+                        {/* <th className="flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             <input
                                 disabled
                                 type="checkbox"
                                 className="bg-gray-500 form-checkbox h-5 w-5 text-red-600"
                             />
-                        </th>
+                        </th> */}
                         <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Name of Raw Materials
                         </th>
@@ -74,9 +75,9 @@ export default function BranchRawMaterialsTableComponent({ data }) {
                                     : "bg-gray-100 border-l-2 border-red-500"
                             } flex flex-row my-1`}
                         >
-                            <td className="flex-none px-6 py-2 whitespace-no-wrap ">
+                            {/* <td className="flex-none px-6 py-2 whitespace-no-wrap ">
                             <input onClick={() => addItem(res.id)} type="checkbox" className={`${isExistFunction(res.id) == undefined ? '' : 'border-red-500 border bg-red-500 text-red-500'}  form-checkbox h-5 w-5`} />
-                                 </td>
+                                 </td> */}
                             <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {res.raw_materials}
                             </td> 
@@ -120,7 +121,8 @@ export default function BranchRawMaterialsTableComponent({ data }) {
                                 {moment(res.created_at).format("L")}
                             </td>
                             <td className=" flex-none px-10 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                <FaEdit className="text-2xl text-blue-600" />
+                              
+                                <BranchRawMaterialsUpdate data={res}/>
                             </td>
                             {/* <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <FaTrashAlt className="text-xl text-red-600"/>

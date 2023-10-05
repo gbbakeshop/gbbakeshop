@@ -10,6 +10,15 @@ use Illuminate\Http\Request;
 class RawMaterialsController extends Controller
 {
 
+    public function edit_branch_raw_materials(Request $request){
+        BranchRawMaterials::where('id',$request->id)->update([
+            'quantity' =>$request->quantity
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Created Successfully'
+        ]);
+    }
 
     public function create_raw_materials(Request $request)
     {

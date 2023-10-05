@@ -37,6 +37,7 @@ Route::delete('/delete_raw_materials/{id}','App\Http\Controllers\RawMaterialsCon
 Route::post('/create_raw_materials','App\Http\Controllers\RawMaterialsController@create_raw_materials');
 
 Route::get('/get_branch_raw_materials/{branchid}','App\Http\Controllers\BranchRawMaterialsController@get_branch_raw_materials');
+Route::put('/edit_branch_raw_materials','App\Http\Controllers\RawMaterialsController@edit_branch_raw_materials');
 
 Route::get('/get_all_recipes','App\Http\Controllers\RecipesController@get_all_recipes');
 Route::post('/create_recipes','App\Http\Controllers\RecipesController@create_recipes');
