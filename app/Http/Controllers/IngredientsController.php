@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ingredients;
 use App\Models\RawMaterials;
+use App\Models\Recipes;
 use App\Models\SelectedIngredients;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -80,6 +81,9 @@ class IngredientsController extends Controller
         $se = SelectedIngredients::where('token', $bread->selected_ingredients_token)->get();
 
 
+        Recipes::where('selected_ingredients_token', $bread->selected_ingredients_token)->update([
+            'target' => $request->target
+        ]);
         if ($bread->code == $request->code) {
             Ingredients::where('id', $request->id)->update([
                 'code' => $request->code,

@@ -17,7 +17,7 @@ class RecipesController extends Controller
     }
 
     public function get_all_recipes(){
-        $response = Recipes::with(['selectedBreads','selectedIngredients'])->get();
+        $response = Recipes::with(['selectedBreads','selectedIngredients','ingredientsData'])->get();
         return response()->json([
             'status' => $response
         ]);

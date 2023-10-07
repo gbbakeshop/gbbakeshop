@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Drawer from "@/_components/drawer";
 import ActionDrawer from "@/_components/action-drawer";
-import { MdCreateNewFolder } from "react-icons/md";
 import { AiFillWarning } from "react-icons/ai";
 import { BsFillClipboardCheckFill } from "react-icons/bs";
+import RecipeAddIngredients from "./recipes-add-ingredients";
+import RecipeShowIngredients from "./recipes-show-ingredients";
+import RecipeChangeIngredients from "./recipes-change-ingredients";
 
 export default function RecipesTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
@@ -36,7 +38,10 @@ export default function RecipesTableComponent({ data }) {
                 <thead>
                     <tr className="flex flex-row border-b border-slate-300">
                         <th className="flex-1 px-6 py-3 text-left text-xs leading-4  text-gray-600 tracking-wider">
-                            Name of Bread
+                            Name of Breads
+                        </th>
+                        <th className="flex-none px-6 py-3 text-left text-xs leading-4  text-gray-600 tracking-wider">
+                            Target
                         </th>
                         <th className="flex-none px-6 py-3 text-left text-xs leading-4  text-gray-600 tracking-wider">
                             Status
@@ -61,7 +66,7 @@ export default function RecipesTableComponent({ data }) {
                                     {res?.selected_breads.map((res, index) => (
                                         <div
                                             key={index}
-                                            className="flex-auto ml-4 text-xs inline-flex items-center font-bold leading-sm  px-3 py-1 bg-red-50 border border-red-50 text-red-500 rounded"
+                                            className="flex-auto text-xs inline-flex items-center font-bold leading-sm  px-3 py-1 bg-red-50 border border-red-50 text-red-500 rounded"
                                         >
                                             {res.bread_name}
                                         </div>
@@ -69,62 +74,39 @@ export default function RecipesTableComponent({ data }) {
                                 </div>
                             </td>
                             <td className="flex-none px-6 py-2 whitespace-no-wrap">
-                                {res?.selected_ingredients.length === 0 ? (
-                                    <AiFillWarning className="text-4xl text-red-600" />
-                                ) : (
-                                    <BsFillClipboardCheckFill className="text-4xl text-green-600" />
-                                )}
+                                <div className="bg-red-400 text-white p-1 rounded-xl">
+                                    {res.target}
+                                </div>
                             </td>
                             <td className="flex-none px-6 py-2 whitespace-no-wrap">
-                                {res.raw_materials == null ? (
+                                {res?.selected_ingredients.length === 0 ? (
                                     <ActionDrawer
-                                        data={res}
                                         content={
-                                            <div>
-                                                <div className="grid grid-rows-6 grid-flow-col gap-1">
-                                                    {res?.selected_breads.map(
-                                                        (res, index) => (
-                                                            <div
-                                                                key={index}
-                                                                className="flex-none ml-4 text-xs inline-flex items-center font-bold leading-sm  px-3 py-1 bg-red-50 border border-red-50 text-red-500 rounded"
-                                                            >
-                                                                {res.bread_name}
-                                                            </div>
-                                                        )
-                                                    )}
-                                                </div>
-                                                <div className="grid grid-rows-6 grid-flow-col gap-1 text-lg font-semibold">
-                                                    Raw Materials
-                                                </div>
-                                                {res?.selected_ingredients
-                                                    .length == 0 ? (
-                                                    <h5 className=" text-base font-semibold text-red-500 dark:text-red-400">
-                                                        No Ingredients
-                                                        designated!
-                                                    </h5>
-                                                ) : (
-                                                    <div className="grid grid-rows-6 grid-flow-col gap-1">
-                                                        {res?.selected_ingredients.map(
-                                                            (res, index) => (
-                                                                <div
-                                                                    key={index}
-                                                                    className="flex-none ml-4 text-xs inline-flex items-center font-bold leading-sm  px-3 py-1 bg-red-50 border border-red-50 text-red-500 rounded"
-                                                                >
-                                                                    {
-                                                                        res.raw_materials
-                                                                    }
-                                                                </div>
-                                                            )
-                                                        )}
-                                                    </div>
-                                                )}
-                                            </div>
+                                            <RecipeAddIngredients data={res} />
                                         }
-                                        title={"BREAD LIST "}
+                                        title="ADD INGREDIENTS"
                                         icons={
-                                            <MdCreateNewFolder className="text-4xl text-blue-600" />
+                                            <AiFillWarning className="text-4xl text-red-600" />
                                         }
                                     />
+                                ) : (
+                                    <ActionDrawer
+                                        content={
+                                            <RecipeChangeIngredients
+                                                data={res}
+                                            />
+                                        }
+                                        title="CHANGE INGREDIENTS"
+                                        icons={
+                                            <BsFillClipboardCheckFill className="text-2xl text-green-600" />
+                                        }
+                                    />
+                                )}
+                            </td>
+
+                            <td className="flex-none px-6 py-2 whitespace-no-wrap">
+                                {res.raw_materials == null ? (
+                                    <RecipeShowIngredients data={res} />
                                 ) : (
                                     "YES RM"
                                 )}

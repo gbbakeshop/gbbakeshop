@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->string('selected_breads_token')->nullable();
-            $table->string('selected_ingredients_id')->nullable();
+            $table->string('selected_ingredients_token')->nullable();
+            $table->string('target')->nullable();
             $table->timestamps();
         });
     }

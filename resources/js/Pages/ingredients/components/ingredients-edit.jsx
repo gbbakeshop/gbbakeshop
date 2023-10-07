@@ -18,7 +18,7 @@ export default function IngredientsEdit({ data }) {
     const [rawMaterials, setRawMaterials] = useState([]);
     const [load, setLoad] = useState(false);
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         get_all_raw_materials().then((res) => {
             setRawMaterials(res);
@@ -190,7 +190,7 @@ export default function IngredientsEdit({ data }) {
                         </button>
                     ) : (
                         <button className="flex-none w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0">
-                            CREATE
+                            UPDATE
                         </button>
                     )}
                 </form>

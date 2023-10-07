@@ -56,6 +56,10 @@ Route::put('/update_ingredients','App\Http\Controllers\IngredientsController@upd
 
 Route::delete('/delete_selected_ingredients/{id}','App\Http\Controllers\SelectedIngredientsController@delete_selected_ingredients');
 Route::post('/add_selected_ingredients','App\Http\Controllers\SelectedIngredientsController@add_selected_ingredients');
+Route::post('/add_recipe_ingredients','App\Http\Controllers\SelectedIngredientsController@add_recipe_ingredients');
+Route::put('/change_recipe_ingredients','App\Http\Controllers\SelectedIngredientsController@change_recipe_ingredients');
+
+
 
 
 

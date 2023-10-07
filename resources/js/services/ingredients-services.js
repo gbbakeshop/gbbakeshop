@@ -16,6 +16,15 @@ export async function add_selected_ingredients(data) {
     return response.data;
 }
 
+export async function add_recipe_ingredients(data) {
+    const response = await axios.post('/api/add_recipe_ingredients',data)
+    return response.data;
+}
+
+export async function change_recipe_ingredients(data) {
+    const response = await axios.put('/api/change_recipe_ingredients',data)
+    return response.data;
+}
 
 export async function delete_ingredients(id) {
     const response = await axios.delete('/api/delete_ingredients/'+id)
