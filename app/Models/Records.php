@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Records extends Model
 {
@@ -14,6 +15,7 @@ class Records extends Model
         'bakerid',
         'salerid',
         'bread_name',
+        'price',
         'beginning',
         'new_production',
         'quantity',
@@ -29,5 +31,10 @@ class Records extends Model
         'remarks2',
         'date',
     ];
+    protected $primaryKey = 'breadid';
+    public function getBreads(): BelongsTo
+    {
+        return $this->belongsTo(Breads::class, 'breadid', 'id');
+    }
 
 }

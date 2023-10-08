@@ -59,7 +59,13 @@ export default function BranchSalesReportTableComponent({ data }) {
                             Charges
                         </th>
                         <th className="  flex-1 px-4 py-3 text-left text-sm  text-gray-600 tracking-wider">
+                            Over
+                        </th>
+                        <th className="  flex-1 px-4 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Remaining
+                        </th>
+                        <th className="  flex-1 px-4 py-3 text-left text-sm  text-gray-600 tracking-wider">
+                            Soldout
                         </th>
                         <th className="  flex-1 px-4 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Sales
@@ -81,33 +87,39 @@ export default function BranchSalesReportTableComponent({ data }) {
                         >
                        
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.raw_materials}
+                                {res.bread_name}
                             </td> 
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.bind}
+                                {res.beginning}
                             </td>
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity}
+                                {res.new_production}
                             </td>
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
                            
-                            {res.quantity}
+                            {res.price}
                             </td>
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 
-                            {res.quantity}
+                            {res.total}
                             </td>
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity}
+                                {res.bread_out}
                             </td>
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity}
+                                {res.charge}
                             </td>
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity}
+                                {res.overs}
                             </td>
                             <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity}
+                                {res.remaining}
+                            </td>
+                            <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
+                                {res.soldout}
+                            </td>
+                            <td className=" flex-1 px-4 py-2 text-left text-sm  text-gray-600 tracking-wider">
+                                {res.sales}
                             </td>
                             <td className="   flex-none px-2 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <FaEdit className="text-2xl text-blue-600" />

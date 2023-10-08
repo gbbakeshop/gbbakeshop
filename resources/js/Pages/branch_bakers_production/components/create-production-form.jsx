@@ -47,10 +47,7 @@ export default function CreateProductionForm({ data,branchid, account }) {
 
         setTimeout(async () => {
             const create = await create_new_records(newData);
-            console.log("newData", subData);
-            console.log("create", ingredients);
            
-              
               
             dispatch(isResponseHandler(create));
             setTimeout(() => {

@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 export default function BranchBreadProductionPage(props) {
     const [data,setData] = useState([])
+    const { auth } = props
     const [loading, setLoading] = useState(true);
     const { url } = usePage()
     const branchid = url.split('/')[2]
@@ -26,7 +27,9 @@ export default function BranchBreadProductionPage(props) {
     return ( 
         <AdministratorLayout>
             <BranchBreadProductionTabsComponent />
-            {loading ? <SkeletonLoader /> : <BranchBreadProductionTableComponent data={data} />}
+            {loading ? <SkeletonLoader /> : <BranchBreadProductionTableComponent
+            account={auth.user} 
+            data={data} />}
          </AdministratorLayout>
      );
 }

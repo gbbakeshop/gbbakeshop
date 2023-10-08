@@ -2,11 +2,12 @@ import { useState } from "react";
 import moment from "moment/moment";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { AiFillWarning } from "react-icons/ai";
-import { BsCheckCircleFill } from "react-icons/bs";
+import { BiSolidLayerPlus } from "react-icons/bi";
 import MoveToSalesReportForm from "./move-to-sales-report-form";
 import Drawer from "@/_components/drawer";
+import ActionDrawer from "@/_components/action-drawer";
 
-export default function BranchBreadReportTableComponent({ data }) {
+export default function BranchBreadReportTableComponent({ account,data }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -27,7 +28,7 @@ export default function BranchBreadReportTableComponent({ data }) {
 
     return (
         <div className="bg-white container mx-auto mt-5 rounded-lg overflow-hidden shadow-lg p-10">
-            {selected.length !== 0 && (
+            {/* {selected.length !== 0 && (
                 <Drawer
                     title={"MOVE TO SALES REPORT"}
                     content={
@@ -37,18 +38,18 @@ export default function BranchBreadReportTableComponent({ data }) {
                         />
                     }
                 />
-            )}
+            )} */}
 
             <table className="w-full ">
                 <thead>
                     <tr className="flex flex-row border-b border-slate-300">
-                        <th className="flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
+                        {/* <th className="flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             <input
                                 disabled
                                 type="checkbox"
                                 className="bg-gray-500 form-checkbox h-5 w-5 text-red-600"
                             />
-                        </th>
+                        </th> */}
                         <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Name of Bread
                         </th>
@@ -68,6 +69,9 @@ export default function BranchBreadReportTableComponent({ data }) {
                             Updated at
                         </th>
                         <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
+                            Action
+                        </th>
+                        <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Edit
                         </th>
                     </tr>
@@ -82,7 +86,7 @@ export default function BranchBreadReportTableComponent({ data }) {
                                     : "bg-gray-100 border-l-2 border-red-500"
                             } flex flex-row my-1`}
                         >
-                            <td className="flex-none px-6 py-2 whitespace-no-wrap ">
+                            {/* <td className="flex-none px-6 py-2 whitespace-no-wrap ">
                                 <input
                                     checked={
                                         isExistFunction(res.breadid) ==
@@ -99,7 +103,7 @@ export default function BranchBreadReportTableComponent({ data }) {
                                             : "border-red-500 border bg-red-500 text-red-500"
                                     }  form-checkbox h-5 w-5`}
                                 />
-                            </td>
+                            </td> */}
                             <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {res.bread_name}
                             </td>
@@ -115,8 +119,22 @@ export default function BranchBreadReportTableComponent({ data }) {
                             <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {res.overs ?? 0}
                             </td>
-                            <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
+                            <td className=" flex-1 px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {moment(res.updated_at).format("LLLL")}
+                            </td>
+                            <td className=" flex-none px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
+                                <ActionDrawer
+                                    icons={
+                                        <BiSolidLayerPlus className="text-2xl text-blue-600" />
+                                    }
+                                    title="CREATE PRODUCTION"
+                                    content={
+                                        <MoveToSalesReportForm
+                                        account={account}
+                                            data={res}
+                                        />
+                                    }
+                                />
                             </td>
                             <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <FaEdit className="text-2xl text-blue-600" />

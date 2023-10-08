@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('bakerid')->nullable();
             $table->bigInteger('salerid')->nullable();
             $table->string('bread_name')->nullable();
+            $table->float('price')->nullable();
             $table->bigInteger('beginning')->nullable();
             $table->bigInteger('new_production')->nullable();
             $table->bigInteger('quantity')->nullable();
@@ -27,9 +28,9 @@ return new class extends Migration
             $table->bigInteger('soldout')->nullable();
             $table->bigInteger('bread_out')->nullable();
             $table->bigInteger('total')->nullable();
-            $table->string('charge')->nullable();
-            $table->string('overs')->nullable();
-            $table->string('sales')->nullable();
+            $table->float('charge')->nullable();
+            $table->float('overs')->nullable();
+            $table->float('sales')->nullable();
             $table->string('status')->nullable();
             $table->string('remarks1')->nullable();
             $table->string('remarks2')->nullable();

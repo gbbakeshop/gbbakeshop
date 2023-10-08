@@ -6,8 +6,9 @@ import { isResetForm } from "@/_redux/app-slice";
 import { isRandomhandler } from "@/_redux/app-slice";
 import { move_sales_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
+import moment from "moment";
 
-export default function MoveToSalesReportForm({ selected, setSelected }) {
+export default function MoveToSalesReportForm({ data, account }) {
     const { url } = usePage();
     const [load, setLoad] = useState(false);
     const ref = useRef();
@@ -17,14 +18,32 @@ export default function MoveToSalesReportForm({ selected, setSelected }) {
     async function submitHandler(e) {
         e.preventDefault();
         const formData = new FormData(ref.current);
+
+        const { get_breads, ...resp } = data;
         const newData = {
-            branchid: branchid,
-            breadid: selected,
-            moveTo: "done",
-            remaining: formData.get("remaining"),
-            breadout: formData.get("breadout"),
-            remarks: formData.get("remarks"),
+            ...resp,
+            salerid: account.id,
+            beginning: data.beginning ?? 0,
+            remaining: parseInt(formData.get("remaining")),
+            soldout:
+                (data.beginning ?? 0 + data.new_production ?? 0) -
+                parseInt(formData.get("remaining")) -
+                parseInt(formData.get("breadout")),
+            sales:
+                ((data.beginning ?? 0 + data.new_production ?? 0) -
+                    parseInt(formData.get("remaining")) -
+                    parseInt(formData.get("breadout"))) *
+                parseInt(data.get_breads.price),
+            bread_out: formData.get("breadout"),
+            remarks2: formData.get("remarks"),
+            quantity: data.quantity,
+            overs: data.overs ?? 0,
+            price: parseInt(data.get_breads.price),
+            total: data.beginning ?? 0 + data.new_production ?? 0,
+            status: "done",
+            date: moment().format("LLLL"),
         };
+
         const update = await move_sales_records(newData);
 
         dispatch(isResponseHandler(update));
@@ -36,10 +55,10 @@ export default function MoveToSalesReportForm({ selected, setSelected }) {
             setLoad(false);
             dispatch(isRandomhandler());
             dispatch(isResponseHandler([]));
+            setSelected([]);
         }, 2000);
-        setSelected([]);
     }
-    
+
     return (
         <form
             name="form"
@@ -48,6 +67,9 @@ export default function MoveToSalesReportForm({ selected, setSelected }) {
             className="flex flex-col h-full w-full"
         >
             <div className="flex-1">
+                <label className="block uppercase tracking-wide text-gray-700 text-lg font-bold mb-2">
+                    {data.bread_name}
+                </label>
                 <Input
                     data={0}
                     name="remaining"
