@@ -21,7 +21,7 @@ class BranchesSeeder extends Seeder
     'Ma-oa','Brgy Suay','Himamaylan','Kabangkalan 1','Kabangkalan 2','Binalbagan 1','Binalbagan 2','EB Magallona','Isabela 1','Isabela 2','Vallehermoso Brgy Tagbino',
     'Guihulngan City'];
     
-            for ($i=0; $i < count($branch); $i++) { 
+            for ($i=1; $i < count($branch); $i++) { 
                $user = new Branches;
                $user->branch_name = $branch[$i];
                $user->save();

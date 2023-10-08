@@ -7,6 +7,7 @@ import BranchBreadProductionTabsComponent from './components/branch-bakers-produ
 import SkeletonLoader from "@/_components/skeleton-loader";
 
 export default function BranchBreadProductionPage(props) {
+    const {auth} = props
     const [data,setData] = useState([])
     const [loading, setLoading] = useState(true);
     const { url } = usePage()
@@ -18,11 +19,12 @@ export default function BranchBreadProductionPage(props) {
             setLoading(false);
         })
     }, []);
-    console.log('datasss',data)
     return ( 
         <AdministratorLayout>
         <BranchBreadProductionTabsComponent />
-            {loading ? <SkeletonLoader /> : <BranchBreadProductionTableComponent 
+            {loading ? <SkeletonLoader /> : <BranchBreadProductionTableComponent
+            account={auth.user} 
+            branchid={branchid}
             data={data.length == 0?[]:data} />}
          </AdministratorLayout>
      );

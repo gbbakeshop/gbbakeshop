@@ -59,6 +59,13 @@ Route::post('/add_selected_ingredients','App\Http\Controllers\SelectedIngredient
 Route::post('/add_recipe_ingredients','App\Http\Controllers\SelectedIngredientsController@add_recipe_ingredients');
 Route::put('/change_recipe_ingredients','App\Http\Controllers\SelectedIngredientsController@change_recipe_ingredients');
 
+Route::post('/create_new_records','App\Http\Controllers\RecordsController@create_new_records');
+Route::post('/get_records','App\Http\Controllers\RecordsController@get_records');
+Route::post('/move_records','App\Http\Controllers\RecordsController@move_records');
+Route::post('/move_sales_records','App\Http\Controllers\RecordsController@move_sales_records');
+
+
+
 
 
 

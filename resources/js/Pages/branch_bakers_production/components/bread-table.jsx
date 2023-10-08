@@ -5,7 +5,7 @@ import CreateProductionForm from "./create-production-form";
 import { AiFillWarning } from "react-icons/ai";
 import { BsFillClipboardCheckFill } from "react-icons/bs";
 
-export default function BranchBreadProductionTableComponent({ data }) {
+export default function BranchBreadProductionTableComponent({ data,branchid,account }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -23,7 +23,8 @@ export default function BranchBreadProductionTableComponent({ data }) {
             setSelected(newselected);
         }
     }
-console.log('waaa',data)
+
+    
     return (
         <div className="bg-white container mx-auto mt-5 rounded-lg overflow-hidden shadow-lg p-10">
             {selected.length !== 0 && (
@@ -92,7 +93,10 @@ console.log('waaa',data)
                                         <BiSolidLayerPlus className="text-2xl text-blue-600" />
                                     }
                                     title="CREATE PRODUCTION"
-                                    content={<CreateProductionForm data={res}/>}
+                                    content={<CreateProductionForm
+                                        branchid={branchid}
+                                        account={account}
+                                        data={res}/>}
                                 />
                             </td>
                         </tr>

@@ -1,13 +1,14 @@
 import { get_all_ingredients } from "@/services/ingredients-services";
 import { useState, useEffect, useRef } from "react";
-import { add_recipe_ingredients } from "@/services/ingredients-services";
+import { create_new_records } from "@/services/records-services";
 import { useDispatch } from "react-redux";
+import Input from "@/_components/input";
 import {
     isResponseHandler,
     isRandomhandler,
     isResetForm,
 } from "@/_redux/app-slice";
-export default function CreateProductionForm({ data }) {
+export default function CreateProductionForm({ data,branchid, account }) {
     const ref = useRef();
     const [ingredients, setIngredients] = useState([]);
     const [load, setLoad] = useState(false);
@@ -18,24 +19,40 @@ export default function CreateProductionForm({ data }) {
             setIngredients(res.status);
         });
     }, []);
-console.log('waaa',data)
     async function submitHandler(e) {
         e.preventDefault();
-        setLoad(true);
         const formData = new FormData(ref.current);
+       setLoad(true);
 
-        const newData = {
-            id: data.id,
-            ingredients_token: formData.get("token"),
+        const subData = {
+            branchid:branchid,
+            account: account,
+            data: data,
         };
 
-        setTimeout(async () => {
-            const create = await add_recipe_ingredients(newData);
+        const ingredients = data?.selected_breads.map((res,index)=> ({
+            quantity:formData.get(`quantity_${index}`)
+        })) 
 
+        const newData = {
+            ...subData,
+            data: {
+              ...subData.data,
+              selected_breads: subData.data.selected_breads.map((res, index) => ({
+                ...res,
+                ...ingredients[index]
+              })),
+            },
+          }
+
+        setTimeout(async () => {
+            const create = await create_new_records(newData);
+            console.log("newData", subData);
+            console.log("create", ingredients);
+           
+              
+              
             dispatch(isResponseHandler(create));
-            // if (create.status == "success") {
-            //     ref.current.reset();
-            // }
             setTimeout(() => {
                 setLoad(false);
                 dispatch(isResetForm(false));
@@ -53,13 +70,16 @@ console.log('waaa',data)
         >
             <div className="flex-1">
                 <>
-                    <div className="grid grid-rows-6 grid-flow-col gap-1">
-                        {data?.selected_breads.map((data, index) => (
-                            <div
-                                key={index}
-                                className="flex-none text-xs inline-flex items-center font-bold leading-sm  px-3 py-1 bg-red-50 border border-red-50 text-red-500 rounded"
-                            >
-                                {data.bread_name}
+                    <div className="flex flex-col gap-1">
+                        {data?.selected_breads.map((res, index) => (
+                            <div className="flex-1" key={index}>
+                                {res.bread_name}
+                                <Input
+                                    name={`quantity_${index}`} // Use unique names for each quantity input
+                                    title={res.raw_materials}
+                                    placeholder="Pieces"
+                                    type="number"
+                                />
                             </div>
                         ))}
                     </div>
