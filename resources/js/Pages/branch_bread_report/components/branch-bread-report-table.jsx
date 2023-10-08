@@ -4,10 +4,12 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { AiFillWarning } from "react-icons/ai";
 import { BiSolidLayerPlus } from "react-icons/bi";
 import MoveToSalesReportForm from "./move-to-sales-report-form";
-import Drawer from "@/_components/drawer";
+import { RiFolderTransferFill } from "react-icons/ri";
+import { BsFillClipboardCheckFill } from "react-icons/bs";
+import { MdOutlinePendingActions } from "react-icons/md";
 import ActionDrawer from "@/_components/action-drawer";
 
-export default function BranchBreadReportTableComponent({ account,data }) {
+export default function BranchBreadReportTableComponent({ account, data }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -67,9 +69,9 @@ export default function BranchBreadReportTableComponent({ account,data }) {
                         <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Total
                         </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
+                        {/* <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Updated at
-                        </th>
+                        </th> */}
                         <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Status
                         </th>
@@ -127,21 +129,24 @@ export default function BranchBreadReportTableComponent({ account,data }) {
                             <td className=" flex-1 px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {res.total ?? 0}
                             </td>
-                            <td className=" flex-1 px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
+                            {/* <td className=" flex-1 px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {moment(res.updated_at).format("LLLL")}
-                            </td>
+                            </td> */}
                             <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.new_production == 0 && res.sellerid == account.id?'Done':'Pend'}
+                                {res.new_production == 0 &&
+                                res.sellerid == account.id
+                                    ? <BsFillClipboardCheckFill  className="text-2xl text-green-600"/>
+                                    : <MdOutlinePendingActions   className="text-2xl text-red-600"/>}
                             </td>
                             <td className=" flex-none px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <ActionDrawer
                                     icons={
-                                        <BiSolidLayerPlus className="text-2xl text-blue-600" />
+                                        <RiFolderTransferFill className="text-2xl text-blue-600" />
                                     }
                                     title="CREATE PRODUCTION"
                                     content={
                                         <MoveToSalesReportForm
-                                        account={account}
+                                            account={account}
                                             data={res}
                                         />
                                     }

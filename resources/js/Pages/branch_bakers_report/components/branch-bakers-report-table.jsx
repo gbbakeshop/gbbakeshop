@@ -1,7 +1,10 @@
 import { useState } from "react";
 import moment from "moment/moment";
 import { FaEdit } from "react-icons/fa";
+import { BiTransferAlt } from "react-icons/bi";
+
 import Drawer from "@/_components/drawer";
+import ActionDrawer from "@/_components/action-drawer";
 import MoveToBreadReportForm from "./move-to-bread-report-form";
 
 export default function BranchBakersReportTableComponent({ data }) {
@@ -101,12 +104,23 @@ export default function BranchBakersReportTableComponent({ data }) {
                             <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {moment(res.created_at).format("LLLL")}
                             </td>
+                          
                             <td className=" flex-none px-10 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <FaEdit className="text-2xl text-blue-600" />
                             </td>
                             <td className=" flex-none px-10 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                <FaEdit className="text-2xl text-blue-600" />
-                            </td>
+                               
+                               <ActionDrawer
+                                       icons={
+                                           <BiTransferAlt className="text-2xl text-blue-600" />
+                                       }
+                                       title="CREATE PRODUCTION"
+                                       content={ <MoveToBreadReportForm
+                                           data={res}
+                                       />}
+                                   />
+                                   
+                               </td>
                             {/* <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <FaTrashAlt className="text-xl text-red-600"/>
                             </td> */}
