@@ -25,7 +25,6 @@ export default function BranchBreadReportTableComponent({ account,data }) {
             setSelected(newselected);
         }
     }
-
     return (
         <div className="bg-white container mx-auto mt-5 rounded-lg overflow-hidden shadow-lg p-10">
             {/* {selected.length !== 0 && (
@@ -66,7 +65,13 @@ export default function BranchBreadReportTableComponent({ account,data }) {
                             Over
                         </th>
                         <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
+                            Total
+                        </th>
+                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Updated at
+                        </th>
+                        <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
+                            Status
                         </th>
                         <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Action
@@ -111,16 +116,22 @@ export default function BranchBreadReportTableComponent({ account,data }) {
                                 {res.beginning ?? 0}
                             </td>
                             <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity ?? 0}
+                                {res.new_production ?? 0}
                             </td>
-                            <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
+                            <td className=" flex-1 px-10 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {res.charge ?? 0}
                             </td>
                             <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {res.overs ?? 0}
                             </td>
                             <td className=" flex-1 px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
+                                {res.total ?? 0}
+                            </td>
+                            <td className=" flex-1 px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {moment(res.updated_at).format("LLLL")}
+                            </td>
+                            <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
+                                {res.new_production == 0 && res.sellerid == account.id?'Done':'Pend'}
                             </td>
                             <td className=" flex-none px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <ActionDrawer

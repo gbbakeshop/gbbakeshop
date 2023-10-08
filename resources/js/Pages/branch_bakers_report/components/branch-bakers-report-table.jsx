@@ -54,9 +54,6 @@ export default function BranchBakersReportTableComponent({ data }) {
                             New Production
                         </th>
                         <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Total
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
                             Date Created
                         </th>
                         <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
@@ -99,13 +96,10 @@ export default function BranchBakersReportTableComponent({ data }) {
                                 {res.bread_name}
                             </td>
                             <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity}
+                                {res.new_production}
                             </td>
                             <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity}
-                            </td>
-                            <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {moment(res.created_at).format("lll")}
+                                {moment(res.created_at).format("LLLL")}
                             </td>
                             <td className=" flex-none px-10 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <FaEdit className="text-2xl text-blue-600" />

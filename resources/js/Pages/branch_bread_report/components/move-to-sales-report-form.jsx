@@ -18,31 +18,25 @@ export default function MoveToSalesReportForm({ data, account }) {
     async function submitHandler(e) {
         e.preventDefault();
         const formData = new FormData(ref.current);
-
+        setLoad(true);
         const { get_breads, ...resp } = data;
         const newData = {
             ...resp,
-            salerid: account.id,
+            sellerid: account.id,
             beginning: data.beginning ?? 0,
             remaining: parseInt(formData.get("remaining")),
-            soldout:
-                (data.beginning ?? 0 + data.new_production ?? 0) -
-                parseInt(formData.get("remaining")) -
-                parseInt(formData.get("breadout")),
-            sales:
-                ((data.beginning ?? 0 + data.new_production ?? 0) -
-                    parseInt(formData.get("remaining")) -
-                    parseInt(formData.get("breadout"))) *
-                parseInt(data.get_breads.price),
+            soldout:(data.new_production - parseInt(formData.get("remaining"))) -  parseInt(formData.get("breadout")),
+            sales:((data.new_production - parseInt(formData.get("remaining"))) -  parseInt(formData.get("breadout"))) * data.get_breads.price,
             bread_out: formData.get("breadout"),
             remarks2: formData.get("remarks"),
-            quantity: data.quantity,
             overs: data.overs ?? 0,
             price: parseInt(data.get_breads.price),
-            total: data.beginning ?? 0 + data.new_production ?? 0,
+            total: (data.beginning ?? 0) + (data.new_production ?? 0),
             status: "done",
             date: moment().format("LLLL"),
         };
+
+        console.log('newData',newData)
 
         const update = await move_sales_records(newData);
 

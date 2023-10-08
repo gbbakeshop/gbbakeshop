@@ -18,12 +18,11 @@ return new class extends Migration
             $table->bigInteger('branchid')->nullable();
             $table->bigInteger('breadid')->nullable();
             $table->bigInteger('bakerid')->nullable();
-            $table->bigInteger('salerid')->nullable();
+            $table->bigInteger('sellerid')->nullable();
             $table->string('bread_name')->nullable();
             $table->float('price')->nullable();
             $table->bigInteger('beginning')->nullable();
             $table->bigInteger('new_production')->nullable();
-            $table->bigInteger('quantity')->nullable();
             $table->bigInteger('remaining')->nullable();
             $table->bigInteger('soldout')->nullable();
             $table->bigInteger('bread_out')->nullable();

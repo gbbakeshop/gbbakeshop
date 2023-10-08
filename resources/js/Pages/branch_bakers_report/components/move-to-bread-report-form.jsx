@@ -25,7 +25,7 @@ export default function MoveToBreadReportForm({ selected, setSelected }) {
             remarks: formData.get("remarks"),
             overs: formData.get("overs"),
         };
-        console.log('newData',newData)
+
         const update = await move_records(newData);
 
         dispatch(isResponseHandler(update));
@@ -40,6 +40,7 @@ export default function MoveToBreadReportForm({ selected, setSelected }) {
         }, 2000);
         setSelected([]);
     }
+    
     return (
         <form
             name="form"
