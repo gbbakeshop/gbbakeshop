@@ -30,7 +30,6 @@ export default function IngredientsTableComponent({ data }) {
             setSelected(newselected);
         }
     }
-
     return (
         <div className="bg-white container mx-auto mt-5 rounded-lg overflow-hidden shadow-lg p-10">
             {selected.length !== 0 && (
@@ -94,10 +93,10 @@ export default function IngredientsTableComponent({ data }) {
                             </td>
                            
                             <td className="flex-none px-6 py-2 whitespace-no-wrap">
-                                <IngredientsShow data={data}/>
+                                <IngredientsShow data={res} />
                             </td>
                             <td className="flex-none px-5 py-2 whitespace-no-wrap">
-                                <IngredientsEdit  data={data}/>
+                                <IngredientsEdit  data={res}/>
                             </td>
                             <td className="flex-none px-11 py-2 whitespace-no-wrap">
                                 <IngredientsDelete data={res}/>

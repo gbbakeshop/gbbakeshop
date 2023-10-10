@@ -25,9 +25,7 @@ export default function IngredientsEdit({ data }) {
         });
     }, []);
 
-    const newData = data.map((res) =>
-        res.selected_ingredients.map((result) => result.id)
-    )[0];
+    const newData = data.selected_ingredients.map((result) => result.id);
 
     async function submitHandler(e) {
         e.preventDefault();
@@ -103,24 +101,24 @@ export default function IngredientsEdit({ data }) {
                     onSubmit={submitHandler}
                     className="flex flex-col h-full w-full"
                 >
-                    {data?.map((res, index) => (
-                        <div className="flex-1" key={index}>
+                  
+                        <div className="flex-1">
                             <Input
-                                data={res.id}
+                                data={data.id}
                                 name="id"
                                 title="id"
                                 placeholder="Enter new code"
                                 type="hidden"
                             />
                             <Input
-                                data={res.code}
+                                data={data.code}
                                 name="code"
                                 title="Code"
                                 placeholder="Enter new code"
                                 type="number"
                             />
                             <Input
-                                data={res.target}
+                                data={data.target}
                                 name="target"
                                 title="Target Pieces"
                                 placeholder="Enter target pieces"
@@ -130,7 +128,7 @@ export default function IngredientsEdit({ data }) {
                                 <div className="flex-1">Raw Materials</div>
                                 <div className="flex-1">Grams</div>
                             </div>
-                            {res.selected_ingredients.map((result, index) => (
+                            {data.selected_ingredients.map((result, index) => (
                                 <div key={index}>
                                     <div className="flex flex-row gap-2">
                                         <SelectOption
@@ -162,7 +160,7 @@ export default function IngredientsEdit({ data }) {
                                 </div>
                             ))}
                         </div>
-                    ))}
+              
 
                     {load ? (
                         <button

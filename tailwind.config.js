@@ -14,13 +14,11 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
-        },
-    },
-    extend: {
-        screens: {
-          xxl: '1536px',
-          xs: '480px',
-          xxs: '320px',
+            screens: {
+                xxl: '1536px',
+                xs: '480px',
+                xxs: '300px',
+              },
         },
     },
     plugins: [require('@tailwindcss/forms')],

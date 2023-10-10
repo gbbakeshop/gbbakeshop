@@ -5,21 +5,22 @@ import { Head } from "@inertiajs/react";
 import ToastNotification from "@/_components/toast-notification";
 import { useSelector } from "react-redux";
 export default function AdministratorLayout({ children }) {
-    const { response } = useSelector((state) => state.app);
-   
-   async function resp() {
+    const { response, isSideBar } = useSelector((state) => state.app);
+
+    async function resp() {
         return await response;
     }
 
     return (
         <div className="flex">
-            
             <Head title="GB Bakeshop" />
             {/* Side Navbar */}
-            <aside className="bg-gray-800 text-white w-64 min-h-screen">
-                {/* Your side navbar content here */}
-                <SideNavbar />
-            </aside>
+            {isSideBar && (
+                <aside className="bg-gray-800 text-white w-64 min-h-screen">
+                    {/* Your side navbar content here */}
+                    <SideNavbar />
+                </aside>
+            )}
 
             <div className="flex-1 flex flex-col">
                 {/* Top Navbar */}
@@ -29,9 +30,9 @@ export default function AdministratorLayout({ children }) {
 
                 {/* Content */}
                 <main className="bg-gray-100 p-3 flex-1 overflow-auto">
-                    {
-                        response.length !== 0 && <ToastNotification response={resp()} />
-                    }
+                    {response.length !== 0 && (
+                        <ToastNotification response={resp()} />
+                    )}
                     <Breadcrumbs />
                     {children}
                 </main>
