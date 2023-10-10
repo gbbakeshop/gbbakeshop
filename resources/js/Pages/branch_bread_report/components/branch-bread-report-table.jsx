@@ -8,6 +8,7 @@ import { RiFolderTransferFill } from "react-icons/ri";
 import { BsFillClipboardCheckFill } from "react-icons/bs";
 import { MdOutlinePendingActions } from "react-icons/md";
 import ActionDrawer from "@/_components/action-drawer";
+import BranchBreadReportEdit from "./branch-bread-report-edit";
 
 export default function BranchBreadReportTableComponent({ account, data }) {
     const [selected, setSelected] = useState([]);
@@ -134,16 +135,18 @@ export default function BranchBreadReportTableComponent({ account, data }) {
                             </td> */}
                             <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 {res.new_production == 0 &&
-                                res.sellerid == account.id
-                                    ? <BsFillClipboardCheckFill  className="text-2xl text-green-600"/>
-                                    : <MdOutlinePendingActions   className="text-2xl text-red-600"/>}
+                                res.sellerid == account.id ? (
+                                    <BsFillClipboardCheckFill className="text-2xl text-green-600" />
+                                ) : (
+                                    <MdOutlinePendingActions className="text-2xl text-red-600" />
+                                )}
                             </td>
                             <td className=" flex-none px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <ActionDrawer
                                     icons={
                                         <RiFolderTransferFill className="text-2xl text-blue-600" />
                                     }
-                                    title="CREATE PRODUCTION"
+                                    title="MOVE TO SALES REPORT"
                                     content={
                                         <MoveToSalesReportForm
                                             account={account}
@@ -153,7 +156,18 @@ export default function BranchBreadReportTableComponent({ account, data }) {
                                 />
                             </td>
                             <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                <FaEdit className="text-2xl text-blue-600" />
+                                <ActionDrawer
+                                    icons={
+                                        <FaEdit className="text-2xl text-blue-600" />
+                                    }
+                                    title="EDIT BREAD REPORT"
+                                    content={
+                                        <BranchBreadReportEdit
+                                            account={account}
+                                            data={res}
+                                        />
+                                    }
+                                />
                             </td>
                             {/* <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <FaTrashAlt className="text-xl text-red-600"/>

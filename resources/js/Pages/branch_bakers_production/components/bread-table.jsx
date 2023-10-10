@@ -5,7 +5,7 @@ import CreateProductionForm from "./create-production-form";
 import { AiFillWarning } from "react-icons/ai";
 import { BsFillClipboardCheckFill } from "react-icons/bs";
 
-export default function BranchBreadProductionTableComponent({ data,branchid,account }) {
+export default function BranchBreadProductionTableComponent({ data,branchid,account,data2 }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -89,6 +89,7 @@ export default function BranchBreadProductionTableComponent({ data,branchid,acco
                             </td>
                             <td className=" flex-none px-9 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                 <ActionDrawer
+                                width={'w-1/2'}
                                     icons={
                                         <BiSolidLayerPlus className="text-2xl text-blue-600" />
                                     }
@@ -96,7 +97,9 @@ export default function BranchBreadProductionTableComponent({ data,branchid,acco
                                     content={<CreateProductionForm
                                         branchid={branchid}
                                         account={account}
-                                        data={res}/>}
+                                        data={res}
+                                        data2={data2}
+                                        />}
                                 />
                             </td>
                         </tr>

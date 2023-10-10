@@ -8,11 +8,27 @@ import {
     isRandomhandler,
     isResetForm,
 } from "@/_redux/app-slice";
-export default function CreateProductionForm({ data,branchid, account }) {
+export default function CreateProductionForm({
+    data,
+    branchid,
+    account,
+    data2,
+}) {
     const ref = useRef();
     const [ingredients, setIngredients] = useState([]);
     const [load, setLoad] = useState(false);
     const dispatch = useDispatch();
+
+    const id = data?.selected_ingredients?.map((res) =>
+        parseInt(res.raw_materials_id)
+    );
+    const rm = data2.filter((res) => id.includes(res.raw_materials_id));
+    const si = data.selected_ingredients.map((res) => ({
+        grams: res.quantity,
+    }));
+    const newData = rm.map((res, i) => ({ ...res, ...si[i] }));
+
+    // console.log('heeee',data.selected_ingredients.map(res=>({grams:res.quantity})))
 
     useEffect(() => {
         get_all_ingredients().then((res) => {
@@ -22,33 +38,34 @@ export default function CreateProductionForm({ data,branchid, account }) {
     async function submitHandler(e) {
         e.preventDefault();
         const formData = new FormData(ref.current);
-       setLoad(true);
+        setLoad(true);
 
         const subData = {
-            branchid:branchid,
+            branchid: branchid,
             account: account,
             data: data,
         };
 
-        const ingredients = data?.selected_breads.map((res,index)=> ({
-            quantity:formData.get(`quantity_${index}`)
-        })) 
+        const ingredients = data?.selected_breads.map((res, index) => ({
+            quantity: formData.get(`quantity_${index}`),
+        }));
 
         const newData = {
             ...subData,
             data: {
-              ...subData.data,
-              selected_breads: subData.data.selected_breads.map((res, index) => ({
-                ...res,
-                ...ingredients[index]
-              })),
+                ...subData.data,
+                selected_breads: subData.data.selected_breads.map(
+                    (res, index) => ({
+                        ...res,
+                        ...ingredients[index],
+                    })
+                ),
             },
-          }
+        };
 
         setTimeout(async () => {
             const create = await create_new_records(newData);
-           
-              
+
             dispatch(isResponseHandler(create));
             setTimeout(() => {
                 setLoad(false);
@@ -58,6 +75,7 @@ export default function CreateProductionForm({ data,branchid, account }) {
             }, 2000);
         }, 1000);
     }
+
     return (
         <form
             name="form"
@@ -88,15 +106,78 @@ export default function CreateProductionForm({ data,branchid, account }) {
                             No Ingredients designated!
                         </h5>
                     ) : (
-                        <div className="grid grid-rows-6 grid-flow-col gap-1">
-                            {data?.selected_ingredients.map((data, index) => (
-                                <div
-                                    key={index}
-                                    className="flex-none text-xs inline-flex items-center font-bold leading-sm  px-3 py-1 bg-red-50 border border-red-50 text-red-500 rounded"
-                                >
-                                    {data.raw_materials} - ({data.quantity}gm)
+                        <div className="grid grid-rows-1 grid-flow-col gap-1">
+                            <div className="flex flex-col">
+                                <div className="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+                                    <div className="py-2 inline-block min-w-full">
+                                        <div className="overflow-hidden">
+                                            <table className="min-w-full">
+                                                <thead className="bg-white border-b">
+                                                    <tr>
+                                                        <th
+                                                            scope="col"
+                                                            className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                                        >
+                                                            Raw Materials
+                                                        </th>
+                                                        <th
+                                                            scope="col"
+                                                            className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                                        >
+                                                            Grams
+                                                        </th>
+                                                        <th
+                                                            scope="col"
+                                                            className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                                        >
+                                                            Current Remaining
+                                                        </th>
+                                                        <th
+                                                            scope="col"
+                                                            className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                                        >
+                                                            Calculation
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {newData.map(
+                                                        (res, index) => (
+                                                            <tr
+                                                                key={index}
+                                                                className="bg-gray-100 border-b"
+                                                            >
+                                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                                    {
+                                                                        res.raw_materials
+                                                                    }
+                                                                </td>
+                                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                    {res.grams}
+                                                                </td>
+                                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                    {
+                                                                        res.quantity
+                                                                    }
+                                                                </td>
+                                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                    {(
+                                                                        res.quantity -
+                                                                        res.grams /
+                                                                            1000
+                                                                    ).toFixed(
+                                                                        2
+                                                                    )}
+                                                                </td>
+                                                            </tr>
+                                                        )
+                                                    )}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                            ))}
+                            </div>
                         </div>
                     )}
                 </>

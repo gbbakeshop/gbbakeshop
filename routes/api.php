@@ -63,6 +63,12 @@ Route::post('/create_new_records','App\Http\Controllers\RecordsController@create
 Route::post('/get_records','App\Http\Controllers\RecordsController@get_records');
 Route::post('/move_records','App\Http\Controllers\RecordsController@move_records');
 Route::post('/move_sales_records','App\Http\Controllers\RecordsController@move_sales_records');
+Route::put('/edit_bakers_report_records','App\Http\Controllers\RecordsController@edit_bakers_report_records');
+Route::put('/edit_bread_report_records','App\Http\Controllers\RecordsController@edit_bread_report_records');
+Route::put('/edit_sales_report_records','App\Http\Controllers\RecordsController@edit_sales_report_records');
+Route::put('/record_move_another_branch','App\Http\Controllers\RecordsController@record_move_another_branch');
+
+
 
 
 

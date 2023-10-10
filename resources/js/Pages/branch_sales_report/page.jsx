@@ -8,6 +8,8 @@ import SkeletonLoader from "@/_components/skeleton-loader";
 import { useSelector } from 'react-redux';
 export default function BranchBreadProductionPage(props) {
     const [data,setData] = useState([])
+    
+    const { auth } = props
     const [loading, setLoading] = useState(true);
     const { url } = usePage()
     const branchid = url.split('/')[2]
@@ -26,7 +28,9 @@ export default function BranchBreadProductionPage(props) {
     return ( 
         <AdministratorLayout>
             <BranchBreadProductionTabsComponent />
-            {loading ? <SkeletonLoader /> : <BranchSalesReportTableComponent data={data} />}
+            {loading ? <SkeletonLoader /> : <BranchSalesReportTableComponent
+             account={auth.user} 
+            data={data} />}
          </AdministratorLayout>
      );
 }

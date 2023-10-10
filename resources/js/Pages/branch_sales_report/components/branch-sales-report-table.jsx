@@ -3,7 +3,10 @@ import moment from "moment/moment";
 import { FaEdit,FaTrashAlt } from "react-icons/fa";
 import { AiFillWarning } from "react-icons/ai";
 import {BsCheckCircleFill } from "react-icons/bs";
-export default function BranchSalesReportTableComponent({ data }) {
+import BranchSalesReportEdit from "./branch-sales-report-edit";
+import ActionDrawer from "@/_components/action-drawer";
+
+export default function BranchSalesReportTableComponent({ data,account }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -122,7 +125,19 @@ export default function BranchSalesReportTableComponent({ data }) {
                                 {res.sales}
                             </td>
                             <td className="   flex-none px-2 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                <FaEdit className="text-2xl text-blue-600" />
+                            <ActionDrawer
+                                    icons={
+                                        <FaEdit className="text-2xl text-blue-600" />
+                                    }
+                                    title="EDIT SALES REPORT"
+                                    content={
+                                        <BranchSalesReportEdit
+                                            account={account}
+                                            data={res}
+                                        />
+                                    }
+                                />
+                               
                             </td>
                         </tr>
                     ))}

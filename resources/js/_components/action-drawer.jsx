@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { isResetForm } from "@/_redux/app-slice";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function ActionDrawer({ data, content, title, icons }) {
+export default function ActionDrawer({ data, content, title, icons,width }) {
     const [open, setOpen] = useState(false);
     const { isReset } = useSelector((state) => state.app);
     const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export default function ActionDrawer({ data, content, title, icons }) {
                     id="drawer-right-example"
                     className={`${
                         open ? "flex flex-col" : "hidden"
-                    } shadow-2xl fixed top-0 right-0 z-40 h-[100vh] p-4 overflow-y-auto transition-transform bg-white w-96 dark:bg-gray-800`}
+                    } ${width??'w-96'}  shadow-2xl fixed top-0 right-0 z-40 h-[100vh] p-4 overflow-y-auto transition-transform bg-white  dark:bg-gray-800`}
                 >
                     <h5
                         id="drawer-right-label"

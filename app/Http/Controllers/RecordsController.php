@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BranchRawMaterials;
 use App\Models\Records;
 use Illuminate\Http\Request;
 
@@ -9,6 +10,78 @@ class RecordsController extends Controller
 {
 
 
+    public function record_move_another_branch(Request $request)
+    {
+        for ($i = 0; $i < count($request->breads); $i++) {
+            $record = Records::where('id', '=', $request->breads[$i])->first();
+            // $isExist = Records::where('branchid','=',$request->newBranchid)
+            // ->where('breadid','=',$record->breadid)->first();
+            $isExist = Records::where('branchid', '=', $request->newBranchid)
+                ->where('breadid', '=', $record->breadid)
+                ->where('status', '=', 'bakers')
+                ->orderBy('id', 'DESC')
+                ->first();
+
+            if ($isExist) {
+                Records::where('id', '=', $request->breads[$i])->update([
+                    'branchid' => $request->newBranchid,
+                    'new_production' => $record->new_production + $isExist->new_production,
+                ]);
+                Records::where('id', $isExist->id)->delete();
+            } else {
+                Records::where('id', '=', $request->breads[$i])->update([
+                    'branchid' => $request->newBranchid,
+                ]);
+            }
+
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Transferred Successfully'
+        ]);
+    }
+    public function edit_sales_report_records(Request $request)
+    {
+        Records::where('id', '=', $request->id)->update([
+            'beginning' => $request->beginning,
+            'new_production' => $request->new_production,
+            'charge' => $request->charge,
+            'overs' => $request->overs,
+            'total' => $request->beginning + $request->new_production,
+            'remaining' => $request->remaining,
+            'soldout' => $request->soldout,
+            'sales' => $request->sales,
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Updated Successfully'
+        ]);
+    }
+    public function edit_bread_report_records(Request $request)
+    {
+        Records::where('id', '=', $request->id)->update([
+            'beginning' => $request->beginning,
+            'new_production' => $request->new_production,
+            'charge' => $request->charge,
+            'overs' => $request->overs,
+            'total' => $request->beginning + $request->new_production,
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Updated Successfully'
+        ]);
+    }
+    public function edit_bakers_report_records(Request $request)
+    {
+        Records::where('id', '=', $request->id)->update([
+            'new_production' => $request->new_production
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Updated Successfully'
+        ]);
+    }
 
     public function move_sales_records(Request $request)
     {
@@ -88,9 +161,9 @@ class RecordsController extends Controller
                         'charge' => ($bread->charge ?? 0) + ($request->charge ?? 0),
                         'overs' => ($bread->overs ?? 0) + ($request->overs ?? 0),
                         'new_production' => ($bread->new_production ?? 0) + ($bakers->new_production ?? 0),
-                        'total' => ($bread->total ?? 0) + ($bakers->total ?? 0),
+                        'total' => ($bakers->new_production ?? 0) + ($bread->total ?? 0),
                     ]);
-                    
+
                     if ($res) {
                         Records::where('id', $bakers->id)->delete();
                     }
@@ -111,6 +184,9 @@ class RecordsController extends Controller
         ]);
 
     }
+
+
+
     public function get_records(Request $request)
     {
 
@@ -125,8 +201,33 @@ class RecordsController extends Controller
         ]);
 
     }
+
+    public function raw_materials_deduction($request, $branchid)
+    {
+
+        $grams = $request['quantity'];
+        $kilograms = $grams / 1000;
+        $brm = BranchRawMaterials::where([
+            ['branchid', '=', $branchid],
+            [
+                'raw_materials_id',
+                '=',
+                $request['raw_materials_id']
+            ]
+        ])->first();
+
+        $quantity = $brm->quantity - $kilograms;
+        $brm->update(['quantity' => $quantity]);
+
+    }
+
     public function create_new_records(Request $request)
     {
+
+
+        for ($i = 0; $i < count($request->data['selected_ingredients']); $i++) {
+            $this->raw_materials_deduction($request->data['selected_ingredients'][$i], $request->branchid);
+        }
 
         for ($i = 0; $i < count($request->data['selected_breads']); $i++) {
             $findBeginning = Records::where([

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import moment from "moment/moment";
 import { FaEdit } from "react-icons/fa";
-import { BiTransferAlt } from "react-icons/bi";
-
+import { RiFolderTransferFill } from "react-icons/ri";
+import BranchBakersReportEdit from "./branch-bakers-report-edit";
 import Drawer from "@/_components/drawer";
 import ActionDrawer from "@/_components/action-drawer";
 import MoveToBreadReportForm from "./move-to-bread-report-form";
+import MoveToAnotherBranch from "./move-to-another-branch";
 
 export default function BranchBakersReportTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
@@ -30,9 +31,9 @@ export default function BranchBakersReportTableComponent({ data }) {
         <div className="bg-white container mx-auto mt-5 rounded-lg overflow-hidden shadow-lg p-10">
             {selected.length !== 0 && (
                 <Drawer
-                    title={"MOVE TO BREAD REPORT"}
+                    title={"MOVE TO ANOTHER BRANCH"}
                     content={
-                        <MoveToBreadReportForm
+                        <MoveToAnotherBranch
                             setSelected={setSelected}
                             selected={selected}
                         />
@@ -63,7 +64,7 @@ export default function BranchBakersReportTableComponent({ data }) {
                             Update
                         </th>
                         <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Transfer
+                            Actions
                         </th>
                     </tr>
                 </thead>
@@ -72,7 +73,7 @@ export default function BranchBakersReportTableComponent({ data }) {
                         <tr
                             key={index}
                             className={`${
-                                isExistFunction(res.breadid) == undefined
+                                isExistFunction(res.id) == undefined
                                     ? " border-b border-slate-200 "
                                     : "bg-gray-100 border-l-2 border-red-500"
                             } flex flex-row my-1`}
@@ -80,15 +81,15 @@ export default function BranchBakersReportTableComponent({ data }) {
                             <td className="flex-none px-6 py-2 whitespace-no-wrap ">
                                 <input
                                     checked={
-                                        isExistFunction(res.breadid) ==
+                                        isExistFunction(res.id) ==
                                         undefined
                                             ? false
                                             : true
                                     }
-                                    onClick={() => addItem(res.breadid)}
+                                    onClick={() => addItem(res.id)}
                                     type="checkbox"
                                     className={`${
-                                        isExistFunction(res.breadid) ==
+                                        isExistFunction(res.id) ==
                                         undefined
                                             ? ""
                                             : "border-red-500 border bg-red-500 text-red-500"
@@ -106,13 +107,20 @@ export default function BranchBakersReportTableComponent({ data }) {
                             </td>
                           
                             <td className=" flex-none px-10 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                <FaEdit className="text-2xl text-blue-600" />
+                               
+                                <ActionDrawer
+                                       icons={
+                                           <FaEdit className="text-2xl text-blue-600" />
+                                       }
+                                       title="CREATE PRODUCTION"
+                                       content={ <BranchBakersReportEdit className="text-2xl text-blue-600" data={res} />}
+                                   />
                             </td>
                             <td className=" flex-none px-10 py-2 text-left text-sm  text-gray-600 tracking-wider">
                                
                                <ActionDrawer
                                        icons={
-                                           <BiTransferAlt className="text-2xl text-blue-600" />
+                                           <RiFolderTransferFill className="text-2xl text-blue-600" />
                                        }
                                        title="CREATE PRODUCTION"
                                        content={ <MoveToBreadReportForm
