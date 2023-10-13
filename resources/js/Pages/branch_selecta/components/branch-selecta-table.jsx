@@ -3,7 +3,11 @@ import moment from "moment/moment";
 import { BsInboxes } from "react-icons/bs";
 import { HiOutlineInboxArrowDown } from "react-icons/hi2";
 import { AiFillWarning } from "react-icons/ai";
-import {BsCheckCircleFill } from "react-icons/bs";
+import { BsCheckCircleFill } from "react-icons/bs";
+import ViewIcon from "@/_icons/view-icon";
+import EditIcon from "@/_icons/edit-icon";
+import DeleteIcon from "@/_icons/delete-icon";
+
 export default function BranchSelectaTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
@@ -15,117 +19,110 @@ export default function BranchSelectaTableComponent({ data }) {
         const isExist = isExistFunction(res);
         if (isExist == undefined) {
             // insert array of object
-            setSelected([
-                ...selected,
-                res
-            ]);
+            setSelected([...selected, res]);
         } else {
             // delete array of object
             const newselected = selected.filter((item) => item !== res);
             setSelected(newselected);
         }
     }
-    
-    return (
-        <div className="bg-white container mx-auto mt-5 rounded-lg overflow-hidden shadow-lg p-10">
-            {selected.length !== 0 && (
-                <button className="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
-                    Button
-                </button>
-            )}
 
-            <table className="w-full ">
+    const column = [
+        { title: "Name of Product" },
+        { title: "Price" },
+        { title: "Quantity" },
+        { title: "Status" },
+        { title: "Actions" },
+    ];
+    return (
+        <div className="bg-white shadow-md rounded my-6">
+            <table className="min-w-max w-full table-auto">
                 <thead>
-                    <tr className="flex flex-row border-b border-slate-300">
-                        <th className="flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            <input
-                                disabled
-                                type="checkbox"
-                                className="bg-gray-500 form-checkbox h-5 w-5 text-red-600"
-                            />
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Name of Selecta
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Price
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Quantity
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Status
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                           Remaining
-                        </th>
-                        <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            New
-                        </th>
-                       
+                    <tr className=" text-gray-600 uppercase text-sm leading-normal">
+                        {column.map((res, index) => (
+                            <th key={index} className="py-3 px-6 text-left">
+                                {res.title}
+                            </th>
+                        ))}
                     </tr>
                 </thead>
-                <tbody  className="text-gray-500  font-normal">
-                    {data?.map((res, index) => (
+                <tbody className="text-gray-600 text-sm font-light">
+                    {data.map((res, index) => (
                         <tr
                             key={index}
-                            className={`${
-                                isExistFunction(res.id) == undefined
-                                    ? " border-b border-slate-200 "
-                                    : "bg-gray-100 border-l-2 border-red-500"
-                            } flex flex-row my-1`}
+                            className="border-b border-gray-200 hover:bg-gray-100"
                         >
-                            <td className="flex-none px-6 py-2 whitespace-no-wrap ">
-                            <input onClick={() => addItem(res.id)} type="checkbox" className={`${isExistFunction(res.id) == undefined ? '' : 'border-red-500 border bg-red-500 text-red-500'}  form-checkbox h-5 w-5`} />
-                                 </td>
-                            <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.product_name}
-                            </td> 
-                            <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.price}
-                            </td>
-                            <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.quantity}
-                            </td>
-                            <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                           
-                                    <div
-                                        className={`${res.warning < res.quantity?'bg-green-600':'bg-orange-600'} ml-4 text-xs inline-flex items-center font-bold leading-sm  px-3 py-1  border rounded`}
-                                    >
-                                        {/* <svg
+                            <td className="py-3 px-6 text-left whitespace-nowrap">
+                                <div className="flex items-center">
+                                    <div className="mr-2">
+                                        <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            className="feather feather-arrow-right mr-2"
+                                            x="0px"
+                                            y="0px"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 48 48"
+                                            style={{ fill: "#000000" }}
                                         >
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg> */}
-                                        
-                                      
-                                        {
-                                    res.warning < res.quantity?
-                                    <BsCheckCircleFill  className={`text-white text-xl `}/>: 
-                                    <AiFillWarning className={`text-white text-xl `}/>
-                                }
+                                            <path
+                                                fill="#80deea"
+                                                d="M24,34C11.1,34,1,29.6,1,24c0-5.6,10.1-10,23-10c12.9,0,23,4.4,23,10C47,29.6,36.9,34,24,34z M24,16	c-12.6,0-21,4.1-21,8c0,3.9,8.4,8,21,8s21-4.1,21-8C45,20.1,36.6,16,24,16z"
+                                            ></path>
+                                            <path
+                                                fill="#80deea"
+                                                d="M15.1,44.6c-1,0-1.8-0.2-2.6-0.7C7.6,41.1,8.9,30.2,15.3,19l0,0c3-5.2,6.7-9.6,10.3-12.4c3.9-3,7.4-3.9,9.8-2.5	c2.5,1.4,3.4,4.9,2.8,9.8c-0.6,4.6-2.6,10-5.6,15.2c-3,5.2-6.7,9.6-10.3,12.4C19.7,43.5,17.2,44.6,15.1,44.6z M32.9,5.4	c-1.6,0-3.7,0.9-6,2.7c-3.4,2.7-6.9,6.9-9.8,11.9l0,0c-6.3,10.9-6.9,20.3-3.6,22.2c1.7,1,4.5,0.1,7.6-2.3c3.4-2.7,6.9-6.9,9.8-11.9	c2.9-5,4.8-10.1,5.4-14.4c0.5-4-0.1-6.8-1.8-7.8C34,5.6,33.5,5.4,32.9,5.4z"
+                                            ></path>
+                                            <path
+                                                fill="#80deea"
+                                                d="M33,44.6c-5,0-12.2-6.1-17.6-15.6C8.9,17.8,7.6,6.9,12.5,4.1l0,0C17.4,1.3,26.2,7.8,32.7,19	c3,5.2,5,10.6,5.6,15.2c0.7,4.9-0.3,8.3-2.8,9.8C34.7,44.4,33.9,44.6,33,44.6z M13.5,5.8c-3.3,1.9-2.7,11.3,3.6,22.2	c6.3,10.9,14.1,16.1,17.4,14.2c1.7-1,2.3-3.8,1.8-7.8c-0.6-4.3-2.5-9.4-5.4-14.4C24.6,9.1,16.8,3.9,13.5,5.8L13.5,5.8z"
+                                            ></path>
+                                            <circle
+                                                cx="24"
+                                                cy="24"
+                                                r="4"
+                                                fill="#80deea"
+                                            ></circle>
+                                        </svg>
                                     </div>
+                                    <span className="font-medium">
+                                        {res.product_name}
+                                    </span>
+                                </div>
                             </td>
-                            <td className=" flex-1 px-6 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                
-                              <BsInboxes  className="text-2xl text-blue-600" />
+                            <td className="py-3 px-6 text-left">
+                                <div className="flex items-center">
+                                    {res.price}
+                                </div>
                             </td>
-                            <td className=" flex-none px-7 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                <HiOutlineInboxArrowDown className="text-2xl text-blue-600" />
+                            <td className="py-3 px-6 text-left">
+                                <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                    {res.quantity}
+                                </span>
                             </td>
-                            {/* <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                <FaTrashAlt className="text-xl text-red-600"/>
-                            </td> */}
+                            <td className="py-3 px-6 text-left">
+                                {res.warning < res.quantity ? (
+                                    <span className="bg-purple-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                        {res.warning}
+                                    </span>
+                                ) : (
+                                    <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                        {res.warning}
+                                    </span>
+                                )}
+                            </td>
+                            <td className="py-3 px-6 text-left">
+                                <div className="flex">
+                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
+                                        <ViewIcon />
+                                    </div>
+                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
+                                        <EditIcon />
+                                    </div>
+                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
+                                        <DeleteIcon />
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

@@ -9,6 +9,9 @@ import ActionDrawer from "@/_components/action-drawer";
 import RawMaterialsDelete from "./raw-materials-delete";
 import RawMaterialsCreateForm from "./raw-materials-create";
 import RawMaterialsAdd from "./raw-materials-add";
+import CreateIcon from "@/_icons/create-icon";
+import EditIcon from "@/_icons/edit-icon";
+import DeleteIcon from "@/_icons/delete-icon";
 
 export default function RawMaterialsComponent({ data }) {
     const [selected, setSelected] = useState([]);
@@ -30,9 +33,15 @@ export default function RawMaterialsComponent({ data }) {
         }
     }
 
+    const column = [
+        { title: "Name of Raw Materials" },
+        { title: "Bind" },
+        { title: "Created At" },
+        { title: "Actions" },
+    ];
     return (
-        <div className="bg-white container mx-auto mt-5 rounded-lg overflow-hidden shadow-lg p-10">
-            <div className="flex flex-row w-full">
+        <div className="bg-white shadow-md rounded my-6">
+            <div className="flex flex-row w-full p-4">
                 <div className="flex-1">
                     {selected.length !== 0 && (
                         <Drawer
@@ -53,94 +62,86 @@ export default function RawMaterialsComponent({ data }) {
                     />
                 </div>
             </div>
-
-            <table className="w-full ">
+            <table className="min-w-max w-full table-auto">
                 <thead>
-                    <tr className="flex flex-row border-b border-slate-300">
-                        <th className="flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            <input
-                                disabled
-                                type="checkbox"
-                                className="bg-gray-500 form-checkbox h-5 w-5 text-red-600"
-                            />
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Name of Raw Materials
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Bind
-                        </th>
-                        <th className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Created At
-                        </th>
-                        <th className=" flex-0 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Add
-                        </th>
-                        <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Edit
-                        </th>
-                        <th className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            Delete
-                        </th>
+                    <tr className=" text-gray-600 uppercase text-sm leading-normal">
+                        {column.map((res, index) => (
+                            <th key={index} className="py-3 px-6 text-left">
+                                {res.title}
+                            </th>
+                        ))}
                     </tr>
                 </thead>
-                <tbody className="text-gray-500  font-normal">
+                <tbody className="text-gray-600 text-sm font-light">
                     {data?.map((res, index) => (
                         <tr
-                            key={index}
                             className={`${
                                 isExistFunction(res.id) == undefined
                                     ? " border-b border-slate-200 "
                                     : "bg-gray-100 border-l-2 border-red-500"
-                            } flex flex-row my-1`}
+                            } border-gray-200 hover:bg-gray-100`}
                         >
-                            <td className="flex-none px-6 py-2 whitespace-no-wrap ">
-                                <input
-                                    onClick={() => addItem(res.id)}
-                                    type="checkbox"
-                                    className={`${
-                                        isExistFunction(res.id) == undefined
-                                            ? ""
-                                            : "border-red-500 border bg-red-500 text-red-500"
-                                    }  form-checkbox h-5 w-5`}
-                                />
+                            <td className="py-3 px-6 text-left whitespace-nowrap">
+                                <div className="flex items-center">
+                                    <div className="mr-2">
+                                        <input
+                                            onClick={() => addItem(res.id)}
+                                            type="checkbox"
+                                            className={`${
+                                                isExistFunction(res.id) ==
+                                                undefined
+                                                    ? ""
+                                                    : "border-red-500 border bg-red-500 text-red-500"
+                                            }  form-checkbox`}
+                                        />
+                                    </div>
+                                    <span className="font-medium">
+                                        {res.raw_materials}
+                                    </span>
+                                </div>
                             </td>
-                            <td className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.raw_materials}
+                            <td className="py-3 px-6 text-left">{res.bind}</td>
+
+                            <td className="py-3 px-6 text-left">
+                                {moment(res.created_at).format("LLLL")}
                             </td>
-                            <td className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                                {res.bind}
-                            </td>
-                            <td className=" flex-1 px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                                {moment(res.created_at).format("LL")}
-                            </td>
-                            <td className=" flex-none px-6 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                            <ActionDrawer
-                                    icons={
-                                        <AiFillFileAdd className="text-2xl text-blue-600" />
-                                    }
-                                    title="ADD INGREDIENTS"
-                                    content={
-                                        <RawMaterialsAdd 
-                                        selectedid={res.id}
-                                        data={res} />
-                                    }
-                                />
-                            </td>
-                            <td className=" flex-none px-8 py-3 text-left text-sm  text-gray-600 tracking-wider">
-                                <ActionDrawer
-                                    icons={
-                                        <FaEdit className="text-2xl text-blue-600" />
-                                    }
-                                    title="EDIT RAW MATERIALS"
-                                    content={
-                                        <RawMaterialsEditForm data={res} />
-                                    }
-                                />
-                            </td>
-                            <td className=" flex-none px-8 py-2 text-left text-sm  text-gray-600 tracking-wider">
-                                {/* <FaTrashAlt className="text-xl text-red-600" /> */}
-                                <RawMaterialsDelete data={res} />
+                            <td className="py-3 px-6 text-left">
+                                <div className="flex">
+                                    <ActionDrawer
+                                        icons={
+                                            <div className="w-4 mr-2 text-green-500">
+                                                <CreateIcon />
+                                            </div>
+                                        }
+                                        title="ADD INGREDIENTS"
+                                        content={
+                                            <RawMaterialsAdd
+                                                selectedid={res.id}
+                                                data={res}
+                                            />
+                                        }
+                                    />
+                                    <ActionDrawer
+                                        icons={
+                                            <div className="w-4 mr-2 text-blue-500">
+                                                <EditIcon />
+                                            </div>
+                                        }
+                                        title="EDIT RAW MATERIALS"
+                                        content={
+                                            <RawMaterialsEditForm data={res} />
+                                        }
+                                    />
+
+                                    <RawMaterialsDelete
+                                        icons={
+                                            <div className="w-4 mr-2 text-red-500">
+                                                <DeleteIcon />
+                                            </div>
+                                        }
+                                        data={res}
+                                    />
+                                </div>
                             </td>
                         </tr>
                     ))}

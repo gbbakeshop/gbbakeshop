@@ -37,7 +37,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/administrator/dashboard', function () {
         return Inertia::render('administrator/page');
     })->name('dashboard');
- 
+
     Route::get('/administrator/auth/breads', function () {
         return Inertia::render('breads/page');
     })->name('breads');
@@ -88,6 +88,27 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/administrator/{branchid}/branch_accounts', function () {
         return Inertia::render('branch_accounts/page');
     })->name('branch_accounts');
+
+
+    Route::get('/branch/dashboard', function () {
+        return Inertia::render('branch/dashboard');
+    })->name('b_dashboard');
+    
+    Route::get('/branch/raw-materials', function () {
+        return Inertia::render('branch/raw-materials');
+    })->name('b_raw_materials');
+
+    Route::get('/branch/bread-production', function () {
+        return Inertia::render('branch/bread-production');
+    })->name('b_bread_production');
+    
+    Route::get('/branch/selecta', function () {
+        return Inertia::render('branch/selecta');
+    })->name('b_selecta');
+
+    Route::get('/branch/settings', function () {
+        return Inertia::render('branch/settings');
+    })->name('b_settings');
 });
 
 Route::middleware('auth')->group(function () {
@@ -96,4 +117,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

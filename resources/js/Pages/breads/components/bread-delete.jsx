@@ -4,8 +4,8 @@ import { delete_breads } from "@/services/breads-services";
 import { useDispatch } from "react-redux";
 import { isRandomhandler } from "@/_redux/app-slice";
 
-export default function BreadDelete({ data }) {
-    const dispatch = useDispatch()
+export default function BreadDelete({ data, icons }) {
+    const dispatch = useDispatch();
 
     function openDelete(id) {
         Swal.fire({
@@ -18,16 +18,16 @@ export default function BreadDelete({ data }) {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                delete_breads(id).then(res=>{
-                    if(res.status == 'success'){
-                        dispatch(isRandomhandler())
+                delete_breads(id).then((res) => {
+                    if (res.status == "success") {
+                        dispatch(isRandomhandler());
                         Swal.fire({
                             icon: "success",
                             title: "Your work has been saved",
                             showConfirmButton: false,
                             timer: 1500,
                         });
-                    }else{
+                    } else {
                         Swal.fire({
                             icon: "error",
                             title: "Invalid",
@@ -35,25 +35,9 @@ export default function BreadDelete({ data }) {
                             timer: 1500,
                         });
                     }
-                })
-              
+                });
             }
         });
     }
-    return (
-        <>
-            <div className="relative inline-block text-left">
-                <button
-                    onClick={() => openDelete(data.id)}
-                    type="button"
-                    className=" mt-1 relative flex rounded-full text-sm"
-                    id="user-menu-button"
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                >
-                    <FaTrashAlt className="text-xl text-red-600" />
-                </button>
-            </div>
-        </>
-    );
+    return <div onClick={() => openDelete(data.id)}>{icons}</div>;
 }

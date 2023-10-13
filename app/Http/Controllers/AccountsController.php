@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AccountsController extends Controller
 {
     public function get_all_accounts(){
-        $response = User::where('position','<>','admin')->get();
+        $response = User::where('position','<>','admin')->with('getBranch')->get();
         return response()->json([
             'status' => $response
         ]);

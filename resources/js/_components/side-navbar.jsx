@@ -31,7 +31,7 @@ export default function SideNavbar() {
     return (
         <div
             style={{ minHeight: "100vh" }}
-            className=" w-64 fixed z-50 bg-white shadow md:h-full flex-col justify-between  sm:flex overflow-auto"
+            className=" w-64 z-50 bg-white shadow md:h-full flex-col justify-between  sm:flex overflow-auto"
         >
             {loading ? (
                 <SkeletonLoader />

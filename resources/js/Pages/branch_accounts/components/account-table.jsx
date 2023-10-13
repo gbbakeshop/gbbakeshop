@@ -1,33 +1,8 @@
-import { useState } from "react";
-import BreadDropDownComponent from "./bread-dropdown";
 import ViewIcon from "@/_icons/view-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
 
-export default function AccountsTableComponent({ data }) {
-    const [selected, setSelected] = useState([]);
-
-    function isExistFunction(res) {
-        //check if exist
-        return selected.find((result) => result.id === res);
-    }
-
-    function addItem(res) {
-        const isExist = isExistFunction(res);
-        if (isExist == undefined) {
-            // insert array of object
-            setSelected([
-                ...selected,
-                {
-                    id: res,
-                },
-            ]);
-        } else {
-            // delete array of object
-            const newselected = selected.filter((item) => item.id !== res);
-            setSelected(newselected);
-        }
-    }
+export default function AccountTable() {
     const column = [
         { title: "Name" },
         { title: "Branch" },
@@ -36,23 +11,20 @@ export default function AccountsTableComponent({ data }) {
         { title: "Actions" },
     ];
     return (
-        <div className="bg-white shadow-md rounded my-6">
-            <table className="min-w-max w-full table-auto">
-                <thead>
-                    <tr className=" text-gray-600 uppercase text-sm leading-normal">
-                        {column.map((res, index) => (
-                            <th key={index} className="py-3 px-6 text-left">
-                                {res.title}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody className="text-gray-600 text-sm font-light">
-                    {data?.map((res, index) => (
-                        <tr
-                            key={index}
-                            className="border-b border-gray-200 hover:bg-gray-100"
-                        >
+        <>
+            <div className="bg-white shadow-md rounded my-6">
+                <table className="min-w-max w-full table-auto">
+                    <thead>
+                        <tr className=" text-gray-600 uppercase text-sm leading-normal">
+                            {column.map((res, index) => (
+                                <th key={index} className="py-3 px-6 text-left">
+                                    {res.title}
+                                </th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody className="text-gray-600 text-sm font-light">
+                        <tr className="border-b border-gray-200 hover:bg-gray-100">
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">
                                     <div className="mr-2">
@@ -86,22 +58,41 @@ export default function AccountsTableComponent({ data }) {
                                         </svg>
                                     </div>
                                     <span className="font-medium">
-                                        {res.name}
+                                        React Project
                                     </span>
                                 </div>
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex items-center">
-                                {res.get_branch?.branch_name}
+                                    <div className="mr-2">
+                                        <img
+                                            className="w-6 h-6 rounded-full"
+                                            src="https://randomuser.me/api/portraits/men/1.jpg"
+                                        />
+                                    </div>
+                                    <span>Eshal Rosas</span>
                                 </div>
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">
-                                    {res.position}
+                                    Baker
                                 </span>
                             </td>
                             <td className="py-3 px-6 text-left">
-                               {res.email}
+                                <div className="flex ">
+                                    <img
+                                        className="w-6 h-6 rounded-full border-gray-200 border transform hover:scale-125"
+                                        src="https://randomuser.me/api/portraits/men/1.jpg"
+                                    />
+                                    <img
+                                        className="w-6 h-6 rounded-full border-gray-200 border -m-1 transform hover:scale-125"
+                                        src="https://randomuser.me/api/portraits/women/2.jpg"
+                                    />
+                                    <img
+                                        className="w-6 h-6 rounded-full border-gray-200 border -m-1 transform hover:scale-125"
+                                        src="https://randomuser.me/api/portraits/men/3.jpg"
+                                    />
+                                </div>
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
@@ -117,9 +108,9 @@ export default function AccountsTableComponent({ data }) {
                                 </div>
                             </td>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
+        </>
     );
 }

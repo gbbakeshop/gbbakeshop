@@ -4,7 +4,7 @@ import { delete_raw_materials } from "@/services/raw-materials-services";
 import { useDispatch } from "react-redux";
 import { isRandomhandler } from "@/_redux/app-slice";
 
-export default function RawMaterialsDelete({ data }) {
+export default function RawMaterialsDelete({ data,icons }) {
     const dispatch = useDispatch()
 
     function openDelete(id) {
@@ -46,12 +46,12 @@ export default function RawMaterialsDelete({ data }) {
                 <button
                     onClick={() => openDelete(data.id)}
                     type="button"
-                    className=" mt-1 relative flex rounded-full text-sm"
+                    className=" relative flex rounded-full text-sm"
                     id="user-menu-button"
                     aria-expanded="false"
                     aria-haspopup="true"
                 >
-                    <FaTrashAlt className="text-xl text-red-600" />
+                   {icons}
                 </button>
             </div>
         </>

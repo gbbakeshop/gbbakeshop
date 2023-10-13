@@ -2,11 +2,11 @@ import ActionDrawer from "@/_components/action-drawer";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { BiSolidShow } from "react-icons/bi";
 
-export default function IngredientsShow({ data }) {
+export default function IngredientsShow({ data,icons }) {
   
     return (
         <ActionDrawer
-            icons={<BiSolidShow className="text-2xl text-blue-600" />}
+            icons={icons}
             title="SHOW INGREDIENTS"
             content={
                 <>

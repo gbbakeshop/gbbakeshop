@@ -2,7 +2,7 @@ import ActionDrawer from "@/_components/action-drawer";
 import { MdCreateNewFolder } from "react-icons/md";
 
 
-export default function RecipeShowIngredients({ data }) {
+export default function RecipeShowIngredients({ data,icons }) {
 
     
     return (
@@ -45,7 +45,7 @@ export default function RecipeShowIngredients({ data }) {
                     </div>
                 }
                 title={"BREAD LIST "}
-                icons={<MdCreateNewFolder className="text-4xl text-blue-600" />}
+                icons={icons}
             />
         </>
     );

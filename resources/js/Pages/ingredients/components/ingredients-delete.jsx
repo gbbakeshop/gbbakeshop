@@ -4,7 +4,7 @@ import { delete_ingredients } from "@/services/ingredients-services";
 import { useDispatch } from "react-redux";
 import { isRandomhandler } from "@/_redux/app-slice";
 
-export default function IngredientsDelete({ data }) {
+export default function IngredientsDelete({ data,icons }) {
     const dispatch = useDispatch()
 
     function openDelete(id) {
@@ -46,12 +46,9 @@ export default function IngredientsDelete({ data }) {
                 <button
                     onClick={() => openDelete(data.id)}
                     type="button"
-                    className=" mt-1 relative flex rounded-full text-sm"
-                    id="user-menu-button"
-                    aria-expanded="false"
-                    aria-haspopup="true"
+                    className=" relative flex rounded-full text-sm"
                 >
-                    <FaTrashAlt className="text-lg text-red-600" />
+                    {icons}
                 </button>
             </div>
         </>

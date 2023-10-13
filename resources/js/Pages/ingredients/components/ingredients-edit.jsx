@@ -13,7 +13,7 @@ import {
 } from "@/_redux/app-slice";
 import Swal from "sweetalert2";
 
-export default function IngredientsEdit({ data }) {
+export default function IngredientsEdit({ data,icons }) {
     const ref = useRef();
     const [rawMaterials, setRawMaterials] = useState([]);
     const [load, setLoad] = useState(false);
@@ -92,7 +92,7 @@ export default function IngredientsEdit({ data }) {
     }
     return (
         <ActionDrawer
-            icons={<FaEdit className="text-xl text-blue-600" />}
+            icons={icons}
             title="EDIT INGREDIENTS"
             content={
                 <form

@@ -17,6 +17,7 @@ export default function CreateProductionForm({
     const ref = useRef();
     const [ingredients, setIngredients] = useState([]);
     const [load, setLoad] = useState(false);
+    const [disabled, setDisabled] = useState(false);
     const dispatch = useDispatch();
 
     const id = data?.selected_ingredients?.map((res) =>
@@ -28,7 +29,18 @@ export default function CreateProductionForm({
     }));
     const newData = rm.map((res, i) => ({ ...res, ...si[i] }));
 
-    // console.log('heeee',data.selected_ingredients.map(res=>({grams:res.quantity})))
+    useEffect(() => {
+        const hasNagative = newData?.map(
+            (res) => res.quantity - res.grams / 1000 <= 0
+        );
+        if (hasNagative) {
+            if (hasNagative?.includes(true)) {
+                setDisabled(true);
+            } else {
+                setDisabled(false);
+            }
+        }
+    }, []);
 
     useEffect(() => {
         get_all_ingredients().then((res) => {
@@ -207,8 +219,14 @@ export default function CreateProductionForm({
                     </center>
                 </button>
             ) : (
-                <button className="flex-none w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0">
-                    CREATE NEW PRODUCTION
+                <button
+                    disabled={disabled}
+                    className="flex-none w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0"
+                >
+                    {
+                        disabled?'No Supplies':'CREATE NEW PRODUCTION'
+                    }
+                    
                 </button>
             )}
         </form>

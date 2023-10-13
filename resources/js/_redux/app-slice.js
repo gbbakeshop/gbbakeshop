@@ -6,7 +6,7 @@ export const appSlice = createSlice({
     refresh:Math.random(),
     isReset: false,
     response:[],
-    isSideBar:false
+    isSideBar:true
   },
   reducers: {
     isResetForm: (state,actions) => {
