@@ -16,6 +16,7 @@ export default function CreateProductionForm({
 }) {
     const ref = useRef();
     const [ingredients, setIngredients] = useState([]);
+    const [quantity, setQuantity] = useState(1);
     const [load, setLoad] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const dispatch = useDispatch();
@@ -23,15 +24,39 @@ export default function CreateProductionForm({
     const id = data?.selected_ingredients?.map((res) =>
         parseInt(res.raw_materials_id)
     );
-    const rm = data2.filter((res) => id.includes(res.raw_materials_id));
-    const si = data.selected_ingredients.map((res) => ({
-        grams: res.quantity,
+    // const rm = data2.filter((res) => id.includes(res.raw_materials_id));
+    const si = data.selected_ingredients.map((res, i) => ({
+        ...res,
+        raw_materials_id: parseInt(res.raw_materials_id),
+        raw_materials: res.raw_materials,
+        grams: parseInt(res.quantity),
     }));
-    const newData = rm.map((res, i) => ({ ...res, ...si[i] }));
+    const newData = si.map((res, index) => ({
+        bind: data2.find(
+            (result) => result.raw_materials_id == res.raw_materials_id
+        ).bind,
+        branchid: res.branchid,
+        raw_materials_id: si.find(
+            (result) => result.raw_materials_id == res.raw_materials_id
+        ).raw_materials_id,
+        quantity: data2.find(
+            (result) => result.raw_materials_id == res.raw_materials_id
+        ).quantity,
+        raw_materials: si.find(
+            (result) => result.raw_materials_id == res.raw_materials_id
+        ).raw_materials,
+        grams: si.find(
+            (result) => result.raw_materials_id == si[index].raw_materials_id
+        ).grams,
+    }));
+    // const array1 = rm.map((res, i) => res.raw_materials_id);
+    // const array2 = si.map((res, i) => res.raw_materials_id);
+    // const commonNumbers = array1.filter(item => array2.includes(item)).sort((a, b) => a - b);
+    // const newData = rm.map((res, i) => ({ ...res, ...si[i] }));
 
     useEffect(() => {
         const hasNagative = newData?.map(
-            (res) => res.quantity - res.grams / 1000 <= 0
+            (res) => res.quantity - (res.grams * quantity) / 1000 <= 0
         );
         if (hasNagative) {
             if (hasNagative?.includes(true)) {
@@ -40,7 +65,7 @@ export default function CreateProductionForm({
                 setDisabled(false);
             }
         }
-    }, []);
+    }, [quantity]);
 
     useEffect(() => {
         get_all_ingredients().then((res) => {
@@ -51,41 +76,45 @@ export default function CreateProductionForm({
         e.preventDefault();
         const formData = new FormData(ref.current);
         setLoad(true);
+        if (quantity > 0) {
+            const subData = {
+                quantity: quantity,
+                branchid: branchid,
+                account: account,
+                data: data,
+            };
 
-        const subData = {
-            branchid: branchid,
-            account: account,
-            data: data,
-        };
+            const ingredients = data?.selected_breads.map((res, index) => ({
+                quantity: formData.get(`quantity_${index}`),
+            }));
 
-        const ingredients = data?.selected_breads.map((res, index) => ({
-            quantity: formData.get(`quantity_${index}`),
-        }));
+            const newData = {
+                ...subData,
+                data: {
+                    ...subData.data,
+                    selected_breads: subData.data.selected_breads.map(
+                        (res, index) => ({
+                            ...res,
+                            ...ingredients[index],
+                        })
+                    ),
+                },
+            };
+            setTimeout(async () => {
+                const create = await create_new_records(newData);
 
-        const newData = {
-            ...subData,
-            data: {
-                ...subData.data,
-                selected_breads: subData.data.selected_breads.map(
-                    (res, index) => ({
-                        ...res,
-                        ...ingredients[index],
-                    })
-                ),
-            },
-        };
-
-        setTimeout(async () => {
-            const create = await create_new_records(newData);
-
-            dispatch(isResponseHandler(create));
-            setTimeout(() => {
-                setLoad(false);
-                dispatch(isResetForm(false));
-                dispatch(isRandomhandler());
-                dispatch(isResponseHandler([]));
-            }, 2000);
-        }, 1000);
+                dispatch(isResponseHandler(create));
+                setTimeout(() => {
+                    setLoad(false);
+                    dispatch(isResetForm(false));
+                    dispatch(isRandomhandler());
+                    dispatch(isResponseHandler([]));
+                }, 2000);
+            }, 1000);
+        } else {
+            setLoad(false);
+            alert("Insufficient Quantity");
+        }
     }
 
     return (
@@ -111,7 +140,7 @@ export default function CreateProductionForm({
                         ))}
                     </div>
                     <div className="grid grid-rows-1 grid-flow-col gap-1 text-lg font-semibold">
-                        Raw Materials ({data.target})
+                        Raw Materials - Target Pieces ({data.target * quantity})
                     </div>
                     {data?.selected_ingredients.length == 0 ? (
                         <h5 className=" text-base font-semibold text-red-500 dark:text-red-400">
@@ -121,6 +150,28 @@ export default function CreateProductionForm({
                         <div className="grid grid-rows-1 grid-flow-col gap-1">
                             <div className="flex flex-col">
                                 <div className="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+                                    <div className="px-1">
+                                        <div>
+                                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                                Quantity
+                                            </label>
+                                            <input
+                                                defaultValue={1}
+                                                required
+                                                onInput={(e) =>
+                                                    setQuantity(e.target.value)
+                                                }
+                                                className={`${
+                                                    quantity == "" ||
+                                                    quantity == null
+                                                        ? "border-red-500"
+                                                        : ""
+                                                } appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                                type="number"
+                                                placeholder="Number"
+                                            />
+                                        </div>
+                                    </div>
                                     <div className="py-2 inline-block min-w-full">
                                         <div className="overflow-hidden">
                                             <table className="min-w-full">
@@ -165,7 +216,8 @@ export default function CreateProductionForm({
                                                                     }
                                                                 </td>
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                                    {res.grams}
+                                                                    {res.grams *
+                                                                        quantity}
                                                                 </td>
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     {
@@ -175,10 +227,33 @@ export default function CreateProductionForm({
                                                                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                                     {(
                                                                         res.quantity -
-                                                                        res.grams /
+                                                                        (res.grams *
+                                                                            quantity) /
                                                                             1000
                                                                     ).toFixed(
                                                                         2
+                                                                    ) <= 0 ? (
+                                                                        <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">
+                                                                            {(
+                                                                                res.quantity -
+                                                                                (res.grams *
+                                                                                    quantity) /
+                                                                                    1000
+                                                                            ).toFixed(
+                                                                                2
+                                                                            )}
+                                                                        </span>
+                                                                    ) : (
+                                                                        <span className="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
+                                                                            {(
+                                                                                res.quantity -
+                                                                                (res.grams *
+                                                                                    quantity) /
+                                                                                    1000
+                                                                            ).toFixed(
+                                                                                2
+                                                                            )}
+                                                                        </span>
                                                                     )}
                                                                 </td>
                                                             </tr>
@@ -193,6 +268,7 @@ export default function CreateProductionForm({
                         </div>
                     )}
                 </>
+                <br />
             </div>
             {load ? (
                 <button
@@ -223,12 +299,10 @@ export default function CreateProductionForm({
                     disabled={disabled}
                     className="flex-none w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0"
                 >
-                    {
-                        disabled?'No Supplies':'CREATE NEW PRODUCTION'
-                    }
-                    
+                    {disabled ? "No Supplies" : "CREATE NEW PRODUCTION"}
                 </button>
             )}
+            <br />
         </form>
     );
 }

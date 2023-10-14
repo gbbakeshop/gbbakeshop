@@ -51,7 +51,7 @@ export default function RawMaterialsForm({ selected, data }) {
                 name="code"
                 title="Ingredients Code"
                 placeholder="Enter ingredients code"
-                type="number"
+                type="text"
             />
              <Input
                 name="target"

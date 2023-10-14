@@ -8,9 +8,12 @@ import ActionDrawer from "@/_components/action-drawer";
 import ViewIcon from "@/_icons/view-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
+import { useSelector } from "react-redux";
 
 export default function BranchSalesReportTableComponent({ data, account }) {
     const [selected, setSelected] = useState([]);
+    const { isSideBar } = useSelector((state) => state.app);
+
     function isExistFunction(res) {
         //check if exist
         return selected.find((result) => result === res);
@@ -28,23 +31,100 @@ export default function BranchSalesReportTableComponent({ data, account }) {
         }
     }
     const column = [
-        { title: "Name of Bread" },
-        { title: "Beginning" },
-        { title: "New Production" },
-        { title: "Price" },
-        { title: "Total" },
-        { title: "Breadout" },
-        { title: "Charges" },
-        { title: "Over" },
-        { title: "Remaining" },
-        { title: "Soldout" },
-        { title: "Sales" },
-        { title: "Actions" },
+        { title: "Name of Bread", total: "Total: " },
+        {
+            title: "Beginning",
+            total: data.reduce(
+                (total, obj) => total + parseFloat(obj.beginning),
+                0
+            ),
+        },
+        {
+            title: "New Production",
+            total: data.reduce(
+                (total, obj) =>
+                    total +
+                    parseFloat(
+                        obj.new_production == null ? 0 : obj.new_production
+                    ),
+                0
+            ),
+        },
+        {
+            title: "Price",
+            total: data.reduce(
+                (total, obj) => total + parseFloat(obj.price),
+                0
+            ),
+        },
+        {
+            title: "Total",
+            total: data.reduce(
+                (total, obj) => total + parseFloat(obj.total),
+                0
+            ),
+        },
+        {
+            title: "Breadout",
+            total: data.reduce(
+                (total, obj) => total + parseFloat(obj.bread_out),
+                0
+            ),
+        },
+        {
+            title: "Charges",
+            total: data.reduce(
+                (total, obj) =>
+                    total + obj.charge == "" ? 0 : parseFloat(obj.charge),
+                0
+            ),
+        },
+        {
+            title: "Over",
+            total: data.reduce(
+                (total, obj) => total + parseFloat(obj.overs),
+                0
+            ),
+        },
+        {
+            title: "Remaining",
+            total: data.reduce(
+                (total, obj) => total + parseFloat(obj.remaining),
+                0
+            ),
+        },
+        {
+            title: "Soldout",
+            total: data.reduce(
+                (total, obj) => total + parseFloat(obj.soldout),
+                0
+            ),
+        },
+        {
+            title: "Sales",
+            total: data.reduce(
+                (total, obj) =>
+                    total + parseFloat(obj.price) * parseFloat(obj.soldout),
+                0
+            ),
+        },
+        { title: "Actions", total: " " },
     ];
     return (
-        <div className="bg-white shadow-md rounded my-6 overflow-x-scroll w-[169vh]">
+        <div
+            className={`${
+                isSideBar ? "" : ""
+            } bg-white shadow-md rounded my-6 `}
+        >
             <table className="min-w-max w-full table-auto">
                 <thead>
+                    <tr className=" bg-red-500 text-white uppercase text-sm leading-normal">
+                        {column.map((res, index) => (
+                            <th key={index} className={`py-3 px-6 text-left`}>
+                                {res.total}
+                            </th>
+                        ))}
+                    </tr>
                     <tr className=" text-gray-600 uppercase text-sm leading-normal">
                         {column.map((res, index) => (
                             <th key={index} className="py-3 px-6 text-left">
@@ -55,7 +135,10 @@ export default function BranchSalesReportTableComponent({ data, account }) {
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
                     {data?.map((res, index) => (
-                        <tr  key={index} className="border-b border-gray-200 hover:bg-gray-100">
+                        <tr
+                            key={index}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                        >
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">
                                     {res.bread_name}
@@ -68,12 +151,10 @@ export default function BranchSalesReportTableComponent({ data, account }) {
                                 {res.new_production}
                             </td>
                             <td className="py-3 px-6 text-left">{res.price}</td>
-                            <td className="py-3 px-6 text-left">
-                                {res.total}
-                            </td>{" "}
+                            <td className="py-3 px-6 text-left">{res.total}</td>
                             <td className="py-3 px-6 text-left">
                                 {res.bread_out}
-                            </td>{" "}
+                            </td>
                             <td className="py-3 px-6 text-left">
                                 {res.charge}
                             </td>
@@ -112,6 +193,13 @@ export default function BranchSalesReportTableComponent({ data, account }) {
                             </td>
                         </tr>
                     ))}
+                    <tr className=" bg-red-500 text-white uppercase text-sm leading-normal">
+                        {column.map((res, index) => (
+                            <td key={index} className={`py-3 px-6 text-left`}>
+                                {res.total}
+                            </td>
+                        ))}
+                    </tr>
                 </tbody>
             </table>
         </div>

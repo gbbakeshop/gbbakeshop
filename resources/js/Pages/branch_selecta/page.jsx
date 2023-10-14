@@ -4,12 +4,15 @@ import BranchSelectaTableComponent from "./components/branch-selecta-table";
 import { get_branch_selecta } from "@/services/selecta-services";
 import { usePage } from "@inertiajs/react";
 import SkeletonLoader from "@/_components/skeleton-loader";
+import Search from "@/_components/search";
 
 export default function BranchSelectaPage(props) {
     const [data, setData] = useState([]);
     const { url } = usePage();
     const branchid = url.split("/")[2];
     const [loading, setLoading] = useState(true);
+    const [newData, setNewData] = useState([]);
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
         get_branch_selecta(branchid).then((res) => {
@@ -18,12 +21,21 @@ export default function BranchSelectaPage(props) {
         });
     }, []);
 
+    useEffect(() => {
+        const value = data.filter((obj) =>
+            obj.product_name.toLowerCase().includes(search.toLowerCase())
+        );
+        setNewData(value);
+    }, [search]);
+
+
     return (
         <AdministratorLayout>
+        <Search search={search} setSearch={setSearch} />
             {loading ? (
                 <SkeletonLoader />
             ) : (
-                <BranchSelectaTableComponent data={data} />
+                <BranchSelectaTableComponent data={search == "" ? data : newData}  />
             )}
         </AdministratorLayout>
     );

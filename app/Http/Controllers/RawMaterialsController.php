@@ -25,19 +25,22 @@ class RawMaterialsController extends Controller
         $exist = RawMaterials::where('raw_materials', $request->raw_materials)->first();
         $branches = Branches::all();
         if ($exist == null) {
+            $rm = RawMaterials::create([
+                'raw_materials' => $request->raw_materials,
+                'bind' => 'Kilo'
+            ]);
+
             for ($i = 0; $i < count($branches); $i++) {
                 BranchRawMaterials::create([
                     'branchid' => $branches[$i]->id,
+                    'raw_materials_id' =>$rm->id,
                     'raw_materials' => $request->raw_materials,
                     'quantity' => 0,
                     'bind' => 'Kilo',
                     'warning' => 30
                 ]);
             }
-            RawMaterials::create([
-                'raw_materials' => $request->raw_materials,
-                'bind' => 'Kilo'
-            ]);
+          
             return response()->json([
                 'status' => 'success',
                 'message' => 'Created Successfully'

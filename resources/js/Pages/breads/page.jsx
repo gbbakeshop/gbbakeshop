@@ -4,9 +4,12 @@ import BreadTableComponent from "./components/bread-table";
 import { get_all_breads } from "@/services/breads-services.js";
 import SkeletonLoader from "@/_components/skeleton-loader";
 import { useSelector } from "react-redux";
+import Search from "@/_components/search";
 export default function BreadsPage(props) {
     const [data, setData] = useState([]);
-    const { refresh } = useSelector((state) => state.app)
+    const [newData, setNewData] = useState([]);
+    const [search, setSearch] = useState("");
+    const { refresh } = useSelector((state) => state.app);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -16,9 +19,21 @@ export default function BreadsPage(props) {
         });
     }, [refresh]);
 
+    useEffect(() => {
+        const value = data.filter((obj) =>
+            obj.bread_name.toLowerCase().includes(search.toLowerCase())
+        );
+        setNewData(value);
+    }, [search]);
+
     return (
         <AdministratorLayout>
-            {loading ? <SkeletonLoader /> : <BreadTableComponent data={data} />}
+            <Search search={search} setSearch={setSearch} />
+            {loading ? (
+                <SkeletonLoader />
+            ) : (
+                <BreadTableComponent data={search == "" ? data : newData} />
+            )}
         </AdministratorLayout>
     );
 }

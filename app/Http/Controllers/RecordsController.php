@@ -202,11 +202,11 @@ class RecordsController extends Controller
 
     }
 
-    public function raw_materials_deduction($request, $branchid)
+    public function raw_materials_deduction($request, $branchid, $quantity)
     {
 
         $grams = $request['quantity'];
-        $kilograms = $grams / 1000;
+        $kilograms = ($grams * $quantity) / 1000;
         $brm = BranchRawMaterials::where([
             ['branchid', '=', $branchid],
             [
@@ -226,7 +226,7 @@ class RecordsController extends Controller
 
 
         for ($i = 0; $i < count($request->data['selected_ingredients']); $i++) {
-            $this->raw_materials_deduction($request->data['selected_ingredients'][$i], $request->branchid);
+            $this->raw_materials_deduction($request->data['selected_ingredients'][$i], $request->branchid, $request->quantity);
         }
 
         for ($i = 0; $i < count($request->data['selected_breads']); $i++) {
@@ -251,7 +251,6 @@ class RecordsController extends Controller
                         'remarks2' => 0,
                         'date' => 0,
                     ]);
-
             } else {
                 Records::create([
                     'branchid' => $request->branchid,

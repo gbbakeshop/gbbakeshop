@@ -7,6 +7,7 @@ import BranchBreadProductionTabsComponent from './components/branch-bakers-produ
 import SkeletonLoader from "@/_components/skeleton-loader";
 import { get_branch_raw_materials } from '@/services/raw-materials-services';
 import { useSelector } from 'react-redux';
+import Search from "@/_components/search";
 
 export default function BranchBreadProductionPage(props) {
     const {auth} = props
@@ -16,6 +17,8 @@ export default function BranchBreadProductionPage(props) {
     const { url } = usePage()
     const branchid = url.split('/')[2]
     const { refresh } = useSelector((state) => state.app)
+    const [newData, setNewData] = useState([]);
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
         get_all_recipes(branchid).then(res=>{
@@ -26,14 +29,29 @@ export default function BranchBreadProductionPage(props) {
             setData2(res)
         })
     }, [refresh]);
+
+    useEffect(() => {
+        const value = data?.map((res) =>
+            res?.selected_breads?.filter((obj) =>
+                obj?.bread_name?.toLowerCase().includes(search.toLowerCase())
+            )
+        );
+        setNewData(data.map((res, index) => ({
+            ...res,
+            selected_breads:value[index],
+          })));
+    }, [search,data]);
+
+
     return ( 
         <AdministratorLayout>
-        <BranchBreadProductionTabsComponent />
+        <BranchBreadProductionTabsComponent /><br />
+            <Search search={search} setSearch={setSearch} />
             {loading ? <SkeletonLoader /> : <BranchBreadProductionTableComponent
             account={auth.user} 
             branchid={branchid}
             data2={data2}
-            data={data.length == 0?[]:data} />}
+            data={search == "" ? data : newData} />}
          </AdministratorLayout>
      );
 }
