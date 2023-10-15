@@ -5,7 +5,7 @@ import BranchLayout from '@/Layouts/branch-layout';
 export default function SettingsPage(props) {
   
     return (
-       <BranchLayout>
+       <BranchLayout  branchid={auth.user.branchid} >
       ssss
        </BranchLayout>
     );

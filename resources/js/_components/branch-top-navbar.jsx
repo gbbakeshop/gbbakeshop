@@ -70,7 +70,7 @@ export default function BranchTopNavbar() {
                                     } `}
                                     aria-current="page"
                                 >
-                                    Dashboard
+                                    DASHBOARD
                                 </Link>
                                 <Link
                                     href={route("b_raw_materials")}
@@ -80,7 +80,7 @@ export default function BranchTopNavbar() {
                                             : "text-gray-900 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                                     } `}
                                 >
-                                    Raw Materials
+                                    RAW MATERIALS
                                 </Link>
                                 <Link
                                     href={route("b_bread_production")}
@@ -90,7 +90,7 @@ export default function BranchTopNavbar() {
                                             : "text-gray-900 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                                     } `}
                                 >
-                                    Bread Production
+                                    PRODUCTION
                                 </Link>
                                 <Link
                                     href={route("b_selecta")}
@@ -100,7 +100,7 @@ export default function BranchTopNavbar() {
                                             : "text-gray-900 hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                                     } `}
                                 >
-                                    Selecta
+                                    SELECTA
                                 </Link>
                             </div>
                         </div>

@@ -7,25 +7,23 @@ import { isRandomhandler } from "@/_redux/app-slice";
 import { move_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 
-export default function MoveToBreadReportForm({ data }) {
-    const  { url }  = usePage()
+export default function MoveToBreadReportForm({ data, branchid }) {
+
     const [load, setLoad] = useState(false);
     const ref = useRef();
     const dispatch = useDispatch();
-    const branchid = url.split('/')[2]
 
     async function submitHandler(e) {
-        e.preventDefault()
+        e.preventDefault();
         const formData = new FormData(ref.current);
         const newData = {
-            branchid:branchid,
+            branchid: branchid,
             breadid: [data.breadid],
-            moveTo: 'bread',
+            moveTo: "bread",
             charge: formData.get("charge"),
             remarks: formData.get("remarks"),
             overs: formData.get("overs"),
         };
-
 
         const update = await move_records(newData);
 
@@ -39,9 +37,8 @@ export default function MoveToBreadReportForm({ data }) {
             dispatch(isRandomhandler());
             dispatch(isResponseHandler([]));
         }, 2000);
-
     }
-    
+
     return (
         <form
             name="form"

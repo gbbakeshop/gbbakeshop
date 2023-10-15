@@ -12,7 +12,7 @@ import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
 import TransferIcon from "@/_icons/transfer-icon";
 
-export default function BranchBakersReportTableComponent({ data }) {
+export default function BranchBakersReportTableComponent({ data,branchid }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -44,6 +44,7 @@ export default function BranchBakersReportTableComponent({ data }) {
                     title={"MOVE TO ANOTHER BRANCH"}
                     content={
                         <MoveToAnotherBranch
+                            branchid={branchid}
                             setSelected={setSelected}
                             selected={selected}
                         />
@@ -129,7 +130,9 @@ export default function BranchBakersReportTableComponent({ data }) {
                                         }
                                         title="TRANSFER TO BREAD REPORT"
                                         content={
-                                            <MoveToBreadReportForm data={res} />
+                                            <MoveToBreadReportForm
+                                            branchid={branchid}
+                                            data={res} />
                                         }
                                     />
                                 </div>

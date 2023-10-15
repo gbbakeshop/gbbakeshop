@@ -3,7 +3,7 @@ import { usePage } from "@inertiajs/react";
 import { RxDashboard } from "react-icons/rx";
 import { get_all_branches } from '@/services/branches-services';
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs({branchid}) {
   const [data,setData] = useState([])
   const { url } = usePage();
   const path1 = url.split('/')[1]
@@ -33,7 +33,7 @@ export default function Breadcrumbs() {
                         className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 dark:text-gray-400 dark:hover:text-white"
                     >
                         <RxDashboard  className="w-4 h-4 mr-2.5"/>
-                        {path1}
+                        {findBranch(branchid)?.branch_name }-({path1})
                     </a>
                 </li>
                 <li>

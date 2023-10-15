@@ -5,7 +5,7 @@ import ToastNotification from "@/_components/toast-notification";
 import { useSelector } from "react-redux";
 
 
-export default function BranchLayout({ children }) {
+export default function BranchLayout({ children,branchid }) {
     const { response, isSideBar } = useSelector((state) => state.app);
 
     async function resp() {
@@ -26,7 +26,7 @@ export default function BranchLayout({ children }) {
                                 {response.length !== 0 && (
                                     <ToastNotification response={resp()} />
                                 )}
-                                <Breadcrumbs />
+                                <Breadcrumbs branchid={branchid}/>
                                 {children}
                             </main>
                         </div>

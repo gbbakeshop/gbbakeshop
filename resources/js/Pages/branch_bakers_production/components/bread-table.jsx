@@ -60,7 +60,7 @@ export default function BranchBreadProductionTableComponent({
                                                     key={index}
                                                     className="flex-auto  text-xs inline-flex items-center font-bold leading-sm  px-3 py-1 bg-red-50 border border-red-50 text-red-500 rounded"
                                                 >
-                                                    {res.bread_name}
+                                                    {res?.bread_name}
                                                 </div>
                                             )
                                         )}

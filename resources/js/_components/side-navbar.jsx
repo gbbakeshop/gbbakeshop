@@ -10,14 +10,15 @@ import { AiFillReconciliation } from "react-icons/ai";
 import { get_all_branches } from "@/services/branches-services";
 import SkeletonLoader from "./skeleton-loader";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose } from "react-icons/ai";
 import { isSideBarHandler } from "@/_redux/app-slice";
+import { Link } from "@inertiajs/react";
 
 export default function SideNavbar() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const { isSideBar } = useSelector((state) => state.app);
-    const dispatch  = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         get_all_branches().then((res) => {
@@ -26,8 +27,8 @@ export default function SideNavbar() {
         });
     }, []);
     function sideBarOpen() {
-        dispatch(isSideBarHandler(!isSideBar))
-}   
+        dispatch(isSideBarHandler(!isSideBar));
+    }
     return (
         <div
             style={{ minHeight: "100vh" }}
@@ -36,7 +37,7 @@ export default function SideNavbar() {
             {loading ? (
                 <SkeletonLoader />
             ) : (
-                <div className="px-4">
+                <div className="px-5">
                     <div className="h-16 w-full flex items-center justify-between">
                         <svg
                             aria-label="Ripples. Logo"
@@ -52,9 +53,8 @@ export default function SideNavbar() {
                             />
                         </svg>
                         <button className="md:hidden" onClick={sideBarOpen}>
-                        <AiOutlineClose className="text-red-500 font-bold text-xl"/>
-                            </button>
-                      
+                            <AiOutlineClose className="text-red-500 font-bold text-xl" />
+                        </button>
                     </div>
                     <ul className="mt-12">
                         <ListTags
@@ -95,10 +95,9 @@ export default function SideNavbar() {
                                     icon={<FaUsersCog />}
                                     title="accounts"
                                 />
-                                
                             </DetailsTag>
                         </li>
-                        <li className="subpixel-antialiased text-red-600 font-black">
+                        <li className="px-5 subpixel-antialiased text-red-600 font-black">
                             <hr />
                             <p className="antialiased">Branches</p>
                         </li>
@@ -150,10 +149,12 @@ export default function SideNavbar() {
                     </ul>
                 </div>
             )}
-
-            <div className="px-8 border-t text-red-600">
+            <br />
+            <br />
+            <br />
+            <div className="fixed bottom-0 left-0  border-t text-red-600 bg-blue-500">
                 <ul className="w-full flex items-center justify-between bg-white">
-                    <li className="cursor-pointer text-red-600 pt-5 pb-3">
+                    <li className="px-5 cursor-pointer text-red-600 pt-5 pb-3">
                         <button
                             aria-label="show notifications"
                             className="focus:outline-none focus:ring-2 rounded focus:ring-gray-300"
@@ -176,7 +177,7 @@ export default function SideNavbar() {
                             </svg>
                         </button>
                     </li>
-                    <li className="cursor-pointer text-red-600 pt-5 pb-3">
+                    <li className="px-5 cursor-pointer text-red-600 pt-5 pb-3">
                         <button
                             aria-label="open chats"
                             className="focus:outline-none focus:ring-2 rounded focus:ring-gray-300"
@@ -199,8 +200,9 @@ export default function SideNavbar() {
                             </svg>
                         </button>
                     </li>
-                    <li className="cursor-pointer text-red-600 pt-5 pb-3">
-                        <button
+                    <li className="px-5 cursor-pointer text-red-600 pt-5 pb-3">
+                        <Link
+                        href={route('profile.edit')}
                             aria-label="open settings"
                             className="focus:outline-none focus:ring-2 rounded focus:ring-gray-300"
                         >
@@ -220,9 +222,9 @@ export default function SideNavbar() {
                                 <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
-                        </button>
+                        </Link>
                     </li>
-                    <li className="cursor-pointer text-red-600 pt-5 pb-3">
+                    <li className="px-5 cursor-pointer text-red-600 pt-5 pb-3">
                         <button
                             aria-label="open logs"
                             className="focus:outline-none focus:ring-2 rounded focus:ring-gray-300"

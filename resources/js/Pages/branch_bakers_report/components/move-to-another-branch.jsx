@@ -9,13 +9,13 @@ import { usePage } from "@inertiajs/react";
 import { get_all_branches } from "@/services/branches-services";
 import { useEffect } from "react";
 
-export default function MoveToAnotherBranch({ selected,setSelected }) {
+export default function MoveToAnotherBranch({ selected,setSelected,branchid }) {
     const  { url }  = usePage()
     const [load, setLoad] = useState(false);
     const ref = useRef();
     const dispatch = useDispatch();
     const [branches,setBranches] = useState([])
-    const branchid = url.split('/')[2]
+    
 
     useEffect(() => {
         get_all_branches()

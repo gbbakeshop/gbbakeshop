@@ -98,6 +98,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('branch/raw-materials');
     })->name('b_raw_materials');
 
+    Route::get('/branch/bakers-report', function () {
+        return Inertia::render('branch/bakers-report');
+    })->name('b_bakers_report');
+
+    Route::get('/branch/bread-report', function () {
+        return Inertia::render('branch/bread-report');
+    })->name('b_bread_report');
+
+    Route::get('/branch/sales-report', function () {
+        return Inertia::render('branch/sales-report');
+    })->name('b_sales_report');
+
     Route::get('/branch/bread-production', function () {
         return Inertia::render('branch/bread-production');
     })->name('b_bread_production');
@@ -112,9 +124,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/administrator/settings', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/administrator/settings', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/administrator/settings', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__ . '/auth.php';

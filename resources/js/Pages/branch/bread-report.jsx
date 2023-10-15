@@ -1,43 +1,53 @@
 import React, { useState, useEffect } from "react";
 import BranchLayout from "@/Layouts/branch-layout";
-import BranchRawMaterialsTableComponent from "../branch_raw_materials/components/branch-raw-materials-table";
-import { get_branch_raw_materials } from "@/services/raw-materials-services";
+import BranchBreadReportTableComponent from "../branch_bread_report/components/branch-bread-report-table";
+import { get_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
+import ProductionTabsComponent from "./components/production-tabs";
 import SkeletonLoader from "@/_components/skeleton-loader";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
 
-export default function RawMaterialsPage(props) {
-    const { auth } = props;
-    const branchid = auth.user.branchid;
+export default function BreadReportPage(props) {
     const [data, setData] = useState([]);
+    const { auth } = props;
     const [loading, setLoading] = useState(true);
-    const { url } = usePage();
     const { refresh } = useSelector((state) => state.app);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
+    const { url } = usePage();
+    const branchid =
+        url.split("/")[2] == "bread-report"
+            ? auth.user.branchid
+            : url.split("/")[2];
 
     useEffect(() => {
-        get_branch_raw_materials(branchid).then((res) => {
-            setData(res);
+        get_records({
+            branchid: branchid,
+            params: "bread",
+        }).then((res) => {
+            setData(res.status);
             setLoading(false);
         });
     }, [refresh]);
 
     useEffect(() => {
         const value = data.filter((obj) =>
-            obj.raw_materials.toLowerCase().includes(search.toLowerCase())
+            obj.bread_name.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
     }, [search]);
 
     return (
         <BranchLayout  branchid={auth.user.branchid} >
+            <ProductionTabsComponent />
+            <br />
             <Search search={search} setSearch={setSearch} />
             {loading ? (
                 <SkeletonLoader />
             ) : (
-                <BranchRawMaterialsTableComponent
+                <BranchBreadReportTableComponent
+                    account={auth.user}
                     data={search == "" ? data : newData}
                 />
             )}

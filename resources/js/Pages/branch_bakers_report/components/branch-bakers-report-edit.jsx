@@ -12,7 +12,6 @@ export default function BranchBakersReportEdit({data}) {
     const [load, setLoad] = useState(false);
     const ref = useRef();
     const dispatch = useDispatch();
-    const branchid = url.split("/")[2];
 
     async function submitHandler(e) {
         e.preventDefault();
