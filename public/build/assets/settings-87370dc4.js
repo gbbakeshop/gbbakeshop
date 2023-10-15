@@ -1,0 +1,1 @@
+import{a as r}from"./app-f46303a7.js";import"./Dropdown-8b281f1e.js";import{B as t}from"./branch-layout-2cc28e34.js";import"./transition-1b49db5e.js";import"./toast-notification-8eea7f11.js";import"./iconBase-ff4ab028.js";import"./branches-services-95ce5ec1.js";function u(o){return r(t,{branchid:auth.user.branchid,children:"ssss"})}export{u as default};
