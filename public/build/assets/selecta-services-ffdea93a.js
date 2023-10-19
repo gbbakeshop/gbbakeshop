@@ -1,0 +1,1 @@
+import{f as t}from"./app-bb52e482.js";async function n(){return(await t.get("/api/get_all_selecta")).data.status}async function r(a){return(await t.get("/api/get_branch_selecta/"+a)).data.status}export{n as a,r as g};

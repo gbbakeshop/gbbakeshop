@@ -7,14 +7,13 @@ import { useSelector } from "react-redux";
 import SidebarCategories from "./components/sidebar-categories";
 
 export default function AdministratorLayout({ children }) {
-    const { response, isSideBar } = useSelector((state) => state.app);
+    const { setResponse, isSideBar } = useSelector((state) => state.app);
   
-    console.log('response',response)
     return (
         <aside className="flex">
             <div>
                 <SidebarCategories />
-                <ToastNotification response={response} />
+                <ToastNotification response={setResponse} />
             </div>
             {/* <Breadcrumbs /> */}
             {children}

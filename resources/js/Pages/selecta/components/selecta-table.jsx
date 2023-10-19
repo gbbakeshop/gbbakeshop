@@ -4,7 +4,9 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import ViewIcon from "@/_icons/view-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
-
+import EyesIcon from "@/icons/eyes-icon";
+import TrashIcon from "@/icons/trash-icon";
+import PencilIcon from "@/icons/pencil-icon";
 export default function SelectaTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
 
@@ -32,7 +34,7 @@ export default function SelectaTableComponent({ data }) {
     ];
     return (
         <div className="bg-white shadow-md rounded my-6 p-4">
-              {selected.length !== 0 && (
+            {selected.length !== 0 && (
                 <button className="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
                     Button
                 </button>
@@ -86,14 +88,14 @@ export default function SelectaTableComponent({ data }) {
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                                        <ViewIcon />
+                                    <div className="text-green-500 w-4 mr-6 transform hover:text-red-500 hover:scale-110">
+                                        <EyesIcon />
                                     </div>
-                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                                        <EditIcon />
+                                    <div className="text-blue-500 w-4 mr-6 transform hover:text-red-500 hover:scale-110">
+                                        <PencilIcon />
                                     </div>
-                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                                        <DeleteIcon />
+                                    <div className="text-red-500 w-4 mr-2 transform hover:text-red-500 hover:scale-110">
+                                        <TrashIcon />
                                     </div>
                                 </div>
                             </td>

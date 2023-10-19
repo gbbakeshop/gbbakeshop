@@ -9,6 +9,8 @@ import RecipeChangeIngredients from "./recipes-change-ingredients";
 import ViewIcon from "@/_icons/view-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
+import PencilIcon from "@/icons/pencil-icon";
+import EyesIcon from "@/icons/eyes-icon";
 
 export default function RecipesTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
@@ -87,12 +89,12 @@ export default function RecipesTableComponent({ data }) {
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <div className="w-4 mr-2 ">
+                                    <div className="w-4 mr-6 ">
                                         {res.raw_materials == null ? (
                                             <RecipeShowIngredients
                                                 icons={
                                                     <div className="text-green-500 ">
-                                                        <ViewIcon />
+                                                        <EyesIcon />
                                                     </div>
                                                 }
                                                 data={res}
@@ -111,7 +113,7 @@ export default function RecipesTableComponent({ data }) {
                                             title="ADD INGREDIENTS"
                                             icons={
                                                 <div className="text-blue-500 ">
-                                                    <EditIcon />
+                                                    <PencilIcon />
                                                 </div>
                                             }
                                         />

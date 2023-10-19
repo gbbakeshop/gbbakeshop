@@ -9,9 +9,9 @@ import BreadDelete from "./bread-delete";
 import { create_recipes } from "@/services/recipes-services";
 import { useDispatch } from "react-redux";
 import { isResponseHandler } from "@/_redux/app-slice";
-import EditIcon from "@/_icons/edit-icon";
-import DeleteIcon from "@/_icons/delete-icon";
+import PencilIcon from "@/icons/pencil-icon";
 import LoadingIcon from "@/_icons/loading-icon";
+import TrashIcon from "@/icons/trash-icon";
 
 export default function BreadTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
@@ -159,19 +159,19 @@ export default function BreadTableComponent({ data }) {
                                     {/* <div className="w-4 mr-2 transform ">
                                         <ViewIcon />
                                     </div> */}
-                                    <div className="w-4 mr-2 text-blue-500">
+                                    <div className="w-4 mr-6 text-blue-500">
                                         <ActionDrawer
                                             content={
                                                 <BreadEditForm data={res} />
                                             }
                                             title="Edit Form"
-                                            icons={<EditIcon />}
+                                            icons={<PencilIcon />}
                                         />
                                     </div>
                                     <div className="w-4 mr-2 transform text-red-500">
                                         <BreadDelete
                                             data={res}
-                                            icons={<DeleteIcon />}
+                                            icons={<TrashIcon />}
                                         />
                                     </div>
                                 </div>

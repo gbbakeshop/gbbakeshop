@@ -1,1 +1,0 @@
-import{a as r}from"./app-76f8ddb2.js";import{A as o}from"./administrator-layout-a5c343a9.js";import t from"./sidebar-branches-ba803f68.js";import"./ReactToastify-8573b083.js";import"./store-icon-da55fe9d.js";import"./branches-services-70c13135.js";import"./open-closed-100a0d60.js";import"./keyboard-2aea3a31.js";function c(){return r(o,{children:r(t,{})})}export{c as default};
