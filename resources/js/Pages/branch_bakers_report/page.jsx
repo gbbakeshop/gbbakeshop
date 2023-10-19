@@ -7,13 +7,14 @@ import BranchBakersReportTabsComponent from "./components/branch-bakers-report-t
 import SkeletonLoader from "@/_components/skeleton-loader";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
+import SidebarBranches from "../_components/sidebar-branches";
 
 export default function BranchBakersReportPage(props) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const { url } = usePage();
     const branchid = url.split("/")[2];
-    const { refresh } = useSelector((state) => state.app)
+    const { refresh } = useSelector((state) => state.app);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
 
@@ -27,7 +28,6 @@ export default function BranchBakersReportPage(props) {
         });
     }, [refresh]);
 
-    
     useEffect(() => {
         const value = data.filter((obj) =>
             obj.bread_name.toLowerCase().includes(search.toLowerCase())
@@ -35,16 +35,21 @@ export default function BranchBakersReportPage(props) {
         setNewData(value);
     }, [search]);
 
-    
     return (
         <AdministratorLayout>
-            <BranchBakersReportTabsComponent /><br />
-             <Search search={search} setSearch={setSearch} />
-            {loading ? (
-                <SkeletonLoader />
-            ) : (
-                <BranchBakersReportTableComponent data={search == "" ? data : newData}  />
-            )}
+            <SidebarBranches />
+            <div className="flex flex-col w-full h-full p-4">
+                <BranchBakersReportTabsComponent />
+                <br />
+                <Search search={search} setSearch={setSearch} />
+                {loading ? (
+                    <SkeletonLoader />
+                ) : (
+                    <BranchBakersReportTableComponent
+                        data={search == "" ? data : newData}
+                    />
+                )}
+            </div>
         </AdministratorLayout>
     );
 }

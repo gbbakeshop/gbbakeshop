@@ -6,7 +6,7 @@ import SkeletonLoader from "@/_components/skeleton-loader";
 import RecipesTabsComponent from "./components/recipes-tabs";
 import Search from "@/_components/search";
 import { useSelector } from "react-redux";
-
+import SidebarControls from "../_components/sidebar-controls";
 
 export default function RecipesPage(props) {
     const [data, setData] = useState([]);
@@ -28,22 +28,30 @@ export default function RecipesPage(props) {
                 obj?.bread_name?.toLowerCase().includes(search.toLowerCase())
             )
         );
-        setNewData(data.map((res, index) => ({
-            ...res,
-            selected_breads:value[index],
-          })));
-    }, [search,data]);
+        setNewData(
+            data.map((res, index) => ({
+                ...res,
+                selected_breads: value[index],
+            }))
+        );
+    }, [search, data]);
 
     return (
         <AdministratorLayout>
-            <RecipesTabsComponent />
-            <br />
-            <Search search={search} setSearch={setSearch} />
-            {loading ? (
-                <SkeletonLoader />
-            ) : (
-                <RecipesTableComponent data={search == "" ? data : newData} />
-            )}
+            <SidebarControls />
+            <div className="flex flex-col w-full h-full p-4">
+                <RecipesTabsComponent />
+                <br />
+                <Search search={search} setSearch={setSearch} />
+
+                {loading ? (
+                    <SkeletonLoader />
+                ) : (
+                    <RecipesTableComponent
+                        data={search == "" ? data : newData}
+                    />
+                )}
+            </div>
         </AdministratorLayout>
     );
 }

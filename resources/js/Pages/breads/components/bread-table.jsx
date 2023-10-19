@@ -69,7 +69,7 @@ export default function BreadTableComponent({ data }) {
         { title: "Actions" },
     ];
     return (
-        <div className="bg-white shadow-md rounded my-6 p-6">
+        <div>
             <div className="flex flex-row w-full">
                 <div className="flex-1">
                     {selected.length !== 0 && (

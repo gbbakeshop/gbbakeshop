@@ -111,12 +111,13 @@ export default function BranchSalesReportTableComponent({ data, account }) {
         { title: "Actions", total: " " },
     ];
     return (
-        <div
+      <div className="overflow-auto">
+          <div
             className={`${
                 isSideBar ? "" : ""
             } bg-white shadow-md rounded my-6 `}
         >
-            <table className="min-w-max w-full table-auto">
+            <table className="w-5/6 table-auto">
                 <thead>
                     <tr className=" bg-red-500 text-white uppercase text-sm leading-normal">
                         {column.map((res, index) => (
@@ -203,5 +204,6 @@ export default function BranchSalesReportTableComponent({ data, account }) {
                 </tbody>
             </table>
         </div>
+      </div>
     );
 }

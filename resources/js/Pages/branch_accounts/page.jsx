@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import AdministratorLayout from "@/Layouts/administrator-layout";
 import AccountTable from "./components/account-table";
 import Search from "@/_components/search";
-
+import SidebarBranches from "../_components/sidebar-branches";
 
 export default function BranchAccountsPage(props) {
     const [data, setData] = useState([]);
@@ -16,11 +16,13 @@ export default function BranchAccountsPage(props) {
         setNewData(value);
     }, [search]);
 
-    return ( 
+    return (
         <AdministratorLayout>
-            
-            <Search search={search} setSearch={setSearch} />
-        <AccountTable />
-         </AdministratorLayout>
-     );
+            <SidebarBranches />
+            <div className="flex flex-col w-full h-full p-4">
+                <Search search={search} setSearch={setSearch} />
+                <AccountTable />
+            </div>
+        </AdministratorLayout>
+    );
 }

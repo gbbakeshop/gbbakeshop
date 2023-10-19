@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import AdministratorLayout from "@/Layouts/administrator-layout";
 import BranchRawMaterialsTableComponent from "./components/branch-raw-materials-table";
-import { get_branch_raw_materials } from '@/services/raw-materials-services'
+import { get_branch_raw_materials } from "@/services/raw-materials-services";
 import { usePage } from "@inertiajs/react";
 import SkeletonLoader from "@/_components/skeleton-loader";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import Search from "@/_components/search";
-
+import SidebarBranches from "../_components/sidebar-branches";
 
 export default function BranchRawMaterialsPage(props) {
-    const [data,setData] = useState([])
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { url } = usePage()
-    const branchid = url.split('/')[2]
-    const { refresh } = useSelector((state) => state.app)
+    const { url } = usePage();
+    const branchid = url.split("/")[2];
+    const { refresh } = useSelector((state) => state.app);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
 
@@ -25,16 +25,25 @@ export default function BranchRawMaterialsPage(props) {
     }, [search]);
 
     useEffect(() => {
-        get_branch_raw_materials(branchid).then(res=>{
-            setData(res)
-            setLoading(false)
-        })
+        get_branch_raw_materials(branchid).then((res) => {
+            setData(res);
+            setLoading(false);
+        });
     }, [refresh]);
-    
-    return ( 
+
+    return (
         <AdministratorLayout>
-            <Search search={search} setSearch={setSearch} />
-            {loading ? <SkeletonLoader /> : <BranchRawMaterialsTableComponent  data={search == "" ? data : newData}  />}
-         </AdministratorLayout>
-     );
+            <SidebarBranches />
+            <div className="flex flex-col w-full h-full p-4">
+                <Search search={search} setSearch={setSearch} />
+                {loading ? (
+                    <SkeletonLoader />
+                ) : (
+                    <BranchRawMaterialsTableComponent
+                        data={search == "" ? data : newData}
+                    />
+                )}
+            </div>
+        </AdministratorLayout>
+    );
 }

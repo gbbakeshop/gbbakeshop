@@ -4,6 +4,7 @@ import { get_all_accounts } from "@/services/account-services";
 import AccountsTableComponent from "./components/accounts-table";
 import SkeletonLoader from "@/_components/skeleton-loader";
 import Search from "@/_components/search";
+import SidebarControls from "../_components/sidebar-controls";
 
 export default function AccountsPage(props) {
     const [data, setData] = useState([]);
@@ -18,7 +19,6 @@ export default function AccountsPage(props) {
         });
     }, []);
 
-
     useEffect(() => {
         const value = data.filter((obj) =>
             obj.name.toLowerCase().includes(search.toLowerCase())
@@ -28,12 +28,17 @@ export default function AccountsPage(props) {
 
     return (
         <AdministratorLayout>
-             <Search search={search} setSearch={setSearch} />
-            {loading ? (
-                <SkeletonLoader />
-            ) : (
-                <AccountsTableComponent data={search == "" ? data : newData}  />
-            )}
+            <SidebarControls />
+            <div className="flex flex-col w-full h-full p-4">
+                <Search search={search} setSearch={setSearch} />
+                {loading ? (
+                    <SkeletonLoader />
+                ) : (
+                    <AccountsTableComponent
+                        data={search == "" ? data : newData}
+                    />
+                )}
+            </div>
         </AdministratorLayout>
     );
 }

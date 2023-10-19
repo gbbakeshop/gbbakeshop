@@ -7,8 +7,8 @@ import { usePage } from "@inertiajs/react";
 
 export default function BranchBreadReportTabsComponent() {
     const { url } = usePage();
-    const page = url.split("/")[3];
-    const branchid = url.split("/")[2];
+    const page = url.split("/")[4];
+    const branchid = url.split("/")[3];
 
     return (
         <>
@@ -18,7 +18,7 @@ export default function BranchBreadReportTabsComponent() {
                         <Link
                             href={route("branch_bakers_production", [branchid])}
                             className={`${
-                                page == "branch_bakers_production"
+                                page == "bakers_production"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
                                     : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
                             }`}
@@ -31,7 +31,7 @@ export default function BranchBreadReportTabsComponent() {
                         <Link
                             href={route("branch_bakers_report", [branchid])}
                             className={`${
-                                page == "branch_bakers_report"
+                                page == "bakers_report"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
                                     : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
                             }`}
@@ -44,7 +44,7 @@ export default function BranchBreadReportTabsComponent() {
                         <Link
                             href={route("branch_bread_report", [branchid])}
                             className={`${
-                                page == "branch_bread_report"
+                                page == "bread_report"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
                                     : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
                             }`}
@@ -57,7 +57,7 @@ export default function BranchBreadReportTabsComponent() {
                         <Link
                             href={route("branch_sales_report", [branchid])}
                             className={`${
-                                page == "branch_sales_report"
+                                page == "sales_report"
                                     ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
                                     : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
                             }`}

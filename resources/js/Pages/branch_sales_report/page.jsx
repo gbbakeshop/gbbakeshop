@@ -7,7 +7,7 @@ import BranchBreadProductionTabsComponent from "./components/branch-sales-report
 import SkeletonLoader from "@/_components/skeleton-loader";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
-
+import SidebarBranches from "../_components/sidebar-branches";
 
 export default function BranchBreadProductionPage(props) {
     const [data, setData] = useState([]);
@@ -39,17 +39,21 @@ export default function BranchBreadProductionPage(props) {
     }, [search]);
     return (
         <AdministratorLayout>
-            <BranchBreadProductionTabsComponent />
-            <br />
-            <Search search={search} setSearch={setSearch} />
-            {loading ? (
-                <SkeletonLoader />
-            ) : (
-                <BranchSalesReportTableComponent
-                    account={auth.user}
-                    data={search == "" ? data : newData}
-                />
-            )}
+            <SidebarBranches />
+            <div className="flex flex-col w-full h-full p-4">
+                <BranchBreadProductionTabsComponent />
+                <br />
+                <Search search={search} setSearch={setSearch} />
+                {loading ? (
+                    <SkeletonLoader />
+                ) : (
+                  
+                        <BranchSalesReportTableComponent
+                            account={auth.user}
+                            data={search == "" ? data : newData}
+                        />
+                )}
+            </div>
         </AdministratorLayout>
     );
 }

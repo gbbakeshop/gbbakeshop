@@ -5,6 +5,7 @@ import { get_branch_selecta } from "@/services/selecta-services";
 import { usePage } from "@inertiajs/react";
 import SkeletonLoader from "@/_components/skeleton-loader";
 import Search from "@/_components/search";
+import SidebarBranches from "../_components/sidebar-branches";
 
 export default function BranchSelectaPage(props) {
     const [data, setData] = useState([]);
@@ -28,15 +29,19 @@ export default function BranchSelectaPage(props) {
         setNewData(value);
     }, [search]);
 
-
     return (
         <AdministratorLayout>
-        <Search search={search} setSearch={setSearch} />
-            {loading ? (
-                <SkeletonLoader />
-            ) : (
-                <BranchSelectaTableComponent data={search == "" ? data : newData}  />
-            )}
+            <SidebarBranches />
+            <div className="flex flex-col w-full h-full p-4">
+                <Search search={search} setSearch={setSearch} />
+                {loading ? (
+                    <SkeletonLoader />
+                ) : (
+                    <BranchSelectaTableComponent
+                        data={search == "" ? data : newData}
+                    />
+                )}
+            </div>
         </AdministratorLayout>
     );
 }
