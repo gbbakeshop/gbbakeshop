@@ -72,7 +72,7 @@ export default function MoveToAnotherBranch({ selected,setSelected,branchid }) {
                     ))}
                 </select>
                 <label
-                    htmlFor="message"
+                    htmlhtmlFor="message"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                     Your remarks

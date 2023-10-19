@@ -6,7 +6,8 @@ export const appSlice = createSlice({
     refresh:Math.random(),
     isReset: false,
     response:[],
-    isSideBar:true
+    setResponse:{},
+    isSideBar:true,
   },
   reducers: {
     isResetForm: (state,actions) => {
@@ -21,6 +22,10 @@ export const appSlice = createSlice({
     isSideBarHandler: (state,actions) => {
       state.isSideBar = actions.payload
     },
+    isSetResponse: (state,actions) => {
+      state.setResponse = actions.payload
+    },
+    
   },
 })
 
@@ -29,6 +34,7 @@ export const {
   isResetForm,
   isRandomhandler,
   isResponseHandler,
-  isSideBarHandler } = appSlice.actions
+  isSideBarHandler,
+  isSetResponse } = appSlice.actions
 
 export default appSlice.reducer

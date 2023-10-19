@@ -38,7 +38,7 @@ export default function Login({ status, canResetPassword }) {
 
             <form onSubmit={submit}>
                 <div>
-                    <InputLabel htmlFor="email" value="Email" />
+                    <InputLabel htmlhtmlFor="email" value="Email" />
 
                     <TextInput
                         id="email"
@@ -55,7 +55,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel htmlFor="password" value="Password" />
+                    <InputLabel htmlhtmlFor="password" value="Password" />
 
                     <TextInput
                         id="password"

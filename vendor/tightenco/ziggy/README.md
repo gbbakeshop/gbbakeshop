@@ -382,7 +382,7 @@ If you use this plugin with the `ziggy` import alias shown above, make sure to u
 Now you can use `route()` anywhere in your Vue components and templates, like so:
 
 ```html
-<a class="nav-link" :href="route('home')">Home</a>
+<a className="nav-link" :href="route('home')">Home</a>
 ```
 
 #### React

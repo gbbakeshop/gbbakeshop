@@ -53,7 +53,7 @@ export default function Login({ status, canResetPassword }) {
                     <form onSubmit={submit}>
                         <div>
                             <label
-                                htmlFor="email"
+                                htmlhtmlFor="email"
                                 className="block text-sm font-medium leading-6 text-gray-900"
                             >
                                 Email address
@@ -78,7 +78,7 @@ export default function Login({ status, canResetPassword }) {
                         <div>
                             <div className="flex items-center justify-between">
                                 <label
-                                    htmlFor="password"
+                                    htmlhtmlFor="password"
                                     className="block text-sm font-medium leading-6 text-gray-900"
                                 >
                                     Password

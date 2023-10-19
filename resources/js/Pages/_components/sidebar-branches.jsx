@@ -75,8 +75,15 @@ export default function SidebarBranches() {
                                         </Link>
                                         <Link
                                             className={`${
-                                                branchid == res.id &&
-                                                path == "bakers_production"
+                                                (branchid == res.id &&
+                                                    path ==
+                                                        "bakers_production") ||
+                                                (branchid == res.id &&
+                                                    path == "bakers_report") ||
+                                                (branchid == res.id &&
+                                                    path == "bread_report") ||
+                                                (branchid == res.id &&
+                                                    path == "sales_report")
                                                     ? "bg-red-600 text-white rounded-lg p-2 flex w-full justify-between cursor-pointer items-center"
                                                     : "bg-red-50 text-red-500 rounded-lg p-2 flex w-full justify-between cursor-pointer items-center"
                                             }`}

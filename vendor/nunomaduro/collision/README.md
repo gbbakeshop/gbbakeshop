@@ -57,7 +57,7 @@ Add the Collision `printerClass` to your `phpunit.xml` in the `phpunit` section:
 
 ```xml
 <phpunit
-        printerClass="NunoMaduro\Collision\Adapters\Phpunit\Printer">
+        printerclassName="NunoMaduro\Collision\Adapters\Phpunit\Printer">
 ```
 
 ## No adapter
