@@ -1,0 +1,1 @@
+import{a as r}from"./app-76f8ddb2.js";import"./Dropdown-3dfa4448.js";import{A as t}from"./administrator-layout-a5c343a9.js";import"./transition-ae8196cc.js";import"./open-closed-100a0d60.js";import"./ReactToastify-8573b083.js";import"./store-icon-da55fe9d.js";function d(o){return r(t,{children:"ssss"})}export{d as default};
