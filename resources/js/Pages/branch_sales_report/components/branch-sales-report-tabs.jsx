@@ -7,8 +7,8 @@ import { usePage } from "@inertiajs/react";
 
 export default function BranchBakersProductionTabsComponent() {
     const { url } = usePage();
-    const page = url.split("/")[4];
-    const branchid = url.split("/")[3];
+    const page = url.split("/")[3];
+    const branchid = url.split("/")[2];
 
     return (
         <>

@@ -71,7 +71,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     //
 
-    Route::group(['prefix' => 'administrator/branch'], function () {
+    Route::group(['prefix' => 'administrator'], function () {
         Route::get('/', function () {
             return Inertia::render('branches/page');
         })->name('branches');

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import HomeIcon from "@/icons/home-icon";
 import LogoutIcon from "@/icons/logout-icon";
 import PieChartIcon from "@/icons/piechart-icon";
@@ -9,15 +10,20 @@ import { Link } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
 import axios from "axios";
 import SquireIcon from "@/icons/squire-icon";
-
+import { get_all_branches } from '@/services/branches-services';
+import { setBranches } from '@/_redux/app-slice';
+import { useDispatch } from 'react-redux';
 export default function SidebarCategories() {
-    // const navigate = useNavigate();
+    const dispatch = useDispatch()
     const { url } = usePage();
     const location = url.split("/")[2];
 
-    function nextPage(path) {
-        navigate(path);
-    }
+
+    useEffect(() => {
+        get_all_branches().then((res) => {
+            dispatch(setBranches(res))
+        });
+    }, []);
 
     function logout(params) {
         axios
@@ -91,6 +97,7 @@ export default function SidebarCategories() {
             </Link>
 
             <Link
+            href={route("profile.edit")}
                 className={`${
                     location == "settings"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"

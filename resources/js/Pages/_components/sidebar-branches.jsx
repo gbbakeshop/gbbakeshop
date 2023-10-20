@@ -3,19 +3,15 @@ import StoreIcon from "@/icons/store-icon";
 import { get_all_branches } from "@/services/branches-services";
 import { useState, useEffect } from "react";
 import { Link, usePage } from "@inertiajs/react";
+import { useSelector } from "react-redux";
 // import { useLocation, useNavigate } from "react-router-dom";
 export default function SidebarBranches() {
-    const [data, setData] = useState([]);
-    // const navigate = useNavigate();
+    const { branches } = useSelector((state) => state.app);
     const { url } = usePage();
-    const branchid = url.split("/")[3];
-    const path = url.split("/")[4];
+    const branchid = url.split("/")[2];
+    const path = url.split("/")[3];
 
-    useEffect(() => {
-        get_all_branches().then((res) => {
-            setData(res);
-        });
-    }, []);
+   
 
     return (
         <div>
@@ -24,7 +20,7 @@ export default function SidebarBranches() {
                     Branches
                 </h2>
 
-                {data?.map((res, index) => (
+                {branches?.map((res, index) => (
                     <Disclosure
                         defaultOpen={branchid == res.id}
                         as="div"
