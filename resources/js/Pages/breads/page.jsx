@@ -30,7 +30,7 @@ export default function BreadsPage(props) {
     return (
         <AdministratorLayout>
             <SidebarControls />
-            <div className="flex flex-col w-full h-full p-4">
+            <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Search search={search} setSearch={setSearch} />
                 <br />
                 {loading ? (
