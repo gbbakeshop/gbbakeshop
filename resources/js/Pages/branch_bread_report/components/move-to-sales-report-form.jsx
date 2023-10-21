@@ -10,6 +10,7 @@ import { move_sales_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import moment from "moment";
 import MoveIcon from "@/icons/move-icon";
+import ExclamationIcon from "@/icons/exclamation-icon";
 export default function MoveToSalesReportForm({ data, account }) {
     const [open, setOpen] = useState(false);
     const { url } = usePage();
@@ -24,7 +25,6 @@ export default function MoveToSalesReportForm({ data, account }) {
             message: "Loading...",
         };
     }
-console.log('data.get_breads',data)
     async function submitHandler(e) {
         e.preventDefault();
         dispatch(isSetResponse(loading()));
@@ -53,18 +53,18 @@ console.log('data.get_breads',data)
             status: "done",
             date: moment().format("LLLL"),
         };
-        console.log('newData',newData)
+
         const update = await move_sales_records(newData);
 
         dispatch(isSetResponse(update));
         if (update.status == "success") {
             ref.current.reset();
             dispatch(isResetForm(false));
+            setOpen(false);
+            dispatch(isRandomhandler());
         }
         setTimeout(() => {
-            setOpen(false);
             setLoad(false);
-            dispatch(isRandomhandler());
             dispatch(isSetResponse([]));
             setSelected([]);
         }, 2000);
@@ -72,8 +72,18 @@ console.log('data.get_breads',data)
 
     return (
         <>
-            <button className="text-red-500" onClick={() => setOpen(true)}>
-                <MoveIcon />
+            <button
+                disabled={
+                    (data.beginning ?? 0) + (data.new_production ?? 0) == 0
+                }
+                className="text-red-500"
+                onClick={() => setOpen(true)}
+            >
+                {(data.beginning ?? 0) + (data.new_production ?? 0) == 0 ? (
+                    <ExclamationIcon />
+                ) : (
+                    <MoveIcon />
+                )}
             </button>
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={setOpen}>

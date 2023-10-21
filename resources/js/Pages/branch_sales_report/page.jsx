@@ -40,7 +40,8 @@ export default function BranchBreadProductionPage(props) {
     return (
         <AdministratorLayout>
             <SidebarBranches />
-            <div className="flex flex-col h-screen w-[79vw] p-4">
+            
+            <div className="flex flex-col h-screen w-[79vw] p-4 overflow-auto">
                 <BranchBreadProductionTabsComponent />
                 <br />
                 <Search search={search} setSearch={setSearch} />

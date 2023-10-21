@@ -29,7 +29,7 @@ export default function AccountsPage(props) {
     return (
         <AdministratorLayout>
             <SidebarControls />
-            <div className="flex flex-col w-screen h-full p-4">
+            <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (
                     <SkeletonLoader />

@@ -86,30 +86,29 @@ class RecordsController extends Controller
     public function move_sales_records(Request $request)
     {
 
-        if ($request->remaining !== 0) {
-            Records::create([
-                'branchid' => $request->branchid,
-                'breadid' => $request->breadid,
-                'bakerid' => $request->bakerid,
-                'sellerid' => $request->sellerid,
-                'bread_out' => 0,
-                'bread_name' => $request->bread_name,
-                'price' => $request->price,
-                'beginning' => $request->remaining,
-                // remaining becomes beginning
-                'new_production' => 0,
-                'remaining' => 0,
-                'soldout' => 0,
-                'total' => $request->remaining,
-                'charge' => 0,
-                'overs' => 0,
-                'sales' => 0,
-                'remarks1' => '',
-                'remarks2' => '',
-                'status' => 'bread',
-                'date' => $request->date,
-            ]);
-        }
+        Records::create([
+            'branchid' => $request->branchid,
+            'breadid' => $request->breadid,
+            'bakerid' => $request->bakerid,
+            'sellerid' => $request->sellerid,
+            'bread_out' => 0,
+            'bread_name' => $request->bread_name,
+            'price' => $request->price,
+            'beginning' => $request->remaining == 0 ? 0 : $request->remaining,
+            // remaining becomes beginning$request->remaining
+            'new_production' => 0,
+            'remaining' => 0,
+            'soldout' => 0,
+            'total' => $request->remaining == 0 ? 0 : $request->remaining,
+            'charge' => 0,
+            'overs' => 0,
+            'sales' => 0,
+            'remarks1' => '',
+            'remarks2' => '',
+            'status' => 'bread',
+            'date' => $request->date,
+        ]);
+
         Records::where('id', '=', $request->id)
             ->update([
                 'branchid' => $request->branchid,
@@ -190,11 +189,11 @@ class RecordsController extends Controller
     public function get_records(Request $request)
     {
 
-        
+
         $findBeginning = Records::where('branchid', $request->branchid)
-        ->where('status', $request->params)
-        ->with('getBreads') 
-        ->get();
+            ->where('status', $request->params)
+            ->with('getBreads')
+            ->get();
         return response()->json([
             'status' => $findBeginning,
         ]);

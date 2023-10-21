@@ -34,7 +34,7 @@ export default function BranchRawMaterialsPage(props) {
     return (
         <AdministratorLayout>
             <SidebarBranches />
-            <div className="flex flex-col w-full h-screen p-4">
+            <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (
                     <SkeletonLoader />

@@ -43,11 +43,11 @@ export default function MoveToBreadReportForm({ data, branchid }) {
         if (update.status == "success") {
             setOpen(false);
             ref.current.reset();
+            dispatch(isRandomhandler());
             dispatch(isResetForm(false));
         }
         setTimeout(() => {
             setLoad(false);
-            dispatch(isRandomhandler());
             dispatch(isSetResponse([]));
         }, 2000);
     }

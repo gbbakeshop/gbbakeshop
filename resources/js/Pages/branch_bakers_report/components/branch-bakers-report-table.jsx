@@ -40,16 +40,11 @@ export default function BranchBakersReportTableComponent({ data, branchid }) {
     return (
         <div className="bg-white shadow-md rounded my-6 p-4">
             {selected.length !== 0 && (
-                <Drawer
-                    title={"MOVE TO ANOTHER BRANCH"}
-                    content={
-                        <MoveToAnotherBranch
-                            branchid={branchid}
-                            setSelected={setSelected}
-                            selected={selected}
-                        />
-                    }
-                />
+                <MoveToAnotherBranch
+                branchid={branchid}
+                setSelected={setSelected}
+                selected={selected}
+            />
             )}
 
             <table className="min-w-max w-full table-auto">

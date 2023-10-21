@@ -122,7 +122,7 @@ export default function CreateProductionForm({
             };
             setTimeout(async () => {
                 const create = await create_new_records(newData);
-                setOpen(false)
+                setOpen(false);
                 dispatch(isSetResponse(create));
                 setTimeout(() => {
                     setLoad(false);
@@ -139,7 +139,10 @@ export default function CreateProductionForm({
 
     return (
         <>
-            <button className="flex text-blue-500" onClick={() => setOpen(true)}>
+            <button
+                className="font-medium flex text-blue-500"
+                onClick={() => setOpen(true)}
+            >
                 <PlusIcon /> CREATE PRODUCTION
             </button>
             <Transition.Root show={open} as={Fragment}>
