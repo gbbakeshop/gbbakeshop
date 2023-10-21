@@ -12,7 +12,7 @@ import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
 import TransferIcon from "@/_icons/transfer-icon";
 
-export default function BranchBakersReportTableComponent({ data,branchid }) {
+export default function BranchBakersReportTableComponent({ data, branchid }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -65,6 +65,7 @@ export default function BranchBakersReportTableComponent({ data,branchid }) {
                 <tbody className="text-gray-600 text-sm font-light">
                     {data?.map((res, index) => (
                         <tr
+                            key={index}
                             className={`${
                                 isExistFunction(res.id) == undefined
                                     ? " border-b border-slate-200 "
@@ -107,33 +108,10 @@ export default function BranchBakersReportTableComponent({ data,branchid }) {
 
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <ActionDrawer
-                                        icons={
-                                            <div className="w-4 mr-2 text-blue-500">
-                                                <EditIcon />
-                                            </div>
-                                        }
-                                        title="EDIT NEW PRODUCTION"
-                                        content={
-                                            <BranchBakersReportEdit
-                                                className="text-2xl text-blue-600"
-                                                data={res}
-                                            />
-                                        }
-                                    />
-
-                                    <ActionDrawer
-                                        icons={
-                                            <div className="w-4 mr-2 text-green-500">
-                                                <TransferIcon />
-                                            </div>
-                                        }
-                                        title="TRANSFER TO BREAD REPORT"
-                                        content={
-                                            <MoveToBreadReportForm
-                                            branchid={branchid}
-                                            data={res} />
-                                        }
+                                    <BranchBakersReportEdit data={res} />
+                                    <MoveToBreadReportForm
+                                        branchid={branchid}
+                                        data={res}
                                     />
                                 </div>
                             </td>

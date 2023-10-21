@@ -33,7 +33,7 @@ export default function BranchBakersReportPage(props) {
             obj.bread_name.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
-    }, [search]);
+    }, [search, refresh]);
 
     return (
         <AdministratorLayout>
@@ -46,6 +46,7 @@ export default function BranchBakersReportPage(props) {
                     <SkeletonLoader />
                 ) : (
                     <BranchBakersReportTableComponent
+                        branchid={branchid}
                         data={search == "" ? data : newData}
                     />
                 )}

@@ -190,12 +190,11 @@ class RecordsController extends Controller
     public function get_records(Request $request)
     {
 
-        $findBeginning = Records::where([
-            ['branchid', '=', $request->branchid],
-            ['status', '=', $request->params],
-        ])
-            ->with('getBreads')
-            ->get();
+        
+        $findBeginning = Records::where('branchid', $request->branchid)
+        ->where('status', $request->params)
+        ->with('getBreads') 
+        ->get();
         return response()->json([
             'status' => $findBeginning,
         ]);

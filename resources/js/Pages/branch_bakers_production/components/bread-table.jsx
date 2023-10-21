@@ -50,7 +50,10 @@ export default function BranchBreadProductionTableComponent({
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
                     {data?.map((res, index) => (
-                        <tr  key={index} className="border-b border-gray-200 hover:bg-gray-100">
+                        <tr
+                            key={index}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                        >
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">
                                     <div className="grid grid-rows-2 grid-flow-col gap-1">
@@ -69,7 +72,7 @@ export default function BranchBreadProductionTableComponent({
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex items-center">
-                                    {res.target??0}
+                                    {res.target ?? 0}
                                 </div>
                             </td>
                             <td className="py-3 px-6 text-left">
@@ -85,25 +88,11 @@ export default function BranchBreadProductionTableComponent({
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <ActionDrawer
-                                        width={"w-1/2"}
-                                        icons={
-                                            <button className="flex text-green-500 ">
-                                                <div className="w-4 mr-2">
-                                                    <CreateIcon />
-                                                </div>
-                                                Create
-                                            </button>
-                                        }
-                                        title="CREATE PRODUCTION"
-                                        content={
-                                            <CreateProductionForm
-                                                branchid={branchid}
-                                                account={account}
-                                                data={res}
-                                                data2={data2}
-                                            />
-                                        }
+                                    <CreateProductionForm
+                                        branchid={branchid}
+                                        account={account}
+                                        data={res}
+                                        data2={data2}
                                     />
                                 </div>
                             </td>

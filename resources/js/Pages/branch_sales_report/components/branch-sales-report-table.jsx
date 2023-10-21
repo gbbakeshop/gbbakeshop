@@ -111,99 +111,96 @@ export default function BranchSalesReportTableComponent({ data, account }) {
         { title: "Actions", total: " " },
     ];
     return (
-      <div className="overflow-auto">
-          <div
-            className={`${
-                isSideBar ? "" : ""
-            } bg-white shadow-md rounded my-6 `}
-        >
-            <table className="w-5/6 table-auto">
-                <thead>
-                    <tr className=" bg-red-500 text-white uppercase text-sm leading-normal">
-                        {column.map((res, index) => (
-                            <th key={index} className={`py-3 px-6 text-left`}>
-                                {res.total}
-                            </th>
-                        ))}
-                    </tr>
-                    <tr className=" text-gray-600 uppercase text-sm leading-normal">
-                        {column.map((res, index) => (
-                            <th key={index} className="py-3 px-6 text-left">
-                                {res.title}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody className="text-gray-600 text-sm font-light">
-                    {data?.map((res, index) => (
-                        <tr
-                            key={index}
-                            className="border-b border-gray-200 hover:bg-gray-100"
-                        >
-                            <td className="py-3 px-6 text-left whitespace-nowrap">
-                                <div className="flex items-center">
-                                    {res.bread_name}
-                                </div>
-                            </td>
-                            <td className="py-3 px-6 text-left">
-                                {res.beginning}
-                            </td>
-                            <td className="py-3 px-6 text-left">
-                                {res.new_production}
-                            </td>
-                            <td className="py-3 px-6 text-left">{res.price}</td>
-                            <td className="py-3 px-6 text-left">{res.total}</td>
-                            <td className="py-3 px-6 text-left">
-                                {res.bread_out}
-                            </td>
-                            <td className="py-3 px-6 text-left">
-                                {res.charge}
-                            </td>
-                            <td className="py-3 px-6 text-left">{res.overs}</td>
-                            <td className="py-3 px-6 text-left">
-                                {res.remaining}
-                            </td>
-                            <td className="py-3 px-6 text-left">
-                                {res.soldout}
-                            </td>
-                            <td className="py-3 px-6 text-left">{res.sales}</td>
-                            <td className="py-3 px-6 text-left">
-                                <div className="flex">
-                                    {/* <div className="w-4 mr-2">
-                                        <ViewIcon />
-                                    </div> */}
-                                    <ActionDrawer
-                                        icons={
-                                            <div className="w-4 mr-2 text-blue-500">
-                                                <EditIcon />
-                                            </div>
-                                        }
-                                        title="EDIT SALES REPORT"
-                                        content={
-                                            <BranchSalesReportEdit
-                                                account={account}
-                                                data={res}
-                                            />
-                                        }
-                                    />
-
-                                    {/* <div className="w-4 mr-2">
-                                        <DeleteIcon />
-                                    </div> */}
-                                </div>
-                            </td>
+        <div className="overflow-auto">
+            <div
+                className={`${
+                    isSideBar ? "" : ""
+                } rounded my-6 `}
+            >
+                <table className="w-5/6 table-auto">
+                    <thead>
+                        <tr className=" bg-red-500 text-white uppercase text-sm leading-normal">
+                            {column.map((res, index) => (
+                                <th
+                                    key={index}
+                                    className={`py-3 px-6 text-left`}
+                                >
+                                    {res.total}
+                                </th>
+                            ))}
                         </tr>
-                    ))}
-                    <tr className=" bg-red-500 text-white uppercase text-sm leading-normal">
-                        {column.map((res, index) => (
-                            <td key={index} className={`py-3 px-6 text-left`}>
-                                {res.total}
-                            </td>
+                        <tr className=" text-gray-600 uppercase text-sm leading-normal">
+                            {column.map((res, index) => (
+                                <th key={index} className="py-3 px-6 text-left">
+                                    {res.title}
+                                </th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody className="text-gray-600 text-sm font-light">
+                        {data?.map((res, index) => (
+                            <tr
+                                key={index}
+                                className="border-b border-gray-200 hover:bg-gray-100"
+                            >
+                                <td className="py-3 px-6 text-left whitespace-nowrap">
+                                    <div className="flex items-center">
+                                        {res.bread_name}
+                                    </div>
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.beginning}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.new_production}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.price}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.total}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.bread_out}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.charge}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.overs}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.remaining}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.soldout}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    {res.sales}
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    <div className="flex">
+                                        <BranchSalesReportEdit
+                                            account={account}
+                                            data={res}
+                                        />
+                                    </div>
+                                </td>
+                            </tr>
                         ))}
-                    </tr>
-                </tbody>
-            </table>
+                        <tr className=" bg-red-500 text-white uppercase text-sm leading-normal">
+                            {column.map((res, index) => (
+                                <td
+                                    key={index}
+                                    className={`py-3 px-6 text-left`}
+                                >
+                                    {res.total}
+                                </td>
+                            ))}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
     );
 }
