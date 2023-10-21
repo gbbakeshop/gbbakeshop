@@ -1,11 +1,11 @@
-import { FaTrashAlt } from "react-icons/fa";
+import TrashIcon from "@/icons/trash-icon";
 import Swal from "sweetalert2";
 import { delete_ingredients } from "@/services/ingredients-services";
 import { useDispatch } from "react-redux";
 import { isRandomhandler } from "@/_redux/app-slice";
 
-export default function IngredientsDelete({ data,icons }) {
-    const dispatch = useDispatch()
+export default function IngredientsDelete({ data }) {
+    const dispatch = useDispatch();
 
     function openDelete(id) {
         Swal.fire({
@@ -18,16 +18,16 @@ export default function IngredientsDelete({ data,icons }) {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                delete_ingredients(id).then(res=>{
-                    if(res.status == 'success'){
-                        dispatch(isRandomhandler())
+                delete_ingredients(id).then((res) => {
+                    if (res.status == "success") {
+                        dispatch(isRandomhandler());
                         Swal.fire({
                             icon: "success",
                             title: "Your work has been saved",
                             showConfirmButton: false,
                             timer: 1500,
                         });
-                    }else{
+                    } else {
                         Swal.fire({
                             icon: "error",
                             title: "Invalid",
@@ -35,22 +35,17 @@ export default function IngredientsDelete({ data,icons }) {
                             timer: 1500,
                         });
                     }
-                })
-              
+                });
             }
         });
     }
     return (
-        <>
-            <div className="relative inline-block text-left">
-                <button
-                    onClick={() => openDelete(data.id)}
-                    type="button"
-                    className=" relative flex rounded-full text-sm"
-                >
-                    {icons}
-                </button>
-            </div>
-        </>
+        <button
+            onClick={() => openDelete(data.id)}
+            type="button"
+            className="text-red-500"
+        >
+            <TrashIcon />
+        </button>
     );
 }

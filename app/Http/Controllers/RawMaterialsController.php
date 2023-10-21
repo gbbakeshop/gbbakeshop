@@ -56,7 +56,7 @@ class RawMaterialsController extends Controller
 
     public function get_all_raw_materials()
     {
-        $response = RawMaterials::all();
+        $response = RawMaterials::orderBy('raw_materials', 'asc')->get();
         return response()->json([
             'status' => $response
         ]);

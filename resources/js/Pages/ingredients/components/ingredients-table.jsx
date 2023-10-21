@@ -53,7 +53,10 @@ export default function IngredientsTableComponent({ data }) {
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
                     {data?.map((res, index) => (
-                        <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <tr
+                            key={index}
+                            className="border-b border-gray-200 hover:bg-gray-100"
+                        >
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">
                                     <div className="mr-2">
@@ -98,30 +101,9 @@ export default function IngredientsTableComponent({ data }) {
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <IngredientsShow
-                                        icons={
-                                            <div className="w-4 mr-2 text-green-500">
-                                                <ViewIcon />
-                                            </div>
-                                        }
-                                        data={res}
-                                    />
-                                    <IngredientsEdit
-                                        icons={
-                                            <div className="w-4 mr-2 text-blue-500">
-                                                <EditIcon />
-                                            </div>
-                                        }
-                                        data={res}
-                                    />
-                                    <IngredientsDelete 
-                                     icons={
-                                        <div className="w-4 mr-2 text-red-500">
-                                              <DeleteIcon />
-                                        </div>
-                                    }
-                                    data={res}/>
-                                   
+                                    <IngredientsShow data={res} />
+                                    <IngredientsEdit data={res} />
+                                    <IngredientsDelete data={res} />
                                 </div>
                             </td>
                         </tr>

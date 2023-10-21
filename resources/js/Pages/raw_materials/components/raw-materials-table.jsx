@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import moment from "moment/moment";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { AiFillFileAdd } from "react-icons/ai";
@@ -12,14 +12,23 @@ import RawMaterialsAdd from "./raw-materials-add";
 import CreateIcon from "@/_icons/create-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
+import { get_all_ingredients } from "@/services/ingredients-services";
 
 export default function RawMaterialsComponent({ data }) {
     const [selected, setSelected] = useState([]);
+    const [ingredients, setIngredients] = useState([]);
 
     function isExistFunction(res) {
         //check if exist
         return selected.find((result) => result === res);
     }
+
+    useEffect(() => {
+        get_all_ingredients().then((res) => {
+            setIngredients(res.status);
+        });
+    }, []);
+
 
     function addItem(res) {
         const isExist = isExistFunction(res);
@@ -44,22 +53,11 @@ export default function RawMaterialsComponent({ data }) {
             <div className="flex flex-row w-full p-4">
                 <div className="flex-1">
                     {selected.length !== 0 && (
-                        <Drawer
-                            title={"CREATE INGREDIENTS"}
-                            content={
-                                <RawMaterialsForm
-                                    selected={selected}
-                                    data={data}
-                                />
-                            }
-                        />
+                        <RawMaterialsForm selected={selected} data={data} />
                     )}
                 </div>
                 <div className="flex-none">
-                    <Drawer
-                        title="CREATE RAW MATERIALS"
-                        content={<RawMaterialsCreateForm />}
-                    />
+                    <RawMaterialsCreateForm />
                 </div>
             </div>
             <table className="min-w-max w-full table-auto">
@@ -75,6 +73,7 @@ export default function RawMaterialsComponent({ data }) {
                 <tbody className="text-gray-600 text-sm font-light">
                     {data?.map((res, index) => (
                         <tr
+                        key={index} 
                             className={`${
                                 isExistFunction(res.id) == undefined
                                     ? " border-b border-slate-200 "
@@ -107,40 +106,13 @@ export default function RawMaterialsComponent({ data }) {
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <ActionDrawer
-                                        icons={
-                                            <div className="w-4 mr-2 text-green-500">
-                                                <CreateIcon />
-                                            </div>
-                                        }
-                                        title="ADD INGREDIENTS"
-                                        content={
-                                            <RawMaterialsAdd
-                                                selectedid={res.id}
-                                                data={res}
-                                            />
-                                        }
-                                    />
-                                    <ActionDrawer
-                                        icons={
-                                            <div className="w-4 mr-2 text-blue-500">
-                                                <EditIcon />
-                                            </div>
-                                        }
-                                        title="EDIT RAW MATERIALS"
-                                        content={
-                                            <RawMaterialsEditForm data={res} />
-                                        }
-                                    />
-
-                                    <RawMaterialsDelete
-                                        icons={
-                                            <div className="w-4 mr-2 text-red-500">
-                                                <DeleteIcon />
-                                            </div>
-                                        }
+                                    <RawMaterialsAdd
+                                    ingredients={ingredients}
+                                        selectedid={res.id}
                                         data={res}
                                     />
+                                    <RawMaterialsEditForm data={res} />
+                                    <RawMaterialsDelete data={res} />
                                 </div>
                             </td>
                         </tr>

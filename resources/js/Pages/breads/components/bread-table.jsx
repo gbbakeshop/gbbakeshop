@@ -8,7 +8,7 @@ import ActionDrawer from "@/_components/action-drawer";
 import BreadDelete from "./bread-delete";
 import { create_recipes } from "@/services/recipes-services";
 import { useDispatch } from "react-redux";
-import { isResponseHandler } from "@/_redux/app-slice";
+import { isSetResponse } from "@/_redux/app-slice";
 import PencilIcon from "@/icons/pencil-icon";
 import LoadingIcon from "@/_icons/loading-icon";
 import TrashIcon from "@/icons/trash-icon";
@@ -53,13 +53,13 @@ export default function BreadTableComponent({ data }) {
             data: data,
         });
 
-        dispatch(isResponseHandler(create));
+        dispatch(isSetResponse(create));
         setTimeout(() => {
-            dispatch(isResponseHandler([]));
+            dispatch(isSetResponse([]));
             setLoad(false);
             setSelected([]);
             setBreadName([]);
-        }, 2000);
+        }, 1000);
     }
 
     const column = [
@@ -93,10 +93,7 @@ export default function BreadTableComponent({ data }) {
                     )}
                 </div>
                 <div className="flex-none">
-                    <Drawer
-                        title="CREATE BREAD"
-                        content={<BreadCreateForm />}
-                    />
+                    <BreadCreateForm />
                 </div>
             </div>
 
@@ -160,13 +157,14 @@ export default function BreadTableComponent({ data }) {
                                         <ViewIcon />
                                     </div> */}
                                     <div className="w-4 mr-6 text-blue-500">
-                                        <ActionDrawer
+                                        <BreadEditForm data={res} />
+                                        {/* <ActionDrawer
                                             content={
                                                 <BreadEditForm data={res} />
                                             }
                                             title="Edit Form"
                                             icons={<PencilIcon />}
-                                        />
+                                        /> */}
                                     </div>
                                     <div className="w-4 mr-2 transform text-red-500">
                                         <BreadDelete

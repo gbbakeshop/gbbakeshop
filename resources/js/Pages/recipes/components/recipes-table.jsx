@@ -91,20 +91,16 @@ export default function RecipesTableComponent({ data }) {
                                 <div className="flex">
                                     <div className="w-4 mr-6 ">
                                         {res.raw_materials == null ? (
-                                            <RecipeShowIngredients
-                                                icons={
-                                                    <div className="text-green-500 ">
-                                                        <EyesIcon />
-                                                    </div>
-                                                }
-                                                data={res}
-                                            />
+                                            <RecipeShowIngredients data={res} />
                                         ) : (
                                             "YES RM"
                                         )}
                                     </div>
                                     <div className="w-4 mr-2  ">
-                                        <ActionDrawer
+                                    <RecipeAddIngredients
+                                                    data={res}
+                                                />
+                                        {/* <ActionDrawer
                                             content={
                                                 <RecipeAddIngredients
                                                     data={res}
@@ -116,7 +112,7 @@ export default function RecipesTableComponent({ data }) {
                                                     <PencilIcon />
                                                 </div>
                                             }
-                                        />
+                                        /> */}
                                     </div>
                                     {/* <div className="w-4 mr-2 text-red-500 transform hover:text-red-500 hover:scale-110">
                                         <DeleteIcon />

@@ -6,14 +6,15 @@ import SkeletonLoader from "@/_components/skeleton-loader";
 import RawMaterialsTabsComponent from "./components/raw-materials-tabs";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
+import SidebarControls from "../_components/sidebar-controls";
 
 export default function RawMaterialsPage(props) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { refresh } = useSelector((state) => state.app)
+    const { refresh } = useSelector((state) => state.app);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
-    
+
     useEffect(() => {
         const value = data.filter((obj) =>
             obj.raw_materials.toLowerCase().includes(search.toLowerCase())
@@ -29,13 +30,19 @@ export default function RawMaterialsPage(props) {
     }, [refresh]);
     return (
         <AdministratorLayout>
-            <RawMaterialsTabsComponent /><br />
-            <Search search={search} setSearch={setSearch} />
-            {loading ? (
-                <SkeletonLoader />
-            ) : (
-                <RawMaterialsTableComponent  data={search == "" ? data : newData}  />
-            )}
+            <SidebarControls />
+            <div className="flex flex-col w-full p-4 overflow-auto h-screen">
+                <RawMaterialsTabsComponent />
+                <br />
+                <Search search={search} setSearch={setSearch} />
+                {loading ? (
+                    <SkeletonLoader />
+                ) : (
+                    <RawMaterialsTableComponent
+                        data={search == "" ? data : newData}
+                    />
+                )}
+            </div>
         </AdministratorLayout>
     );
 }
