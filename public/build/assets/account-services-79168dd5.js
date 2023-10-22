@@ -1,0 +1,1 @@
+import{c as t}from"./app-471bb704.js";async function n(){return(await t.get("/api/get_all_accounts")).data.status}async function o(s){return(await t.post("/api/register_accounts",s)).data}export{n as g,o as r};

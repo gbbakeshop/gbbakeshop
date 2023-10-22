@@ -332,13 +332,13 @@ export default function CreateProductionForm({
                                                                                                             }
                                                                                                         </td>
                                                                                                         <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
-                                                                                                            {res.grams *
-                                                                                                                quantity}
+                                                                                                            {(res.grams *
+                                                                                                                quantity) / 1000}kg
                                                                                                         </td>
                                                                                                         <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
-                                                                                                            {
-                                                                                                                res.quantity
-                                                                                                            }
+                                                                                                            {res.quantity.toFixed(
+                                                                                                                2
+                                                                                                            )}kg
                                                                                                         </td>
                                                                                                         <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
                                                                                                             {(
@@ -358,7 +358,7 @@ export default function CreateProductionForm({
                                                                                                                             1000
                                                                                                                     ).toFixed(
                                                                                                                         2
-                                                                                                                    )}
+                                                                                                                    )}kg
                                                                                                                 </span>
                                                                                                             ) : (
                                                                                                                 <span className="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
@@ -369,7 +369,7 @@ export default function CreateProductionForm({
                                                                                                                             1000
                                                                                                                     ).toFixed(
                                                                                                                         2
-                                                                                                                    )}
+                                                                                                                    )}kg
                                                                                                                 </span>
                                                                                                             )}
                                                                                                         </td>

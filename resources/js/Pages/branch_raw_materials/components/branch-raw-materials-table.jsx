@@ -37,7 +37,7 @@ export default function BranchRawMaterialsTableComponent({ data }) {
     ];
 
     return (
-        <div className="bg-white shadow-md rounded my-6">
+        <div className="my-6">
             <table className="min-w-max w-full table-auto">
                 <thead>
                     <tr className=" text-gray-600 uppercase text-sm leading-normal">
@@ -58,7 +58,7 @@ export default function BranchRawMaterialsTableComponent({ data }) {
                             </td>
                             <td className="py-3 px-6 text-left">{res.bind}</td>
                             <td className="py-3 px-6 text-left">
-                                {res.quantity}
+                                {res.quantity}kg
                             </td>
                             <td className="py-3 px-6 text-left">
                                 {res.warning < res.quantity ? (

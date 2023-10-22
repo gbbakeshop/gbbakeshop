@@ -5,7 +5,12 @@ export async function get_all_accounts() {
     return response.data.status;
 }
 
-export async function get_branch_accounts($branchid) {
-    const response = await axios.get('/api/get_branch_accounts/'+$branchid)
+export async function get_branch_accounts(branchid) {
+    const response = await axios.get('/api/get_branch_accounts/'+branchid)
     return response.data.status;
+}
+
+export async function register_account(data) {
+    const response = await axios.post('/api/register_accounts',data)
+    return response.data;
 }

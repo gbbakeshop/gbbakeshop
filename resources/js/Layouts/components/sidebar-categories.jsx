@@ -36,7 +36,7 @@ export default function SidebarCategories() {
             });
     }
     return (
-        <div className="flex  border-r flex-col items-center w-16 h-screen py-8 space-y-8 bg-white dark:bg-gray-900 dark:border-gray-700">
+        <div className="flex  border-r flex-col items-center w-16 h-screen py-8 space-y-8 dark:bg-gray-900 dark:border-gray-700">
             {/* <Link>
                 <img
                     className="w-auto h-6"
@@ -69,13 +69,14 @@ export default function SidebarCategories() {
                 href={route("branches")}
                 className={`${
                     location == undefined ||
-                    location2 == "bakers_production" ||
-                    location2 == "bakers_report" ||
-                    location2 == "bread_report" ||
-                    location2 == "sales_report"||
-                    location2 == "raw_materials"||
-                    location2 == "selecta"||
-                    location2 == "accounts"
+                    (location2 == "bakers_production" &&
+                        location !== "controls") ||
+                    (location2 == "bakers_report" && location !== "controls") ||
+                    (location2 == "bread_report" && location !== "controls") ||
+                    (location2 == "sales_report" && location !== "controls") ||
+                    (location2 == "raw_materials" && location !== "controls") ||
+                    (location2 == "selecta" && location !== "controls") ||
+                    location2 == "accounts" && location !== "controls"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
                 } `}

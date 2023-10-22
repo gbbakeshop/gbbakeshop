@@ -83,7 +83,8 @@ export default function SidebarControls() {
                     <Link
                         href={route("accounts")}
                         className={`${
-                            location == "accounts"
+                            location == "accounts" ||
+                            location == "registration"
                                 ? "flex text-red-600 items-center w-full px-5 py-2 transition-colors duration-200 bg-red-100 dark:bg-gray-800 gap-x-2 focus:outline-none"
                                 : "flex items-center w-full px-5 py-2 transition-colors duration-200 dark:hover:bg-gray-800 gap-x-2 hover:bg-gray-100 focus:outline-none"
                         }`}

@@ -49,7 +49,7 @@ export default function RawMaterialsComponent({ data }) {
         { title: "Actions" },
     ];
     return (
-        <div className="bg-white shadow-md rounded my-6">
+        <div className=" my-6">
             <div className="flex flex-row w-full p-4">
                 <div className="flex-1">
                     {selected.length !== 0 && (

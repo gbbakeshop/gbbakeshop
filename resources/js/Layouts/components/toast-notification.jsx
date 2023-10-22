@@ -15,6 +15,8 @@ export default function ToastNotification({ response }) {
                 showToast(res.message, "success");
             } else if (res.status === "exist") {
                 showToast(res.message, "warning");
+            }else if (res.status === "error") {
+                showToast(res.message, "error");
             }
         });
     }, [data]);

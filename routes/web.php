@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -61,8 +62,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         })->name('selecta');
 
         Route::get('accounts', function () {
-            return Inertia::render('accounts/page');
+            return Inertia::render('accounts/accounts');
         })->name('accounts');
+
+        Route::get('registration', function () {
+            return Inertia::render('accounts/registration');
+        })->name('registration');
+
 
         Route::get('raw_materials', function () {
             return Inertia::render('raw_materials/page');
@@ -113,9 +119,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
-
-
-
     Route::get('/branch/dashboard', function () {
         return Inertia::render('branch/dashboard');
     })->name('b_dashboard');
@@ -147,12 +150,23 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/branch/settings', function () {
         return Inertia::render('branch/settings');
     })->name('b_settings');
+
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/administrator/settings', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/administrator/settings', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/administrator/settings', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('register', [RegisteredUserController::class, 'create'])
+        ->name('register');
+    Route::post('register', [RegisteredUserController::class, 'store']);
 });
+
+
+
+// Route::any('/{page?}', function () {
+//     return Inertia::render('_components/error404');
+// })->where('page', '.*');
 
 require __DIR__ . '/auth.php';

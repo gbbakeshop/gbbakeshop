@@ -38,7 +38,7 @@ export default function BranchBakersReportTableComponent({ data, branchid }) {
         { title: "Actions" },
     ];
     return (
-        <div className="bg-white shadow-md rounded my-6 p-4">
+        <div className=" my-6 p-4">
             {selected.length !== 0 && (
                 <MoveToAnotherBranch
                 branchid={branchid}

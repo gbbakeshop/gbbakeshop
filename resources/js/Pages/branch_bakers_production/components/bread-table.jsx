@@ -37,7 +37,7 @@ export default function BranchBreadProductionTableComponent({
     ];
 
     return (
-        <div className="bg-white shadow-md rounded my-6">
+        <div className=" my-6">
             <table className="min-w-max w-full table-auto">
                 <thead>
                     <tr className=" text-gray-600 uppercase text-sm leading-normal">

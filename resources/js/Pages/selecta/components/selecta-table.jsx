@@ -33,7 +33,7 @@ export default function SelectaTableComponent({ data }) {
         { title: "Actions" },
     ];
     return (
-        <div className="bg-white shadow-md rounded my-6 p-4">
+        <div className="my-6 p-4">
             {selected.length !== 0 && (
                 <button className="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
                     Button

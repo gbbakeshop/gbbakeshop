@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/get_all_accounts','App\Http\Controllers\AccountsController@get_all_accounts');
 Route::get('/get_branch_accounts/{branchid}','App\Http\Controllers\AccountsController@get_branch_accounts');
+Route::post('/register_accounts','App\Http\Controllers\AccountsController@register_accounts');
 
 Route::get('/get_all_branches','App\Http\Controllers\BranchesController@get_all_branches');
 
