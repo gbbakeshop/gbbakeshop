@@ -6,6 +6,7 @@ import { usePage } from "@inertiajs/react";
 import SkeletonLoader from "@/_components/skeleton-loader";
 import Search from "@/_components/search";
 import SidebarBranches from "../_components/sidebar-branches";
+import Breadcrumbs from "@/_components/bread-crumbs";
 
 export default function BranchSelectaPage(props) {
     const [data, setData] = useState([]);
@@ -33,6 +34,7 @@ export default function BranchSelectaPage(props) {
         <AdministratorLayout>
             <SidebarBranches />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
+                <Breadcrumbs />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (
                     <SkeletonLoader />

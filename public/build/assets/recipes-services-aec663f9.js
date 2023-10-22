@@ -1,0 +1,1 @@
+import{c as s}from"./app-5b6c1851.js";async function r(){return(await s.get("/api/get_all_recipes")).data.status}async function c(e){return(await s.post("/api/create_recipes",e)).data}export{c,r as g};

@@ -117,7 +117,7 @@ export default function BranchSalesReportTableComponent({ data, account }) {
                     isSideBar ? "" : ""
                 } rounded my-6 `}
             >
-                <table className="w-5/6 table-auto">
+                <table className="w-full table-auto">
                     <thead>
                         <tr className=" bg-red-500 text-white uppercase text-sm leading-normal">
                             {column.map((res, index) => (

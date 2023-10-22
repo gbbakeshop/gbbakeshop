@@ -3,6 +3,7 @@ import AdministratorLayout from "@/Layouts/administrator-layout";
 import AccountTable from "./components/account-table";
 import Search from "@/_components/search";
 import SidebarBranches from "../_components/sidebar-branches";
+import Breadcrumbs from "@/_components/bread-crumbs";
 
 export default function BranchAccountsPage(props) {
     const [data, setData] = useState([]);
@@ -19,7 +20,8 @@ export default function BranchAccountsPage(props) {
     return (
         <AdministratorLayout>
             <SidebarBranches />
-            <div className="flex flex-col w-full h-screen p-4">
+            <div className="flex flex-col w-full p-4 overflow-auto h-screen">
+                <Breadcrumbs />
                 <Search search={search} setSearch={setSearch} />
                 <AccountTable />
             </div>

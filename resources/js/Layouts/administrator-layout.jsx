@@ -29,8 +29,9 @@ export default function AdministratorLayout({ children }) {
                         <SidebarCategories />
                         <ToastNotification response={setResponse} />
                     </div>
-                    {/* <Breadcrumbs /> */}
-                    {children}
+                    <>
+                        {children}
+                    </>
                 </aside>
             </div>
         </div>

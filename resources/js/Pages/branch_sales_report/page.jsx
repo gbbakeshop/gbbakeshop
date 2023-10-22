@@ -8,6 +8,7 @@ import SkeletonLoader from "@/_components/skeleton-loader";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
 import SidebarBranches from "../_components/sidebar-branches";
+import Breadcrumbs from "@/_components/bread-crumbs";
 
 export default function BranchBreadProductionPage(props) {
     const [data, setData] = useState([]);
@@ -26,6 +27,7 @@ export default function BranchBreadProductionPage(props) {
             params: "done",
         }).then((res) => {
             setData(res.status);
+            console.log("res.status", res.status);
             setLoading(false);
         });
     }, [refresh]);
@@ -36,23 +38,21 @@ export default function BranchBreadProductionPage(props) {
         );
         setNewData(value);
     }, [search]);
-   
     return (
         <AdministratorLayout>
             <SidebarBranches />
-            
-            <div className={`${auth.user.position == 'admin'?' w-[79vw]':'w-screen'} flex flex-col h-screen p-4 overflow-auto`}>
+            <div className="flex flex-col h-screen w-[79vw] p-4 overflow-auto">
+                <Breadcrumbs />
                 <BranchBreadProductionTabsComponent />
                 <br />
                 <Search search={search} setSearch={setSearch} />
                 {loading ? (
                     <SkeletonLoader />
                 ) : (
-                  
-                        <BranchSalesReportTableComponent
-                            account={auth.user}
-                            data={search == "" ? data : newData}
-                        />
+                    <BranchSalesReportTableComponent
+                        account={auth.user}
+                        data={search == "" ? data : newData}
+                    />
                 )}
             </div>
         </AdministratorLayout>

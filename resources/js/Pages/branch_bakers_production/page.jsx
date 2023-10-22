@@ -9,6 +9,7 @@ import { get_branch_raw_materials } from "@/services/raw-materials-services";
 import { useSelector } from "react-redux";
 import Search from "@/_components/search";
 import SidebarBranches from "../_components/sidebar-branches";
+import Breadcrumbs from "@/_components/bread-crumbs";
 
 export default function BranchBreadProductionPage(props) {
     const { auth } = props;
@@ -49,6 +50,7 @@ export default function BranchBreadProductionPage(props) {
         <AdministratorLayout>
             <SidebarBranches />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
+                <Breadcrumbs />
                 <BranchBreadProductionTabsComponent />
                 <br />
                 <Search search={search} setSearch={setSearch} />
