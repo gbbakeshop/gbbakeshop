@@ -26,7 +26,6 @@ export default function BranchBreadProductionPage(props) {
             params: "done",
         }).then((res) => {
             setData(res.status);
-            console.log("res.status", res.status);
             setLoading(false);
         });
     }, [refresh]);
@@ -37,11 +36,12 @@ export default function BranchBreadProductionPage(props) {
         );
         setNewData(value);
     }, [search]);
+   
     return (
         <AdministratorLayout>
             <SidebarBranches />
             
-            <div className="flex flex-col h-screen w-[79vw] p-4 overflow-auto">
+            <div className={`${auth.user.position == 'admin'?' w-[79vw]':'w-screen'} flex flex-col h-screen p-4 overflow-auto`}>
                 <BranchBreadProductionTabsComponent />
                 <br />
                 <Search search={search} setSearch={setSearch} />

@@ -20,7 +20,7 @@ class AccountsController extends Controller
 
         User::create([
             'name' => $request->name,
-            'branchid' => $request->branchid,
+            'branchid' => $request->branch,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'position' => $request->position
