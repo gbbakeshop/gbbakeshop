@@ -4,6 +4,7 @@ import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { AiFillWarning } from "react-icons/ai";
 import { BsCheckCircleFill } from "react-icons/bs";
 import BranchRawMaterialsUpdate from "./branch-raw-materials-update";
+import BranchRawMaterialsUpdateForm from "./branch-raw-materials-update-form";
 import ViewIcon from "@/_icons/view-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
@@ -80,14 +81,15 @@ export default function BranchRawMaterialsTableComponent({ data }) {
                                         <ViewIcon />
                                     </div> */}
 
-                                    <BranchRawMaterialsUpdate
+                                    {/* <BranchRawMaterialsUpdate
                                         icons={
                                             <div className="w-4 mr-2 text-blue-500">
                                                 <EditIcon />
                                             </div>
                                         }
                                         data={res}
-                                    />
+                                    /> */}
+                                    <BranchRawMaterialsUpdateForm data={res}/>
 
                                     {/* <div className="w-4 mr-2">
                                         <DeleteIcon />
