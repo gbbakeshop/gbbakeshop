@@ -56,8 +56,8 @@ export default function SelectaTableComponent({ data }) {
                             className={`${
                                 isExistFunction(res.id) == undefined
                                     ? " border-b border-slate-200 "
-                                    : "bg-gray-100 border-l-2 border-red-500"
-                            } border-gray-200 hover:bg-gray-100`}
+                                    : "bg-red-100 border-l-2 border-red-500"
+                            } border-red-200 hover:bg-red-100`}
                         >
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">

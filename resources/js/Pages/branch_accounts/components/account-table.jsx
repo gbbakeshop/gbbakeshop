@@ -24,7 +24,7 @@ export default function AccountTable() {
                         </tr>
                     </thead>
                     <tbody className="text-gray-600 text-sm font-light">
-                        <tr className="border-b border-gray-200 hover:bg-gray-100">
+                        <tr className="border-b border-red-200 hover:bg-red-100">
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">
                                     <div className="mr-2">

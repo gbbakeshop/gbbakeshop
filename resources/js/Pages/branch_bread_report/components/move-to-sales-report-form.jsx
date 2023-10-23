@@ -46,13 +46,14 @@ export default function MoveToSalesReportForm({ data, account }) {
                     parseInt(formData.get("breadout"))) *
                 data.get_breads.price,
             bread_out: formData.get("breadout"),
-            remarks2: formData.get("remarks"),
+            remarks: formData.get("remarks"),
             overs: data.overs ?? 0,
             price: parseInt(data.get_breads.price),
             total: (data.beginning ?? 0) + (data.new_production ?? 0),
             status: "done",
             date: moment().format("LLLL"),
         };
+        console.log("sss", newData);
 
         const update = await move_sales_records(newData);
 
@@ -66,7 +67,6 @@ export default function MoveToSalesReportForm({ data, account }) {
         setTimeout(() => {
             setLoad(false);
             dispatch(isSetResponse([]));
-            setSelected([]);
         }, 2000);
     }
 
@@ -178,6 +178,7 @@ export default function MoveToSalesReportForm({ data, account }) {
                                                             Your remarks
                                                         </label>
                                                         <textarea
+                                                            
                                                             name="remarks"
                                                             id="message"
                                                             rows="4"

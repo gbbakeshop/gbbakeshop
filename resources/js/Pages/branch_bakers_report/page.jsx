@@ -18,7 +18,8 @@ export default function BranchBakersReportPage(props) {
     const { refresh } = useSelector((state) => state.app);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
-
+    const {auth} = props
+  
     useEffect(() => {
         get_records({
             branchid: branchid,
@@ -48,6 +49,7 @@ export default function BranchBakersReportPage(props) {
                     <SkeletonLoader />
                 ) : (
                     <BranchBakersReportTableComponent
+                        account={auth.user}
                         branchid={branchid}
                         data={search == "" ? data : newData}
                     />

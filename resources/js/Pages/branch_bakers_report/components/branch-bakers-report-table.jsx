@@ -12,7 +12,7 @@ import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
 import TransferIcon from "@/_icons/transfer-icon";
 
-export default function BranchBakersReportTableComponent({ data, branchid }) {
+export default function BranchBakersReportTableComponent({ account,data, branchid }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -103,8 +103,11 @@ export default function BranchBakersReportTableComponent({ data, branchid }) {
 
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <BranchBakersReportEdit data={res} />
+                                    <BranchBakersReportEdit 
+                                    account={account}
+                                    data={res} />
                                     <MoveToBreadReportForm
+                                        account={account}
                                         branchid={branchid}
                                         data={res}
                                     />

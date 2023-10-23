@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Remarks extends Model
+class History extends Model
 {
     use HasFactory;
     protected $fillable = [
         'branchid',
         'userid',
-        'from',
-        'remarks',
+        'message',
     ];
+    
 }

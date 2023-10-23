@@ -10,7 +10,7 @@ import { isRandomhandler } from "@/_redux/app-slice";
 import { edit_bread_report_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import PencilIcon from "@/icons/pencil-icon";
-export default function BranchBreadReportEdit({ data }) {
+export default function BranchBreadReportEdit({ data,account }) {
     const [open, setOpen] = useState(false);
     const { url } = usePage();
     const [load, setLoad] = useState(false);
@@ -31,7 +31,8 @@ export default function BranchBreadReportEdit({ data }) {
         const formData = new FormData(ref.current);
         const newData = {
             id: data.id,
-            new_production: formData.get("new_production"),
+            userid:account.id,
+            // new_production: formData.get("new_production"),
             beginning: formData.get("beginning"),
             charge: formData.get("charge"),
             remarks: formData.get("remarks"),
@@ -140,7 +141,7 @@ export default function BranchBreadReportEdit({ data }) {
                                                             placeholder="Enter beginning"
                                                             type="number"
                                                         />
-                                                        <Input
+                                                        {/* <Input
                                                             data={
                                                                 data.new_production ??
                                                                 0
@@ -151,7 +152,7 @@ export default function BranchBreadReportEdit({ data }) {
                                                             }
                                                             placeholder="Enter new production"
                                                             type="number"
-                                                        />
+                                                        /> */}
                                                         <Input
                                                             data={
                                                                 data.charge ?? 0

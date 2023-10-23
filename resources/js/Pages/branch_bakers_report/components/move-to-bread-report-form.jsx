@@ -10,7 +10,7 @@ import { move_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import MoveIcon from "@/icons/move-icon";
 
-export default function MoveToBreadReportForm({ data, branchid }) {
+export default function MoveToBreadReportForm({ account,data, branchid }) {
     const [open, setOpen] = useState(false);
     const [load, setLoad] = useState(false);
     const ref = useRef();
@@ -28,6 +28,7 @@ export default function MoveToBreadReportForm({ data, branchid }) {
         dispatch(isSetResponse(loading()));
         const formData = new FormData(ref.current);
         const newData = {
+            userid:account.id,
             branchid: branchid,
             breadid: [data.breadid],
             moveTo: "bread",

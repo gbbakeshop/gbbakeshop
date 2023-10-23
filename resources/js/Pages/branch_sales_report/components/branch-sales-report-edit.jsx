@@ -10,7 +10,7 @@ import { isRandomhandler } from "@/_redux/app-slice";
 import { edit_sales_report_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 
-export default function BranchSalesReportEdit({ data }) {
+export default function BranchSalesReportEdit({ data, account }) {
     const [open, setOpen] = useState(false);
     const { url } = usePage();
     const [load, setLoad] = useState(false);
@@ -30,6 +30,7 @@ export default function BranchSalesReportEdit({ data }) {
         const formData = new FormData(ref.current);
         const newData = {
             id: data.id,
+            userid: account.id,
             new_production: formData.get("new_production"),
             beginning: formData.get("beginning"),
             charge: formData.get("charge"),
@@ -45,7 +46,7 @@ export default function BranchSalesReportEdit({ data }) {
         dispatch(isSetResponse(update));
         if (update.status == "success") {
             ref.current.reset();
-            setOpen(false)
+            setOpen(false);
             dispatch(isResetForm(false));
         }
         setTimeout(() => {
@@ -205,6 +206,7 @@ export default function BranchSalesReportEdit({ data }) {
                                                             Your remarks
                                                         </label>
                                                         <textarea
+                                                            required
                                                             name="remarks"
                                                             id="message"
                                                             rows="4"

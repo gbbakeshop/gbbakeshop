@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\BranchRawMaterials;
+use App\Models\History;
 use App\Models\Records;
+use App\Models\Remarks;
 use Illuminate\Http\Request;
 
 class RecordsController extends Controller
@@ -43,6 +45,7 @@ class RecordsController extends Controller
     }
     public function edit_sales_report_records(Request $request)
     {
+        $record = Records::where('id', '=', $request->id)->first();
         Records::where('id', '=', $request->id)->update([
             'beginning' => $request->beginning,
             'new_production' => $request->new_production,
@@ -53,6 +56,30 @@ class RecordsController extends Controller
             'soldout' => $request->soldout,
             'sales' => $request->sales,
         ]);
+
+
+        if ($request->remarks != "" || $request->remarks != null) {
+            Remarks::create([
+                'branchid' => $record->branchid,
+                'userid' => $request->userid,
+                'from' => 'Sales Report',
+                'remarks' => $request->remarks,
+            ]);
+        }
+
+        $a1 = 'Beginning from ' . $record->beginning . 'pcs to ' . $request->beginning . ' ';
+        $a2 = 'New Production from ' . $record->new_production . 'pcs to ' . $request->new_production . ' ';
+        $a3 = 'Charge from ' . $record->charge . 'pcs to ' . $request->charge . ' ';
+        $a4 = 'Over from ' . $record->overs . 'pcs to ' . $request->overs . ' ';
+        $a5 = 'Remaining from ' . $record->remaining . 'pcs to ' . $request->remaining . ' ';
+        $a6 = 'Soldout from ' . $record->soldout . 'pcs to ' . $request->soldout . ' ';
+        $a7 = 'Sales from ' . $record->sales . 'pcs to ' . $request->sales . ' ';
+        History::create([
+            'branchid' => $record->branchid,
+            'userid' => $request->userid,
+            'message' => 'updated the ' . $a1 . $a2 . $a3 . $a4 . $a5 . $a6 . $a7,
+        ]);
+
         return response()->json([
             'status' => 'success',
             'message' => 'Updated Successfully'
@@ -60,12 +87,27 @@ class RecordsController extends Controller
     }
     public function edit_bread_report_records(Request $request)
     {
+        $record = Records::where('id', '=', $request->id)->first();
         Records::where('id', '=', $request->id)->update([
             'beginning' => $request->beginning,
-            'new_production' => $request->new_production,
             'charge' => $request->charge,
             'overs' => $request->overs,
             'total' => $request->beginning + $request->new_production,
+        ]);
+        if ($request->remarks != '' || $request->remarks != null) {
+            Remarks::create([
+                'branchid' => $record->branchid,
+                'userid' => $request->userid,
+                'from' => 'Bread Report',
+                'remarks' => $request->remarks,
+            ]);
+        }
+
+        History::create([
+            'branchid' => $record->branchid,
+            'userid' => $request->userid,
+            'message' => 'updated the beginning from ' . $record->beginning . ' to ' . $request->beginning .
+                ', charge from ' . $record->charge . ' to ' . $request->charge . ' and over from ' . $record->overs . ' from ' . $request->overs,
         ]);
         return response()->json([
             'status' => 'success',
@@ -74,8 +116,24 @@ class RecordsController extends Controller
     }
     public function edit_bakers_report_records(Request $request)
     {
+        $record = Records::where('id', $request->id)->first();
+
         Records::where('id', '=', $request->id)->update([
             'new_production' => $request->new_production
+        ]);
+
+        if ($request->remarks != '' || $request->remarks != null) {
+            Remarks::create([
+                'branchid' => $record->branchid,
+                'userid' => $request->userid,
+                'from' => 'Bakers Report',
+                'remarks' => $request->remarks,
+            ]);
+        }
+        History::create([
+            'branchid' => $record->branchid,
+            'userid' => $request->userid,
+            'message' => 'updated the new production from ' . $record->new_production . ' to ' . $request->new_production,
         ]);
         return response()->json([
             'status' => 'success',
@@ -85,6 +143,7 @@ class RecordsController extends Controller
 
     public function move_sales_records(Request $request)
     {
+        $record = Records::where('id', '=', $request->id)->first();
 
         Records::create([
             'branchid' => $request->branchid,
@@ -95,7 +154,6 @@ class RecordsController extends Controller
             'bread_name' => $request->bread_name,
             'price' => $request->price,
             'beginning' => $request->remaining == 0 ? 0 : $request->remaining,
-            // remaining becomes beginning$request->remaining
             'new_production' => 0,
             'remaining' => 0,
             'soldout' => 0,
@@ -103,8 +161,6 @@ class RecordsController extends Controller
             'charge' => 0,
             'overs' => 0,
             'sales' => 0,
-            'remarks1' => '',
-            'remarks2' => '',
             'status' => 'bread',
             'date' => $request->date,
         ]);
@@ -126,11 +182,27 @@ class RecordsController extends Controller
                 'charge' => $request->charge,
                 'overs' => $request->overs,
                 'sales' => $request->sales,
-                'remarks1' => $request->remarks1,
-                'remarks2' => $request->remarks2,
                 'status' => $request->status,
                 'date' => $request->date,
             ]);
+
+        if ($request->remarks != "" || $request->remarks != null) {
+            Remarks::create([
+                'branchid' => $record->branchid,
+                'userid' => $request->sellerid,
+                'from' => 'Bread Report',
+                'remarks' => $request->remarks,
+            ]);
+        }
+
+
+        History::create([
+            'branchid' => $record->branchid,
+            'userid' => $request->sellerid,
+            'message' => 'transferred ' . $record->bread_name . ' in Bread Report page with the remaining of ' . $request->remaining . 'pcs and breadout of ' . $request->bread_out . 'pcs',
+        ]);
+
+
         return response()->json([
             'status' => 'success',
             'message' => 'Move successfully'
@@ -156,24 +228,35 @@ class RecordsController extends Controller
             if ($bakers) {
                 if ($bread) {
                     $res = $bread->update([
-                        'remarks1' => $bread->remarks . ' , ' . $request->remarks,
                         'charge' => ($bread->charge ?? 0) + ($request->charge ?? 0),
                         'overs' => ($bread->overs ?? 0) + ($request->overs ?? 0),
                         'new_production' => ($bread->new_production ?? 0) + ($bakers->new_production ?? 0),
                         'total' => ($bakers->new_production ?? 0) + ($bread->total ?? 0),
                     ]);
-
                     if ($res) {
                         Records::where('id', $bakers->id)->delete();
                     }
                 } else {
                     $bakers->update([
-                        'remarks1' => $request->remarks,
                         'charge' => $request->charge,
                         'overs' => $request->overs,
                         'status' => $request->moveTo,
                     ]);
                 }
+                if ($request->remarks != '' || $request->remarks != null) {
+                    Remarks::create([
+                        'branchid' => $request->breadid[$i],
+                        'userid' => $request->userid,
+                        'from' => 'Bakers Report',
+                        'remarks' => $request->remarks,
+                    ]);
+                }
+
+                History::create([
+                    'branchid' => $request->breadid[$i],
+                    'userid' => $request->userid,
+                    'message' => 'transferred ' . $bakers->bread_name . 'in Bread Report page with the charge of ' . $request->charge . 'pcs and over of ' . $request->overs . 'pcs',
+                ]);
             }
 
         }

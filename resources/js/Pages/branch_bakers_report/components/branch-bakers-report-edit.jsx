@@ -10,7 +10,7 @@ import { edit_bakers_report_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import PencilIcon from "@/icons/pencil-icon";
 
-export default function BranchBakersReportEdit({ data }) {
+export default function BranchBakersReportEdit({ data,account }) {
     const [open, setOpen] = useState(false);
     const { url } = usePage();
     const [load, setLoad] = useState(false);
@@ -28,6 +28,7 @@ export default function BranchBakersReportEdit({ data }) {
         dispatch(isSetResponse(loading()));
         const formData = new FormData(ref.current);
         const newData = {
+            userid:account.id,
             id: data.id,
             new_production: formData.get("new_production"),
             remarks: formData.get("remarks"),

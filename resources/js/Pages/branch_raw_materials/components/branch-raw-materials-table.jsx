@@ -51,7 +51,7 @@ export default function BranchRawMaterialsTableComponent({ data }) {
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
                     {data?.map((res, index) => (
-                        <tr  key={index}  className="border-b border-gray-200 hover:bg-gray-100">
+                        <tr  key={index}  className="border-b border-red-200 hover:bg-red-100">
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">
                                     {res.raw_materials}

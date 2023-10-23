@@ -51,6 +51,7 @@ return array(
     'App\\Models\\BranchSelecta' => $baseDir . '/app/Models/BranchSelecta.php',
     'App\\Models\\Branches' => $baseDir . '/app/Models/Branches.php',
     'App\\Models\\Breads' => $baseDir . '/app/Models/Breads.php',
+    'App\\Models\\History' => $baseDir . '/app/Models/History.php',
     'App\\Models\\Ingredients' => $baseDir . '/app/Models/Ingredients.php',
     'App\\Models\\RawMaterials' => $baseDir . '/app/Models/RawMaterials.php',
     'App\\Models\\Recipes' => $baseDir . '/app/Models/Recipes.php',

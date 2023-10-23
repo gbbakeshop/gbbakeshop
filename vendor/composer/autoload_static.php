@@ -365,8 +365,8 @@ class ComposerStaticInit6316d192b6a26dc24988e10ff73ee646
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -605,6 +605,7 @@ class ComposerStaticInit6316d192b6a26dc24988e10ff73ee646
         'App\\Models\\BranchSelecta' => __DIR__ . '/../..' . '/app/Models/BranchSelecta.php',
         'App\\Models\\Branches' => __DIR__ . '/../..' . '/app/Models/Branches.php',
         'App\\Models\\Breads' => __DIR__ . '/../..' . '/app/Models/Breads.php',
+        'App\\Models\\History' => __DIR__ . '/../..' . '/app/Models/History.php',
         'App\\Models\\Ingredients' => __DIR__ . '/../..' . '/app/Models/Ingredients.php',
         'App\\Models\\RawMaterials' => __DIR__ . '/../..' . '/app/Models/RawMaterials.php',
         'App\\Models\\Recipes' => __DIR__ . '/../..' . '/app/Models/Recipes.php',
