@@ -14,3 +14,9 @@ export async function register_account(data) {
     const response = await axios.post('/api/register_accounts',data)
     return response.data;
 }
+
+
+export async function delete_account(id) {
+    const response = await axios.delete('/api/delete_accounts/'+id)
+    return response.data;
+}

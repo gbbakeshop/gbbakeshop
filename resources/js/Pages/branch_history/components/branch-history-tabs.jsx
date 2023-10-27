@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
 import ClockIcon from "@/icons/clock-icon";
 
-export default function BranchBreadReportTabsComponent() {
+export default function BranchHistoryTabsComponent() {
     const { url } = usePage();
     const page = url.split("/")[3];
     const branchid = url.split("/")[2];

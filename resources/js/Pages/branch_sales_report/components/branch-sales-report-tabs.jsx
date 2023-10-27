@@ -4,6 +4,7 @@ import { GiSlicedBread } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
 import { Link } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
+import ClockIcon from "@/icons/clock-icon";
 
 export default function BranchBakersProductionTabsComponent() {
     const { url } = usePage();
@@ -64,6 +65,19 @@ export default function BranchBakersProductionTabsComponent() {
                         >
                             <TbReportSearch className="text-2xl" />
                             Sales Report
+                        </Link>
+                    </li>
+                    <li className="mr-2">
+                        <Link
+                            href={route("branch_history", [branchid])}
+                            className={`${
+                                page == "history"
+                                    ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
+                                    : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
+                            }`}
+                        >
+                            <ClockIcon />
+                            History Logs
                         </Link>
                     </li>
                 </ul>

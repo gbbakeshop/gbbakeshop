@@ -106,9 +106,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return Inertia::render('branch_selecta/page');
         })->name('branch_selecta');
 
-        Route::get('{branchid}/accounts', function () {
-            return Inertia::render('branch_accounts/page');
-        })->name('branch_accounts');
+        
+        Route::group(['prefix' => '{branchid}/accounts'], function () {
+            Route::get('/', function () {
+                return Inertia::render('branch_accounts/page');
+            })->name('branch_accounts');
+            
+            Route::get('{userid}/{path}', function () {
+                return Inertia::render('branch_accounts/branch-account-layout');
+            })->name('branch_accounts_layout');
+        });
+        
+        
+        Route::get('{branchid}/history', function () {
+            return Inertia::render('branch_history/page');
+        })->name('branch_history');
     });
 
 

@@ -10,6 +10,14 @@ use Illuminate\Validation\Rules;
 class AccountsController extends Controller
 {
 
+    
+    public function delete_accounts($id){
+        User::where('id',$id)->delete();
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Deleted successfully'
+        ]);
+    }
     public function register_accounts(Request $request)
     {
         $request->validate([
@@ -41,7 +49,7 @@ class AccountsController extends Controller
 
     public function get_branch_accounts($branchid)
     {
-        $response = User::where('branchid', '=', $branchid)->get();
+        $response = User::where('branchid', '=', $branchid)->with('getBranch')->get();
         return response()->json([
             'status' => $response
         ]);

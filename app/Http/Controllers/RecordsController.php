@@ -6,6 +6,7 @@ use App\Models\BranchRawMaterials;
 use App\Models\History;
 use App\Models\Records;
 use App\Models\Remarks;
+use App\Models\Charge;
 use Illuminate\Http\Request;
 
 class RecordsController extends Controller
@@ -347,9 +348,22 @@ class RecordsController extends Controller
                     'date' => 0,
                 ]);
             }
-
         }
 
+        if($request->charge !== 0){
+            Charge::create([
+                'branchid' => $request->branchid,
+                'userid' => $request->account['id'],
+                'quantity' => $request->charge,
+                'discription' => 'has charge ' . $request->charge,
+            ]);
+        }
+       
+        History::create([
+            'branchid' => $request->branchid,
+            'userid' => $request->account['id'],
+            'message' => 'created ' . $request->created,
+        ]);
         return response()->json([
             'status' => 'success',
             'message' => 'Created Successfully'

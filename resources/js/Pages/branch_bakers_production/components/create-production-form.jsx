@@ -21,6 +21,7 @@ export default function CreateProductionForm({
     const [open, setOpen] = useState(false);
     const ref = useRef();
     const [ingredients, setIngredients] = useState([]);
+    const [production, setProduction] = useState(0);
     const [quantity, setQuantity] = useState(1);
     const [load, setLoad] = useState(false);
     const [disabled, setDisabled] = useState(false);
@@ -91,11 +92,24 @@ export default function CreateProductionForm({
             setIngredients(res.status);
         });
     }, []);
+
+    function setQuantityValue(e) {
+        const formData = new FormData(ref.current);
+        const ingredients = data?.selected_breads.map((res, index) => ({
+            quantity: formData.get(`quantity_${index}`),
+        }));
+        const values = ingredients
+            .map((res) => parseInt(res.quantity))
+            .reduce(function (a, b) {
+                return a + b;
+            });
+        setProduction(values);
+    }
     async function submitHandler(e) {
         e.preventDefault();
-        dispatch(isSetResponse(loading()));
+        // dispatch(isSetResponse(loading()));
         const formData = new FormData(ref.current);
-        setLoad(true);
+        // setLoad(true);
         if (quantity > 0) {
             const subData = {
                 quantity: quantity,
@@ -108,8 +122,21 @@ export default function CreateProductionForm({
                 quantity: formData.get(`quantity_${index}`),
             }));
 
+            const targetPieces = data.target * quantity;
+            const totalNewProduction = ingredients
+                .map((res) => parseInt(res.quantity))
+                .reduce(function (a, b) {
+                    return a + b;
+                });
+
+            const charge =
+                totalNewProduction < targetPieces
+                    ? targetPieces - totalNewProduction
+                    : 0;
+
             const newData = {
                 ...subData,
+                charge: charge,
                 data: {
                     ...subData.data,
                     selected_breads: subData.data.selected_breads.map(
@@ -119,7 +146,14 @@ export default function CreateProductionForm({
                         })
                     ),
                 },
+                created: JSON.stringify(
+                    subData.data.selected_breads.map((res, index) => ({
+                        ...res,
+                        ...ingredients[index],
+                    }))
+                ),
             };
+
             setTimeout(async () => {
                 const create = await create_new_records(newData);
                 setOpen(false);
@@ -207,6 +241,29 @@ export default function CreateProductionForm({
                                                 </Dialog.Title>
                                             </div>
                                             <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                                                <div className="grid grid-rows-1 grid-flow-col gap-1 text-lg font-semibold">
+                                                    Charge (
+                                                    {data.target * quantity <
+                                                    (!isNaN(production)
+                                                        ? production
+                                                        : 0)
+                                                        ? 0
+                                                        : data.target *
+                                                              quantity -
+                                                          (!isNaN(production)
+                                                              ? production
+                                                              : 0)}
+                                                    )
+                                                    <br />
+                                                    Target Pieces (
+                                                    {data.target * quantity}
+                                                    )<br />
+                                                    Actual Target (
+                                                    {!isNaN(production)
+                                                        ? production
+                                                        : 0}
+                                                    )
+                                                </div>
                                                 <form
                                                     name="form"
                                                     ref={ref}
@@ -230,25 +287,33 @@ export default function CreateProductionForm({
                                                                             {
                                                                                 res.bread_name
                                                                             }
-                                                                            <Input
-                                                                                name={`quantity_${index}`} // Use unique names for each quantity input
-                                                                                title={
-                                                                                    res.raw_materials
+                                                                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                                                                res.raw_materials
+                                                                            </label>
+                                                                            <input
+                                                                                name={`quantity_${index}`}
+                                                                                defaultValue={
+                                                                                    0
                                                                                 }
-                                                                                placeholder="Pieces"
+                                                                                required
+                                                                                onInput={(
+                                                                                    e
+                                                                                ) =>
+                                                                                    setQuantityValue(
+                                                                                        e
+                                                                                            .target
+                                                                                            .value
+                                                                                    )
+                                                                                }
+                                                                                className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
                                                                                 type="number"
+                                                                                placeholder="Pieces"
                                                                             />
                                                                         </div>
                                                                     )
                                                                 )}
                                                             </div>
-                                                            <div className="grid grid-rows-1 grid-flow-col gap-1 text-lg font-semibold">
-                                                                Raw Materials -
-                                                                Target Pieces (
-                                                                {data.target *
-                                                                    quantity}
-                                                                )
-                                                            </div>
+
                                                             {data
                                                                 ?.selected_ingredients
                                                                 .length == 0 ? (
@@ -333,12 +398,15 @@ export default function CreateProductionForm({
                                                                                                         </td>
                                                                                                         <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
                                                                                                             {(res.grams *
-                                                                                                                quantity) / 1000}kg
+                                                                                                                quantity) /
+                                                                                                                1000}
+                                                                                                            kg
                                                                                                         </td>
                                                                                                         <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
                                                                                                             {res.quantity.toFixed(
                                                                                                                 2
-                                                                                                            )}kg
+                                                                                                            )}
+                                                                                                            kg
                                                                                                         </td>
                                                                                                         <td className="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
                                                                                                             {(
@@ -358,7 +426,8 @@ export default function CreateProductionForm({
                                                                                                                             1000
                                                                                                                     ).toFixed(
                                                                                                                         2
-                                                                                                                    )}kg
+                                                                                                                    )}
+                                                                                                                    kg
                                                                                                                 </span>
                                                                                                             ) : (
                                                                                                                 <span className="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">
@@ -369,7 +438,8 @@ export default function CreateProductionForm({
                                                                                                                             1000
                                                                                                                     ).toFixed(
                                                                                                                         2
-                                                                                                                    )}kg
+                                                                                                                    )}
+                                                                                                                    kg
                                                                                                                 </span>
                                                                                                             )}
                                                                                                         </td>

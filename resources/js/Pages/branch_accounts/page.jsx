@@ -4,18 +4,32 @@ import AccountTable from "./components/account-table";
 import Search from "@/_components/search";
 import SidebarBranches from "../_components/sidebar-branches";
 import Breadcrumbs from "@/_components/bread-crumbs";
+import { get_branch_accounts } from "@/services/account-services";
+import { usePage } from "@inertiajs/react";
+import { useSelector } from "react-redux";
 
 export default function BranchAccountsPage(props) {
-    const [data, setData] = useState([]);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
+    const { url } = usePage();
+    const branchid = url.split('/')[2]
+    const [accounts,setAccounts] = useState([])
+    const { refresh } = useSelector((state) => state.app);
+    useEffect(() => {
+        get_branch_accounts(branchid)
+        .then(res=>{
+            setAccounts(res)
+        })
+    }, [refresh]);
 
     useEffect(() => {
-        const value = data.filter((obj) =>
+        const value = accounts.filter((obj) =>
             obj.name.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
     }, [search]);
+
+ 
 
     return (
         <AdministratorLayout>
@@ -23,7 +37,7 @@ export default function BranchAccountsPage(props) {
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Breadcrumbs />
                 <Search search={search} setSearch={setSearch} />
-                <AccountTable />
+                <AccountTable data={search == "" ? accounts : newData}/>
             </div>
         </AdministratorLayout>
     );
