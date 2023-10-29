@@ -12,7 +12,14 @@ use Illuminate\Http\Request;
 class RecordsController extends Controller
 {
 
-
+    
+    public function search_record(Request $request){
+        $record = Records::where('date', '=', $request->date)->get();
+        return response()->json([
+            'status' => $record,
+            'message' => 'Transferred Successfully'
+        ]);
+    }
     public function record_move_another_branch(Request $request)
     {
         for ($i = 0; $i < count($request->breads); $i++) {
@@ -79,6 +86,7 @@ class RecordsController extends Controller
             'branchid' => $record->branchid,
             'userid' => $request->userid,
             'message' => 'updated the ' . $a1 . $a2 . $a3 . $a4 . $a5 . $a6 . $a7,
+            'date'=>$request->date
         ]);
 
         return response()->json([
@@ -109,6 +117,7 @@ class RecordsController extends Controller
             'userid' => $request->userid,
             'message' => 'updated the beginning from ' . $record->beginning . ' to ' . $request->beginning .
                 ', charge from ' . $record->charge . ' to ' . $request->charge . ' and over from ' . $record->overs . ' from ' . $request->overs,
+            'date'=>$request->date
         ]);
         return response()->json([
             'status' => 'success',
@@ -135,6 +144,7 @@ class RecordsController extends Controller
             'branchid' => $record->branchid,
             'userid' => $request->userid,
             'message' => 'updated the new production from ' . $record->new_production . ' to ' . $request->new_production,
+            'date'=>$request->date
         ]);
         return response()->json([
             'status' => 'success',
@@ -201,6 +211,7 @@ class RecordsController extends Controller
             'branchid' => $record->branchid,
             'userid' => $request->sellerid,
             'message' => 'transferred ' . $record->bread_name . ' in Bread Report page with the remaining of ' . $request->remaining . 'pcs and breadout of ' . $request->bread_out . 'pcs',
+            'date'=>$request->date
         ]);
 
 
@@ -257,6 +268,7 @@ class RecordsController extends Controller
                     'branchid' => $request->breadid[$i],
                     'userid' => $request->userid,
                     'message' => 'transferred ' . $bakers->bread_name . 'in Bread Report page with the charge of ' . $request->charge . 'pcs and over of ' . $request->overs . 'pcs',
+                    'date'=>$request->date
                 ]);
             }
 
@@ -331,7 +343,7 @@ class RecordsController extends Controller
                         'total' => $findBeginning->new_production + $request->data['selected_breads'][$i]['quantity'],
                         'remarks1' => 0,
                         'remarks2' => 0,
-                        'date' => 0,
+                        'date' => $request->date
                     ]);
             } else {
                 Records::create([
@@ -345,7 +357,7 @@ class RecordsController extends Controller
                     'status' => 'bakers',
                     'remarks1' => 0,
                     'remarks2' => 0,
-                    'date' => 0,
+                    'date' => $request->date,
                 ]);
             }
         }
@@ -363,6 +375,7 @@ class RecordsController extends Controller
             'branchid' => $request->branchid,
             'userid' => $request->account['id'],
             'message' => 'created ' . $request->created,
+            'date'=>$request->date
         ]);
         return response()->json([
             'status' => 'success',

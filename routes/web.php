@@ -112,9 +112,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
                 return Inertia::render('branch_accounts/page');
             })->name('branch_accounts');
             
-            Route::get('{userid}/{path}', function () {
-                return Inertia::render('branch_accounts/branch-account-layout');
-            })->name('branch_accounts_layout');
+
+            Route::get('{userid}/expenses', function () {
+                return Inertia::render('account_expenses/page');
+            })->name('account_expenses');
+
+            Route::get('{userid}/history', function () {
+                return Inertia::render('account_history/page');
+            })->name('account_history');
+
+            Route::get('{userid}/settings', function () {
+                return Inertia::render('account_settings/page');
+            })->name('account_settings');
+
         });
         
         

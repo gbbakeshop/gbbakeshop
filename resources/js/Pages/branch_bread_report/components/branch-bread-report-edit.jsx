@@ -10,6 +10,8 @@ import { isRandomhandler } from "@/_redux/app-slice";
 import { edit_bread_report_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import PencilIcon from "@/icons/pencil-icon";
+import moment from "moment";
+
 export default function BranchBreadReportEdit({ data,account }) {
     const [open, setOpen] = useState(false);
     const { url } = usePage();
@@ -37,6 +39,7 @@ export default function BranchBreadReportEdit({ data,account }) {
             charge: formData.get("charge"),
             remarks: formData.get("remarks"),
             overs: formData.get("overs"),
+            date: moment().format("L"),
         };
 
         const update = await edit_bread_report_records(newData);

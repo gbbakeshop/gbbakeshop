@@ -6,6 +6,8 @@ import { useState, useEffect, useRef, Fragment } from "react";
 import { create_new_records } from "@/services/records-services";
 import { useDispatch } from "react-redux";
 import Input from "@/_components/input";
+import moment from "moment";
+
 import {
     isSetResponse,
     isRandomhandler,
@@ -136,6 +138,7 @@ export default function CreateProductionForm({
 
             const newData = {
                 ...subData,
+                date: moment().format("L"),
                 charge: charge,
                 data: {
                     ...subData.data,

@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->bigInteger('branchid')->nullable();
             $table->bigInteger('userid')->nullable();
             $table->longText('message')->nullable();
+            $table->string('date')->nullable();
             $table->timestamps();
         });
     }

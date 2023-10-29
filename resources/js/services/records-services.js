@@ -40,3 +40,10 @@ export async function record_move_another_branch(data) {
     const response = await axios.put('/api/record_move_another_branch',data)
     return response.data;
 }
+
+export async function search_record(date) {
+    const response = await axios.post('/api/search_record',{
+        date:date
+    })
+    return response.data;
+}

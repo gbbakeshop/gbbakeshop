@@ -24,6 +24,8 @@ class User extends Authenticatable
        'email_verified_at',
        'password',
        'branchid',
+       'address',
+       'image_path',
        'shift',
        'mobile',
        'gender',

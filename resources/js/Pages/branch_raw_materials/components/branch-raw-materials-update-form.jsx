@@ -17,6 +17,7 @@ export default function BranchRawMaterialsUpdateForm({ data }) {
     function loading() {
         return {
             status: "loading",
+            message:"Loading..."
         };
     }
 

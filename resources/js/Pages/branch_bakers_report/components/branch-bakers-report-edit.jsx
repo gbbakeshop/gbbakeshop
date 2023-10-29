@@ -9,6 +9,7 @@ import { isRandomhandler } from "@/_redux/app-slice";
 import { edit_bakers_report_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import PencilIcon from "@/icons/pencil-icon";
+import moment from "moment";
 
 export default function BranchBakersReportEdit({ data,account }) {
     const [open, setOpen] = useState(false);
@@ -32,6 +33,7 @@ export default function BranchBakersReportEdit({ data,account }) {
             id: data.id,
             new_production: formData.get("new_production"),
             remarks: formData.get("remarks"),
+            date: moment().format("L"),
         };
 
         const update = await edit_bakers_report_records(newData);

@@ -28,7 +28,10 @@ export default function AccountTable({ data }) {
                     </thead>
                     <tbody className="text-gray-600 text-sm font-light">
                         {data.map((res, index) => (
-                            <tr key={index} className="border-b border-red-200 hover:bg-red-100">
+                            <tr
+                                key={index}
+                                className="border-b border-red-200 hover:bg-red-100"
+                            >
                                 <td className="py-3 px-6 text-left whitespace-nowrap">
                                     <div className="flex items-center">
                                         <div className="mr-2">
@@ -55,25 +58,22 @@ export default function AccountTable({ data }) {
                                     </span>
                                 </td>
                                 <td className="py-3 px-6 text-left">
-                                    <div className="flex">
-                                        {res.email}
-                                    </div>
+                                    <div className="flex">{res.email}</div>
                                 </td>
                                 <td className="py-3 px-6 text-left">
                                     <div className="flex">
                                         <div className="w-4 mr-6 text-green-500">
-                                            <Link 
-                                             href={route('branch_accounts_layout', {
-                                                branchid: res.branchid, // Replace with the appropriate branch ID source
-                                                userid: res.id,
-                                                path: 'profile'
-                                            })}
+                                            <Link
+                                                href={route("account_settings", {
+                                                    branchid: res.branchid, // Replace with the appropriate branch ID source
+                                                    userid: res.id,
+                                                })}
                                             >
                                                 <EyesIcon />
                                             </Link>
                                         </div>
                                         <div className="w-4 text-red-500">
-                                            <BranchAccountDelete id={res.id}/>
+                                            <BranchAccountDelete id={res.id} />
                                         </div>
                                     </div>
                                 </td>

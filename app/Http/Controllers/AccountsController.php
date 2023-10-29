@@ -10,9 +10,52 @@ use Illuminate\Validation\Rules;
 class AccountsController extends Controller
 {
 
-    
-    public function delete_accounts($id){
-        User::where('id',$id)->delete();
+    public function update_personal_information(Request $request)
+    {
+        $user = User::where('id', $request->userid)->update([
+            'name' => $request->name,
+            'branchid' => $request->branchid,
+            'position' => $request->position,
+            'address' => $request->address
+        ]);
+        if ($user) {
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Updated successfully'
+            ]);
+        }
+
+    }
+
+    public function update_personal_credentials(Request $request)
+    {
+        if ($request->getPassword == '') {
+            User::where('id', $request->userid)->update([
+                'email' => $request->email,
+            ]);
+        } else {
+            User::where('id', $request->userid)->update([
+                'email' => $request->email,
+                'password' => Hash::make($request->password)
+            ]);
+        }
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Updated successfully'
+        ]);
+    }
+
+    public function get_specific_accounts($id)
+    {
+        $response = User::where('id', $id)->with('getBranch')->first();
+        return response()->json([
+            'status' => $response
+        ]);
+    }
+
+    public function delete_accounts($id)
+    {
+        User::where('id', $id)->delete();
         return response()->json([
             'status' => 'success',
             'message' => 'Deleted successfully'

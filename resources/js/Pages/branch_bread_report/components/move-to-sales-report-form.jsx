@@ -51,9 +51,8 @@ export default function MoveToSalesReportForm({ data, account }) {
             price: parseInt(data.get_breads.price),
             total: (data.beginning ?? 0) + (data.new_production ?? 0),
             status: "done",
-            date: moment().format("LLLL"),
+            date: moment().format("L"),
         };
-        console.log("sss", newData);
 
         const update = await move_sales_records(newData);
 

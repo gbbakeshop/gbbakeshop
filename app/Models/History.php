@@ -12,6 +12,7 @@ class History extends Model
         'branchid',
         'userid',
         'message',
+        'date'
     ];
     
 }

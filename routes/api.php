@@ -25,6 +25,9 @@ Route::get('/get_all_accounts','App\Http\Controllers\AccountsController@get_all_
 Route::delete('/delete_accounts/{id}','App\Http\Controllers\AccountsController@delete_accounts');
 Route::get('/get_branch_accounts/{branchid}','App\Http\Controllers\AccountsController@get_branch_accounts');
 Route::post('/register_accounts','App\Http\Controllers\AccountsController@register_accounts');
+Route::get('/get_specific_accounts/{id}','App\Http\Controllers\AccountsController@get_specific_accounts');
+Route::put('/update_personal_information','App\Http\Controllers\AccountsController@update_personal_information');
+Route::put('/update_personal_credentials','App\Http\Controllers\AccountsController@update_personal_credentials');
 
 Route::get('/get_all_branches','App\Http\Controllers\BranchesController@get_all_branches');
 
@@ -69,6 +72,8 @@ Route::put('/edit_bakers_report_records','App\Http\Controllers\RecordsController
 Route::put('/edit_bread_report_records','App\Http\Controllers\RecordsController@edit_bread_report_records');
 Route::put('/edit_sales_report_records','App\Http\Controllers\RecordsController@edit_sales_report_records');
 Route::put('/record_move_another_branch','App\Http\Controllers\RecordsController@record_move_another_branch');
+Route::post('/search_record','App\Http\Controllers\RecordsController@search_record');
+
 
 
 

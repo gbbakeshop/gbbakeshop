@@ -9,6 +9,7 @@ import { isRandomhandler } from "@/_redux/app-slice";
 import { move_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import MoveIcon from "@/icons/move-icon";
+import moment from "moment";
 
 export default function MoveToBreadReportForm({ account,data, branchid }) {
     const [open, setOpen] = useState(false);
@@ -35,6 +36,7 @@ export default function MoveToBreadReportForm({ account,data, branchid }) {
             charge: formData.get("charge"),
             remarks: formData.get("remarks"),
             overs: formData.get("overs"),
+            date: moment().format("L"),
         };
 
         const update = await move_records(newData);

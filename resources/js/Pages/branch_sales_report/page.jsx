@@ -5,14 +5,14 @@ import { get_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import BranchBreadProductionTabsComponent from "./components/branch-sales-report-tabs";
 import SkeletonLoader from "@/_components/skeleton-loader";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Search from "@/_components/search";
 import SidebarBranches from "../_components/sidebar-branches";
 import Breadcrumbs from "@/_components/bread-crumbs";
-
+import BranchSalesReportSearch from "./components/branch-sales-report-search-date";
+import { setRecord } from "./_redux/sales-report-slice";
 export default function BranchBreadProductionPage(props) {
-    const [data, setData] = useState([]);
-
+    const dispatch = useDispatch()
     const { auth } = props;
     const [loading, setLoading] = useState(true);
     const { url } = usePage();
@@ -20,20 +20,20 @@ export default function BranchBreadProductionPage(props) {
     const { refresh } = useSelector((state) => state.app);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
+    const { records } = useSelector((state) => state.salesReport);
 
     useEffect(() => {
         get_records({
             branchid: branchid,
             params: "done",
         }).then((res) => {
-            setData(res.status);
-            console.log("res.status", res.status);
+            dispatch(setRecord(res.status))
             setLoading(false);
         });
     }, [refresh]);
 
     useEffect(() => {
-        const value = data.filter((obj) =>
+        const value = records.filter((obj) =>
             obj.bread_name.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
@@ -45,13 +45,21 @@ export default function BranchBreadProductionPage(props) {
                 <Breadcrumbs />
                 <BranchBreadProductionTabsComponent />
                 <br />
-                <Search search={search} setSearch={setSearch} />
+                <div className="flex gap-4">
+                    <div className="flex-none">
+                    <BranchSalesReportSearch />
+                    </div>
+                    <div className="flex-1">
+                    <Search search={search} setSearch={setSearch} />
+                    </div>
+                </div>
+                
                 {loading ? (
                     <SkeletonLoader />
                 ) : (
                     <BranchSalesReportTableComponent
                         account={auth.user}
-                        data={search == "" ? data : newData}
+                        data={search == "" ? records : newData}
                     />
                 )}
             </div>

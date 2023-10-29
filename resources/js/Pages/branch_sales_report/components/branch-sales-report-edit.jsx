@@ -9,7 +9,7 @@ import { isResetForm } from "@/_redux/app-slice";
 import { isRandomhandler } from "@/_redux/app-slice";
 import { edit_sales_report_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
-
+import moment from "moment";
 export default function BranchSalesReportEdit({ data, account }) {
     const [open, setOpen] = useState(false);
     const { url } = usePage();
@@ -39,6 +39,7 @@ export default function BranchSalesReportEdit({ data, account }) {
             remaining: formData.get("remaining"),
             soldout: formData.get("soldout"),
             sales: formData.get("sales"),
+            date: moment().format("L"),
         };
 
         const update = await edit_sales_report_records(newData);
