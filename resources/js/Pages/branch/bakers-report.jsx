@@ -50,6 +50,7 @@ export default function BakersReportPage(props) {
                 <SkeletonLoader />
             ) : (
                 <BranchBakersReportTableComponent
+                   account={auth.user}
                     branchid={branchid}
                     data={search == "" ? data : newData}
                 />

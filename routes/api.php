@@ -75,6 +75,9 @@ Route::put('/record_move_another_branch','App\Http\Controllers\RecordsController
 Route::post('/search_record','App\Http\Controllers\RecordsController@search_record');
 
 
+Route::post('/get_branch_history','App\Http\Controllers\HistoryController@get_branch_history');
+
+
 
 
 

@@ -79,7 +79,9 @@ export default function SidebarBranches() {
                                                 (branchid == res.id &&
                                                     path == "bread_report") ||
                                                 (branchid == res.id &&
-                                                    path == "sales_report")
+                                                    path == "sales_report")||
+                                                    (branchid == res.id &&
+                                                        path == "history")
                                                     ? "bg-red-600 text-white rounded-lg p-2 flex w-full justify-between cursor-pointer items-center"
                                                     : "bg-red-50 text-red-500 rounded-lg p-2 flex w-full justify-between cursor-pointer items-center"
                                             }`}

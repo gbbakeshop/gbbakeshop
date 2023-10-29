@@ -1,0 +1,1 @@
+import{f as e,g as u,h as c}from"./app-5d8b0e1d.js";function r(t=e){const o=t===e?u:c(t);return function(){const{store:s}=o();return s}}const a=r();function i(t=e){const o=t===e?a:r(t);return function(){return o().dispatch}}const f=i();export{f as u};
