@@ -6,8 +6,10 @@ import SkeletonLoader from "@/_components/skeleton-loader";
 import Search from "@/_components/search";
 import SidebarControls from "../_components/sidebar-controls";
 import AccountTabs from "./components/account-tabs";
-
+import { useSelector } from "react-redux";
 export default function AccountsPage(props) {
+    
+    const { refresh } = useSelector((state) => state.app);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [newData, setNewData] = useState([]);
@@ -18,7 +20,7 @@ export default function AccountsPage(props) {
             setData(res);
             setLoading(false);
         });
-    }, []);
+    }, [refresh]);
 
     useEffect(() => {
         const value = data.filter((obj) =>

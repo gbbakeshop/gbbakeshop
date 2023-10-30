@@ -64,6 +64,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('accounts', function () {
             return Inertia::render('accounts/accounts');
         })->name('accounts');
+        
 
         Route::get('registration', function () {
             return Inertia::render('accounts/registration');

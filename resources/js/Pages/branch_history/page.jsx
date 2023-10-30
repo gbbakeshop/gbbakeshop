@@ -13,7 +13,7 @@ import BranchHistoryTable from "./components/branch-history-table";
 import { get_branch_history } from "@/services/history-services";
 import moment from "moment";
 import { setHistory } from "./_redux/branch-history-slice";
-
+import BranchSearchHistory from "./components/branch-search-history";
 export default function BranchBakersReportPage(props) {
     const dispatch = useDispatch()
     const [loading, setLoading] = useState(true);
@@ -39,7 +39,6 @@ export default function BranchBakersReportPage(props) {
         setNewData(value);
     }, [search, refresh]);
 
-console.log('history',history)
     return (
         <AdministratorLayout>
             <SidebarBranches />
@@ -47,6 +46,7 @@ console.log('history',history)
                 <Breadcrumbs />
                 <BranchHistoryTabsComponent />
                 <br />
+                <BranchSearchHistory />
                 {/* <Search search={search} setSearch={setSearch} /> */}
                 {loading ? (
                     <SkeletonLoader />

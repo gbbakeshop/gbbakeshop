@@ -62,7 +62,7 @@ export default function AccountTable({ data }) {
                                 </td>
                                 <td className="py-3 px-6 text-left">
                                     <div className="flex">
-                                        <div className="w-4 mr-6 text-green-500">
+                                        <div className="w-4 mr-6 text-blue-500">
                                             <Link
                                                 href={route("account_settings", {
                                                     branchid: res.branchid, // Replace with the appropriate branch ID source

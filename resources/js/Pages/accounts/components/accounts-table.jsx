@@ -1,9 +1,10 @@
 import { useState } from "react";
 import BreadDropDownComponent from "./bread-dropdown";
-import ViewIcon from "@/_icons/view-icon";
+import EyesIcon from "@/icons/eyes-icon";
 import EditIcon from "@/_icons/edit-icon";
-import DeleteIcon from "@/_icons/delete-icon";
-
+import TrashIcon from "@/icons/trash-icon";
+import { Link } from "@inertiajs/react";
+import DeleteAccount from "./delete-account";
 export default function AccountsTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
 
@@ -105,14 +106,17 @@ export default function AccountsTableComponent({ data }) {
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <div className="w-4 mr-2">
-                                        <ViewIcon />
+                                    <div className="w-4 mr-6 text-blue-500">
+                                        <Link  href={route("account_settings", {
+                                                    branchid: res.branchid, // Replace with the appropriate branch ID source
+                                                    userid: res.id,
+                                                })}>
+                                        <EyesIcon />
+                                        </Link>
+                                       
                                     </div>
-                                    <div className="w-4 mr-2">
-                                        <EditIcon />
-                                    </div>
-                                    <div className="w-4 mr-2">
-                                        <DeleteIcon />
+                                    <div className="w-4 mr-2 text-red-500">
+                                       <DeleteAccount id={res.id}/>
                                     </div>
                                 </div>
                             </td>
