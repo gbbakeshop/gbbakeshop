@@ -34,6 +34,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
         $user = User::where('email', $request->email)->first();
+        $request->session()->put('account', $user);
         if ($user->position !== 'admin') {
             return redirect()->intended(RouteServiceProvider::BRANCH);
         } else {
@@ -48,7 +49,7 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
-
+        $request->session()->flush();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->to('/')->send();

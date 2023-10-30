@@ -17,7 +17,6 @@ export default function BranchHistoryTable({ data }) {
       }
     });
   }, [data]);
-
   return (
     <div className="flex-1 capitalize rounded-lg mt-4 p-8">
       <h4 className="text-xl text-gray-900 font-bold">History log</h4>

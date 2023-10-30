@@ -5,12 +5,12 @@ import { useDispatch } from "react-redux";
 import { setAccount } from "../_redux/branch-account-slice";
 import { useSelector } from "react-redux";
 
-export default function AccountProfile() {
+export default function AccountProfile({id}) {
     const { account } = useSelector((state) => state.branchAccount);
     const { refresh } = useSelector((state) => state.app);
     const dispatch = useDispatch();
     const { url } = usePage();
-    const userid = url.split("/")[4];
+    const userid = url.split("/")[4]??id;
 
     useEffect(() => {
         get_specific_accounts(userid).then((res) => {
@@ -46,7 +46,7 @@ export default function AccountProfile() {
                         <div class="flex items-center justify-between sm:mt-2">
                             <div class="flex items-center">
                                 <div class="flex flex-col">
-                                    <div class="w-full flex-none text-lg  font-bold leading-none">
+                                    <div class="w-full flex-none text-lg capitalize font-bold leading-none">
                                         {account.name}
                                     </div>
                                     <div class="flex-auto  my-1">

@@ -65,6 +65,19 @@ export default function ProductionTabsComponent({branchid}) {
                             Sales Report
                         </Link>
                     </li>
+                    <li className="mr-2">
+                        <Link
+                            href={route("b_history")}
+                            className={`${
+                                page == "history"
+                                    ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
+                                    : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
+                            }`}
+                        >
+                            <TbReportSearch className="text-2xl" />
+                            Hisory Logs
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </>

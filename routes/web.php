@@ -82,6 +82,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/', function () {
             return Inertia::render('branches/page');
         })->name('branches');
+        
+
+        Route::get('{branchid}/analytics', function () {
+            return Inertia::render('branch_analytics/page');
+        })->name('branch_analytics');
 
         Route::get('{branchid}/raw_materials', function () {
             return Inertia::render('branch_raw_materials/page');
@@ -166,6 +171,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('branch/bread-production');
     })->name('b_bread_production');
 
+    Route::get('/branch/history', function () {
+        return Inertia::render('branch/branch_sales_history');
+    })->name('b_history');
+
     Route::get('/branch/selecta', function () {
         return Inertia::render('branch/selecta');
     })->name('b_selecta');
@@ -173,6 +182,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/branch/settings', function () {
         return Inertia::render('branch/settings');
     })->name('b_settings');
+
+    Route::get('/branch/expenses', function () {
+        return Inertia::render('account_expenses/page');
+    })->name('b_expenses');
 
 });
 
