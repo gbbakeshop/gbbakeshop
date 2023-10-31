@@ -13,6 +13,8 @@ import SquireIcon from "@/icons/squire-icon";
 import { get_all_branches } from "@/services/branches-services";
 import { setBranches } from "@/_redux/app-slice";
 import { useDispatch } from "react-redux";
+import CubeIcon from "@/icons/cube-icon";
+import DatabaseIcon from "@/icons/database-icon";
 export default function BranchSidebarCategories({branchid}) {
     const dispatch = useDispatch();
     const { url } = usePage();
@@ -53,7 +55,7 @@ export default function BranchSidebarCategories({branchid}) {
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
                 } `}
             >
-                <HomeIcon />
+                <StoreIcon />
             </Link>
             <Link
                 href={route("b_raw_materials")}
@@ -78,7 +80,7 @@ export default function BranchSidebarCategories({branchid}) {
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
                 } `}
             >
-                <StoreIcon />
+                <DatabaseIcon />
             </Link>
             <Link
                  href={route("b_selecta")}
@@ -88,7 +90,7 @@ export default function BranchSidebarCategories({branchid}) {
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
                 } `}
             >
-                <StoreIcon />
+                <CubeIcon />
             </Link>
             <Link
                 href={route("b_dashboard")}

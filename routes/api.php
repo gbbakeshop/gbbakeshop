@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
+Route::get('/get_account_credits_charge/{id}','App\Http\Controllers\ChargeController@get_account_credits_charge');
+Route::get('/get_all_credits_charge/{branchid}','App\Http\Controllers\ChargeController@get_all_credits_charge');
 
 Route::get('/get_all_accounts','App\Http\Controllers\AccountsController@get_all_accounts');
 Route::delete('/delete_accounts/{id}','App\Http\Controllers\AccountsController@delete_accounts');

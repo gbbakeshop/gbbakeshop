@@ -21,6 +21,7 @@ return new class extends Migration
             $table->bigInteger('quantity')->nullable();
             $table->bigInteger('amount')->nullable();
             $table->string('discription')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

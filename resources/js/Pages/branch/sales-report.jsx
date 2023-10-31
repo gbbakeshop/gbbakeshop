@@ -5,13 +5,15 @@ import { get_records } from "@/services/records-services";
 import { usePage } from "@inertiajs/react";
 import ProductionTabsComponent from "./components/production-tabs";
 import SkeletonLoader from "@/_components/skeleton-loader";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Search from "@/_components/search";
-
+import BranchSalesReportSearch from "../branch_sales_report/components/branch-sales-report-search-date";
+import { setRecord } from "../branch_sales_report/_redux/sales-report-slice";
 
 export default function SalesReportPage(props) {
     const [data, setData] = useState([]);
-
+    const dispatch = useDispatch()
+    const { records } = useSelector((state) => state.salesReport);
     const { auth } = props;
     const [loading, setLoading] = useState(true);
     const { url } = usePage();
@@ -25,29 +27,36 @@ export default function SalesReportPage(props) {
             branchid: branchid,
             params: "done",
         }).then((res) => {
-            setData(res.status);
-            console.log("res.status", res.status);
+            dispatch(setRecord(res.status))
             setLoading(false);
         });
     }, [refresh]);
 
     useEffect(() => {
-        const value = data.filter((obj) =>
+        const value = records.filter((obj) =>
             obj.bread_name.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
     }, [search]);
     return (
-        <BranchLayout  branchid={auth.user.branchid} >
+        <BranchLayout branchid={auth.user.branchid}>
             <ProductionTabsComponent />
             <br />
-            <Search search={search} setSearch={setSearch} />
+            <div className="flex gap-4">
+                <div className="flex-none">
+                    <BranchSalesReportSearch />
+                </div>
+                <div className="flex-1">
+                    <Search search={search} setSearch={setSearch} />
+                </div>
+            </div>
+
             {loading ? (
                 <SkeletonLoader />
             ) : (
                 <BranchSalesReportTableComponent
                     account={auth.user}
-                    data={search == "" ? data : newData}
+                    data={search == "" ? records : newData}
                 />
             )}
         </BranchLayout>

@@ -92,6 +92,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return Inertia::render('branch_raw_materials/page');
         })->name('branch_raw_materials');
 
+        Route::get('{branchid}/expenses', function () {
+            return Inertia::render('branch_expenses/page');
+        })->name('branch_expenses');
+
         Route::get('{branchid}/bakers_production', function () {
             return Inertia::render('branch_bakers_production/page');
         })->name('branch_bakers_production');

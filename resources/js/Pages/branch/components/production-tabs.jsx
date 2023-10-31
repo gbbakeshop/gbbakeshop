@@ -4,6 +4,7 @@ import { GiSlicedBread } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
 import { Link } from "@inertiajs/react";
 import { usePage } from "@inertiajs/react";
+import ClockIcon from "@/icons/clock-icon";
 
 export default function ProductionTabsComponent({branchid}) {
     const { url } = usePage();
@@ -74,7 +75,7 @@ export default function ProductionTabsComponent({branchid}) {
                                     : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-800 hover:border-gray-600 dark:hover:text-gray-600 group"
                             }`}
                         >
-                            <TbReportSearch className="text-2xl" />
+                            <ClockIcon className="text-2xl" />
                             Hisory Logs
                         </Link>
                     </li>
