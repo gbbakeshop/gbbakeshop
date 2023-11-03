@@ -9,9 +9,11 @@ import Breadcrumbs from "@/_components/bread-crumbs";
 import BranchExpensesTable from "./components/branch-expenses-table";
 import { get_branch_history } from "@/services/history-services";
 import moment from "moment";
-import { setExpenses } from "./_redux/branch-expenses-slice";
+import { setExpenses,setCharge } from "./_redux/branch-expenses-slice";
 import BranchSearchExpenses from "./components/branch-search-expenses";
 import CreditsChargeTable from "./components/credits-charge-table";
+import { get_branch_expenses } from "@/services/expenses-services";
+import { get_all_credits_charge } from "@/services/credits-services";
 
 export default function BranchBakersReportPage(props) {
     const dispatch = useDispatch();
@@ -19,23 +21,37 @@ export default function BranchBakersReportPage(props) {
     const { url } = usePage();
     const branchid = url.split("/")[2];
     const { refresh } = useSelector((state) => state.app);
-    const { expenses } = useSelector((state) => state.branchExpenses);
+    const { expenses,charges } = useSelector((state) => state.branchExpenses);
     const [newData, setNewData] = useState([]);
+    const [newData2, setNewData2] = useState([]);
     const [search, setSearch] = useState("");
-    const { auth } = props;
+    const [search2, setSearch2] = useState("");
+  
 
     useEffect(() => {
-        get_branch_history(moment().format("L")).then((res) => {
-            dispatch(setExpenses(res));
+        get_all_credits_charge(branchid).then((res) => {
+            dispatch(setCharge(res));
             setLoading(false);
         });
     }, [refresh]);
 
     useEffect(() => {
-        const value = expenses?.filter((obj) =>
+        get_branch_expenses(branchid).then((res)=>{
+            dispatch(setExpenses(res));
+            // console.log('heheheh',res)
+        })
+    }, [refresh]);
+    
+    useEffect(() => {
+        const value = charges?.filter((obj) =>
             obj?.bread_name?.toLowerCase().includes(search.toLowerCase())
         );
+
+        const value2 = expenses?.filter((obj) =>
+            obj?.name?.toLowerCase().includes(search.toLowerCase())
+        );
         setNewData(value);
+        setNewData2(value2)
     }, [search, refresh]);
 
     return (
@@ -49,17 +65,19 @@ export default function BranchBakersReportPage(props) {
                 {loading ? (
                     <SkeletonLoader />
                 ) : (
-                    <div className="grid grid-cols-2 gap-4">
-                        <div class="h-auto w-auto">
-                            <CreditsChargeTable />
+                    <>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="h-auto w-auto col-span-2">
+                                <CreditsChargeTable 
+                                  data={search == "" ? charges : newData}/>
+                            </div>
+                            <div className="h-auto w-auto  col-span-2">
+                                <BranchExpensesTable
+                                    data={search2 == "" ? expenses : newData2}
+                                />
+                            </div>
                         </div>
-                        <div class="h-auto w-auto">02</div>
-                        <div class="h-auto w-auto">03</div>
-                        <div class="h-auto w-auto">04</div>
-                    </div>
-                    // <BranchExpensesTable
-                    //     data={search == "" ? expenses : newData}
-                    // />
+                    </>
                 )}
             </div>
         </AdministratorLayout>

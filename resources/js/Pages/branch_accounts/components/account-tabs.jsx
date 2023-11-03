@@ -8,9 +8,9 @@ export default function AccountTabs() {
     const userid = url.split("/")[4];
     console.log('path',path)
     return (
-        <div class="border-b border-gray-200 dark:border-gray-700">
-            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 ">
-            <li class="mr-2">
+        <div className="border-b border-gray-200 dark:border-gray-700">
+            <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 ">
+            <li className="mr-2">
                     <Link
                         href={route("account_settings", {
                             branchid: branchid, // Replace with the appropriate branch ID source
@@ -38,7 +38,7 @@ export default function AccountTabs() {
                         Settings
                     </Link>
                 </li>
-                <li class="mr-2">
+                <li className="mr-2">
                     <Link
                         href={route("account_expenses", {
                             branchid: branchid, // Replace with the appropriate branch ID source
@@ -68,7 +68,7 @@ export default function AccountTabs() {
                     </Link>
                 </li>
                
-                <li class="mr-2">
+                <li className="mr-2">
                     <Link
                         href={route("account_history", {
                             branchid: branchid, // Replace with the appropriate branch ID source

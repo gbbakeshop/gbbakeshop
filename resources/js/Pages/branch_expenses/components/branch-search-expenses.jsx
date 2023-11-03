@@ -1,6 +1,7 @@
 import { get_branch_history } from "@/services/history-services"
 import { useDispatch } from "react-redux"
 import { setExpenses } from "../_redux/branch-expenses-slice"
+
 export default function BranchSearchExpenses() {
 const dispatch = useDispatch()
     function searchDate(e) {
@@ -15,10 +16,10 @@ const dispatch = useDispatch()
         })
     }
     return (
-        <div class="relative max-w-sm">
-            <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+        <div className="relative max-w-sm">
+            <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
                 <svg
-                    class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -33,7 +34,7 @@ const dispatch = useDispatch()
                 name="date"
                 datepicker
                 type="date"
-                class="bg-gray-50 border py-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
+                className="bg-gray-50 border py-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                 placeholder="Select date"
             />
         </div>

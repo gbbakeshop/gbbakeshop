@@ -1,71 +1,83 @@
-import React, { useEffect } from "react";
-
-export default function BranchExpensesTable({ data }) {
-  useEffect(() => {
-    data.forEach((res) => {
-      const message = res?.message;
-
-      if (message && message.includes("created ")) {
-        const createdIndex = message.indexOf("created ");
-        const parsedJson = message.substring(createdIndex + 8);
-
-        try {
-          console.log(JSON.parse(parsedJson));
-        } catch (error) {
-          console.error("Error parsing JSON:", error);
-        }
-      }
-    });
-  }, [data]);
-  return (
-    <div className="flex-1 capitalize rounded-lg mt-4 p-8">
-      <h4 className="text-xl text-gray-900 font-bold">History log</h4>
-      <div className="relative px-4">
-        <div className="absolute h-full border border-dashed border-opacity-20 border-secondary"></div>
-        {data.map((res, index) => (
-          <div key={index}>
-            <div className="flex items-center w-full my-6 -ml-1.5">
-              <div className="w-1/12 z-10">
-                <div className="w-3.5 h-3.5 bg-red-600 rounded-full"></div>
-              </div>
-              <div className="w-11/12">
-                <div className="flex">
-                  <a href="#" className="text-red-600 font-bold">
-                    {res?.user?.name}
-                  </a>
-                  <p className="lowercase ml-3 mt-1 text-xs text-gray-500">3 min ago</p>
+import EyesIcon from "@/icons/eyes-icon";
+import { get_all_credits_charge } from "@/services/credits-services";
+import { usePage } from "@inertiajs/react";
+import { useState, useEffect } from "react";
+import CreateChargeCredit from "./create-charge-credit";
+import { useSelector } from "react-redux";
+import moment from "moment";
+import CreateExpenses from "./create-expenses";
+import ShowReceipt from "./show-receipts";
+export default function BranchExpensesTable({data}) {
+ 
+    return (
+        <div className="w-full">
+            <div className="py-4 md:py-7 px-4 ">
+                <div className="sm:flex items-center justify-between">
+                    <CreateExpenses />
                 </div>
-
-                <p className="text-sm">
-                  {res?.user?.name}{" "}
-                  {res?.message && (
-                    <>
-                      {res.message.includes("created ") ? (
-                        <span>
-                          {(() => {
-                            const createdIndex = res.message.indexOf("created ");
-                            if (createdIndex !== -1) {
-                              const parsedJson = res.message.substring(createdIndex + 8);
-                              try {
-                                return 'created '+ JSON.parse(parsedJson).map(result=>result.bread_name+' '+result.quantity)+'qty';
-                              } catch (error) {
-                                console.error("Error parsing JSON:", error);
-                                return null;
-                              }
-                            }
-                          })()}
-                        </span>
-                      ) : (
-                        res.message
-                      )}.
-                    </>
-                  )}
-                </p>
-              </div>
+                <div className="mt-7 overflow-x-auto">
+                    <table className="w-full whitespace-nowrap">
+                        <tbody>
+                            <tr
+                                tabIndex="0"
+                                className="focus:outline-none h-16 border border-gray-300 rounded"
+                            >
+                                <td className="">
+                                    <div className="flex">
+                                        <div className="ml-10"></div>
+                                        <div className="flex items-center pl-5">
+                                            <p className="text-base font-medium leading-none text-gray-700 mr-2">
+                                                Name of Supplier
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className="pl-5">
+                                    Description (Receipt ID #)</td>
+                                <td className="pl-5">Amount</td>
+                                <td className="pl-5">Date</td>
+                            </tr>
+                            {data.map((res, index) => (
+                                <tr
+                                    key={index}
+                                    tabIndex="0"
+                                    className="focus:outline-none h-16 border border-gray-300 rounded"
+                                >
+                                    <td className="">
+                                        <div className="flex">
+                                            <div className="ml-5">
+                                                <div className="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
+                                                    <input
+                                                        placeholder="checkbox"
+                                                        type="checkbox"
+                                                        className="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center pl-5">
+                                                <p className="text-base font-medium leading-none text-gray-700 mr-2">
+                                                    {res.name}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="pl-5">
+                                    <ShowReceipt data={res}/>
+                                       </td>
+                                    <td className="pl-5">₱ {res.amount}</td>
+                                    {/* <td className="pl-4 text-blue-500">
+                                        <EyesIcon />
+                                    </td> */}
+                                
+                                    <td className="pl-5">
+                                        {moment(res.created_at).format("LLL")}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+        </div>
+    );
 }

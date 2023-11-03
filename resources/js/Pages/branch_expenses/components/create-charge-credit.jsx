@@ -1,25 +1,26 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import XMarkIcon from "@/icons/x-mark-icon";
-import PlusIcon from "@/icons/plus-icon";
-import { get_all_ingredients } from "@/services/ingredients-services";
-import { useEffect, useRef } from "react";
-import { add_selected_ingredients } from "@/services/ingredients-services";
+import { useRef } from "react";
+import { get_branch_accounts } from "@/services/account-services";
+import { usePage } from "@inertiajs/react";
+import { useEffect } from "react";
+import { create_charge_credit } from "@/services/credits-services";
 import { useDispatch } from "react-redux";
-import {
-    isSetResponse,
-    isRandomhandler,
-    isResetForm,
-} from "@/_redux/app-slice";
-import Input from "@/_components/input";
+import { isRandomhandler, isSetResponse } from "@/_redux/app-slice";
+import moment from "moment";
 
-export default function RawMaterialsAdd({ selectedid, data, ingredients }) {
+
+export default function CreateChargeCredit() {
     const [open, setOpen] = useState(false);
     const ref = useRef();
-    const [load, setLoad] = useState(false);
-    const dispatch = useDispatch();
+    const { url } = usePage();
+    const path = url.split("/")[2];
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch()
 
-    function loading() {
+    function load() {
         return {
             status: "loading",
             message: "Loading...",
@@ -28,38 +29,45 @@ export default function RawMaterialsAdd({ selectedid, data, ingredients }) {
 
     async function submitHandler(e) {
         e.preventDefault();
-        setLoad(true);
-        dispatch(isSetResponse(loading()));
         const formData = new FormData(ref.current);
+        setLoading(true)
+        dispatch(isSetResponse(load()));
 
-        const data = {
-            raw_materials_id: selectedid,
-            token: formData.get("token"),
-            quantity: formData.get("quantity"),
+        const newData = {
+            branchid:path,
+            type: formData.get("types"),
+            userid: formData.get("name"),
+            amount: parseInt(formData.get("amount")),
+            discription: formData.get("discription"),
+            date: moment().format("L"),
         };
-
-        setTimeout(async () => {
-            const create = await add_selected_ingredients(data);
-
-            dispatch(isSetResponse(create));
-            console.log("create", create);
-            setOpen(false);
-            setTimeout(() => {
-                setLoad(false);
-                dispatch(isResetForm(false));
-                dispatch(isRandomhandler());
-                dispatch(isSetResponse([]));
-            }, 2000);
-        }, 1000);
+        create_charge_credit(newData).then((res) => {
+            if(res.status == 'success'){
+                setTimeout(() => {
+                    setLoading(false)
+                    setOpen(false)
+                    dispatch(isRandomhandler());
+                    dispatch(isSetResponse(res));
+                    ref.current.reset();  
+                }, 1000);
+            }
+        });
     }
 
+    useEffect(() => {
+        get_branch_accounts(path).then((res) => {
+            setData(res);
+        });
+    }, []);
     return (
         <>
             <button
-                className="text-green-500 mr-6"
                 onClick={() => setOpen(true)}
+                className="focus:ring-2 focus:ring-offset-2 focus:ring-red-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-red-700 hover:bg-red-600 focus:outline-none rounded"
             >
-                <PlusIcon />
+                <p className="text-sm font-medium leading-none text-white">
+                    Create Charge / Credits
+                </p>
             </button>
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -119,8 +127,7 @@ export default function RawMaterialsAdd({ selectedid, data, ingredients }) {
                                         <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                                             <div className="px-4 sm:px-6">
                                                 <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
-                                                    ADD RAW MATERIALS (
-                                                    {data.raw_materials})
+                                                    Create Charge or Credit
                                                 </Dialog.Title>
                                             </div>
                                             <div className="relative mt-6 flex-1 px-4 sm:px-6">
@@ -131,40 +138,84 @@ export default function RawMaterialsAdd({ selectedid, data, ingredients }) {
                                                     className="flex flex-col h-full w-full"
                                                 >
                                                     <div className="flex-1">
-                                                        SELECT CODE
+                                                        <div className="flex gap-4 mb-3">
+                                                        <div className="flex w-full items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                                                            <input
+                                                            checked
+                                                                id="type-1"
+                                                                type="radio"
+                                                                value="Charge"
+                                                                name="types"
+                                                                className="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                                            />
+                                                            <label
+                                                                for="type-1"
+                                                                className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                            >
+                                                                Charge
+                                                            </label>
+                                                        </div>
+                                                        <div className="flex w-full items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                                                            <input
+                                                                
+                                                                id="type-2"
+                                                                type="radio"
+                                                                value="Credit"
+                                                                name="types"
+                                                                className="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                                            />
+                                                            <label
+                                                                for="type-2"
+                                                                className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                            >
+                                                               Credit
+                                                            </label>
+                                                        </div>
+                                                        </div>
                                                         <select
-                                                            name="token"
-                                                            required
-                                                            className={` appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                                        required
+                                                            name="name"
+                                                            className={`border-red-500 appearance-none block w-full bg-gray-200 text-gray-700 border-2  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
                                                         >
-                                                            {ingredients?.map(
+                                                            <option
+                                                                value={null}
+                                                            ></option>
+                                                            {data.map(
                                                                 (
                                                                     res,
                                                                     index
                                                                 ) => (
                                                                     <option
                                                                         key={
-                                                                            index
+                                                                            res
                                                                         }
                                                                         value={
-                                                                            res.selected_ingredients_token
+                                                                            res.id
                                                                         }
                                                                     >
                                                                         {
-                                                                            res.code
+                                                                            res.name
                                                                         }
                                                                     </option>
                                                                 )
                                                             )}
                                                         </select>
-                                                        <Input
-                                                            name={`quantity`} // Use unique names for each quantity input
-                                                            title="Quantity"
-                                                            placeholder="Enter Grams"
+
+                                                        <input
+                                                            id="amount"
+                                                            name="amount"
                                                             type="number"
+                                                            placeholder="Input amount"
+                                                            required
+                                                            className={`border-red-500 appearance-none block w-full bg-gray-200 text-gray-700 border-2  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
                                                         />
+                                                        <textarea
+                                                            name="discription"
+                                                            placeholder="Write your discription"
+                                                            className={`border-red-500 appearance-none block w-full bg-gray-200 text-gray-700 border-2  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                                        ></textarea>
                                                     </div>
-                                                    {load ? (
+                                                    {loading ? (
                                                         <button
                                                             disabled
                                                             className="flex-none w-full items-center align-center justify-center bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0"
@@ -190,7 +241,7 @@ export default function RawMaterialsAdd({ selectedid, data, ingredients }) {
                                                         </button>
                                                     ) : (
                                                         <button className="flex-none w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0">
-                                                            ADD INGREDIENTS
+                                                            SUBMIT
                                                         </button>
                                                     )}
                                                 </form>

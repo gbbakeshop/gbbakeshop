@@ -19,49 +19,49 @@ export default function AccountProfile({id}) {
     }, [refresh]);
 
     return (
-        <div class="flex flex-col  top-0 z-10">
-            <div class="  rounded-2xl p-4">
-                <div class="flex-none sm:flex">
-                    <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+        <div className="flex flex-col  top-0 z-10">
+            <div className="  rounded-2xl p-4">
+                <div className="flex-none sm:flex">
+                    <div className=" relative h-32 w-32   sm:mb-0 mb-3">
                         <img
                             src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                             alt="aji"
-                            class=" w-32 h-32 object-cover rounded-2xl"
+                            className=" w-32 h-32 object-cover rounded-2xl"
                         />
                         <a
                             href="#"
-                            class="absolute -right-2 bottom-2   -ml-3   p-1 text-xs bg-green-400 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300"
+                            className="absolute -right-2 bottom-2   -ml-3   p-1 text-xs bg-green-400 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
-                                class="h-4 w-4"
+                                className="h-4 w-4"
                             >
                                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
                             </svg>
                         </a>
                     </div>
-                    <div class="flex-auto sm:ml-5 justify-evenly">
-                        <div class="flex items-center justify-between sm:mt-2">
-                            <div class="flex items-center">
-                                <div class="flex flex-col">
-                                    <div class="w-full flex-none text-lg capitalize font-bold leading-none">
+                    <div className="flex-auto sm:ml-5 justify-evenly">
+                        <div className="flex items-center justify-between sm:mt-2">
+                            <div className="flex items-center">
+                                <div className="flex flex-col">
+                                    <div className="w-full flex-none text-lg capitalize font-bold leading-none">
                                         {account.name}
                                     </div>
-                                    <div class="flex-auto  my-1">
-                                        <span class="mr-3 ">GB BAKESHOP</span>
-                                        <span class="mr-3 border-r border-gray-600  max-h-0"></span>
+                                    <div className="flex-auto  my-1">
+                                        <span className="mr-3 ">GB BAKESHOP</span>
+                                        <span className="mr-3 border-r border-gray-600  max-h-0"></span>
                                         <span>{account.position}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex pt-2 flex-col  text-sm text-gray-400">
-                            <div class="flex-1 inline-flex items-center">
+                        <div className="flex pt-2 flex-col  text-sm text-gray-400">
+                            <div className="flex-1 inline-flex items-center">
                             <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5 mr-2"
+                                    className="h-5 w-5 mr-2"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                 >
@@ -71,12 +71,12 @@ export default function AccountProfile({id}) {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <p class="">{account?.get_branch?.branch_name}</p>
+                                <p className="">{account?.get_branch?.branch_name}</p>
                             </div>
-                            <div class="flex-1 inline-flex items-center">
+                            <div className="flex-1 inline-flex items-center">
                             <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5 mr-2"
+                                    className="h-5 w-5 mr-2"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                 >
@@ -86,11 +86,11 @@ export default function AccountProfile({id}) {
                                         clip-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <p class="">{account.email}</p>
+                                <p className="">{account.email}</p>
                             </div>
-                            <div class="flex-1 inline-flex items-center">
+                            <div className="flex-1 inline-flex items-center">
                               
-                                <p class="">{account.address}</p>
+                                <p className="">{account.address}</p>
                             </div>
                         </div>
                     </div>

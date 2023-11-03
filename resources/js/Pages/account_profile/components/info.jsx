@@ -1,55 +1,55 @@
 export default function ProfileInfo() {
     return (
-            <div class="container mt-5">
-                <div class="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
+            <div className="container mt-5">
+                <div className="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
                    
-                    <div class="flex flex-col  top-0 z-10">
-                        <div class="bg-white border  shadow-lg  rounded-2xl p-4">
-                            <div class="flex-none sm:flex">
-                                <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                    <div className="flex flex-col  top-0 z-10">
+                        <div className="bg-white border  shadow-lg  rounded-2xl p-4">
+                            <div className="flex-none sm:flex">
+                                <div className=" relative h-32 w-32   sm:mb-0 mb-3">
                                     <img
                                         src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                                         alt="aji"
-                                        class=" w-32 h-32 object-cover rounded-2xl"
+                                        className=" w-32 h-32 object-cover rounded-2xl"
                                     />
                                     <a
                                         href="#"
-                                        class="absolute -right-2 bottom-2   -ml-3   p-1 text-xs bg-green-400 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300"
+                                        className="absolute -right-2 bottom-2   -ml-3   p-1 text-xs bg-green-400 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 20 20"
                                             fill="currentColor"
-                                            class="h-4 w-4"
+                                            className="h-4 w-4"
                                         >
                                             <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
                                         </svg>
                                     </a>
                                 </div>
-                                <div class="flex-auto sm:ml-5 justify-evenly">
-                                    <div class="flex items-center justify-between sm:mt-2">
-                                        <div class="flex items-center">
-                                            <div class="flex flex-col">
-                                                <div class="w-full flex-none text-lg  font-bold leading-none">
+                                <div className="flex-auto sm:ml-5 justify-evenly">
+                                    <div className="flex items-center justify-between sm:mt-2">
+                                        <div className="flex items-center">
+                                            <div className="flex flex-col">
+                                                <div className="w-full flex-none text-lg  font-bold leading-none">
                                                     Aji
                                                 </div>
-                                                <div class="flex-auto  my-1">
-                                                    <span class="mr-3 ">
+                                                <div className="flex-auto  my-1">
+                                                    <span className="mr-3 ">
                                                         UI/UX Designer
                                                     </span>
-                                                    <span class="mr-3 border-r border-gray-600  max-h-0"></span>
+                                                    <span className="mr-3 border-r border-gray-600  max-h-0"></span>
                                                     <span>Cochin, IND</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="flex flex-row items-center">
-                                        <div class="flex">
+                                    <div className="flex flex-row items-center">
+                                        <div className="flex">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
-                                                class="h-5 w-5 text-yellow-400"
+                                                className="h-5 w-5 text-yellow-400"
                                             >
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                                             </svg>
@@ -57,7 +57,7 @@ export default function ProfileInfo() {
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
-                                                class="h-5 w-5 text-yellow-400"
+                                                className="h-5 w-5 text-yellow-400"
                                             >
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                                             </svg>
@@ -65,7 +65,7 @@ export default function ProfileInfo() {
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
-                                                class="h-5 w-5 text-yellow-400"
+                                                className="h-5 w-5 text-yellow-400"
                                             >
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                                             </svg>
@@ -73,7 +73,7 @@ export default function ProfileInfo() {
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
-                                                class="h-5 w-5 text-yellow-400"
+                                                className="h-5 w-5 text-yellow-400"
                                             >
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                                             </svg>
@@ -82,7 +82,7 @@ export default function ProfileInfo() {
                                                 fill="none"
                                                 viewBox="0 0 24 24"
                                                 stroke="currentColor"
-                                                class="h-5 w-5 text-yellow-400"
+                                                className="h-5 w-5 text-yellow-400"
                                             >
                                                 <path
                                                     stroke-linecap="round"
@@ -92,13 +92,13 @@ export default function ProfileInfo() {
                                                 ></path>
                                             </svg>
                                         </div>
-                                        <div class="flex-1 inline-flex   items-center ml-2 space-x-2">
+                                        <div className="flex-1 inline-flex   items-center ml-2 space-x-2">
                                             <a
                                                 hre="https://www.behance.net/ajeeshmon"
                                                 target="_blank"
                                             >
                                                 <svg
-                                                    class=" cursor-pointer w-5 h-5 p-1  rounded-2xl hover:bg-blue-500 hover: transition ease-in duration-300"
+                                                    className=" cursor-pointer w-5 h-5 p-1  rounded-2xl hover:bg-blue-500 hover: transition ease-in duration-300"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     x="0px"
                                                     y="0px"
@@ -139,7 +139,7 @@ export default function ProfileInfo() {
                                                 target="_blank"
                                             >
                                                 <svg
-                                                    class="cursor-pointer w-5 h-5 p-1  rounded-2xl hover:bg-blue-500 hover: transition ease-in duration-300"
+                                                    className="cursor-pointer w-5 h-5 p-1  rounded-2xl hover:bg-blue-500 hover: transition ease-in duration-300"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     x="0px"
                                                     y="0px"
@@ -179,7 +179,7 @@ export default function ProfileInfo() {
                                                 target="_blank"
                                             >
                                                 <svg
-                                                    class="cursor-pointer w-5 h-5 p-1  rounded-2xl hover:bg-blue-400 hover: transition ease-in duration-300"
+                                                    className="cursor-pointer w-5 h-5 p-1  rounded-2xl hover:bg-blue-400 hover: transition ease-in duration-300"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     x="0px"
                                                     y="0px"
@@ -216,22 +216,22 @@ export default function ProfileInfo() {
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="flex pt-2  text-sm ">
-                                        <div class="flex-1 inline-flex items-center">
+                                    <div className="flex pt-2  text-sm ">
+                                        <div className="flex-1 inline-flex items-center">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                class="h-5 w-5 mr-2"
+                                                className="h-5 w-5 mr-2"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
                                             >
                                                 <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path>
                                             </svg>
-                                            <p class="">1.2k Followers</p>
+                                            <p className="">1.2k Followers</p>
                                         </div>
-                                        <div class="flex-1 inline-flex items-center">
+                                        <div className="flex-1 inline-flex items-center">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                class="h-5 w-5 mr-2"
+                                                className="h-5 w-5 mr-2"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
                                             >
@@ -241,12 +241,12 @@ export default function ProfileInfo() {
                                                     clip-rule="evenodd"
                                                 ></path>
                                             </svg>
-                                            <p class="">14 Components</p>
+                                            <p className="">14 Components</p>
                                         </div>
                                         <a
                                             href="https://www.behance.net/ajeeshmon"
                                             target="_blank"
-                                            class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500  rounded-full transition ease-in duration-300"
+                                            className="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500  rounded-full transition ease-in duration-300"
                                         >
                                             FOLLOW
                                         </a>
@@ -255,59 +255,59 @@ export default function ProfileInfo() {
                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-12 gap-4 ">
-                        <div class="col-span-12 sm:col-span-4">
-                            <div class="p-4 relative  bg-white border  shadow-lg  rounded-2xl">
+                    <div className="grid grid-cols-12 gap-4 ">
+                        <div className="col-span-12 sm:col-span-4">
+                            <div className="p-4 relative  bg-white border  shadow-lg  rounded-2xl">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-14 w-14  absolute bottom-4 right-3 text-green-400"
+                                    className="h-14 w-14  absolute bottom-4 right-3 text-green-400"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                 >
                                     <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
                                     <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
                                 </svg>
-                                <div class="flex justify-between items-center ">
+                                <div className="flex justify-between items-center ">
                                     <img
-                                        class="w-7 filter grayscale"
+                                        className="w-7 filter grayscale"
                                         src="https://v1.tailwindcss.com/_next/static/media/tailwindcss-mark.6ea76c3b72656960a6ae5ad8b85928d0.svg"
                                         alt="taiwind css"
                                     />
                                 </div>
-                                <div class="text-2xl  font-medium leading-8 mt-5">
+                                <div className="text-2xl  font-medium leading-8 mt-5">
                                     20
                                 </div>
-                                <div class="text-sm ">
+                                <div className="text-sm ">
                                     Components
                                 </div>
                             </div>
                         </div>
-                        <div class="col-span-12 sm:col-span-4">
-                            <div class="p-4 relative  bg-white border  shadow-lg  rounded-2xl">
+                        <div className="col-span-12 sm:col-span-4">
+                            <div className="p-4 relative  bg-white border  shadow-lg  rounded-2xl">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-14 w-14  absolute bottom-4 right-3 text-blue-500"
+                                    className="h-14 w-14  absolute bottom-4 right-3 text-blue-500"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                 >
                                     <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
                                 </svg>
-                                <div class="flex justify-between items-center ">
-                                    <i class="fab fa-behance text-xl "></i>
+                                <div className="flex justify-between items-center ">
+                                    <i className="fab fa-behance text-xl "></i>
                                 </div>
-                                <div class="text-2xl  font-medium leading-8 mt-5">
+                                <div className="text-2xl  font-medium leading-8 mt-5">
                                     99
                                 </div>
-                                <div class="text-sm ">
+                                <div className="text-sm ">
                                     Projects
                                 </div>
                             </div>
                         </div>
-                        <div class="col-span-12 sm:col-span-4">
-                            <div class="p-4 relative  bg-white border  shadow-lg  rounded-2xl">
+                        <div className="col-span-12 sm:col-span-4">
+                            <div className="p-4 relative  bg-white border  shadow-lg  rounded-2xl">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-14 w-14  absolute bottom-4 right-3 text-yellow-300"
+                                    className="h-14 w-14  absolute bottom-4 right-3 text-yellow-300"
                                     viewBox="0 0 20 20"
                                     fill="currentColor"
                                 >
@@ -317,25 +317,25 @@ export default function ProfileInfo() {
                                         clip-rule="evenodd"
                                     />
                                 </svg>
-                                <div class="flex justify-between items-center ">
-                                    <i class="fab fa-codepen text-xl "></i>
+                                <div className="flex justify-between items-center ">
+                                    <i className="fab fa-codepen text-xl "></i>
                                 </div>
-                                <div class="text-2xl  font-medium leading-8 mt-5">
+                                <div className="text-2xl  font-medium leading-8 mt-5">
                                     50
                                 </div>
-                                <div class="text-sm ">
+                                <div className="text-sm ">
                                     Pen Items
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
-                        <div class="flex flex-col p-4 relative items-center justify-center bg-white border  shadow-lg  rounded-2xl">
-                            <div class="">
-                                <div class="text-center p-5 flex-auto justify-center">
+                    <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+                        <div className="flex flex-col p-4 relative items-center justify-center bg-white border  shadow-lg  rounded-2xl">
+                            <div className="">
+                                <div className="text-center p-5 flex-auto justify-center">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        class="w-4 h-4 -m-1 flex items-center text-blue-400 mx-auto"
+                                        className="w-4 h-4 -m-1 flex items-center text-blue-400 mx-auto"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
@@ -349,7 +349,7 @@ export default function ProfileInfo() {
                                     </svg>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        class="w-16 h-16 flex items-center text-gray-600 mx-auto"
+                                        className="w-16 h-16 flex items-center text-gray-600 mx-auto"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
@@ -359,54 +359,54 @@ export default function ProfileInfo() {
                                             clip-rule="evenodd"
                                         />
                                     </svg>
-                                    <h2 class="text-xl font-bold py-4 ">
+                                    <h2 className="text-xl font-bold py-4 ">
                                         Are you sure?
                                     </h2>
-                                    <p class="text-sm  px-8">
+                                    <p className="text-sm  px-8">
                                         Do you really want to delete your
                                         account? This process cannot be undone
                                     </p>
                                 </div>
-                                <div class="p-3  mt-2 text-center space-x-4 md:block">
-                                    <button class="mb-2 md:mb-0 bg-gray-700 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border-2 border-gray-600 hover:border-gray-700 text-gray-300 rounded-full hover:shadow-lg hover:bg-white transition ease-in duration-300">
+                                <div className="p-3  mt-2 text-center space-x-4 md:block">
+                                    <button className="mb-2 md:mb-0 bg-gray-700 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border-2 border-gray-600 hover:border-gray-700 text-gray-300 rounded-full hover:shadow-lg hover:bg-white transition ease-in duration-300">
                                         Cancel
                                     </button>
-                                    <button class="bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500  rounded-full transition ease-in duration-300">
+                                    <button className="bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500  rounded-full transition ease-in duration-300">
                                         Confirm
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col space-y-4">
-                            <div class="flex flex-col p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center mr-auto">
-                                        <div class="inline-flex w-12 h-12">
+                        <div className="flex flex-col space-y-4">
+                            <div className="flex flex-col p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center mr-auto">
+                                        <div className="inline-flex w-12 h-12">
                                             <img
                                                 src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                                                 alt="aji"
-                                                class=" relative w-12 h-12 object-cover rounded-2xl"
+                                                className=" relative w-12 h-12 object-cover rounded-2xl"
                                             />
-                                            <span class="animate-ping absolute w-12 h-12 inline-flex border-2 rounded-2xl border-green-400 opacity-75"></span>
+                                            <span className="animate-ping absolute w-12 h-12 inline-flex border-2 rounded-2xl border-green-400 opacity-75"></span>
                                             <span></span>
                                         </div>
 
-                                        <div class="flex flex-col ml-3">
-                                            <div class="font-medium leading-none ">
+                                        <div className="flex flex-col ml-3">
+                                            <div className="font-medium leading-none ">
                                                 Aji
                                             </div>
-                                            <p class="text-sm  leading-none mt-1">
+                                            <p className="text-sm  leading-none mt-1">
                                                 UI/UX Designer
                                             </p>
                                         </div>
                                     </div>
                                     <a
                                         href="#"
-                                        class="flex-no-shrink text-xs  font-medium tracking-wider   hover:text-green-400 transition ease-in duration-300 mr-2"
+                                        className="flex-no-shrink text-xs  font-medium tracking-wider   hover:text-green-400 transition ease-in duration-300 mr-2"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="h-5 w-5"
+                                            className="h-5 w-5"
                                             viewBox="0 0 20 20"
                                             fill="currentColor"
                                         >
@@ -419,11 +419,11 @@ export default function ProfileInfo() {
                                     </a>
                                     <a
                                         hrf="#"
-                                        class="flex-no-shrink text-xs  font-medium tracking-wider   hover:text-green-400 transition ease-in duration-300 ml-2"
+                                        className="flex-no-shrink text-xs  font-medium tracking-wider   hover:text-green-400 transition ease-in duration-300 ml-2"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="h-5 w-5"
+                                            className="h-5 w-5"
                                             viewBox="0 0 20 20"
                                             fill="currentColor"
                                         >
@@ -436,37 +436,37 @@ export default function ProfileInfo() {
                                     </a>
                                 </div>
                             </div>
-                            <div class="flex flex-col p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center mr-auto">
-                                        <div class="inline-flex w-12 h-12">
+                            <div className="flex flex-col p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center mr-auto">
+                                        <div className="inline-flex w-12 h-12">
                                             <img
                                                 src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                                                 alt="aji"
-                                                class=" relative p-1 w-12 h-12 object-cover rounded-2xl"
+                                                className=" relative p-1 w-12 h-12 object-cover rounded-2xl"
                                             />
-                                            <span class="absolute w-12 h-12 inline-flex border-2 rounded-2xl border-green-400 opacity-75"></span>
+                                            <span className="absolute w-12 h-12 inline-flex border-2 rounded-2xl border-green-400 opacity-75"></span>
                                             <span></span>
                                         </div>
 
-                                        <div class="flex flex-col ml-3 min-w-0">
-                                            <div class="font-medium leading-none ">
+                                        <div className="flex flex-col ml-3 min-w-0">
+                                            <div className="font-medium leading-none ">
                                                 Groupname
                                             </div>
-                                            <p class="text-sm  leading-none mt-1 truncate">
+                                            <p className="text-sm  leading-none mt-1 truncate">
                                                 Beautiful hand-crafted SVG icons
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col ml-3 min-w-0">
-                                        <span class="text-xs  text-right mb-1">
+                                    <div className="flex flex-col ml-3 min-w-0">
+                                        <span className="text-xs  text-right mb-1">
                                             9:02pm
                                         </span>
-                                        <div class="flex">
-                                            <a class="flex-no-shrink text-xs  font-medium tracking-wider   hover:text-green-400 transition ease-in duration-300 mr-2">
+                                        <div className="flex">
+                                            <a className="flex-no-shrink text-xs  font-medium tracking-wider   hover:text-green-400 transition ease-in duration-300 mr-2">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-5 w-5"
+                                                    className="h-5 w-5"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
                                                 >
@@ -477,41 +477,41 @@ export default function ProfileInfo() {
                                                     />
                                                 </svg>
                                             </a>
-                                            <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-green-100 bg-green-400 rounded-full ml-2">
+                                            <span className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-green-100 bg-green-400 rounded-full ml-2">
                                                 99
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex flex-col p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center mr-auto">
-                                        <div class="inline-flex w-12 h-12">
+                            <div className="flex flex-col p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center mr-auto">
+                                        <div className="inline-flex w-12 h-12">
                                             <img
                                                 src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                                                 alt="aji"
-                                                class=" relative p-1 w-12 h-12 object-cover rounded-2xl"
+                                                className=" relative p-1 w-12 h-12 object-cover rounded-2xl"
                                             />
-                                            <span class="absolute w-12 h-12 inline-flex border-2 rounded-2xl border-gray-600 opacity-75"></span>
+                                            <span className="absolute w-12 h-12 inline-flex border-2 rounded-2xl border-gray-600 opacity-75"></span>
                                             <span></span>
                                         </div>
 
-                                        <div class="flex flex-col ml-3 min-w-0">
-                                            <div class="font-medium leading-none ">
+                                        <div className="flex flex-col ml-3 min-w-0">
+                                            <div className="font-medium leading-none ">
                                                 Ajimon
                                             </div>
-                                            <p class="text-sm  leading-none mt-1 truncate">
+                                            <p className="text-sm  leading-none mt-1 truncate">
                                                 Jul 066, 2021, 8.25 PM
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col ml-3 min-w-0">
-                                        <div class="flex">
-                                            <h5 class="flex items-center font-medium text-gray-300 mr-2">
+                                    <div className="flex flex-col ml-3 min-w-0">
+                                        <div className="flex">
+                                            <h5 className="flex items-center font-medium text-gray-300 mr-2">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4 w-4"
+                                                    className="h-4 w-4"
                                                     fill="none"
                                                     viewBox="0 0 24 24"
                                                     stroke="currentColor"
@@ -527,7 +527,7 @@ export default function ProfileInfo() {
                                             </h5>
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                class="h-6 w-6 text-green-400 ml-2"
+                                                className="h-6 w-6 text-green-400 ml-2"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
                                             >
@@ -541,35 +541,35 @@ export default function ProfileInfo() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex flex-col p-4 bg-white border  shadow-md hover:text-green-500  hover:shodow-lg rounded-2xl transition ease-in duration-500  transform hover:scale-105 cursor-pointer">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center mr-auto">
-                                        <div class="-space-x-5 flex ">
+                            <div className="flex flex-col p-4 bg-white border  shadow-md hover:text-green-500  hover:shodow-lg rounded-2xl transition ease-in duration-500  transform hover:scale-105 cursor-pointer">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center mr-auto">
+                                        <div className="-space-x-5 flex ">
                                             <img
                                                 src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                                                 alt="aji"
-                                                class=" relative p-1 w-12 h-12 object-cover rounded-2xl border-2 border-gray-600 bg-white"
+                                                className=" relative p-1 w-12 h-12 object-cover rounded-2xl border-2 border-gray-600 bg-white"
                                             />
                                             <img
                                                 src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
                                                 alt="aji"
-                                                class=" relative p-1 w-12 h-12 object-cover rounded-2xl border-2 border-gray-600 bg-white shadow"
+                                                className=" relative p-1 w-12 h-12 object-cover rounded-2xl border-2 border-gray-600 bg-white shadow"
                                             />
                                         </div>
 
-                                        <div class="flex flex-col ml-3 min-w-0">
-                                            <div class="font-medium leading-none ">
+                                        <div className="flex flex-col ml-3 min-w-0">
+                                            <div className="font-medium leading-none ">
                                                 Pending Request{" "}
                                             </div>
-                                            <p class="text-sm  leading-none mt-1 truncate">
+                                            <p className="text-sm  leading-none mt-1 truncate">
                                                 Jul 066, 2021, 8.25 PM
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col ml-3 min-w-0">
+                                    <div className="flex flex-col ml-3 min-w-0">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="h-6 w-6 ml-2"
+                                            className="h-6 w-6 ml-2"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             stroke="currentColor"
@@ -585,22 +585,22 @@ export default function ProfileInfo() {
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center">
-                                    <div class="flex flex-col">
-                                        <div class="font-medium leading-none ">
+                        <div className="flex flex-col justify-center p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center">
+                                    <div className="flex flex-col">
+                                        <div className="font-medium leading-none ">
                                             Delete Your Acccount?
                                         </div>
-                                        <p class="text-sm  leading-none mt-1">
+                                        <p className="text-sm  leading-none mt-1">
                                             By deleting your account.
                                         </p>
                                     </div>
                                 </div>
-                                <a class="flex-no-shrink text-xs  font-medium tracking-wider   hover:text-green-400 transition ease-in duration-300">
+                                <a className="flex-no-shrink text-xs  font-medium tracking-wider   hover:text-green-400 transition ease-in duration-300">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        class="h-5 w-5"
+                                        className="h-5 w-5"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
@@ -613,23 +613,23 @@ export default function ProfileInfo() {
                                 </a>
                             </div>
                         </div>
-                        <div class="flex flex-col p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl">
-                            <div class="flex">
+                        <div className="flex flex-col p-4 bg-white  shadow-md hover:shodow-lg rounded-2xl">
+                            <div className="flex">
                                 <img
                                     src="https://images.unsplash.com/photo-1575390730294-dfc5efa5250b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
                                     alt="Just a flower"
-                                    class=" w-16  object-fit  h-16 rounded-2xl"
+                                    className=" w-16  object-fit  h-16 rounded-2xl"
                                 />
-                                <div class="flex flex-col justify-center w-full px-2 py-1">
-                                    <div class="flex justify-between items-center ">
-                                        <div class="flex flex-col">
-                                            <h2 class="font-medium leading-none ">
+                                <div className="flex flex-col justify-center w-full px-2 py-1">
+                                    <div className="flex justify-between items-center ">
+                                        <div className="flex flex-col">
+                                            <h2 className="font-medium leading-none ">
                                                 Massive Dynamic
                                             </h2>
                                         </div>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="h-5 w-5  hover:text-green-400 cursor-pointer"
+                                            className="h-5 w-5  hover:text-green-400 cursor-pointer"
                                             fill="none"
                                             viewBox="0 0 24 24"
                                             stroke="currentColor"
@@ -642,21 +642,21 @@ export default function ProfileInfo() {
                                             ></path>
                                         </svg>
                                     </div>
-                                    <div class="flex pt-2  text-sm ">
-                                        <div class="flex items-center mr-auto">
+                                    <div className="flex pt-2  text-sm ">
+                                        <div className="flex items-center mr-auto">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                class="h-5 w-5 text-yellow-400 mr-1"
+                                                className="h-5 w-5 text-yellow-400 mr-1"
                                                 viewBox="0 0 20 20"
                                                 fill="currentColor"
                                             >
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                                             </svg>
-                                            <p class="font-normal">4.5</p>
+                                            <p className="font-normal">4.5</p>
                                         </div>
-                                        <div class="flex items-center font-medium text-gray-300 ">
+                                        <div className="flex items-center font-medium text-gray-300 ">
                                             $1800
-                                            <span class="text-gray-600 text-sm font-normal">
+                                            <span className="text-gray-600 text-sm font-normal">
                                                 {" "}
                                                 /wk
                                             </span>

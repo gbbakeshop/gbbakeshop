@@ -9,3 +9,8 @@ export async function get_all_credits_charge(branchid) {
     const response = await axios.get('/api/get_all_credits_charge/'+branchid)
     return response.data.status;
 }
+
+export async function create_charge_credit(data) {
+    const response = await axios.post('/api/create_charge_credit',data)
+    return response.data;
+}

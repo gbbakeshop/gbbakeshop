@@ -2,82 +2,89 @@ import EyesIcon from "@/icons/eyes-icon";
 import { get_all_credits_charge } from "@/services/credits-services";
 import { usePage } from "@inertiajs/react";
 import { useState, useEffect } from "react";
-export default function CreditsChargeTable() {
+import CreateChargeCredit from "./create-charge-credit";
+import { useSelector } from "react-redux";
+import moment from "moment";
+export default function CreditsChargeTable({data}) {
     const { url } = usePage();
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
     const branchid = url.split("/")[2];
-
-    useEffect(() => {
-        get_all_credits_charge(branchid).then((res) => {
-            setData(res);
-        });
-    }, []);
+    const { refresh } = useSelector((state) => state.app);
+    // useEffect(() => {
+       
+    // }, [refresh]);
     return (
-        <div class="w-full">
-            <div class="py-4 md:py-7 px-4 ">
-                <div class="sm:flex items-center justify-between">
-                    <button
-                        onclick="popuphandler(true)"
-                        class="focus:ring-2 focus:ring-offset-2 focus:ring-red-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-red-700 hover:bg-red-600 focus:outline-none rounded"
-                    >
-                        <p class="text-sm font-medium leading-none text-white">
-                            Add Charge/Expenses
-                        </p>
-                    </button>
+        <div className="w-full">
+            <div className="py-4 md:py-7 px-4 ">
+                <div className="sm:flex items-center justify-between">
+                    <CreateChargeCredit />
                 </div>
-                <div class="mt-7 overflow-x-auto">
-                    <table class="w-full whitespace-nowrap">
+                <div className="mt-7 overflow-x-auto">
+                    <table className="w-full whitespace-nowrap">
                         <tbody>
-                        <tr
-                                    tabindex="0"
-                                    class="focus:outline-none h-16 border border-gray-300 rounded"
-                                >
-                                    <td class="">
-                                        <div className="flex">
-                                            <div class="ml-10">
-                                              
-                                            </div>
-                                            <div class="flex items-center pl-5">
-                                                <p class="text-base font-medium leading-none text-gray-700 mr-2">
-                                                    Name
-                                                </p>
-                                            </div>
+                            <tr
+                                tabIndex="0"
+                                className="focus:outline-none h-16 border border-gray-300 rounded"
+                            >
+                                <td className="">
+                                    <div className="flex">
+                                        <div className="ml-10"></div>
+                                        <div className="flex items-center pl-5">
+                                            <p className="text-base font-medium leading-none text-gray-700 mr-2">
+                                                Name
+                                            </p>
                                         </div>
-                                    </td>
-                                    <td class="pl-5">Qty</td>
-                                    <td class="pl-5">Amount</td>
-                                    <td class="pl-4 text-blue-500">
-                                        Show
-                                    </td>
-                                </tr>
+                                    </div>
+                                </td>
+                                <td className="pl-5">Description</td>
+                                <td className="pl-5">Amount</td>
+                                <td className="pl-5">Status</td>
+                                <td className="pl-5">Type</td>
+                                <td className="pl-5">Date</td>
+                            </tr>
                             {data.map((res, index) => (
                                 <tr
                                     key={index}
-                                    tabindex="0"
-                                    class="focus:outline-none h-16 border border-gray-300 rounded"
+                                    tabIndex="0"
+                                    className="focus:outline-none h-16 border border-gray-300 rounded"
                                 >
-                                    <td class="">
+                                    <td className="">
                                         <div className="flex">
-                                            <div class="ml-5">
-                                                <div class="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
+                                            <div className="ml-5">
+                                                <div className="bg-gray-200 rounded-sm w-5 h-5 flex flex-shrink-0 justify-center items-center relative">
                                                     <input
                                                         placeholder="checkbox"
                                                         type="checkbox"
-                                                        class="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full"
+                                                        className="focus:opacity-100 checkbox opacity-0 absolute cursor-pointer w-full h-full"
                                                     />
                                                 </div>
                                             </div>
-                                            <div class="flex items-center pl-5">
-                                                <p class="text-base font-medium leading-none text-gray-700 mr-2">
+                                            <div className="flex items-center pl-5">
+                                                <p className="text-base font-medium leading-none text-gray-700 mr-2">
                                                     {res.user.name}
                                                 </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="pl-5">{res.quantity}</td>
-                                    <td class="pl-5">₱ {res.quantity * 5}</td>
-                                    <td class="pl-4 text-blue-500">
+                                    <td className="pl-5">{res.discription}</td>
+                                    <td className="pl-5">₱ {res.amount}</td>
+                                    {/* <td className="pl-4 text-blue-500">
                                         <EyesIcon />
+                                    </td> */}
+                                    <td className="pl-5">
+                                        {res.status ? (
+                                            <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                                                {res.status}
+                                            </span>
+                                        ) : (
+                                            <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                                                Unpaid
+                                            </span>
+                                        )}
+                                    </td>
+                                    <td className="pl-5">{res.type}</td>
+                                    <td className="pl-5">
+                                        {moment(res.created_at).format("LLL")}
                                     </td>
                                 </tr>
                             ))}

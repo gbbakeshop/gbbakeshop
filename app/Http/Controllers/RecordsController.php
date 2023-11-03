@@ -368,6 +368,7 @@ class RecordsController extends Controller
                 'userid' => $request->account['id'],
                 'quantity' => $request->charge,
                 'discription' => 'has charge ' . $request->charge,
+                'type'=>'Charge'
             ]);
         }
        

@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('charges', function (Blueprint $table) {
+        Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('branchid')->nullable();
-            $table->bigInteger('userid')->nullable();
-            $table->bigInteger('breadid')->nullable();
+            $table->string('name')->nullable();
             $table->bigInteger('quantity')->nullable();
-            $table->bigInteger('amount')->nullable();
+            $table->string('quantity_type')->nullable();
+            $table->float('amount')->nullable();
             $table->string('discription')->nullable();
-            $table->string('type')->nullable();
             $table->string('date')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('charges');
+        Schema::dropIfExists('expenses');
     }
 };

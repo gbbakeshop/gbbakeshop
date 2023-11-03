@@ -16,6 +16,8 @@ class Charge extends Model
        'quantity',
        'amount',
        'discription',
+       'type',
+       'date',
        'status'
     ];
     protected $primaryKey = 'userid';

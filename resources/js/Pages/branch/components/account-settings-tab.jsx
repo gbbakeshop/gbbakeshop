@@ -8,9 +8,9 @@ export default function BranchAccountTabs({branch,id}) {
     const userid = id;
     
     return (
-        <div class="border-b border-gray-200 dark:border-gray-700">
-            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 ">
-            <li class="mr-2">
+        <div className="border-b border-gray-200 dark:border-gray-700">
+            <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 ">
+            <li className="mr-2">
                     <Link
                         href={route("b_settings", {
                             branchid: branchid, // Replace with the appropriate branch ID source
@@ -38,7 +38,7 @@ export default function BranchAccountTabs({branch,id}) {
                         Settings
                     </Link>
                 </li>
-                <li class="mr-2">
+                <li className="mr-2">
                     <Link
                         href={route("b_expenses", {
                             branchid: branchid, // Replace with the appropriate branch ID source
@@ -68,7 +68,7 @@ export default function BranchAccountTabs({branch,id}) {
                     </Link>
                 </li>
                
-                <li class="mr-2">
+                <li className="mr-2">
                     <Link
                         href={route("account_history", {
                             branchid: branchid, // Replace with the appropriate branch ID source

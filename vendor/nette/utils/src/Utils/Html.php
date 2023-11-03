@@ -115,7 +115,7 @@ use function is_array, is_float, is_object, is_string;
  * @property int|null    $start
  * @property float|null  $step
  * @property string|null $style
- * @property int|null    $tabindex
+ * @property int|null    $tabIndex
  * @property string|null $target
  * @property string|null $title
  * @property string|null $translate
@@ -221,7 +221,7 @@ use function is_array, is_float, is_object, is_string;
  * @method self start(?int $val)
  * @method self step(?float $val)
  * @method self style(?string $property, string $val = null)
- * @method self tabindex(?int $val)
+ * @method self tabIndex(?int $val)
  * @method self target(?string $val)
  * @method self title(?string $val)
  * @method self translate(?string $val)

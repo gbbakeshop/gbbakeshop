@@ -8,6 +8,21 @@ use Illuminate\Http\Request;
 class ChargeController extends Controller
 {
 
+    public function create_charge_credit(Request $request)
+    {
+        Charge::create([
+            'branchid' => $request->branchid,
+            'type' => $request->type,
+            'userid' => $request->userid,
+            'amount' => $request->amount,
+            'discription' => $request->discription,
+            'date' => $request->date,
+        ]);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Created Successfully'
+        ]);
+    }
     public function get_all_credits_charge($branchid)
     {
         $charge = Charge::where('branchid', $branchid)->with('user')->get();
