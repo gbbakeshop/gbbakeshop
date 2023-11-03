@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BranchRawMaterials;
+use App\Models\Expenses;
 use App\Models\History;
 use App\Models\Records;
 use App\Models\Remarks;
@@ -12,7 +13,36 @@ use Illuminate\Http\Request;
 class RecordsController extends Controller
 {
 
-    
+   
+    public function get_record_of_the_day(Request $request){
+        // $industry = Industry::get();
+        // $industry->each(function ($industry) {
+        //     $countData = JobList::where('industry_id', $industry->id)->count();
+        //     $industry->count = $countData??0;
+        // });
+        $record = Records::where([
+            ['date','=',$request->date],
+            ['branchid','=',$request->branchid],
+            ['status','=','done']
+            ])->sum('sales');
+
+        $charge= Charge::where([
+            ['date','=',$request->date],
+            ['branchid','=',$request->branchid],
+            ['amount','<>',null],
+        ])->sum('amount');
+
+        $expenses = Expenses::where([
+            ['date','=',$request->date],
+        ])->sum('amount');
+        //     $industry->count = $countData??0;
+        return response()->json([
+            'sales' => $record,
+            'charges' =>$charge,
+            'expenses'=>$expenses,
+            'message' => 'Transferred Successfully'
+        ]);
+    }
     public function search_record(Request $request){
         $record = Records::where('date', '=', $request->date)->get();
         return response()->json([

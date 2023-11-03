@@ -1,3 +1,13 @@
+
+
+export async function get_record_of_the_day(branchid,data) {
+    const response = await axios.post('/api/get_record_of_the_day',{
+        branchid:branchid,
+        date:data
+    })
+    return response.data;
+}
+
 export async function create_new_records(data) {
     const response = await axios.post('/api/create_new_records',data)
     return response.data;

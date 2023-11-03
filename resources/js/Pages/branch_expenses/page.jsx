@@ -14,6 +14,7 @@ import BranchSearchExpenses from "./components/branch-search-expenses";
 import CreditsChargeTable from "./components/credits-charge-table";
 import { get_branch_expenses } from "@/services/expenses-services";
 import { get_all_credits_charge } from "@/services/credits-services";
+import SalesChart from "./components/sales-chart";
 
 export default function BranchBakersReportPage(props) {
     const dispatch = useDispatch();
@@ -21,27 +22,23 @@ export default function BranchBakersReportPage(props) {
     const { url } = usePage();
     const branchid = url.split("/")[2];
     const { refresh } = useSelector((state) => state.app);
-    const { expenses,charges } = useSelector((state) => state.branchExpenses);
+    const { expenses,charges,date } = useSelector((state) => state.branchExpenses);
     const [newData, setNewData] = useState([]);
     const [newData2, setNewData2] = useState([]);
     const [search, setSearch] = useState("");
     const [search2, setSearch2] = useState("");
-  
 
     useEffect(() => {
-        get_all_credits_charge(branchid).then((res) => {
+        get_all_credits_charge(branchid, date).then((res) => {
             dispatch(setCharge(res));
             setLoading(false);
         });
-    }, [refresh]);
-
-    useEffect(() => {
-        get_branch_expenses(branchid).then((res)=>{
+        get_branch_expenses(branchid, date).then((res)=>{
             dispatch(setExpenses(res));
-            // console.log('heheheh',res)
         })
-    }, [refresh]);
-    
+    }, [refresh,date]);
+
+
     useEffect(() => {
         const value = charges?.filter((obj) =>
             obj?.bread_name?.toLowerCase().includes(search.toLowerCase())
@@ -60,13 +57,16 @@ export default function BranchBakersReportPage(props) {
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Breadcrumbs />
                 <br />
-                <BranchSearchExpenses />
+                
+                
                 {/* <Search search={search} setSearch={setSearch} /> */}
                 {loading ? (
                     <SkeletonLoader />
                 ) : (
                     <>
-                        <div className="grid grid-cols-2 gap-4">
+                       <SalesChart />
+                       <BranchSearchExpenses />
+                        <div className="grid grid-cols-2 gap-4 mt-5">
                             <div className="h-auto w-auto col-span-2">
                                 <CreditsChargeTable 
                                   data={search == "" ? charges : newData}/>

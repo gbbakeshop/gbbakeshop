@@ -183,7 +183,7 @@ export default function MoveToBreadReportForm({ account,data, branchid }) {
                                                         </button>
                                                     ) : (
                                                         <button className="flex-none w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0">
-                                                            MOVE
+                                                            SUBMIT
                                                         </button>
                                                     )}
                                                 </form>

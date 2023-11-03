@@ -20,10 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/create_expenses','App\Http\Controllers\ExpensesController@create_expenses');
-Route::get('/get_branch_expenses/{branchid}','App\Http\Controllers\ExpensesController@get_branch_expenses');
+Route::post('/get_branch_expenses','App\Http\Controllers\ExpensesController@get_branch_expenses');
 
 Route::get('/get_account_credits_charge/{id}','App\Http\Controllers\ChargeController@get_account_credits_charge');
-Route::get('/get_all_credits_charge/{branchid}','App\Http\Controllers\ChargeController@get_all_credits_charge');
+Route::post('/get_all_credits_charge','App\Http\Controllers\ChargeController@get_all_credits_charge');
 Route::post('/create_charge_credit','App\Http\Controllers\ChargeController@create_charge_credit');
 
 Route::get('/get_all_accounts','App\Http\Controllers\AccountsController@get_all_accounts');
@@ -69,6 +69,7 @@ Route::post('/add_selected_ingredients','App\Http\Controllers\SelectedIngredient
 Route::post('/add_recipe_ingredients','App\Http\Controllers\SelectedIngredientsController@add_recipe_ingredients');
 Route::put('/change_recipe_ingredients','App\Http\Controllers\SelectedIngredientsController@change_recipe_ingredients');
 
+Route::post('/get_record_of_the_day','App\Http\Controllers\RecordsController@get_record_of_the_day');
 Route::post('/create_new_records','App\Http\Controllers\RecordsController@create_new_records');
 Route::post('/get_records','App\Http\Controllers\RecordsController@get_records');
 Route::post('/move_records','App\Http\Controllers\RecordsController@move_records');

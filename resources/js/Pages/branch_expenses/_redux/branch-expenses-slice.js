@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+import moment from 'moment'
 export const branchExpenses = createSlice({
   name: 'branchExpenses',
   initialState: {
     expenses:[],
-    charges:[]
+    charges:[],
+    date:moment().format('L')
   },
   reducers: {
     setCharge: (state,actions) => {
@@ -13,6 +14,10 @@ export const branchExpenses = createSlice({
     setExpenses: (state,actions) => {
       state.expenses = actions.payload
     },
+    setDate: (state,actions) => {
+      state.date = actions.payload
+    },
+    
     
   },
 })
@@ -20,7 +25,8 @@ export const branchExpenses = createSlice({
 // Action creators are generated for each case reducer function
 export const { 
     setCharge,
-    setExpenses
+    setExpenses,
+    setDate
 } = branchExpenses.actions
 
 export default branchExpenses.reducer

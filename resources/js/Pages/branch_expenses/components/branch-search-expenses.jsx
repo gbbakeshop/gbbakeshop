@@ -1,19 +1,17 @@
 import { get_branch_history } from "@/services/history-services"
 import { useDispatch } from "react-redux"
 import { setExpenses } from "../_redux/branch-expenses-slice"
-
+import { setDate } from "../_redux/branch-expenses-slice"
 export default function BranchSearchExpenses() {
 const dispatch = useDispatch()
+
     function searchDate(e) {
         const year = e.target.value.split('-')[0]
         const month = e.target.value.split('-')[1]
         const day = e.target.value.split('-')[2]
         const newDate = month+'/'+day+'/'+year
        
-        get_branch_history(newDate)
-        .then(res=>{
-            dispatch(setExpenses(res))
-        })
+        dispatch(setDate(newDate))
     }
     return (
         <div className="relative max-w-sm">

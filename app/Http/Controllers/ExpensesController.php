@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 class ExpensesController extends Controller
 {
 
-    public function get_branch_expenses($branchid){
-        $expenses = Expenses::where('branchid',$branchid)->with('uploadImage')->get();
+    public function get_branch_expenses(Request $request){
+        $expenses = Expenses::where([['branchid','=',$request->id],['date','=',$request->date]])->with('uploadImage')->get();
         return response()->json([
+            'date'=>$request->date,
             'status' => $expenses,
         ]);
     }
@@ -33,7 +34,8 @@ class ExpensesController extends Controller
                 $image->storeAs('images', $imageName, 'public'); 
                 UploadImage::create([
                     'expenses_id'=>$expenses->id,
-                    'file_name'=> $imageName
+                    'file_name'=> $imageName,
+                    'date' => $request->date
                 ]);
             }
         } 

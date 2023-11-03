@@ -23,9 +23,9 @@ class ChargeController extends Controller
             'message' => 'Created Successfully'
         ]);
     }
-    public function get_all_credits_charge($branchid)
+    public function get_all_credits_charge(Request $request)
     {
-        $charge = Charge::where('branchid', $branchid)->with('user')->get();
+        $charge = Charge::where([['branchid','=',$request->branchid],['date','=',$request->date]])->with('user')->get();
         return response()->json([
             'status' => $charge,
         ]);

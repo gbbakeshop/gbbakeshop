@@ -11,7 +11,7 @@ export default function BranchExpensesTable({data}) {
  
     return (
         <div className="w-full">
-            <div className="py-4 md:py-7 px-4 ">
+            <div className="">
                 <div className="sm:flex items-center justify-between">
                     <CreateExpenses />
                 </div>
@@ -20,7 +20,7 @@ export default function BranchExpensesTable({data}) {
                         <tbody>
                             <tr
                                 tabIndex="0"
-                                className="focus:outline-none h-16 border border-gray-300 rounded"
+                                className="focus:outline-none h-8 border border-gray-300 rounded"
                             >
                                 <td className="">
                                     <div className="flex">
@@ -41,7 +41,7 @@ export default function BranchExpensesTable({data}) {
                                 <tr
                                     key={index}
                                     tabIndex="0"
-                                    className="focus:outline-none h-16 border border-gray-300 rounded"
+                                    className="focus:outline-none h-8 border border-gray-300 rounded"
                                 >
                                     <td className="">
                                         <div className="flex">

@@ -11,6 +11,7 @@ import Breadcrumbs from "@/_components/bread-crumbs";
 import { BranchLineChart } from "./components/branch-line-chart";
 import { BranchBarChart } from "./components/branch-bar-chart";
 import BranchAnalyticsSearch from "./components/branch-analytics-search";
+import SalesChart from "../branch_expenses/components/sales-chart";
 
 export default function BranchAnalyticsPage(props) {
     const [data, setData] = useState([]);
@@ -46,7 +47,11 @@ export default function BranchAnalyticsPage(props) {
                 ) : (
                     <>
                         <BranchAnalyticsSearch />
+                        <div className="w-full mt-8">
+                                <SalesChart />
+                            </div>
                         <div className="flex">
+                          
                             <div className="w-1/2">
                             <BranchLineChart />
                             </div>

@@ -109,9 +109,9 @@ export default function CreateProductionForm({
     }
     async function submitHandler(e) {
         e.preventDefault();
-        // dispatch(isSetResponse(loading()));
+        dispatch(isSetResponse(loading()));
         const formData = new FormData(ref.current);
-        // setLoad(true);
+         setLoad(true);
         if (quantity > 0) {
             const subData = {
                 quantity: quantity,
