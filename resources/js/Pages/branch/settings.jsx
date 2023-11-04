@@ -8,7 +8,9 @@ export default function SettingsPage(props) {
   const {auth} =props 
 console.log('auth',auth)
     return (
-       <BranchLayout  branchid={auth.user.branchid} >
+       <BranchLayout
+       position={auth.user.position}
+       branchid={auth.user.branchid} >
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Breadcrumbs   branchid={auth.user.branchid}/>
                 <AccountProfile id={auth.user.id}/>

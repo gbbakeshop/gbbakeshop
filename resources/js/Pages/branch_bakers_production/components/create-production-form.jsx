@@ -290,9 +290,7 @@ export default function CreateProductionForm({
                                                                             {
                                                                                 res.bread_name
                                                                             }
-                                                                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                                                                                res.raw_materials
-                                                                            </label>
+                                                                           
                                                                             <input
                                                                                 name={`quantity_${index}`}
                                                                                 defaultValue={

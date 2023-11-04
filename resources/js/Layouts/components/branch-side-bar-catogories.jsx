@@ -15,7 +15,7 @@ import { setBranches } from "@/_redux/app-slice";
 import { useDispatch } from "react-redux";
 import CubeIcon from "@/icons/cube-icon";
 import DatabaseIcon from "@/icons/database-icon";
-export default function BranchSidebarCategories({branchid}) {
+export default function BranchSidebarCategories({position,branchid}) {
     const dispatch = useDispatch();
     const { url } = usePage();
     const location = url.split("/")[2];
@@ -37,6 +37,11 @@ export default function BranchSidebarCategories({branchid}) {
                 console.log("waa", res);
             });
     }
+    const access = position == 'Chief Baker' || 
+                   position == 'Baker' || 
+                   position == 'Lamasador' || 
+                   position == 'Hornero'?route("b_bread_production"): 
+                   position == 'Sales Lady' || position == 'Cashier'?route("b_bakers_report"):route("b_bread_production")
     return (
         <div className="flex  border-r flex-col items-center w-16 h-screen py-8 space-y-8 dark:bg-gray-900 dark:border-gray-700">
             {/* <Link>
@@ -68,13 +73,14 @@ export default function BranchSidebarCategories({branchid}) {
                 <SquireIcon />
             </Link>
             <Link
-                href={route("b_bread_production")}
+                href={access}
                 className={`${
                     (location == "bakers-production")||
                     (location == "bakers-report") ||
                     (location == "bread-report") ||
                     (location == "sales-report") ||
                     (location == "bread-production") ||
+                    (location == "history") ||
                     location == "accounts"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"

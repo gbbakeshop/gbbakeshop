@@ -30,7 +30,9 @@ export default function SelectaPage(props) {
         setNewData(value);
     }, [search]);
     return (
-        <BranchLayout  branchid={auth.user.branchid} >
+        <BranchLayout 
+        position={auth.user.position}
+         branchid={auth.user.branchid} >
              <Search search={search} setSearch={setSearch} />
             {loading ? (
                 <SkeletonLoader />

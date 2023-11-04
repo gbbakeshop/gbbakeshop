@@ -13,38 +13,41 @@ use Illuminate\Http\Request;
 class RecordsController extends Controller
 {
 
-   
-    public function get_record_of_the_day(Request $request){
+
+    public function get_record_of_the_day(Request $request)
+    {
         // $industry = Industry::get();
         // $industry->each(function ($industry) {
         //     $countData = JobList::where('industry_id', $industry->id)->count();
         //     $industry->count = $countData??0;
         // });
         $record = Records::where([
-            ['date','=',$request->date],
-            ['branchid','=',$request->branchid],
-            ['status','=','done']
-            ])->sum('sales');
+            ['date', '=', $request->date],
+            ['branchid', '=', $request->branchid],
+            ['status', '=', 'done']
+        ])->sum('sales');
 
-        $charge= Charge::where([
-            ['date','=',$request->date],
-            ['branchid','=',$request->branchid],
-            ['amount','<>',null],
+        $charge = Charge::where([
+            ['date', '=', $request->date],
+            ['branchid', '=', $request->branchid],
+            ['amount', '<>', null],
         ])->sum('amount');
 
         $expenses = Expenses::where([
-            ['date','=',$request->date],
+            ['date', '=', $request->date],
         ])->sum('amount');
         //     $industry->count = $countData??0;
         return response()->json([
             'sales' => $record,
-            'charges' =>$charge,
-            'expenses'=>$expenses,
+            'charges' => $charge,
+            'expenses' => $expenses,
             'message' => 'Transferred Successfully'
         ]);
     }
-    public function search_record(Request $request){
-        $record = Records::where('date', '=', $request->date)->get();
+    public function search_record(Request $request)
+    {
+        $record = Records::where('date', '=', $request->date)
+            ->where('status', '=', 'done')->get();
         return response()->json([
             'status' => $record,
             'message' => 'Transferred Successfully'
@@ -116,7 +119,7 @@ class RecordsController extends Controller
             'branchid' => $record->branchid,
             'userid' => $request->userid,
             'message' => 'updated the ' . $a1 . $a2 . $a3 . $a4 . $a5 . $a6 . $a7,
-            'date'=>$request->date
+            'date' => $request->date
         ]);
 
         return response()->json([
@@ -147,7 +150,7 @@ class RecordsController extends Controller
             'userid' => $request->userid,
             'message' => 'updated the beginning from ' . $record->beginning . ' to ' . $request->beginning .
                 ', charge from ' . $record->charge . ' to ' . $request->charge . ' and over from ' . $record->overs . ' from ' . $request->overs,
-            'date'=>$request->date
+            'date' => $request->date
         ]);
         return response()->json([
             'status' => 'success',
@@ -174,7 +177,7 @@ class RecordsController extends Controller
             'branchid' => $record->branchid,
             'userid' => $request->userid,
             'message' => 'updated the new production from ' . $record->new_production . ' to ' . $request->new_production,
-            'date'=>$request->date
+            'date' => $request->date
         ]);
         return response()->json([
             'status' => 'success',
@@ -241,7 +244,7 @@ class RecordsController extends Controller
             'branchid' => $record->branchid,
             'userid' => $request->sellerid,
             'message' => 'transferred ' . $record->bread_name . ' in Bread Report page with the remaining of ' . $request->remaining . 'pcs and breadout of ' . $request->bread_out . 'pcs',
-            'date'=>$request->date
+            'date' => $request->date
         ]);
 
 
@@ -298,7 +301,7 @@ class RecordsController extends Controller
                     'branchid' => $request->breadid[$i],
                     'userid' => $request->userid,
                     'message' => 'transferred ' . $bakers->bread_name . 'in Bread Report page with the charge of ' . $request->charge . 'pcs and over of ' . $request->overs . 'pcs',
-                    'date'=>$request->date
+                    'date' => $request->date
                 ]);
             }
 
@@ -315,14 +318,25 @@ class RecordsController extends Controller
     public function get_records(Request $request)
     {
 
+        if ($request->params == 'done') {
+            $findBeginning = Records::where('branchid', $request->branchid)
+                ->where('status', $request->params)
+                ->where('date', $request->date)
+                ->with('getBreads')
+                ->get();
+            return response()->json([
+                'status' => $findBeginning,
+            ]);
+        } else {
+            $findBeginning = Records::where('branchid', $request->branchid)
+                ->where('status', $request->params)
+                ->with('getBreads')
+                ->get();
+            return response()->json([
+                'status' => $findBeginning,
+            ]);
+        }
 
-        $findBeginning = Records::where('branchid', $request->branchid)
-            ->where('status', $request->params)
-            ->with('getBreads')
-            ->get();
-        return response()->json([
-            'status' => $findBeginning,
-        ]);
 
     }
 
@@ -392,21 +406,21 @@ class RecordsController extends Controller
             }
         }
 
-        if($request->charge !== 0){
+        if ($request->charge !== 0) {
             Charge::create([
                 'branchid' => $request->branchid,
                 'userid' => $request->account['id'],
                 'quantity' => $request->charge,
                 'discription' => 'has charge ' . $request->charge,
-                'type'=>'Charge'
+                'type' => 'Charge'
             ]);
         }
-       
+
         History::create([
             'branchid' => $request->branchid,
             'userid' => $request->account['id'],
             'message' => 'created ' . $request->created,
-            'date'=>$request->date
+            'date' => $request->date
         ]);
         return response()->json([
             'status' => 'success',

@@ -13,7 +13,9 @@ export default function BranchDashboardPage(props) {
             ? auth.user.branchid
             : url.split("/")[2];
     return (
-        <BranchLayout branchid={branchid}>
+        <BranchLayout 
+        position={auth.user.position}
+        branchid={branchid}>
             <BranchAnalyticsSearch />
             <div className="flex">
                 <div className="w-1/2">

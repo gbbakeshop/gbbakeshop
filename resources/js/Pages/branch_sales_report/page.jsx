@@ -11,6 +11,7 @@ import SidebarBranches from "../_components/sidebar-branches";
 import Breadcrumbs from "@/_components/bread-crumbs";
 import BranchSalesReportSearch from "./components/branch-sales-report-search-date";
 import { setRecord } from "./_redux/sales-report-slice";
+import moment from "moment";
 export default function BranchBreadProductionPage(props) {
     const dispatch = useDispatch()
     const { auth } = props;
@@ -26,6 +27,7 @@ export default function BranchBreadProductionPage(props) {
         get_records({
             branchid: branchid,
             params: "done",
+            date:moment().format('L')
         }).then((res) => {
             dispatch(setRecord(res.status))
             setLoading(false);

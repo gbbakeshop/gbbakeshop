@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Search from "@/_components/search";
 import BranchSalesReportSearch from "../branch_sales_report/components/branch-sales-report-search-date";
 import { setRecord } from "../branch_sales_report/_redux/sales-report-slice";
+import moment from "moment";
 
 export default function SalesReportPage(props) {
     const [data, setData] = useState([]);
@@ -26,6 +27,7 @@ export default function SalesReportPage(props) {
         get_records({
             branchid: branchid,
             params: "done",
+            date:moment().format('L')
         }).then((res) => {
             dispatch(setRecord(res.status))
             setLoading(false);
@@ -39,8 +41,13 @@ export default function SalesReportPage(props) {
         setNewData(value);
     }, [search]);
     return (
-        <BranchLayout branchid={auth.user.branchid}>
-            <ProductionTabsComponent />
+        <BranchLayout 
+        
+        position={auth.user.position}
+        branchid={auth.user.branchid}>
+            <ProductionTabsComponent 
+            
+        position={auth.user.position}/>
             <br />
             <div className="flex gap-4">
                 <div className="flex-none">

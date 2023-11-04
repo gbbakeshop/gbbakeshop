@@ -5,7 +5,7 @@ import ToastNotification from "./components/toast-notification";
 import { useSelector } from "react-redux";
 import BranchSidebarCategories from "./components/branch-side-bar-catogories";
 
-export default function BranchLayout({ children, branchid }) {
+export default function BranchLayout({ children, position,branchid }) {
     const { setResponse } = useSelector((state) => state.app);
 
     return (
@@ -25,7 +25,9 @@ export default function BranchLayout({ children, branchid }) {
                 </div>
                 <aside className="flex">
                     <div>
-                        <BranchSidebarCategories />
+                        <BranchSidebarCategories
+                        branchid={branchid} 
+                        position={position}/>
                         <ToastNotification response={setResponse} />
                     </div>
                     <div className="flex flex-col w-full p-4 overflow-auto h-screen">

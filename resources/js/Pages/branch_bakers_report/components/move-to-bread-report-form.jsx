@@ -144,7 +144,7 @@ export default function MoveToBreadReportForm({ account,data, branchid }) {
                                                             type="number"
                                                         />
                                                         <label
-                                                            htmlhtmlFor="message"
+                                                            htmlFor="message"
                                                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                                         >
                                                             Your remarks

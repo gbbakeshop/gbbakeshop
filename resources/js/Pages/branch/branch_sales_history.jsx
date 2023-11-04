@@ -15,7 +15,7 @@ import { setHistory } from "../branch_history/_redux/branch-history-slice";
 
 export default function BranchSalesHistoryPage(props) {
     const [data, setData] = useState([]);
-    const dispatch  = useDispatch()
+    const dispatch = useDispatch();
     const { auth } = props;
     const [loading, setLoading] = useState(true);
     const { url } = usePage();
@@ -25,10 +25,9 @@ export default function BranchSalesHistoryPage(props) {
     const [search, setSearch] = useState("");
 
     useEffect(() => {
-        get_branch_history(moment().format('L')).then((res) => {
-            dispatch(setHistory(res))
+        get_branch_history(moment().format("L")).then((res) => {
+            dispatch(setHistory(res));
             setLoading(false);
-            
         });
     }, [refresh]);
 
@@ -38,10 +37,13 @@ export default function BranchSalesHistoryPage(props) {
         );
         setNewData(value);
     }, [search]);
-    
+
     return (
-        <BranchLayout  branchid={auth.user.branchid} >
-            <ProductionTabsComponent />
+        <BranchLayout
+            position={auth.user.position}
+            branchid={auth.user.branchid}
+        >
+            <ProductionTabsComponent position={auth.user.position} />
             <br />
             <BranchSearchHistory />
             {loading ? (

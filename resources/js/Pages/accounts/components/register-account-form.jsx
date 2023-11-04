@@ -157,7 +157,7 @@ export default function RegisterAccountForm() {
                         Personal Information
                     </div>
                     <div>
-                        <InputLabel htmlhtmlFor="name" value="Name" />
+                        <InputLabel htmlFor="name" value="Name" />
 
                         <TextInput
                             id="name"
@@ -363,7 +363,7 @@ export default function RegisterAccountForm() {
                     <div className="text-lg font-medium">Credentials</div>
 
                     <div>
-                        <InputLabel htmlhtmlFor="email" value="Email" />
+                        <InputLabel htmlFor="email" value="Email" />
 
                         <TextInput
                             id="email"
@@ -377,7 +377,7 @@ export default function RegisterAccountForm() {
                         />
                     </div>
                     <div className="mt-4">
-                        <InputLabel htmlhtmlFor="password" value="Password" />
+                        <InputLabel htmlFor="password" value="Password" />
 
                         <TextInput
                             id="password"
@@ -392,7 +392,7 @@ export default function RegisterAccountForm() {
                     </div>
                     <div className="mt-4">
                         <InputLabel
-                            htmlhtmlFor="password_confirmation"
+                            htmlFor="password_confirmation"
                             value="Confirm Password"
                         />
 

@@ -9,7 +9,7 @@ import ViewIcon from "@/_icons/view-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
 
-export default function BranchRawMaterialsTableComponent({ data }) {
+export default function BranchRawMaterialsTableComponent({ data,position }) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -34,7 +34,7 @@ export default function BranchRawMaterialsTableComponent({ data }) {
         { title: "Quantity" },
         { title: "Status" },
         { title: "Created At" },
-        { title: "Actions" },
+        !position && { title: "Actions" },
     ];
 
     return (
@@ -89,8 +89,9 @@ export default function BranchRawMaterialsTableComponent({ data }) {
                                         }
                                         data={res}
                                     /> */}
-                                    <BranchRawMaterialsUpdateForm data={res}/>
-
+                                    {
+                                        !position &&  <BranchRawMaterialsUpdateForm data={res}/>
+                                    }
                                     {/* <div className="w-4 mr-2">
                                         <DeleteIcon />
                                     </div> */}

@@ -1,18 +1,16 @@
 import { useState } from "react";
 import moment from "moment/moment";
-import { FaEdit } from "react-icons/fa";
-import { RiFolderTransferFill } from "react-icons/ri";
 import BranchBakersReportEdit from "./branch-bakers-report-edit";
 import Drawer from "@/_components/drawer";
 import ActionDrawer from "@/_components/action-drawer";
 import MoveToBreadReportForm from "./move-to-bread-report-form";
 import MoveToAnotherBranch from "./move-to-another-branch";
-import CreateIcon from "@/_icons/create-icon";
-import EditIcon from "@/_icons/edit-icon";
-import DeleteIcon from "@/_icons/delete-icon";
-import TransferIcon from "@/_icons/transfer-icon";
 
-export default function BranchBakersReportTableComponent({ account,data, branchid }) {
+export default function BranchBakersReportTableComponent({
+    account,
+    data,
+    branchid,
+}) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -30,21 +28,24 @@ export default function BranchBakersReportTableComponent({ account,data, branchi
             setSelected(newselected);
         }
     }
-
+    const position = account.position;
     const column = [
         { title: "Name of Bread" },
         { title: "New Production" },
         { title: "Date Created" },
-        { title: "Actions" },
+        position == "Sales Lady" ||
+            position == "Cashier" ||
+            position == "Supervisor" ||
+            (position == "admin" && { title: "Actions" }),
     ];
     return (
         <div className=" my-6 p-4">
             {selected.length !== 0 && (
                 <MoveToAnotherBranch
-                branchid={branchid}
-                setSelected={setSelected}
-                selected={selected}
-            />
+                    branchid={branchid}
+                    setSelected={setSelected}
+                    selected={selected}
+                />
             )}
 
             <table className="min-w-max w-full table-auto">
@@ -70,22 +71,27 @@ export default function BranchBakersReportTableComponent({ account,data, branchi
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">
                                     <div className="mr-2">
-                                        <input
-                                            checked={
-                                                isExistFunction(res.id) ==
-                                                undefined
-                                                    ? false
-                                                    : true
-                                            }
-                                            onClick={() => addItem(res.id)}
-                                            type="checkbox"
-                                            className={`${
-                                                isExistFunction(res.id) ==
-                                                undefined
-                                                    ? ""
-                                                    : "border-red-500 border bg-red-500 text-red-500"
-                                            }  form-checkbox`}
-                                        />
+                                        {position == "Sales Lady" ||
+                                        position == "Cashier" ||
+                                        position == "Supervisor" ||
+                                        position == "admin" ? (
+                                            <input
+                                                checked={
+                                                    isExistFunction(res.id) ==
+                                                    undefined
+                                                        ? false
+                                                        : true
+                                                }
+                                                onClick={() => addItem(res.id)}
+                                                type="checkbox"
+                                                className={`${
+                                                    isExistFunction(res.id) ==
+                                                    undefined
+                                                        ? ""
+                                                        : "border-red-500 border bg-red-500 text-red-500"
+                                                }  form-checkbox`}
+                                            />
+                                        ) : null}
                                     </div>
                                     <span className="font-medium">
                                         {res.bread_name}
@@ -102,16 +108,22 @@ export default function BranchBakersReportTableComponent({ account,data, branchi
                             </td>
 
                             <td className="py-3 px-6 text-left">
-                                <div className="flex">
-                                    <BranchBakersReportEdit 
-                                    account={account}
-                                    data={res} />
-                                    <MoveToBreadReportForm
-                                        account={account}
-                                        branchid={branchid}
-                                        data={res}
-                                    />
-                                </div>
+                                {position == "Sales Lady" ||
+                                position == "Cashier" ||
+                                position == "Supervisor" ||
+                                position == "admin" ? (
+                                    <div className="flex">
+                                        <BranchBakersReportEdit
+                                            account={account}
+                                            data={res}
+                                        />
+                                        <MoveToBreadReportForm
+                                            account={account}
+                                            branchid={branchid}
+                                            data={res}
+                                        />
+                                    </div>
+                                ) : null}
                             </td>
                         </tr>
                     ))}

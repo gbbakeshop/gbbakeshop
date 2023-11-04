@@ -30,8 +30,13 @@ export default function BreadProductionPage(props) {
         });
     }, [refresh]);
     return (
-        <BranchLayout  branchid={auth.user.branchid} >
-            <ProductionTabsComponent branchid={auth.user.branchid} />
+        <BranchLayout  
+        position={auth.user.position}
+        branchid={auth.user.branchid}
+        >
+            <ProductionTabsComponent 
+             position={auth.user.position}
+            branchid={auth.user.branchid} />
             {loading ? (
                 <SkeletonLoader />
             ) : (

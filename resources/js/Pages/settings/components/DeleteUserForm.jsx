@@ -68,7 +68,7 @@ export default function DeleteUserForm({ className }) {
                     </p>
 
                     <div className="mt-6">
-                        <InputLabel htmlhtmlFor="password" value="Password" className="sr-only" />
+                        <InputLabel htmlFor="password" value="Password" className="sr-only" />
 
                         <TextInput
                             id="password"

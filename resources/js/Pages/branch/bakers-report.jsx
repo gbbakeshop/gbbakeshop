@@ -42,8 +42,13 @@ export default function BakersReportPage(props) {
         setNewData(value);
     }, [search]);
     return (
-        <BranchLayout  branchid={auth.user.branchid} >
-            <ProductionTabsComponent />
+        <BranchLayout  
+        
+        position={auth.user.position}
+        branchid={auth.user.branchid} >
+            <ProductionTabsComponent 
+            
+        position={auth.user.position}/>
             <br />
             <Search search={search} setSearch={setSearch} />
             {loading ? (
