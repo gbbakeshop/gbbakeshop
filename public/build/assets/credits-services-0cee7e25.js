@@ -1,1 +1,0 @@
-import{k as a}from"./app-1c369c91.js";async function r(t){return(await a.get("/api/get_account_credits_charge/"+t)).data.status}async function c(t){return(await a.get("/api/get_all_credits_charge/"+t)).data.status}export{c as a,r as g};
