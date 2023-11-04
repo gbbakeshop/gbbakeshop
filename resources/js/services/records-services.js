@@ -1,4 +1,10 @@
 
+export async function get_branch_period(period,branchid) {
+    const response = await axios.get('/api/get_branch_period/'+period+'/'+branchid)
+    return response.data;
+}
+
+
 
 export async function get_record_of_the_day(branchid,data) {
     const response = await axios.post('/api/get_record_of_the_day',{

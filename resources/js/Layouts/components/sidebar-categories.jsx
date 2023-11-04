@@ -84,7 +84,7 @@ export default function SidebarCategories() {
             >
                 <StoreIcon />
             </Link>
-            <Link
+            {/* <Link
                 href={route("chats")}
                 className={`${
                     location == "chats"
@@ -103,7 +103,7 @@ export default function SidebarCategories() {
 
             <Link className="p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100">
                 <BellIcon />
-            </Link>
+            </Link> */}
 
             <Link
                 href={route("profile.edit")}

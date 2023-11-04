@@ -88,7 +88,7 @@ export default function BranchSidebarCategories({position,branchid}) {
             >
                 <DatabaseIcon />
             </Link>
-            <Link
+            {/* <Link
                  href={route("b_selecta")}
                 className={`${
                     (location == "selecta")
@@ -97,8 +97,8 @@ export default function BranchSidebarCategories({position,branchid}) {
                 } `}
             >
                 <CubeIcon />
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
                 href={route("b_dashboard")}
                 className={`${
                     location == "chats"
@@ -110,7 +110,7 @@ export default function BranchSidebarCategories({position,branchid}) {
                     <ChatsIcon />
                     <span className="h-2 w-2 rounded-full bg-emerald-500 absolute right-0.5 ring-1 ring-white bottom-0"></span>
                 </div>
-            </Link>
+            </Link> */}
 
             <Link
                 href={route("b_settings")}

@@ -32,30 +32,32 @@ export const options = {
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Sales',
-      data: [20,50,20],
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    {
-      label: 'Breadout',
-      data: [20,50,20],
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-    {
-        label: 'Charges',
-        data: [30,60,30],
-        borderColor: 'rgb(0, 230, 0)',
-        backgroundColor: 'rgb(153, 255, 153)',
+
+export function BranchBarChart({datas}) {
+
+  const labels = datas?.sales?.map(res=>res.label);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Sales',
+        data:datas?.sales?.map(res=>res.total_sales),
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
-  ],
-};
-
-export function BranchBarChart() {
+      {
+        label: 'Expenses',
+        data: datas?.expenses?.map(res=>res.total_expenses),
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+      {
+          label: 'Charges',
+          data:  datas?.charges?.map(res=>res.total_charge),
+          borderColor: 'rgb(0, 230, 0)',
+          backgroundColor: 'rgb(153, 255, 153)',
+        },
+    ],
+  };
   return <Bar options={options} data={data} />;
 }

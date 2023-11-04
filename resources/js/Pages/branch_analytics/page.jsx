@@ -11,10 +11,18 @@ import Breadcrumbs from "@/_components/bread-crumbs";
 import { BranchLineChart } from "./components/branch-line-chart";
 import { BranchBarChart } from "./components/branch-bar-chart";
 import BranchAnalyticsSearch from "./components/branch-analytics-search";
+import BranchAnalyticsSales from "./components/branch-analytics-sales";
+import { get_branch_period } from "@/services/records-services";
 import SalesChart from "../branch_expenses/components/sales-chart";
 
 export default function BranchAnalyticsPage(props) {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({
+        sales: [],
+        charges: [],
+        expenses: [],
+    });
+
+    const { period } = useSelector((state) => state.branchAnalytics);
     const [loading, setLoading] = useState(true);
     const { url } = usePage();
     const branchid = url.split("/")[2];
@@ -22,19 +30,36 @@ export default function BranchAnalyticsPage(props) {
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
 
-    useEffect(() => {
-        const value = data.filter((obj) =>
-            obj.raw_materials.toLowerCase().includes(search.toLowerCase())
-        );
-        setNewData(value);
-    }, [search]);
+    // useEffect(() => {
+    //     const value = data.filter((obj) =>
+    //         obj.raw_materials.toLowerCase().includes(search.toLowerCase())
+    //     );
+    //     setNewData(value);
+    // }, [search]);
+
+    // useEffect(() => {
+    //     get_branch_raw_materials(branchid).then((res) => {
+    //         setData(res);
+    //         setLoading(false);
+    //     });
+    // }, [refresh]);
+
 
     useEffect(() => {
-        get_branch_raw_materials(branchid).then((res) => {
-            setData(res);
-            setLoading(false);
+        get_branch_period(period,branchid).then((res) => {
+            console.log('data',res)
+           setData({
+              ...data,
+              sales:res.records,
+              charges:res.charges,
+              expenses:res.expenses
+            })
         });
-    }, [refresh]);
+    }, [period]);
+
+    useEffect(() => {
+        setLoading(false);
+    }, []);
 
     return (
         <AdministratorLayout>
@@ -48,15 +73,16 @@ export default function BranchAnalyticsPage(props) {
                     <>
                         <BranchAnalyticsSearch />
                         <div className="w-full mt-8">
+                                {/* <BranchAnalyticsSales 
+                                period={period}/> */}
                                 <SalesChart />
                             </div>
                         <div className="flex">
-                          
                             <div className="w-1/2">
-                            <BranchLineChart />
+                            <BranchLineChart datas={data}/>
                             </div>
                             <div className="w-1/2">
-                            <BranchBarChart />
+                            <BranchBarChart datas={data}/>
                             </div>
                         </div>
                         {/* <div className="md:px-52">

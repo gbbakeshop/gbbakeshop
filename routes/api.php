@@ -79,6 +79,7 @@ Route::put('/edit_bread_report_records','App\Http\Controllers\RecordsController@
 Route::put('/edit_sales_report_records','App\Http\Controllers\RecordsController@edit_sales_report_records');
 Route::put('/record_move_another_branch','App\Http\Controllers\RecordsController@record_move_another_branch');
 Route::post('/search_record','App\Http\Controllers\RecordsController@search_record');
+Route::get('/get_branch_period/{period}/{branchid}','App\Http\Controllers\RecordsController@get_branch_period');
 
 
 Route::post('/get_branch_history','App\Http\Controllers\HistoryController@get_branch_history');

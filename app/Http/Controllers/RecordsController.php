@@ -8,12 +8,138 @@ use App\Models\History;
 use App\Models\Records;
 use App\Models\Remarks;
 use App\Models\Charge;
+use DB;
 use Illuminate\Http\Request;
 
 class RecordsController extends Controller
 {
 
+    public function get_branch_period($period,$branchid)
+    {
+        if ($period == 'Daily') {
+               $records = Records::where([
+                ['status', '=','done'],
+                ['branchid', '=',$branchid]
+                ])
+                ->groupBy('date')
+                ->selectRaw('date as label, SUM(sales) as total_sales')
+                ->get();
 
+                $charges = Charge::where([
+                    ['branchid', '=', $branchid],
+                    ['amount', '<>', null],
+                ])
+                ->groupBy('date')
+                ->selectRaw('date as label, SUM(amount) as total_charge')
+                ->get();
+
+                $expenses = Expenses::where(
+                    'branchid', '=', $branchid
+                )
+                ->groupBy('date')
+                ->selectRaw('date as label, SUM(amount) as total_expenses')
+                ->get();
+
+            return response()->json([
+                'records' => $records,
+                'charges'=>$charges,
+                'expenses'=>$expenses,
+                'message' => 'Transferred Successfully'
+            ]);
+        } else if ($period == 'Weekly') {
+            $records = Records::where([
+                ['status', '=','done'],
+                ['branchid', '=',$branchid]
+                ])
+                ->groupBy(DB::raw('WEEK(created_at)'))
+                ->selectRaw('WEEK(created_at) as label, SUM(sales) as total_sales')
+                ->get();
+
+                $charges = Charge::where([
+                    ['branchid', '=', $branchid],
+                    ['amount', '<>', null],
+                ])
+                ->groupBy(DB::raw('WEEK(created_at)'))
+                ->selectRaw('WEEK(created_at) as label, SUM(amount) as total_charge')
+                ->get();
+
+                $expenses = Expenses::where(
+                    'branchid', '=', $branchid
+                )
+                ->groupBy(DB::raw('WEEK(created_at)'))
+                ->selectRaw('WEEK(created_at) as label, SUM(amount) as total_expenses')
+                ->get();
+
+             return response()->json([
+                'records' => $records,
+                'charges'=>$charges,
+                'expenses'=>$expenses,
+                'message' => 'Transferred Successfully'
+            ]);
+        } else if ($period == 'Monthly') {
+            $records = Records::where([
+                ['status', '=','done'],
+                ['branchid', '=',$branchid]
+                ])
+                ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
+                ->selectRaw('YEAR(created_at) as year, MONTH(created_at) as label, SUM(sales) as total_sales')
+                ->get();
+
+                $charges = Charge::where([
+                    ['branchid', '=', $branchid],
+                    ['amount', '<>', null],
+                ])
+                ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
+                ->selectRaw('YEAR(created_at) as year, MONTH(created_at) as label, SUM(amount) as total_charge')
+                ->get();
+
+                $expenses = Expenses::where(
+                    'branchid', '=', $branchid
+                )
+                ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
+                ->selectRaw('YEAR(created_at) as year, MONTH(created_at) as label, SUM(amount) as total_expenses')
+                ->get();
+
+                return response()->json([
+                    'records' => $records,
+                    'charges'=>$charges,
+                    'expenses'=>$expenses,
+                    'message' => 'Transferred Successfully'
+                ]);
+        } else if ($period == 'Annually') {
+            $records = Records::where([
+                ['status', '=','done'],
+                ['branchid', '=',$branchid]
+                ])
+                ->groupBy(DB::raw('YEAR(created_at)'))
+                ->selectRaw('YEAR(created_at) as label, SUM(sales) as total_sales')
+                ->get();
+
+                $charges = Charge::where([
+                    ['branchid', '=', $branchid],
+                    ['amount', '<>', null],
+                ])
+                ->groupBy(DB::raw('YEAR(created_at)'))
+                ->selectRaw('YEAR(created_at) as label, SUM(amount) as total_charge')
+                ->get();
+
+                $expenses = Expenses::where(
+                    'branchid', '=', $branchid
+                )
+                ->groupBy(DB::raw('YEAR(created_at)'))
+                ->selectRaw('YEAR(created_at) as label, SUM(amount) as total_expenses')
+                ->get();
+
+                return response()->json([
+                    'records' => $records,
+                    'charges'=>$charges,
+                    'expenses'=>$expenses,
+                    'message' => 'Transferred Successfully'
+                ]);
+        }
+
+
+    }
     public function get_record_of_the_day(Request $request)
     {
         // $industry = Industry::get();
@@ -34,6 +160,7 @@ class RecordsController extends Controller
         ])->sum('amount');
 
         $expenses = Expenses::where([
+            ['branchid', '=', $request->branchid],
             ['date', '=', $request->date],
         ])->sum('amount');
         //     $industry->count = $countData??0;
