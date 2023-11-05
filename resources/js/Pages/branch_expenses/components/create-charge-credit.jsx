@@ -66,7 +66,7 @@ export default function CreateChargeCredit() {
                 className="focus:ring-2 focus:ring-offset-2 focus:ring-red-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-red-700 hover:bg-red-600 focus:outline-none rounded"
             >
                 <p className="text-sm font-medium leading-none text-white">
-                    Create Charge / Credits
+                    Create Charge / Credits(CA)
                 </p>
             </button>
             <Transition.Root show={open} as={Fragment}>
@@ -127,7 +127,7 @@ export default function CreateChargeCredit() {
                                         <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                                             <div className="px-4 sm:px-6">
                                                 <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
-                                                    Create Charge or Credit
+                                                    Create Charge or Credit/CA
                                                 </Dialog.Title>
                                             </div>
                                             <div className="relative mt-6 flex-1 px-4 sm:px-6">
@@ -210,7 +210,7 @@ export default function CreateChargeCredit() {
                                                             className={`border-red-500 appearance-none block w-full bg-gray-200 text-gray-700 border-2  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
                                                         />
                                                         <textarea
-                                                            name="discription"
+                                                            name="description"
                                                             placeholder="Write your discription"
                                                             className={`border-red-500 appearance-none block w-full bg-gray-200 text-gray-700 border-2  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
                                                         ></textarea>
