@@ -115,7 +115,9 @@ export default function BranchSidebarCategories({position,branchid}) {
             <Link
                 href={route("b_settings")}
                 className={`${
-                    location == "settings"
+                    location == "settings"||
+                    (location == "expenses")||
+                    (location == "logs")
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
                 } `}

@@ -31,7 +31,7 @@ export default function BranchLayout({ children, position,branchid }) {
                         <ToastNotification response={setResponse} />
                     </div>
                     <div className="flex flex-col w-full p-4 overflow-auto h-screen">
-                        <div className=" overflow-auto p-3">{children}</div>
+                    {children}
                     </div>
                 </aside>
             </div>

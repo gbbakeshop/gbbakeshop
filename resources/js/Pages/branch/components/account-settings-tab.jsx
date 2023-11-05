@@ -12,10 +12,7 @@ export default function BranchAccountTabs({branch,id}) {
             <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 ">
             <li className="mr-2">
                     <Link
-                        href={route("b_settings", {
-                            branchid: branchid, // Replace with the appropriate branch ID source
-                            userid: userid,
-                        })}
+                        href={route("b_settings")}
                         className={
                             path == "settings"
                                 ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
@@ -40,10 +37,7 @@ export default function BranchAccountTabs({branch,id}) {
                 </li>
                 <li className="mr-2">
                     <Link
-                        href={route("b_expenses", {
-                            branchid: branchid, // Replace with the appropriate branch ID source
-                            userid: userid,
-                        })}
+                        href={route("b_expenses")}
                         className={
                             path == "expenses"
                                 ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
@@ -70,19 +64,16 @@ export default function BranchAccountTabs({branch,id}) {
                
                 <li className="mr-2">
                     <Link
-                        href={route("account_history", {
-                            branchid: branchid, // Replace with the appropriate branch ID source
-                            userid: userid,
-                        })}
+                        href={route("b_logs")}
                         className={
-                            path == "history"
+                            path == "logs"
                                 ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
                                 : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300  group"
                         }
                     >
                         <svg
                             className={
-                                path == "history"
+                                path == "logs"
                                     ? "w-4 h-4 mr-2 text-red-600 dark:text-red-500"
                                     : "w-4 h-4 mr-2 text-gray-400 group-hover:text-gray-500  dark:group-hover:text-gray-300"
                             }

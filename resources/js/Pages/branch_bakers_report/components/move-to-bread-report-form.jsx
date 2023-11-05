@@ -26,6 +26,7 @@ export default function MoveToBreadReportForm({ account,data, branchid }) {
     
     async function submitHandler(e) {
         e.preventDefault();
+        setLoad(true);
         dispatch(isSetResponse(loading()));
         const formData = new FormData(ref.current);
         const newData = {

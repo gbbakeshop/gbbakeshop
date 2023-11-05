@@ -6,7 +6,7 @@ import BranchSettingsEditForm from '../account_settings/components/edit-form';
 import BranchAccountTabs from './components/account-settings-tab';
 export default function SettingsPage(props) {
   const {auth} =props 
-console.log('auth',auth)
+  
     return (
        <BranchLayout
        position={auth.user.position}

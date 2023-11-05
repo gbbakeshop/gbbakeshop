@@ -187,8 +187,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('branch/settings');
     })->name('b_settings');
 
+    Route::get('/branch/logs', function () {
+        return Inertia::render('branch/account-logs');
+    })->name('b_logs');
+
     Route::get('/branch/expenses', function () {
-        return Inertia::render('account_expenses/page');
+        return Inertia::render('branch/account-expenses');
     })->name('b_expenses');
 
 });
