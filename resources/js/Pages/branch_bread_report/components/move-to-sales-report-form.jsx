@@ -29,7 +29,7 @@ export default function MoveToSalesReportForm({ data, account }) {
         e.preventDefault();
         dispatch(isSetResponse(loading()));
         const formData = new FormData(ref.current);
-        setLoad(true);
+        // setLoad(true);
         const { get_breads, ...resp } = data;
         const newData = {
             ...resp,
@@ -41,7 +41,7 @@ export default function MoveToSalesReportForm({ data, account }) {
                 parseInt(formData.get("remaining")) -
                 parseInt(formData.get("breadout")),
             sales:
-                (data.total -
+                ((data.total + data.charge) -
                     parseInt(formData.get("remaining")) -
                     parseInt(formData.get("breadout"))) *
                 data.get_breads.price,
@@ -53,7 +53,7 @@ export default function MoveToSalesReportForm({ data, account }) {
             status: "done",
             date: moment().format("L"),
         };
-
+        console.log('newData',newData)
         const update = await move_sales_records(newData);
 
         dispatch(isSetResponse(update));

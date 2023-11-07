@@ -50,10 +50,11 @@ class RawMaterialsSeeder extends Seeder
             '003C',
             '0015k',
             'ALASKA EVA 305g/can',
-            '00B',
+            '00BS',
             'Gold Star (3rd)',
             'Sun Moon Star (1st)',
             '00ws',
+            'H2o',
         ];
         
         for ($i = 1; $i < count($rowMaterialsKilo); $i++) {

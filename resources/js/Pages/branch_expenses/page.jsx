@@ -9,7 +9,7 @@ import Breadcrumbs from "@/_components/bread-crumbs";
 import BranchExpensesTable from "./components/branch-expenses-table";
 import { get_branch_history } from "@/services/history-services";
 import moment from "moment";
-import { setExpenses,setCharge } from "./_redux/branch-expenses-slice";
+import { setExpenses, setCharge } from "./_redux/branch-expenses-slice";
 import BranchSearchExpenses from "./components/branch-search-expenses";
 import CreditsChargeTable from "./components/credits-charge-table";
 import { get_branch_expenses } from "@/services/expenses-services";
@@ -22,7 +22,9 @@ export default function BranchBakersReportPage(props) {
     const { url } = usePage();
     const branchid = url.split("/")[2];
     const { refresh } = useSelector((state) => state.app);
-    const { expenses,charges,date } = useSelector((state) => state.branchExpenses);
+    const { expenses, charges, date } = useSelector(
+        (state) => state.branchExpenses
+    );
     const [newData, setNewData] = useState([]);
     const [newData2, setNewData2] = useState([]);
     const [search, setSearch] = useState("");
@@ -33,11 +35,10 @@ export default function BranchBakersReportPage(props) {
             dispatch(setCharge(res));
             setLoading(false);
         });
-        get_branch_expenses(branchid, date).then((res)=>{
+        get_branch_expenses(branchid, date).then((res) => {
             dispatch(setExpenses(res));
-        })
-    }, [refresh,date]);
-
+        });
+    }, [refresh, date]);
 
     useEffect(() => {
         const value = charges?.filter((obj) =>
@@ -48,7 +49,7 @@ export default function BranchBakersReportPage(props) {
             obj?.name?.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
-        setNewData2(value2)
+        setNewData2(value2);
     }, [search, refresh]);
 
     return (
@@ -57,25 +58,25 @@ export default function BranchBakersReportPage(props) {
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Breadcrumbs />
                 <br />
-                
-                
+
                 {/* <Search search={search} setSearch={setSearch} /> */}
                 {loading ? (
                     <SkeletonLoader />
                 ) : (
                     <>
-                       <SalesChart />
-                       <BranchSearchExpenses />
-                        <div className="grid grid-cols-2 gap-4 mt-5">
-                            <div className="h-auto w-auto col-span-2">
-                                <CreditsChargeTable 
+                        <SalesChart />
+                        <BranchSearchExpenses />
+                        <div class="grid grid-rows-2 grid-flow-col grid-cols-3 gap-4  mt-5">
+                            <div class="col-span-2 h-auto w-auto ">
+                            <CreditsChargeTable 
                                   data={search == "" ? charges : newData}/>
                             </div>
-                            <div className="h-auto w-auto  col-span-2">
-                                <BranchExpensesTable
+                            <div class="row-span-2 col-span-2 h-auto w-auto ">
+                            <BranchExpensesTable
                                     data={search2 == "" ? expenses : newData2}
                                 />
                             </div>
+                            <div class="row-span-3 h-auto w-auto bg-red-400">Domination here</div>
                         </div>
                     </>
                 )}

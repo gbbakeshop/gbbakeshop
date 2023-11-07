@@ -34,7 +34,7 @@ export default function BranchBreadReportEdit({ data,account }) {
         const newData = {
             id: data.id,
             userid:account.id,
-            // new_production: formData.get("new_production"),
+            new_production: data.new_production,
             beginning: formData.get("beginning"),
             charge: formData.get("charge"),
             remarks: formData.get("remarks"),

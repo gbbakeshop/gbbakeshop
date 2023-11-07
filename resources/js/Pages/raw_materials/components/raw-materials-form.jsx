@@ -146,6 +146,7 @@ export default function RawMaterialsForm({ selected, data }) {
                                                                     key={index}
                                                                 >
                                                                     <Input
+                                                                       
                                                                         name={`quantity_${index}`} // Use unique names for each quantity input
                                                                         title={
                                                                             res.raw_materials

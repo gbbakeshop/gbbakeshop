@@ -24,11 +24,12 @@ export default function CreateProductionForm({
     const ref = useRef();
     const [ingredients, setIngredients] = useState([]);
     const [production, setProduction] = useState(0);
+    const [targetProduction, setTargetProduction] = useState(0);
     const [quantity, setQuantity] = useState(1);
     const [load, setLoad] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const dispatch = useDispatch();
-
+    
     const id = data?.selected_ingredients?.map((res) =>
         parseInt(res.raw_materials_id)
     );
@@ -83,12 +84,14 @@ export default function CreateProductionForm({
         if (hasNagative) {
             if (hasNagative?.includes(true)) {
                 setDisabled(true);
+            }else if(parseInt(targetProduction) !== (data.target * quantity)){
+                setDisabled(true);
             } else {
                 setDisabled(false);
             }
         }
-    }, [quantity]);
-
+    }, [quantity,targetProduction]);
+    
     useEffect(() => {
         get_all_ingredients().then((res) => {
             setIngredients(res.status);
@@ -107,11 +110,24 @@ export default function CreateProductionForm({
             });
         setProduction(values);
     }
+
+    function setTargetValue(e) {
+        const formData = new FormData(ref.current);
+        const ingredients = data?.selected_breads.map((res, index) => ({
+            target: formData.get(`target_${index}`),
+        }));
+        const values = ingredients
+            .map((res) => parseInt(res.target))
+            .reduce(function (a, b) {
+                return a + b;
+            });
+        setTargetProduction(values);
+    }
     async function submitHandler(e) {
         e.preventDefault();
         dispatch(isSetResponse(loading()));
         const formData = new FormData(ref.current);
-         setLoad(true);
+        setLoad(true);
         if (quantity > 0) {
             const subData = {
                 quantity: quantity,
@@ -121,7 +137,11 @@ export default function CreateProductionForm({
             };
 
             const ingredients = data?.selected_breads.map((res, index) => ({
-                quantity: formData.get(`quantity_${index}`),
+                quantity: parseInt(formData.get(`quantity_${index}`)),
+            }));
+
+            const targetPerBread = data?.selected_breads.map((res, index) => ({
+                targetPerBread: parseInt(formData.get(`target_${index}`)),
             }));
 
             const targetPieces = data.target * quantity;
@@ -146,6 +166,7 @@ export default function CreateProductionForm({
                         (res, index) => ({
                             ...res,
                             ...ingredients[index],
+                            ...targetPerBread[index]
                         })
                     ),
                 },
@@ -156,7 +177,6 @@ export default function CreateProductionForm({
                     }))
                 ),
             };
-
             setTimeout(async () => {
                 const create = await create_new_records(newData);
                 setOpen(false);
@@ -244,6 +264,9 @@ export default function CreateProductionForm({
                                                 </Dialog.Title>
                                             </div>
                                             <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                                               <div className="text-red-500">
+                                               {targetProduction !== (data.target * quantity)?"Note: target pieces and target per bread must be equal.":''}
+                                               </div>
                                                 <div className="grid grid-rows-1 grid-flow-col gap-1 text-lg font-semibold">
                                                     Charge (
                                                     {data.target * quantity <
@@ -261,6 +284,14 @@ export default function CreateProductionForm({
                                                     Target Pieces (
                                                     {data.target * quantity}
                                                     )<br />
+                                                    Target Pieces Per Bread
+                                                    (
+                                                    {!isNaN(targetProduction)
+                                                        ? targetProduction
+                                                        : 0}
+                                                    )
+                                                    <br />
+                                                    {/* targetProduction !== (data.target * quantity) */}
                                                     Actual Target (
                                                     {!isNaN(production)
                                                         ? production
@@ -290,26 +321,54 @@ export default function CreateProductionForm({
                                                                             {
                                                                                 res.bread_name
                                                                             }
-                                                                           
-                                                                            <input
-                                                                                name={`quantity_${index}`}
-                                                                                defaultValue={
-                                                                                    0
-                                                                                }
-                                                                                required
-                                                                                onInput={(
-                                                                                    e
-                                                                                ) =>
-                                                                                    setQuantityValue(
-                                                                                        e
-                                                                                            .target
-                                                                                            .value
-                                                                                    )
-                                                                                }
-                                                                                className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
-                                                                                type="number"
-                                                                                placeholder="Pieces"
-                                                                            />
+                                                                            <div className="flex gap-x-4">
+                                                                                <div>
+                                                                                    Target
+                                                                                    Pieces
+                                                                                    <input
+                                                                                        name={`target_${index}`}
+                                                                                        defaultValue={
+                                                                                            0
+                                                                                        }
+                                                                                        onInput={(
+                                                                                            e
+                                                                                        ) =>
+                                                                                            setTargetValue(
+                                                                                                e
+                                                                                                    .target
+                                                                                                    .value
+                                                                                            )
+                                                                                        }
+                                                                                        required
+                                                                                        className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                                                                        type="number"
+                                                                                        placeholder="Target Pieces"
+                                                                                    />
+                                                                                </div>
+                                                                                <div>
+                                                                                    Actual
+                                                                                    Pieces
+                                                                                    <input
+                                                                                        name={`quantity_${index}`}
+                                                                                        defaultValue={
+                                                                                            0
+                                                                                        }
+                                                                                        required
+                                                                                        onInput={(
+                                                                                            e
+                                                                                        ) =>
+                                                                                            setQuantityValue(
+                                                                                                e
+                                                                                                    .target
+                                                                                                    .value
+                                                                                            )
+                                                                                        }
+                                                                                        className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}
+                                                                                        type="number"
+                                                                                        placeholder="Actual Pieces"
+                                                                                    />
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     )
                                                                 )}

@@ -9,6 +9,7 @@ export default function Input({ data,title, type, placeholder,name }) {
                 {title}
             </label>
             <input
+                step="any"
                 name={name}
                 defaultValue={data}
                 required

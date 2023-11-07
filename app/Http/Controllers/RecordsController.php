@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BranchRawMaterials;
+use App\Models\Breads;
 use App\Models\Expenses;
 use App\Models\History;
 use App\Models\Records;
@@ -399,8 +400,9 @@ class RecordsController extends Controller
 
             if ($bakers) {
                 if ($bread) {
-                    $res = $bread->update([
-                        'charge' => ($bread->charge ?? 0) + ($request->charge ?? 0),
+                    $res = Records::where('id',$bread->id)
+                    ->update([
+                        'charge' => ($bread->charge ?? 0) + ($bakers->charge ?? 0),
                         'overs' => ($bread->overs ?? 0) + ($request->overs ?? 0),
                         'new_production' => ($bread->new_production ?? 0) + ($bakers->new_production ?? 0),
                         'total' => ($bakers->new_production ?? 0) + ($bread->total ?? 0),
@@ -409,8 +411,8 @@ class RecordsController extends Controller
                         Records::where('id', $bakers->id)->delete();
                     }
                 } else {
-                    $bakers->update([
-                        'charge' => $request->charge,
+                    Records::where('id',$bakers->id)
+                    ->update([
                         'overs' => $request->overs,
                         'status' => $request->moveTo,
                     ]);
@@ -427,7 +429,7 @@ class RecordsController extends Controller
                 History::create([
                     'branchid' => $request->breadid[$i],
                     'userid' => $request->userid,
-                    'message' => 'transferred ' . $bakers->bread_name . 'in Bread Report page with the charge of ' . $request->charge . 'pcs and over of ' . $request->overs . 'pcs',
+                    'message' => 'transferred ' . $bakers->bread_name . 'in Bread Report page with the over of ' . $request->overs . 'pcs',
                     'date' => $request->date
                 ]);
             }
@@ -495,6 +497,7 @@ class RecordsController extends Controller
         }
 
         for ($i = 0; $i < count($request->data['selected_breads']); $i++) {
+            $bread = Breads::where('id', $request->data['selected_breads'][$i]['bread_id'])->first();
             $findBeginning = Records::where([
                 ['breadid', '=', $request->data['selected_breads'][$i]['bread_id']],
                 ['branchid', '=', $request->branchid],
@@ -503,6 +506,19 @@ class RecordsController extends Controller
                 ->orderBy('id', 'DESC')
                 ->first();
 
+                if ($request->data['selected_breads'][$i]['targetPerBread'] > $request->data['selected_breads'][$i]['quantity']) {
+                    Charge::create([
+                        'branchid' => $request->branchid,
+                        'breadid' => $request->data['selected_breads'][$i]['bread_id'],
+                        'userid' => $request->account['id'],
+                        'date'=>$request->date,
+                        'amount'=>($request->data['selected_breads'][$i]['targetPerBread'] - $request->data['selected_breads'][$i]['quantity']) * $bread->price,
+                        'quantity' => $request->data['selected_breads'][$i]['targetPerBread'] - $request->data['selected_breads'][$i]['quantity'],
+                        'discription' => 'has charge ' . $request->data['selected_breads'][$i]['targetPerBread'] - $request->data['selected_breads'][$i]['quantity'].' with the price of '. $bread->price,
+                        'type' => 'Charge'
+                    ]);
+                }
+        
             if ($findBeginning) {
                 Records::where('id', '=', $findBeginning->id)
                     ->update([
@@ -512,6 +528,7 @@ class RecordsController extends Controller
                         'bread_name' => $request->data['selected_breads'][$i]['bread_name'],
                         'new_production' => $findBeginning->new_production + $request->data['selected_breads'][$i]['quantity'],
                         'total' => $findBeginning->new_production + $request->data['selected_breads'][$i]['quantity'],
+                        'charge'=>$request->data['selected_breads'][$i]['targetPerBread'] - $request->data['selected_breads'][$i]['quantity'] + $findBeginning->quantity,
                         'remarks1' => 0,
                         'remarks2' => 0,
                         'date' => $request->date
@@ -526,6 +543,7 @@ class RecordsController extends Controller
                     'new_production' => $request->data['selected_breads'][$i]['quantity'],
                     'total' => $request->data['selected_breads'][$i]['quantity'],
                     'status' => 'bakers',
+                    'charge'=>$request->data['selected_breads'][$i]['targetPerBread'] - $request->data['selected_breads'][$i]['quantity'],
                     'remarks1' => 0,
                     'remarks2' => 0,
                     'date' => $request->date,
@@ -533,16 +551,7 @@ class RecordsController extends Controller
             }
         }
 
-        if ($request->charge !== 0) {
-            Charge::create([
-                'branchid' => $request->branchid,
-                'userid' => $request->account['id'],
-                'quantity' => $request->charge,
-                'discription' => 'has charge ' . $request->charge,
-                'type' => 'Charge'
-            ]);
-        }
-
+       
         History::create([
             'branchid' => $request->branchid,
             'userid' => $request->account['id'],

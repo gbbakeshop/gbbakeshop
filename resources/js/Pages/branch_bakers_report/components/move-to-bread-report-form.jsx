@@ -34,7 +34,7 @@ export default function MoveToBreadReportForm({ account,data, branchid }) {
             branchid: branchid,
             breadid: [data.breadid],
             moveTo: "bread",
-            charge: formData.get("charge"),
+            // charge: formData.get("charge"),
             remarks: formData.get("remarks"),
             overs: formData.get("overs"),
             date: moment().format("L"),
@@ -130,13 +130,13 @@ export default function MoveToBreadReportForm({ account,data, branchid }) {
                                                     className="flex flex-col h-full w-full"
                                                 >
                                                     <div className="flex-1">
-                                                        <Input
+                                                        {/* <Input
                                                             data={0}
                                                             name="charge"
                                                             title={"Charge"}
                                                             placeholder="Enter change"
                                                             type="number"
-                                                        />
+                                                        /> */}
                                                         <Input
                                                             data={0}
                                                             name="overs"

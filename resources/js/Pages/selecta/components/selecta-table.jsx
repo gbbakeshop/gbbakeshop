@@ -7,6 +7,7 @@ import DeleteIcon from "@/_icons/delete-icon";
 import EyesIcon from "@/icons/eyes-icon";
 import TrashIcon from "@/icons/trash-icon";
 import PencilIcon from "@/icons/pencil-icon";
+import CreateSelectaForm from "./create-selecta-form";
 export default function SelectaTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
 
@@ -39,6 +40,7 @@ export default function SelectaTableComponent({ data }) {
                     Button
                 </button>
             )}
+            <CreateSelectaForm />
             <table className="min-w-max w-full table-auto">
                 <thead>
                     <tr className=" text-gray-600 uppercase text-sm leading-normal">
@@ -61,7 +63,7 @@ export default function SelectaTableComponent({ data }) {
                         >
                             <td className="py-3 px-6 text-left whitespace-nowrap">
                                 <div className="flex items-center">
-                                    <div className="mr-2">
+                                    {/* <div className="mr-2">
                                         <input
                                             onClick={() => addItem(res.id)}
                                             type="checkbox"
@@ -72,7 +74,7 @@ export default function SelectaTableComponent({ data }) {
                                                     : "border-red-500 border bg-red-500 text-red-500"
                                             }  form-checkbox`}
                                         />
-                                    </div>
+                                    </div> */}
                                     <span className="font-medium">
                                         {res.product_name}
                                     </span>

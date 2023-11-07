@@ -19,8 +19,8 @@ export default function RawMaterialsDelete({ data }) {
         }).then((result) => {
             if (result.isConfirmed) {
                 delete_raw_materials(id).then((res) => {
+                    dispatch(isRandomhandler());
                     if (res.status == "success") {
-                        dispatch(isRandomhandler());
                         Swal.fire({
                             icon: "success",
                             title: "Your work has been saved",

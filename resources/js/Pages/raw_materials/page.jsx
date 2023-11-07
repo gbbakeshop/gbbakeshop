@@ -20,11 +20,12 @@ export default function RawMaterialsPage(props) {
             obj.raw_materials.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
-    }, [search]);
+    }, [search,refresh]);
 
     useEffect(() => {
         get_all_raw_materials().then((res) => {
             setData(res);
+            setSearch('')
             setLoading(false);
         });
     }, [refresh]);

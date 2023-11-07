@@ -168,7 +168,7 @@ export default function CreateChargeCredit() {
                                                                 for="type-2"
                                                                 className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                                             >
-                                                               Credit
+                                                               Credit/CA
                                                             </label>
                                                         </div>
                                                         </div>

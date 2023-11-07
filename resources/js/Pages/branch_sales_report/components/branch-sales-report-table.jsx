@@ -75,7 +75,7 @@ export default function BranchSalesReportTableComponent({ data, account }) {
             title: "Charges",
             total: data.reduce(
                 (total, obj) =>
-                    total + obj.charge == "" ? 0 : parseFloat(obj.charge),
+                    total + parseFloat(obj.charge),
                 0
             ),
         },
@@ -104,7 +104,7 @@ export default function BranchSalesReportTableComponent({ data, account }) {
             title: "Sales",
             total: data.reduce(
                 (total, obj) =>
-                    total + parseFloat(obj.price) * parseFloat(obj.soldout),
+                    total + parseFloat(obj.sales),
                 0
             ),
         },
