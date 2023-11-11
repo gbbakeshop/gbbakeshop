@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('branch_selectas', function (Blueprint $table) {
             $table->id();
-            $table->string('branchid')->nullable();
+            $table->bigInteger('branchid')->nullable();
+            $table->bigInteger('selectaid')->nullable();
             $table->string('product_name')->nullable();
             $table->float('quantity')->nullable();
             $table->float('price')->nullable();

@@ -1,11 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useRef } from "react";
-import { update_personal_information,update_personal_credentials } from "@/services/account-services";
-import { isSetResponse,isRandomhandler } from "@/_redux/app-slice";
+import {
+    update_personal_information,
+    update_personal_credentials,
+} from "@/services/account-services";
+import { isSetResponse, isRandomhandler } from "@/_redux/app-slice";
 
-export default function BranchSettingsEditForm({ data }) {
+export default function BranchSettingsEditForm({ data, positions }) {
+    
     const { branches } = useSelector((state) => state.app);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const ref1 = useRef();
     const ref2 = useRef();
     const position = [
@@ -49,7 +53,7 @@ export default function BranchSettingsEditForm({ data }) {
     function loading() {
         return {
             status: "loading",
-            message:"Loading..."
+            message: "Loading...",
         };
     }
 
@@ -64,11 +68,10 @@ export default function BranchSettingsEditForm({ data }) {
             position: formData.get("position"),
             address: formData.get("address"),
         };
-        update_personal_information(newData)
-        .then(res=>{
-            dispatch(isRandomhandler())
+        update_personal_information(newData).then((res) => {
+            dispatch(isRandomhandler());
             dispatch(isSetResponse(res));
-        })
+        });
     }
 
     function submitHandler2(e) {
@@ -79,11 +82,10 @@ export default function BranchSettingsEditForm({ data }) {
             email: formData.get("email"),
             password: formData.get("password"),
         };
-        update_personal_credentials(newData)
-        .then(res=>{
-            dispatch(isRandomhandler())
+        update_personal_credentials(newData).then((res) => {
+            dispatch(isRandomhandler());
             dispatch(isSetResponse(res));
-        })
+        });
     }
     return (
         <>
@@ -121,61 +123,71 @@ export default function BranchSettingsEditForm({ data }) {
                                 </div>
                             </div>
 
-                            <div className="sm:col-span-3">
-                                <label
-                                    htmlFor="country"
-                                    className="block text-sm font-medium leading-6 text-gray-900"
-                                >
-                                    Branches
-                                </label>
-                                <div className="mt-2">
-                                    <select
-                                        id="branches"
-                                        name="branchid"
-                                        autoComplete="branches-name"
-                                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                                    >
-                                        {branches.map((res, index) => (
-                                            <option key={index}
-                                            value={res.id}>
-                                                {res.branch_name}
-                                            </option>
-                                        ))}
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
+                            {positions == "admin" && (
                                 <div className="sm:col-span-3">
                                     <label
-                                        htmlFor="position"
+                                        htmlFor="country"
                                         className="block text-sm font-medium leading-6 text-gray-900"
                                     >
-                                        Position
+                                        Branches
                                     </label>
                                     <div className="mt-2">
                                         <select
-                                            id="position"
-                                            name="position"
-                                            autoComplete="position-name"
+                                            id="branches"
+                                            name="branchid"
+                                            autoComplete="branches-name"
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6"
                                         >
-                                            {position.map((res, index) => (
+                                            {branches.map((res, index) => (
                                                 <option
                                                     key={index}
+                                                    value={res.id}
                                                     selected={
-                                                        res.name ===
-                                                        data.position
+                                                        res.branch_name ===
+                                                        data.get_branch?.branch_name
                                                     }
-                                                    value={data.position}
                                                 >
-                                                    {res.name}
+                                                    {res.branch_name}
                                                 </option>
                                             ))}
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+                            )}
+
+                            {positions == "admin" && (
+                                <div>
+                                    <div className="sm:col-span-3">
+                                        <label
+                                            htmlFor="position"
+                                            className="block text-sm font-medium leading-6 text-gray-900"
+                                        >
+                                            Position
+                                        </label>
+                                        <div className="mt-2">
+                                            <select
+                                                id="position"
+                                                name="position"
+                                                autoComplete="position-name"
+                                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                                            >
+                                                {position.map((res, index) => (
+                                                    <option
+                                                        key={index}
+                                                        selected={
+                                                            res.name ===
+                                                            data.position
+                                                        }
+                                                        value={data.position}
+                                                    >
+                                                        {res.name}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
 
                             <div className="sm:col-span-4 mb-5">
                                 <label

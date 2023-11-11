@@ -10,11 +10,11 @@ import { useDispatch } from "react-redux";
 import { isRandomhandler, isSetResponse } from "@/_redux/app-slice";
 import moment from "moment";
 
-export default function CreateExpenses() {
+export default function CreateExpenses({branchid}) {
     const [open, setOpen] = useState(false);
     const ref = useRef();
     const { url } = usePage();
-    const path = url.split("/")[2];
+    const path = branchid??url.split("/")[2];
     const [files, setFiles] = useState([]);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);

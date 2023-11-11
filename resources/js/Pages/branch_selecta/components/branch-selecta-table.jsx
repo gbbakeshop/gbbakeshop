@@ -7,8 +7,18 @@ import { BsCheckCircleFill } from "react-icons/bs";
 import ViewIcon from "@/_icons/view-icon";
 import EditIcon from "@/_icons/edit-icon";
 import DeleteIcon from "@/_icons/delete-icon";
+import PencilIcon from "@/icons/pencil-icon";
+import DatabaseIcon from "@/icons/database-icon";
+import BranchSelectaRemainingForm from "./branch-selecta-remaining-form";
+import BranchSelectaEditForm from "./branch-selecta-edit-form";
+import ExclamationIcon from "@/icons/exclamation-icon";
+import CheckIcon from "@/icons/check-icon";
 
-export default function BranchSelectaTableComponent({ data }) {
+export default function BranchSelectaTableComponent({
+    data,
+    userid,
+    position,
+}) {
     const [selected, setSelected] = useState([]);
     function isExistFunction(res) {
         //check if exist
@@ -101,25 +111,31 @@ export default function BranchSelectaTableComponent({ data }) {
                             </td>
                             <td className="py-3 px-6 text-left">
                                 {res.warning < res.quantity ? (
-                                    <span className="bg-purple-200 text-green-600 py-1 px-3 rounded-full text-xs">
-                                        {res.warning}
+                                    <span className="text-green-600">
+                                        <CheckIcon />
                                     </span>
                                 ) : (
-                                    <span className="bg-purple-200 text-red-600 py-1 px-3 rounded-full text-xs">
-                                        {res.warning}
-                                    </span>
+                                    <div className=" text-red-600">
+                                        <ExclamationIcon />
+                                    </div>
                                 )}
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                                        <ViewIcon />
-                                    </div>
-                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                                        <EditIcon />
-                                    </div>
-                                    <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                                        <DeleteIcon />
+                                    {position == "admin" && (
+                                        <div className="w-4 transform text-blue-500 mr-4 hover:text-blue-500 hover:scale-110">
+                                            <BranchSelectaEditForm
+                                                userid={userid}
+                                                data={res}
+                                            />
+                                        </div>
+                                    )}
+
+                                    <div className="w-4 mr-4 transform text-red-500 hover:text-red-500 hover:scale-110">
+                                        <BranchSelectaRemainingForm
+                                            userid={userid}
+                                            data={res}
+                                        />
                                     </div>
                                 </div>
                             </td>

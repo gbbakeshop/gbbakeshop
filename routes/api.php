@@ -55,8 +55,26 @@ Route::post('/create_recipes','App\Http\Controllers\RecipesController@create_rec
 // Route::get('/get_branch_recipes/{branchid}','App\Http\Controllers\RecipesController@get_branch_recipes');
 
 Route::get('/get_all_selecta','App\Http\Controllers\SelectaController@get_all_selecta');
+Route::post('/create_selecta','App\Http\Controllers\SelectaController@create_selecta');
+Route::post('/update_selecta','App\Http\Controllers\SelectaController@update_selecta');
+Route::delete('/delete_selecta/{id}','App\Http\Controllers\SelectaController@delete_selecta');
 
 Route::get('/get_branch_selecta/{branchid}','App\Http\Controllers\BranchSelectaController@get_branch_selecta');
+
+Route::post('/update_selecta_remaining','App\Http\Controllers\BranchSelectaRecordController@update_selecta_remaining');
+Route::post('/update_selecta_quantity','App\Http\Controllers\BranchSelectaRecordController@update_selecta_quantity');
+Route::post('/update_selecta_quantity_record','App\Http\Controllers\BranchSelectaRecordController@update_selecta_quantity_record');
+Route::post('/get_branch_selecta_records','App\Http\Controllers\BranchSelectaRecordController@get_branch_selecta_records');
+
+
+Route::post('/get_branch_selecta_history','App\Http\Controllers\SelectaHistoryController@get_branch_selecta_history');
+Route::get('/get_user_histories/{id}/{find}','App\Http\Controllers\SelectaHistoryController@get_user_histories');
+
+
+Route::post('/create_domination','App\Http\Controllers\DominationController@create_domination');
+Route::post('/get_domination','App\Http\Controllers\DominationController@get_domination');
+
+
 
 Route::get('/get_all_ingredients','App\Http\Controllers\IngredientsController@get_all_ingredients');
 Route::post('/create_ingredients','App\Http\Controllers\IngredientsController@create_ingredients');

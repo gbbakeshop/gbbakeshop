@@ -1,10 +1,56 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import XMarkIcon from "@/icons/x-mark-icon";
+import Input from "@/_components/input";
+import LoadingIcon from "@/icons/loading-icon";
+import { useDispatch } from "react-redux";
+import { isRandomhandler, isSetResponse } from "@/_redux/app-slice";
+import { create_selecta } from "@/services/selecta-services";
 
 export default function CreateSelectaForm() {
     const [open, setOpen] = useState(false);
+    const [load,setLoad] = useState(false)
+    const ref = useRef();
+    const dispatch = useDispatch()
+    // const { isReset } = useSelector((state) => state.app);
 
+    // useEffect(() => {
+    //     if (!isReset) {
+    //         ref?.current?.reset();
+    //     }
+    // }, [isReset]);
+
+    function loading() {
+        return {
+            status: "loading",
+            message:'Loading...'
+        };
+    }
+    
+    function submitHandler(e) {
+        e.preventDefault()
+        setLoad(true)
+        const formData = new FormData(ref.current);
+        dispatch(isSetResponse(loading()));
+        const data = {
+            product_name: formData.get("product_name").toUpperCase(),
+            price: formData.get("price"),
+        };
+        create_selecta(data)
+        .then(res=>{
+            dispatch(isSetResponse(res));
+            setOpen(false)
+            if(res.status == 'success'){
+                ref.current.reset();
+            }
+            setTimeout(() => {
+                setLoad(false);
+                dispatch(isRandomhandler());
+                dispatch(isSetResponse([]));
+            }, 2000);
+          
+        })
+    }
     return (
         <>
             <button
@@ -75,7 +121,45 @@ export default function CreateSelectaForm() {
                                                 </Dialog.Title>
                                             </div>
                                             <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                                                {/* Your content */}
+                                                <form
+                                                    name="form"
+                                                    ref={ref}
+                                                    onSubmit={submitHandler}
+                                                    className="flex flex-col h-full w-full"
+                                                >
+                                                       <div className="flex-1">
+                                                    <Input
+                                                        type="text"
+                                                        name="product_name"
+                                                        data=""
+                                                        title={"Product Name"}
+                                                        placeholder="Enter name of product"
+                                                    />
+                                                    <Input
+                                                        type="number"
+                                                        name="price"
+                                                        data=""
+                                                        title={"Price"}
+                                                        placeholder="Enter product price"
+                                                    />
+                                                    </div>
+                                                    <div className="flex-none">
+                                                        {load ? (
+                                                            <button
+                                                                disabled
+                                                                className="flex-none w-full items-center align-center justify-center bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0"
+                                                            >
+                                                                <center>
+                                                                    <LoadingIcon />
+                                                                </center>
+                                                            </button>
+                                                        ) : (
+                                                            <button className="flex-none w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded bottom-0">
+                                                                UPDATE
+                                                            </button>
+                                                        )}
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </Dialog.Panel>

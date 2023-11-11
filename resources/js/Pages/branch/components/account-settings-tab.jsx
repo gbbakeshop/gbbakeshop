@@ -37,9 +37,9 @@ export default function BranchAccountTabs({branch,id}) {
                 </li>
                 <li className="mr-2">
                     <Link
-                        href={route("b_expenses")}
+                        href={route("b_credits")}
                         className={
-                            path == "expenses"
+                            path == "credits"
                                 ? "inline-flex items-center justify-center p-4 text-red-600 border-b-2 border-red-600 rounded-t-lg active dark:text-red-500 dark:border-red-500 group"
                                 : "inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300  group"
                         }
@@ -47,7 +47,7 @@ export default function BranchAccountTabs({branch,id}) {
                     >
                         <svg
                             className={
-                                path == "expenses"
+                                path == "credits"
                                     ? "w-4 h-4 mr-2 text-red-600 dark:text-red-500"
                                     : "w-4 h-4 mr-2 text-gray-400 group-hover:text-gray-500  dark:group-hover:text-gray-300"
                             }

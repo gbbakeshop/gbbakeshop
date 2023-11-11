@@ -4,14 +4,15 @@ import { Link } from "@inertiajs/react";
 import { useState,useEffect } from "react";
 import { get_account_credits_charge } from "@/services/credits-services";
 import {usePage} from "@inertiajs/react";
-export default function AccountExpensesTable() {
+export default function AccountExpensesTable({id}) {
     const [data,setData] = useState([])
     const { url } = usePage();
-    const userid = url.split("/")[4];
+    const userid = url.split("/")[4]??id;
     
     const column = [
         { title: "Discription" },
         { title: "Amount" },
+        { title: "Status" },
     ];
 
     useEffect(() => {
@@ -20,7 +21,7 @@ export default function AccountExpensesTable() {
             setData(res)
         })
     }, []);
-    console.log('data',data)
+
     return (
         <>
             <div className="my-6">
@@ -55,6 +56,9 @@ export default function AccountExpensesTable() {
                                 </td>
                                 <td className="py-3 px-6 text-left">
                                     <div className="flex">{res.amount??0}</div>
+                                </td>
+                                <td className="py-3 px-6 text-left">
+                                    <div className="flex">{res.statys??'Unpaid'}</div>
                                 </td>
                               
                             </tr>

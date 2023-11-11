@@ -4,3 +4,8 @@ export async function get_branch_history(date) {
     })
     return response.data.status;
 }
+
+export async function get_user_histories(id,find) {
+    const response = await axios.get('/api/get_user_histories/'+id+'/'+find)
+    return response.data.status;
+}

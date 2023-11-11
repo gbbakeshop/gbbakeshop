@@ -15,6 +15,7 @@ import CreditsChargeTable from "./components/credits-charge-table";
 import { get_branch_expenses } from "@/services/expenses-services";
 import { get_all_credits_charge } from "@/services/credits-services";
 import SalesChart from "./components/sales-chart";
+import Domination from "./components/domination";
 
 export default function BranchBakersReportPage(props) {
     const dispatch = useDispatch();
@@ -66,17 +67,19 @@ export default function BranchBakersReportPage(props) {
                     <>
                         <SalesChart />
                         <BranchSearchExpenses />
-                        <div class="grid grid-rows-2 grid-flow-col grid-cols-3 gap-4  mt-5">
-                            <div class="col-span-2 h-auto w-auto ">
+                        <div className="grid grid-rows-2 grid-flow-col grid-cols-3 gap-4  mt-5">
+                            <div className="col-span-2 h-auto w-auto ">
                             <CreditsChargeTable 
                                   data={search == "" ? charges : newData}/>
                             </div>
-                            <div class="row-span-2 col-span-2 h-auto w-auto ">
+                            <div className="row-span-2 col-span-2 h-auto w-auto ">
                             <BranchExpensesTable
                                     data={search2 == "" ? expenses : newData2}
                                 />
                             </div>
-                            <div class="row-span-3 h-auto w-auto bg-red-400">Domination here</div>
+                            <div className="row-span-3 h-auto w-auto ">
+                                <Domination />
+                            </div>
                         </div>
                     </>
                 )}

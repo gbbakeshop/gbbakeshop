@@ -15,7 +15,7 @@ import { setBranches } from "@/_redux/app-slice";
 import { useDispatch } from "react-redux";
 import CubeIcon from "@/icons/cube-icon";
 import DatabaseIcon from "@/icons/database-icon";
-export default function BranchSidebarCategories({position,branchid}) {
+export default function BranchSidebarCategories({ position, branchid }) {
     const dispatch = useDispatch();
     const { url } = usePage();
     const location = url.split("/")[2];
@@ -37,11 +37,15 @@ export default function BranchSidebarCategories({position,branchid}) {
                 console.log("waa", res);
             });
     }
-    const access = position == 'Chief Baker' || 
-                   position == 'Baker' || 
-                   position == 'Lamasador' || 
-                   position == 'Hornero'?route("b_bread_production"): 
-                   position == 'Sales Lady' || position == 'Cashier'?route("b_bakers_report"):route("b_bread_production")
+    const access =
+        position == "Chief Baker" ||
+        position == "Baker" ||
+        position == "Lamasador" ||
+        position == "Hornero"
+            ? route("b_bread_production")
+            : position == "Sales Lady" || position == "Cashier"
+            ? route("b_bakers_report")
+            : route("b_bread_production");
     return (
         <div className="flex  border-r flex-col items-center w-16 h-screen py-8 space-y-8 dark:bg-gray-900 dark:border-gray-700">
             {/* <Link>
@@ -53,7 +57,7 @@ export default function BranchSidebarCategories({position,branchid}) {
             </Link> */}
 
             <Link
-               href={route("b_dashboard")}
+                href={route("b_dashboard")}
                 className={`${
                     location == "dashboard"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
@@ -62,6 +66,22 @@ export default function BranchSidebarCategories({position,branchid}) {
             >
                 <StoreIcon />
             </Link>
+
+            {position == "Supervisor" || position == "Cashier" || position == "admin"? (
+                <Link
+                    href={route("b_expenses")}
+                    className={`${
+                        location == "expenses"
+                            ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
+                            : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
+                    } `}
+                >
+                    <div className="relative">
+                        <PieChartIcon />
+                    </div>
+                </Link>
+            ) : null}
+
             <Link
                 href={route("b_raw_materials")}
                 className={`${
@@ -75,12 +95,12 @@ export default function BranchSidebarCategories({position,branchid}) {
             <Link
                 href={access}
                 className={`${
-                    (location == "bakers-production")||
-                    (location == "bakers-report") ||
-                    (location == "bread-report") ||
-                    (location == "sales-report") ||
-                    (location == "bread-production") ||
-                    (location == "history") ||
+                    location == "bakers-production" ||
+                    location == "bakers-report" ||
+                    location == "bread-report" ||
+                    location == "sales-report" ||
+                    location == "bread-production" ||
+                    location == "history" ||
                     location == "accounts"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
@@ -88,36 +108,25 @@ export default function BranchSidebarCategories({position,branchid}) {
             >
                 <DatabaseIcon />
             </Link>
-            {/* <Link
-                 href={route("b_selecta")}
+            <Link
+                href={route("b_selecta")}
                 className={`${
-                    (location == "selecta")
+                    location == "selecta" ||
+                    location == "selecta_records" ||
+                    location == "selecta_history"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
                 } `}
             >
                 <CubeIcon />
-            </Link> */}
-            {/* <Link
-                href={route("b_dashboard")}
-                className={`${
-                    location == "chats"
-                        ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
-                        : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
-                } `}
-            >
-                <div className="relative">
-                    <ChatsIcon />
-                    <span className="h-2 w-2 rounded-full bg-emerald-500 absolute right-0.5 ring-1 ring-white bottom-0"></span>
-                </div>
-            </Link> */}
+            </Link>
 
             <Link
                 href={route("b_settings")}
                 className={`${
-                    location == "settings"||
-                    (location == "expenses")||
-                    (location == "logs")
+                    location == "settings" ||
+                  (location == "credits")||
+                    location == "logs"
                         ? "p-1.5 text-red-500 transition-colors duration-200 bg-red-100 rounded-lg dark:text-red-400 dark:bg-gray-800"
                         : "p-1.5 text-gray-500 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-400 dark:hover:bg-gray-800 hover:bg-gray-100"
                 } `}

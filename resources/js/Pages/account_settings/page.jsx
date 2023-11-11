@@ -8,7 +8,7 @@ import BranchSettingsEditForm from "./components/edit-form";
 import { get_specific_accounts } from '@/services/account-services';
 import { usePage } from '@inertiajs/react';
 import { useSelector } from 'react-redux';
-export default function AccountSettingsPage() {
+export default function AccountSettingsPage(props) {
     const { account } = useSelector((state) => state.branchAccount);
   
 
@@ -19,7 +19,7 @@ export default function AccountSettingsPage() {
                 <Breadcrumbs />
                 <AccountProfile />
                 <AccountTabs />
-                <BranchSettingsEditForm data={account}/>
+                <BranchSettingsEditForm positions={ props.auth.user.position} data={account}/>
             </div>
         </AdministratorLayout>
     );

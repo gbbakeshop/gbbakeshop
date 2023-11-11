@@ -10,6 +10,7 @@ class BranchSelecta extends Model
     use HasFactory;
     protected $fillable = [
        'branchid',
+       'selectaid',
        'product_name',
        'quantity',
        'price',

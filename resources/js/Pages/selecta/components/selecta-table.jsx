@@ -8,6 +8,8 @@ import EyesIcon from "@/icons/eyes-icon";
 import TrashIcon from "@/icons/trash-icon";
 import PencilIcon from "@/icons/pencil-icon";
 import CreateSelectaForm from "./create-selecta-form";
+import DeleteSelecta from "./delete-selecta";
+import UpdateSelectaForm from "./update-select-form";
 export default function SelectaTableComponent({ data }) {
     const [selected, setSelected] = useState([]);
 
@@ -35,11 +37,11 @@ export default function SelectaTableComponent({ data }) {
     ];
     return (
         <div className="my-6 p-4">
-            {selected.length !== 0 && (
+            {/* {selected.length !== 0 && (
                 <button className="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
                     Button
                 </button>
-            )}
+            )} */}
             <CreateSelectaForm />
             <table className="min-w-max w-full table-auto">
                 <thead>
@@ -90,14 +92,16 @@ export default function SelectaTableComponent({ data }) {
                             </td>
                             <td className="py-3 px-6 text-left">
                                 <div className="flex">
-                                    <div className="text-green-500 w-4 mr-6 transform hover:text-red-500 hover:scale-110">
+                                    {/* <div className="text-green-500 w-4 mr-6 transform hover:text-red-500 hover:scale-110">
                                         <EyesIcon />
-                                    </div>
-                                    <div className="text-blue-500 w-4 mr-6 transform hover:text-red-500 hover:scale-110">
-                                        <PencilIcon />
+                                    </div> */}
+                                    <div className="text-blue-500 w-4 mr-6 transform hover:text-blue-500 hover:scale-110">
+                                    
+                                        <UpdateSelectaForm data={res}/>
                                     </div>
                                     <div className="text-red-500 w-4 mr-2 transform hover:text-red-500 hover:scale-110">
-                                        <TrashIcon />
+                                  
+                                        <DeleteSelecta id={res.id}/>
                                     </div>
                                 </div>
                             </td>

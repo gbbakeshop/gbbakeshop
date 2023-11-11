@@ -1,0 +1,1 @@
+async function e(s){return(await axios.post("/api/get_branch_history",{date:s})).data.status}async function r(s,t){return(await axios.get("/api/get_user_histories/"+s+"/"+t)).data.status}export{e as a,r as g};

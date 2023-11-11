@@ -17,7 +17,9 @@ export default function SettingsPage(props) {
                 <BranchAccountTabs
                  branch={auth.user.branchid} 
                  id={auth.user.id}/>
-                <BranchSettingsEditForm data={auth.user}/>
+                <BranchSettingsEditForm 
+                 positions={auth.user.position}
+                data={auth.user}/>
             </div>
        </BranchLayout>
     );

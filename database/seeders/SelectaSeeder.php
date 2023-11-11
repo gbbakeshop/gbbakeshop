@@ -108,12 +108,16 @@ class SelectaSeeder extends Seeder
         $branch = Branches::all();
         foreach ($supplies as $Supply) {
             
-            Selecta::create([
+            $selecta=Selecta::create([
                 'product_name' => $Supply['product_name'],
                 'price' => $Supply['price'],
             ]);
             for ($i = 1; $i <= count( $branch); $i++) {
-                BranchSelecta::create(['branchid' => $i] + $Supply);
+                BranchSelecta::create([
+                    'branchid' => $i,
+                    'selectaid'=>$selecta->id
+                    ] + $Supply,
+                );
             }
         }
     }

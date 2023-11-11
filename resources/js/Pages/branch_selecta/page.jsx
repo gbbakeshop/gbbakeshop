@@ -7,6 +7,8 @@ import SkeletonLoader from "@/_components/skeleton-loader";
 import Search from "@/_components/search";
 import SidebarBranches from "../_components/sidebar-branches";
 import Breadcrumbs from "@/_components/bread-crumbs";
+import BranchSelectaTabs from "./components/tab";
+import { useSelector } from "react-redux";
 
 export default function BranchSelectaPage(props) {
     const [data, setData] = useState([]);
@@ -15,20 +17,21 @@ export default function BranchSelectaPage(props) {
     const [loading, setLoading] = useState(true);
     const [newData, setNewData] = useState([]);
     const [search, setSearch] = useState("");
-
+    const { refresh } = useSelector((state) => state.app);
+    
     useEffect(() => {
         get_branch_selecta(branchid).then((res) => {
             setData(res);
             setLoading(false);
         });
-    }, []);
+    }, [refresh]);
 
     useEffect(() => {
         const value = data.filter((obj) =>
             obj.product_name.toLowerCase().includes(search.toLowerCase())
         );
         setNewData(value);
-    }, [search]);
+    }, [search,refresh]);
 
     return (
         <AdministratorLayout>
@@ -36,10 +39,13 @@ export default function BranchSelectaPage(props) {
             <div className="flex flex-col w-full p-4 overflow-auto h-screen">
                 <Breadcrumbs />
                 <Search search={search} setSearch={setSearch} />
+                <BranchSelectaTabs branchid={branchid}/>
                 {loading ? (
                     <SkeletonLoader />
                 ) : (
                     <BranchSelectaTableComponent
+                    position={props.auth.user.position}
+                    userid={props.auth.user.id}
                         data={search == "" ? data : newData}
                     />
                 )}

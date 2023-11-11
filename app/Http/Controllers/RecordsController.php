@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BranchRawMaterials;
+use App\Models\BranchSelectaRecord;
 use App\Models\Breads;
 use App\Models\Expenses;
 use App\Models\History;
@@ -154,6 +155,11 @@ class RecordsController extends Controller
             ['status', '=', 'done']
         ])->sum('sales');
 
+        $record2 = BranchSelectaRecord::where([
+            ['date', '=', $request->date],
+            ['branchid', '=', $request->branchid],
+        ])->sum('sales');
+
         $charge = Charge::where([
             ['date', '=', $request->date],
             ['branchid', '=', $request->branchid],
@@ -166,7 +172,7 @@ class RecordsController extends Controller
         ])->sum('amount');
         //     $industry->count = $countData??0;
         return response()->json([
-            'sales' => $record,
+            'sales' => $record + $record2,
             'charges' => $charge,
             'expenses' => $expenses,
             'message' => 'Transferred Successfully'

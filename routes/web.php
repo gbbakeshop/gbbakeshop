@@ -64,7 +64,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('accounts', function () {
             return Inertia::render('accounts/accounts');
         })->name('accounts');
-        
+
 
         Route::get('registration', function () {
             return Inertia::render('accounts/registration');
@@ -82,7 +82,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/', function () {
             return Inertia::render('branches/page');
         })->name('branches');
-        
+
 
         Route::get('{branchid}/analytics', function () {
             return Inertia::render('branch_analytics/page');
@@ -116,12 +116,20 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return Inertia::render('branch_selecta/page');
         })->name('branch_selecta');
 
-        
+        Route::get('{branchid}/selecta/records', function () {
+            return Inertia::render('branch_selecta/page_records');
+        })->name('branch_selecta_records');
+
+        Route::get('{branchid}/selecta/history', function () {
+            return Inertia::render('branch_selecta/page_history');
+        })->name('branch_selecta_history');
+
+
         Route::group(['prefix' => '{branchid}/accounts'], function () {
             Route::get('/', function () {
                 return Inertia::render('branch_accounts/page');
             })->name('branch_accounts');
-            
+
 
             Route::get('{userid}/expenses', function () {
                 return Inertia::render('account_expenses/page');
@@ -136,8 +144,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
             })->name('account_settings');
 
         });
-        
-        
+
+
         Route::get('{branchid}/history', function () {
             return Inertia::render('branch_history/page');
         })->name('branch_history');
@@ -183,9 +191,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('branch/selecta');
     })->name('b_selecta');
 
+    Route::get('/branch/selecta_records', function () {
+        return Inertia::render('branch/selecta_records');
+    })->name('b_selecta_records');
+
+    Route::get('/branch/selecta_history', function () {
+        return Inertia::render('branch/selecta_history');
+    })->name('b_selecta_history');
+
     Route::get('/branch/settings', function () {
         return Inertia::render('branch/settings');
     })->name('b_settings');
+
+
+    Route::get('/branch/credits', function () {
+        return Inertia::render('branch/account-credits');
+    })->name('b_credits');
 
     Route::get('/branch/logs', function () {
         return Inertia::render('branch/account-logs');

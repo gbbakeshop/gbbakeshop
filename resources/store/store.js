@@ -5,6 +5,7 @@ import salesReportSlice from '@/Pages/branch_sales_report/_redux/sales-report-sl
 import branchHistorySlice from '@/Pages/branch_history/_redux/branch-history-slice'
 import branchExpensesSlice from '@/Pages/branch_expenses/_redux/branch-expenses-slice'
 import branchAnalyticsSlice from '@/Pages/branch_analytics/_redux/branch-analytics-slice'
+import branchSelectaSlice from '@/Pages/branch_selecta/_redux/branch-selecta-slice'
 export default configureStore({
   reducer: {
     app: appSlice,
@@ -12,6 +13,7 @@ export default configureStore({
     salesReport:salesReportSlice,
     branchHistory:branchHistorySlice,
     branchExpenses:branchExpensesSlice,
-    branchAnalytics:branchAnalyticsSlice
+    branchAnalytics:branchAnalyticsSlice,
+    branchSelecta:branchSelectaSlice
   },
 })

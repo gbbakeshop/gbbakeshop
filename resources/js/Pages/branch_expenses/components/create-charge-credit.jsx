@@ -11,11 +11,11 @@ import { isRandomhandler, isSetResponse } from "@/_redux/app-slice";
 import moment from "moment";
 
 
-export default function CreateChargeCredit() {
+export default function CreateChargeCredit({branchid}) {
     const [open, setOpen] = useState(false);
     const ref = useRef();
     const { url } = usePage();
-    const path = url.split("/")[2];
+    const path = branchid??url.split("/")[2];
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch()
