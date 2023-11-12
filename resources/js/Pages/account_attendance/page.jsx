@@ -16,7 +16,7 @@ export default function AccountAttendancePage(props) {
     const [find, setFind] = useState("production");
     const [loading, setLoading] = useState(true);
     const userid = url.split("/")[4]??auth.user.id;
-    const branchid = url.split("/")[4]?auth.user.branchid:auth.user.branchid;
+    const branchid = auth.user.position == 'admin'?url.split("/")[2]:auth.user.branchid;
 
     return (
         <AdministratorLayout>

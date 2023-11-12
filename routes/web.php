@@ -96,6 +96,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return Inertia::render('branch_expenses/page');
         })->name('branch_expenses');
 
+        Route::get('{branchid}/attendance', function () {
+            return Inertia::render('branch_attendance/page');
+        })->name('branch_attendance');
+
         Route::get('{branchid}/bakers_production', function () {
             return Inertia::render('branch_bakers_production/page');
         })->name('branch_bakers_production');

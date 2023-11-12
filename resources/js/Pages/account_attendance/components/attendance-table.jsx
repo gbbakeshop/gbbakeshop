@@ -58,6 +58,7 @@ export default function AttendanceTable({ userid, branchid }) {
             branchid: branchid,
             updateWhere: updateWhere,
             date: moment().format(),
+            dateNow: moment().format("L"),
         }).then((res) => {
             setRefresh(Math.random());
             Swal.fire({
@@ -92,7 +93,7 @@ export default function AttendanceTable({ userid, branchid }) {
 
         const startTime4 = moment(pm2_in ?? new Date());
         const endTime4 = moment(pm2_out ?? new Date());
-        
+
         const duration1 = moment.duration(endTime1.diff(startTime1));
         const duration2 = moment.duration(endTime2.diff(startTime2));
         const duration3 = moment.duration(endTime3.diff(startTime3));
@@ -204,7 +205,9 @@ export default function AttendanceTable({ userid, branchid }) {
                                                 )}
                                             </button>
                                         ) : (
-                                            ""
+                                            <div className="text-green-500">
+                                                <CheckIcon />
+                                            </div>
                                         )}
                                     </center>
                                 </td>
@@ -249,7 +252,9 @@ export default function AttendanceTable({ userid, branchid }) {
                                                 )}
                                             </>
                                         ) : (
-                                            ""
+                                            <div className="text-green-500">
+                                                <CheckIcon />
+                                            </div>
                                         )}
                                     </center>
                                 </td>
@@ -294,7 +299,9 @@ export default function AttendanceTable({ userid, branchid }) {
                                                 )}
                                             </>
                                         ) : (
-                                            ""
+                                            <div className="text-green-500">
+                                                <CheckIcon />
+                                            </div>
                                         )}
                                     </center>
                                 </td>
@@ -339,7 +346,9 @@ export default function AttendanceTable({ userid, branchid }) {
                                                 )}
                                             </>
                                         ) : (
-                                            ""
+                                            <div className="text-green-500">
+                                                <CheckIcon />
+                                            </div>
                                         )}
                                     </center>
                                 </td>
@@ -384,7 +393,9 @@ export default function AttendanceTable({ userid, branchid }) {
                                                 )}
                                             </>
                                         ) : (
-                                            ""
+                                            <div className="text-green-500">
+                                                <CheckIcon />
+                                            </div>
                                         )}
                                     </center>
                                 </td>
@@ -429,7 +440,9 @@ export default function AttendanceTable({ userid, branchid }) {
                                                 )}
                                             </>
                                         ) : (
-                                            ""
+                                            <div className="text-green-500">
+                                                <CheckIcon />
+                                            </div>
                                         )}
                                     </center>
                                 </td>
@@ -474,7 +487,9 @@ export default function AttendanceTable({ userid, branchid }) {
                                                 )}
                                             </>
                                         ) : (
-                                            ""
+                                            <div className="text-green-500">
+                                                <CheckIcon />
+                                            </div>
                                         )}
                                     </center>
                                 </td>
@@ -519,7 +534,9 @@ export default function AttendanceTable({ userid, branchid }) {
                                                 )}
                                             </>
                                         ) : (
-                                            ""
+                                            <div className="text-green-500">
+                                                <CheckIcon />
+                                            </div>
                                         )}
                                     </center>
                                 </td>
@@ -534,7 +551,8 @@ export default function AttendanceTable({ userid, branchid }) {
                                         res.am2_out,
                                         res.pm2_in,
                                         res.pm2_out
-                                    )} */}{res.total}
+                                    )} */}
+                                    {res.total}
                                 </td>
                                 <td class="px-6 py-4 text-center">
                                     {moment(res.date3).format("LL")}

@@ -176,7 +176,25 @@ export default function SidebarBranches() {
                                             </div>
                                         </Link>
 
-                                      
+                                        <Link
+                                            className={`${
+                                                branchid == res.id &&
+                                                path == "attendance"
+                                                    ? "bg-red-600 text-white rounded-lg p-2 flex w-full justify-between cursor-pointer items-center"
+                                                    : "bg-red-50 text-red-500 rounded-lg p-2 flex w-full justify-between cursor-pointer items-center"
+                                            }`}
+                                            href={route(
+                                                "branch_attendance",
+                                                res.id
+                                            )}
+                                        >
+                                            <div className="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                                {/* {icon} */}
+                                                <span className="text-sm ml-2">
+                                                    {/* {title} */}ATTENDANCE
+                                                </span>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </Disclosure.Panel>
                             </>

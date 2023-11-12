@@ -33,7 +33,11 @@ class AttendanceController extends Controller
 
     public function get_branch_attendance(Request $request)
     {
-
+        $attendance = Attendance::where([['branchid', '=', $request->branchid], ['date', '=', $request->date]])->with('user')->get();
+        return response()->json([
+            'status' => $attendance,
+            'message' => 'Updated Successfully!'
+        ]);
     }
 
     public function check_attendance(Request $request)
@@ -71,6 +75,7 @@ class AttendanceController extends Controller
         // Update the total column
         Attendance::where('id', $request->id)->update([
             'total' => $formattedTotalDuration,
+            'date'=>$request->dateNow,
         ]);
 
         return response()->json([

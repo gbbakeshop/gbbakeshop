@@ -1,260 +1,272 @@
 {
-  "_ApplicationLogo-b8ae30fc.js": {
-    "file": "assets/ApplicationLogo-b8ae30fc.js",
+  "_ApplicationLogo-e26d5b7f.js": {
+    "file": "assets/ApplicationLogo-e26d5b7f.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_Dropdown-dd1a1116.js": {
-    "file": "assets/Dropdown-dd1a1116.js",
+  "_Dropdown-8d4344cc.js": {
+    "file": "assets/Dropdown-8d4344cc.js",
     "imports": [
       "resources/js/app.jsx",
-      "_transition-ecf15cca.js"
+      "_transition-8fbb313c.js"
     ]
   },
-  "_GuestLayout-1e4de119.js": {
-    "file": "assets/GuestLayout-1e4de119.js",
+  "_GuestLayout-e4131d29.js": {
+    "file": "assets/GuestLayout-e4131d29.js",
     "imports": [
       "resources/js/app.jsx",
-      "_ApplicationLogo-b8ae30fc.js"
+      "_ApplicationLogo-e26d5b7f.js"
     ]
   },
-  "_InputLabel-5037b042.js": {
-    "file": "assets/InputLabel-5037b042.js",
+  "_InputLabel-aa9217ce.js": {
+    "file": "assets/InputLabel-aa9217ce.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_PrimaryButton-baeb0c82.js": {
-    "file": "assets/PrimaryButton-baeb0c82.js",
+  "_PrimaryButton-71763f3f.js": {
+    "file": "assets/PrimaryButton-71763f3f.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_SecondaryButton-868c8236.js": {
-    "file": "assets/SecondaryButton-868c8236.js",
+  "_SecondaryButton-8c19459b.js": {
+    "file": "assets/SecondaryButton-8c19459b.js",
     "imports": [
       "resources/js/app.jsx",
-      "_dialog-793596d4.js",
-      "_transition-ecf15cca.js"
+      "_dialog-ad4f0c03.js",
+      "_transition-8fbb313c.js"
     ]
   },
-  "_TextInput-4aa2a67b.js": {
-    "file": "assets/TextInput-4aa2a67b.js",
+  "_TextInput-e0b7be1c.js": {
+    "file": "assets/TextInput-e0b7be1c.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_account-icons-711e48ad.js": {
-    "file": "assets/account-icons-711e48ad.js",
+  "_account-icons-a57cd32b.js": {
+    "file": "assets/account-icons-a57cd32b.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_account-services-13cc3a0f.js": {
-    "file": "assets/account-services-13cc3a0f.js",
+  "_account-services-fc073ead.js": {
+    "file": "assets/account-services-fc073ead.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_administrator-layout-323b050b.js": {
-    "file": "assets/administrator-layout-323b050b.js",
+  "_administrator-layout-52b410e4.js": {
+    "file": "assets/administrator-layout-52b410e4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_useDispatch-3338ceec.js"
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_useDispatch-cb55bb16.js"
     ]
   },
-  "_branch-layout-0b080b06.js": {
-    "file": "assets/branch-layout-0b080b06.js",
+  "_attendance-services-af0f906c.js": {
+    "file": "assets/attendance-services-af0f906c.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_branch-layout-64ca66b9.js": {
+    "file": "assets/branch-layout-64ca66b9.js",
     "imports": [
       "resources/js/app.jsx",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_useDispatch-3338ceec.js"
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_useDispatch-cb55bb16.js"
     ]
   },
-  "_branches-services-7dd5a948.js": {
-    "file": "assets/branches-services-7dd5a948.js",
+  "_branches-services-c82cb97c.js": {
+    "file": "assets/branches-services-c82cb97c.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_bread-crumbs-eaf8b415.js": {
-    "file": "assets/bread-crumbs-eaf8b415.js",
+  "_bread-crumbs-fcf137bf.js": {
+    "file": "assets/bread-crumbs-fcf137bf.js",
     "imports": [
       "resources/js/app.jsx",
-      "_iconBase-91a5c3ab.js",
-      "_branches-services-7dd5a948.js"
+      "_iconBase-94d31c31.js",
+      "_branches-services-c82cb97c.js"
     ]
   },
-  "_breads-services-7212532c.js": {
-    "file": "assets/breads-services-7212532c.js",
+  "_breads-services-96435f7b.js": {
+    "file": "assets/breads-services-96435f7b.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_check-icon-c3db5f8d.js": {
-    "file": "assets/check-icon-c3db5f8d.js",
+  "_check-icon-2697b205.js": {
+    "file": "assets/check-icon-2697b205.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_clock-icon-8b8c2455.js": {
-    "file": "assets/clock-icon-8b8c2455.js",
+  "_clock-icon-af8cab06.js": {
+    "file": "assets/clock-icon-af8cab06.js",
     "imports": [
-      "_iconBase-91a5c3ab.js",
+      "_iconBase-94d31c31.js",
       "resources/js/app.jsx"
     ]
   },
-  "_create-expenses-e01bad91.js": {
-    "file": "assets/create-expenses-e01bad91.js",
+  "_create-expenses-542da90d.js": {
+    "file": "assets/create-expenses-542da90d.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_account-services-13cc3a0f.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_account-services-fc073ead.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js"
     ],
     "isDynamicEntry": true
   },
-  "_credits-services-bb251ce3.js": {
-    "file": "assets/credits-services-bb251ce3.js",
+  "_credits-services-07338361.js": {
+    "file": "assets/credits-services-07338361.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_database-icon-4b4783e7.js": {
-    "file": "assets/database-icon-4b4783e7.js",
+  "_database-icon-6f5852e3.js": {
+    "file": "assets/database-icon-6f5852e3.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_dialog-793596d4.js": {
-    "file": "assets/dialog-793596d4.js",
+  "_dialog-ad4f0c03.js": {
+    "file": "assets/dialog-ad4f0c03.js",
     "imports": [
       "resources/js/app.jsx",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_transition-ecf15cca.js"
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_transition-8fbb313c.js"
     ]
   },
-  "_exclamation-icon-e1195478.js": {
-    "file": "assets/exclamation-icon-e1195478.js",
+  "_exclamation-icon-01d9f900.js": {
+    "file": "assets/exclamation-icon-01d9f900.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_eyes-icon-8da42a93.js": {
-    "file": "assets/eyes-icon-8da42a93.js",
+  "_eyes-icon-301cd51b.js": {
+    "file": "assets/eyes-icon-301cd51b.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_hidden-95bf9ddf.js": {
-    "file": "assets/hidden-95bf9ddf.js",
+  "_hidden-5f273b7b.js": {
+    "file": "assets/hidden-5f273b7b.js",
     "imports": [
       "resources/js/app.jsx",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js"
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js"
     ]
   },
   "_history-services-2b7776b0.js": {
     "file": "assets/history-services-2b7776b0.js"
   },
-  "_iconBase-91a5c3ab.js": {
-    "file": "assets/iconBase-91a5c3ab.js",
+  "_iconBase-94d31c31.js": {
+    "file": "assets/iconBase-94d31c31.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_index-f71e4b0f.js": {
-    "file": "assets/index-f71e4b0f.js",
+  "_index-0e200d20.js": {
+    "file": "assets/index-0e200d20.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_index.esm-5540f020.js": {
-    "file": "assets/index.esm-5540f020.js",
+  "_index.esm-3f38f8a4.js": {
+    "file": "assets/index.esm-3f38f8a4.js",
     "imports": [
-      "_iconBase-91a5c3ab.js"
+      "_iconBase-94d31c31.js"
     ]
   },
-  "_index.esm-f0d9e263.js": {
-    "file": "assets/index.esm-f0d9e263.js",
+  "_index.esm-cf821160.js": {
+    "file": "assets/index.esm-cf821160.js",
     "imports": [
-      "_iconBase-91a5c3ab.js"
+      "_iconBase-94d31c31.js"
     ]
   },
-  "_ingredients-services-097df2d1.js": {
-    "file": "assets/ingredients-services-097df2d1.js",
-    "imports": [
-      "resources/js/app.jsx"
-    ]
-  },
-  "_input-bea1ffe2.js": {
-    "file": "assets/input-bea1ffe2.js",
+  "_ingredients-services-49e04f93.js": {
+    "file": "assets/ingredients-services-49e04f93.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_keyboard-23378de6.js": {
-    "file": "assets/keyboard-23378de6.js",
+  "_input-e7403343.js": {
+    "file": "assets/input-e7403343.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_keyboard-4c58af20.js": {
+    "file": "assets/keyboard-4c58af20.js",
     "imports": [
       "resources/js/app.jsx",
-      "_open-closed-8292dd2d.js"
+      "_open-closed-e1999277.js"
     ]
   },
-  "_loading-icon-0145f98c.js": {
-    "file": "assets/loading-icon-0145f98c.js",
+  "_loading-icon-c303e7b8.js": {
+    "file": "assets/loading-icon-c303e7b8.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_moment-c511fdcc.js": {
-    "file": "assets/moment-c511fdcc.js",
+  "_loading-icon-cb83ab3c.js": {
+    "file": "assets/loading-icon-cb83ab3c.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_move-icon-301b9e73.js": {
-    "file": "assets/move-icon-301b9e73.js",
+  "_moment-854efd96.js": {
+    "file": "assets/moment-854efd96.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_open-closed-8292dd2d.js": {
-    "file": "assets/open-closed-8292dd2d.js",
+  "_move-icon-e3604fc6.js": {
+    "file": "assets/move-icon-e3604fc6.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_pencil-icon-0e380139.js": {
-    "file": "assets/pencil-icon-0e380139.js",
+  "_open-closed-e1999277.js": {
+    "file": "assets/open-closed-e1999277.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_plus-icon-baf7651f.js": {
-    "file": "assets/plus-icon-baf7651f.js",
+  "_pencil-icon-3de4c194.js": {
+    "file": "assets/pencil-icon-3de4c194.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_raw-materials-services-b72a0613.js": {
-    "file": "assets/raw-materials-services-b72a0613.js",
+  "_plus-icon-30220570.js": {
+    "file": "assets/plus-icon-30220570.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_recipes-services-3a581f18.js": {
-    "file": "assets/recipes-services-3a581f18.js",
+  "_raw-materials-services-975bebc8.js": {
+    "file": "assets/raw-materials-services-975bebc8.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_recipes-services-1d6f9ae2.js": {
+    "file": "assets/recipes-services-1d6f9ae2.js",
     "imports": [
       "resources/js/app.jsx"
     ]
@@ -262,230 +274,230 @@
   "_records-services-8c083049.js": {
     "file": "assets/records-services-8c083049.js"
   },
-  "_search-44165072.js": {
-    "file": "assets/search-44165072.js",
+  "_search-0e3c4a69.js": {
+    "file": "assets/search-0e3c4a69.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_selecta-services-9dffa43f.js": {
-    "file": "assets/selecta-services-9dffa43f.js",
+  "_selecta-services-43a08df6.js": {
+    "file": "assets/selecta-services-43a08df6.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_skeleton-loader-cb02462d.js": {
-    "file": "assets/skeleton-loader-cb02462d.js",
+  "_skeleton-loader-efe0ba36.js": {
+    "file": "assets/skeleton-loader-efe0ba36.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_squire-icon-469d41ab.js": {
+  "_squire-icon-3a27aa60.js": {
     "css": [
       "assets/squire-icon-93d8b085.css"
     ],
-    "file": "assets/squire-icon-469d41ab.js",
+    "file": "assets/squire-icon-3a27aa60.js",
     "imports": [
       "resources/js/app.jsx",
-      "_useDispatch-3338ceec.js"
+      "_useDispatch-cb55bb16.js"
     ]
   },
-  "_store-icon-330df8fd.js": {
-    "file": "assets/store-icon-330df8fd.js",
+  "_store-icon-6351df1f.js": {
+    "file": "assets/store-icon-6351df1f.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_sweetalert2.all-f665d82e.js": {
-    "file": "assets/sweetalert2.all-f665d82e.js",
+  "_sweetalert2.all-9b305cf4.js": {
+    "file": "assets/sweetalert2.all-9b305cf4.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_transition-ecf15cca.js": {
-    "file": "assets/transition-ecf15cca.js",
+  "_transition-8fbb313c.js": {
+    "file": "assets/transition-8fbb313c.js",
     "imports": [
       "resources/js/app.jsx",
-      "_open-closed-8292dd2d.js"
+      "_open-closed-e1999277.js"
     ]
   },
-  "_trash-icon-9cabf65f.js": {
-    "file": "assets/trash-icon-9cabf65f.js",
+  "_trash-icon-6dc9e5cb.js": {
+    "file": "assets/trash-icon-6dc9e5cb.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_use-resolve-button-type-81bb4e53.js": {
-    "file": "assets/use-resolve-button-type-81bb4e53.js",
+  "_use-resolve-button-type-8276605f.js": {
+    "file": "assets/use-resolve-button-type-8276605f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_open-closed-8292dd2d.js"
+      "_open-closed-e1999277.js"
     ]
   },
-  "_useDispatch-3338ceec.js": {
-    "file": "assets/useDispatch-3338ceec.js",
+  "_useDispatch-cb55bb16.js": {
+    "file": "assets/useDispatch-cb55bb16.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_x-mark-icon-a6cf0dfc.js": {
-    "file": "assets/x-mark-icon-a6cf0dfc.js",
+  "_x-mark-icon-74cd7f9d.js": {
+    "file": "assets/x-mark-icon-74cd7f9d.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
   "resources/js/Pages/Auth/ConfirmPassword.jsx": {
-    "file": "assets/ConfirmPassword-5c7d876d.js",
+    "file": "assets/ConfirmPassword-cccf405f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-1e4de119.js",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_ApplicationLogo-b8ae30fc.js"
+      "_GuestLayout-e4131d29.js",
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_ApplicationLogo-e26d5b7f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ConfirmPassword.jsx"
   },
   "resources/js/Pages/Auth/ForgotPassword.jsx": {
-    "file": "assets/ForgotPassword-b6f1ebbf.js",
+    "file": "assets/ForgotPassword-27668c8f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-1e4de119.js",
-      "_TextInput-4aa2a67b.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_ApplicationLogo-b8ae30fc.js"
+      "_GuestLayout-e4131d29.js",
+      "_TextInput-e0b7be1c.js",
+      "_PrimaryButton-71763f3f.js",
+      "_ApplicationLogo-e26d5b7f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ForgotPassword.jsx"
   },
   "resources/js/Pages/Auth/Login.jsx": {
-    "file": "assets/Login-8c83cf3d.js",
+    "file": "assets/Login-2a3f3bf1.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-4aa2a67b.js"
+      "_TextInput-e0b7be1c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/Login.jsx"
   },
   "resources/js/Pages/Auth/Register.jsx": {
-    "file": "assets/Register-6dff08b3.js",
+    "file": "assets/Register-21326b98.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-1e4de119.js",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_ApplicationLogo-b8ae30fc.js"
+      "_GuestLayout-e4131d29.js",
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_ApplicationLogo-e26d5b7f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/Register.jsx"
   },
   "resources/js/Pages/Auth/ResetPassword.jsx": {
-    "file": "assets/ResetPassword-fdee71d8.js",
+    "file": "assets/ResetPassword-78bc38ac.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-1e4de119.js",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_ApplicationLogo-b8ae30fc.js"
+      "_GuestLayout-e4131d29.js",
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_ApplicationLogo-e26d5b7f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/ResetPassword.jsx"
   },
   "resources/js/Pages/Auth/VerifyEmail.jsx": {
-    "file": "assets/VerifyEmail-59d25f87.js",
+    "file": "assets/VerifyEmail-8324f0ee.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-1e4de119.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_ApplicationLogo-b8ae30fc.js"
+      "_GuestLayout-e4131d29.js",
+      "_PrimaryButton-71763f3f.js",
+      "_ApplicationLogo-e26d5b7f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Auth/VerifyEmail.jsx"
   },
   "resources/js/Pages/Dashboard.jsx": {
-    "file": "assets/Dashboard-53b74905.js",
+    "file": "assets/Dashboard-7f8a29a4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_ApplicationLogo-b8ae30fc.js",
-      "_Dropdown-dd1a1116.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js"
+      "_ApplicationLogo-e26d5b7f.js",
+      "_Dropdown-8d4344cc.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Dashboard.jsx"
   },
   "resources/js/Pages/Profile/Edit.jsx": {
-    "file": "assets/Edit-013dcb52.js",
+    "file": "assets/Edit-d1f83c45.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_SecondaryButton-868c8236.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_transition-ecf15cca.js",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_SecondaryButton-8c19459b.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_transition-8fbb313c.js",
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Edit.jsx"
   },
   "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx": {
-    "file": "assets/DeleteUserForm-919ab04a.js",
+    "file": "assets/DeleteUserForm-cc7e4ec8.js",
     "imports": [
       "resources/js/app.jsx",
-      "_SecondaryButton-868c8236.js",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_transition-ecf15cca.js"
+      "_SecondaryButton-8c19459b.js",
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_transition-8fbb313c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/DeleteUserForm.jsx"
   },
   "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx": {
-    "file": "assets/UpdatePasswordForm-86b9f2e7.js",
+    "file": "assets/UpdatePasswordForm-e1deaae6.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js"
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/UpdatePasswordForm.jsx"
   },
   "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx": {
-    "file": "assets/UpdateProfileInformationForm-989d74c0.js",
+    "file": "assets/UpdateProfileInformationForm-37fc61c0.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js"
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.jsx"
   },
   "resources/js/Pages/Welcome.jsx": {
-    "file": "assets/Welcome-d0bbdc6d.js",
+    "file": "assets/Welcome-91da3e0c.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -493,7 +505,7 @@
     "src": "resources/js/Pages/Welcome.jsx"
   },
   "resources/js/Pages/_components/error404.jsx": {
-    "file": "assets/error404-5a63f9ab.js",
+    "file": "assets/error404-0382634a.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -501,124 +513,126 @@
     "src": "resources/js/Pages/_components/error404.jsx"
   },
   "resources/js/Pages/_components/sidebar-branches.jsx": {
-    "file": "assets/sidebar-branches-7d358b5b.js",
+    "file": "assets/sidebar-branches-55280ff1.js",
     "imports": [
       "resources/js/app.jsx",
-      "_store-icon-330df8fd.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js"
+      "_store-icon-6351df1f.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/_components/sidebar-branches.jsx"
   },
   "resources/js/Pages/_components/sidebar-controls.jsx": {
-    "file": "assets/sidebar-controls-8f0b04aa.js",
+    "file": "assets/sidebar-controls-cc3a9c8e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-icons-711e48ad.js"
+      "_account-icons-a57cd32b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/_components/sidebar-controls.jsx"
   },
   "resources/js/Pages/account_attendance/components/attendance-table.jsx": {
-    "file": "assets/attendance-table-693041c4.js",
+    "file": "assets/attendance-table-fe045f43.js",
     "imports": [
       "resources/js/app.jsx",
-      "_check-icon-c3db5f8d.js",
-      "_exclamation-icon-e1195478.js",
-      "_loading-icon-0145f98c.js",
-      "_sweetalert2.all-f665d82e.js"
+      "_attendance-services-af0f906c.js",
+      "_check-icon-2697b205.js",
+      "_exclamation-icon-01d9f900.js",
+      "_loading-icon-cb83ab3c.js",
+      "_sweetalert2.all-9b305cf4.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/account_attendance/components/attendance-table.jsx"
   },
   "resources/js/Pages/account_attendance/page.jsx": {
-    "file": "assets/page-1b9cb805.js",
+    "file": "assets/page-7d203596.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_accounts/components/account-tabs.jsx",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
       "resources/js/Pages/account_attendance/components/attendance-table.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
-      "_account-services-13cc3a0f.js",
-      "_check-icon-c3db5f8d.js",
-      "_exclamation-icon-e1195478.js",
-      "_loading-icon-0145f98c.js",
-      "_sweetalert2.all-f665d82e.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
+      "_account-services-fc073ead.js",
+      "_attendance-services-af0f906c.js",
+      "_check-icon-2697b205.js",
+      "_exclamation-icon-01d9f900.js",
+      "_loading-icon-cb83ab3c.js",
+      "_sweetalert2.all-9b305cf4.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/account_attendance/page.jsx"
   },
   "resources/js/Pages/account_expenses/components/account-expenses-table.jsx": {
-    "file": "assets/account-expenses-table-f0a30d0a.js",
+    "file": "assets/account-expenses-table-28feadc5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_credits-services-bb251ce3.js"
+      "_credits-services-07338361.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/account_expenses/components/account-expenses-table.jsx"
   },
   "resources/js/Pages/account_expenses/page.jsx": {
-    "file": "assets/page-48275dbd.js",
+    "file": "assets/page-754eeaf6.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_accounts/components/account-tabs.jsx",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
       "resources/js/Pages/account_expenses/components/account-expenses-table.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
-      "_account-services-13cc3a0f.js",
-      "_credits-services-bb251ce3.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
+      "_account-services-fc073ead.js",
+      "_credits-services-07338361.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/account_expenses/page.jsx"
   },
   "resources/js/Pages/account_history/page.jsx": {
-    "file": "assets/page-b4c6988a.js",
+    "file": "assets/page-d582ef40.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_accounts/components/account-tabs.jsx",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
       "resources/js/Pages/branch/components/account-history.jsx",
       "_history-services-2b7776b0.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
-      "_account-services-13cc3a0f.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
+      "_account-services-fc073ead.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/account_history/page.jsx"
   },
   "resources/js/Pages/account_profile/components/info.jsx": {
-    "file": "assets/info-ada12dac.js",
+    "file": "assets/info-5cb7a5ed.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -626,112 +640,112 @@
     "src": "resources/js/Pages/account_profile/components/info.jsx"
   },
   "resources/js/Pages/account_profile/page.jsx": {
-    "file": "assets/page-24731da7.js",
+    "file": "assets/page-a21c7521.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_accounts/components/account-tabs.jsx",
       "resources/js/Pages/account_profile/components/info.jsx",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
-      "_account-services-13cc3a0f.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
+      "_account-services-fc073ead.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/account_profile/page.jsx"
   },
   "resources/js/Pages/account_settings/components/edit-form.jsx": {
-    "file": "assets/edit-form-fe908c88.js",
+    "file": "assets/edit-form-860ced59.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-services-13cc3a0f.js",
-      "_useDispatch-3338ceec.js"
+      "_account-services-fc073ead.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/account_settings/components/edit-form.jsx"
   },
   "resources/js/Pages/account_settings/page.jsx": {
-    "file": "assets/page-ba42cc8a.js",
+    "file": "assets/page-5e92cef5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_accounts/components/account-tabs.jsx",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
       "resources/js/Pages/account_settings/components/edit-form.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
-      "_account-services-13cc3a0f.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
+      "_account-services-fc073ead.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/account_settings/page.jsx"
   },
   "resources/js/Pages/accounts/accounts.jsx": {
-    "file": "assets/accounts-d439ff04.js",
+    "file": "assets/accounts-9ffeed67.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_account-services-13cc3a0f.js",
+      "_administrator-layout-52b410e4.js",
+      "_account-services-fc073ead.js",
       "resources/js/Pages/accounts/components/accounts-table.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-controls.jsx",
       "resources/js/Pages/accounts/components/account-tabs.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_eyes-icon-8da42a93.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_eyes-icon-301cd51b.js",
       "resources/js/Pages/accounts/components/delete-account.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_account-icons-711e48ad.js",
-      "_database-icon-4b4783e7.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_account-icons-a57cd32b.js",
+      "_database-icon-6f5852e3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/accounts/accounts.jsx"
   },
   "resources/js/Pages/accounts/components/account-tabs.jsx": {
-    "file": "assets/account-tabs-72bb11bd.js",
+    "file": "assets/account-tabs-54c96b6c.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-icons-711e48ad.js",
-      "_database-icon-4b4783e7.js"
+      "_account-icons-a57cd32b.js",
+      "_database-icon-6f5852e3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/accounts/components/account-tabs.jsx"
   },
   "resources/js/Pages/accounts/components/accounts-table.jsx": {
-    "file": "assets/accounts-table-83809610.js",
+    "file": "assets/accounts-table-c7347327.js",
     "imports": [
       "resources/js/app.jsx",
-      "_eyes-icon-8da42a93.js",
+      "_eyes-icon-301cd51b.js",
       "resources/js/Pages/accounts/components/delete-account.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_account-services-13cc3a0f.js",
-      "_useDispatch-3338ceec.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_account-services-fc073ead.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/accounts/components/accounts-table.jsx"
   },
   "resources/js/Pages/accounts/components/bread-dropdown.jsx": {
-    "file": "assets/bread-dropdown-0a167df9.js",
+    "file": "assets/bread-dropdown-f14dbb1a.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -739,156 +753,157 @@
     "src": "resources/js/Pages/accounts/components/bread-dropdown.jsx"
   },
   "resources/js/Pages/accounts/components/delete-account.jsx": {
-    "file": "assets/delete-account-f75c0fab.js",
+    "file": "assets/delete-account-7ca9a64f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_account-services-13cc3a0f.js",
-      "_useDispatch-3338ceec.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_account-services-fc073ead.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/accounts/components/delete-account.jsx"
   },
   "resources/js/Pages/accounts/components/register-account-form.jsx": {
-    "file": "assets/register-account-form-05b17566.js",
+    "file": "assets/register-account-form-f9f372ac.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_move-icon-301b9e73.js",
-      "_check-icon-c3db5f8d.js",
-      "_store-icon-330df8fd.js",
-      "_account-services-13cc3a0f.js",
-      "_transition-ecf15cca.js",
-      "_keyboard-23378de6.js",
-      "_open-closed-8292dd2d.js",
-      "_hidden-95bf9ddf.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_useDispatch-3338ceec.js"
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_move-icon-e3604fc6.js",
+      "_check-icon-2697b205.js",
+      "_store-icon-6351df1f.js",
+      "_account-services-fc073ead.js",
+      "_transition-8fbb313c.js",
+      "_keyboard-4c58af20.js",
+      "_open-closed-e1999277.js",
+      "_hidden-5f273b7b.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/accounts/components/register-account-form.jsx"
   },
   "resources/js/Pages/accounts/registration.jsx": {
-    "file": "assets/registration-2cc96c61.js",
+    "file": "assets/registration-944a75e4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_account-services-13cc3a0f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_skeleton-loader-cb02462d.js",
+      "_administrator-layout-52b410e4.js",
+      "_account-services-fc073ead.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/_components/sidebar-controls.jsx",
       "resources/js/Pages/accounts/components/account-tabs.jsx",
       "resources/js/Pages/accounts/components/register-account-form.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_account-icons-711e48ad.js",
-      "_database-icon-4b4783e7.js",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_move-icon-301b9e73.js",
-      "_check-icon-c3db5f8d.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_use-resolve-button-type-81bb4e53.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_account-icons-a57cd32b.js",
+      "_database-icon-6f5852e3.js",
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_move-icon-e3604fc6.js",
+      "_check-icon-2697b205.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_use-resolve-button-type-8276605f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/accounts/registration.jsx"
   },
   "resources/js/Pages/administrator/page.jsx": {
-    "file": "assets/page-251471d1.js",
+    "file": "assets/page-91bebd7a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Dropdown-dd1a1116.js",
-      "_administrator-layout-323b050b.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js"
+      "_Dropdown-8d4344cc.js",
+      "_administrator-layout-52b410e4.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/administrator/page.jsx"
   },
   "resources/js/Pages/branch/account-attendance.jsx": {
-    "file": "assets/account-attendance-0412cd73.js",
+    "file": "assets/account-attendance-e6e1f0aa.js",
     "imports": [
       "resources/js/app.jsx",
-      "_bread-crumbs-eaf8b415.js",
-      "_squire-icon-469d41ab.js",
+      "_bread-crumbs-fcf137bf.js",
+      "_squire-icon-3a27aa60.js",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
-      "_branch-layout-0b080b06.js",
+      "_branch-layout-64ca66b9.js",
       "resources/js/Pages/account_attendance/components/attendance-table.jsx",
       "resources/js/Pages/branch/components/account-settings-tab.jsx",
-      "_iconBase-91a5c3ab.js",
-      "_branches-services-7dd5a948.js",
-      "_useDispatch-3338ceec.js",
-      "_account-services-13cc3a0f.js",
-      "_store-icon-330df8fd.js",
-      "_database-icon-4b4783e7.js",
-      "_check-icon-c3db5f8d.js",
-      "_exclamation-icon-e1195478.js",
-      "_loading-icon-0145f98c.js",
-      "_sweetalert2.all-f665d82e.js"
+      "_iconBase-94d31c31.js",
+      "_branches-services-c82cb97c.js",
+      "_useDispatch-cb55bb16.js",
+      "_account-services-fc073ead.js",
+      "_store-icon-6351df1f.js",
+      "_database-icon-6f5852e3.js",
+      "_attendance-services-af0f906c.js",
+      "_check-icon-2697b205.js",
+      "_exclamation-icon-01d9f900.js",
+      "_loading-icon-cb83ab3c.js",
+      "_sweetalert2.all-9b305cf4.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/account-attendance.jsx"
   },
   "resources/js/Pages/branch/account-credits.jsx": {
-    "file": "assets/account-credits-0ac095fb.js",
+    "file": "assets/account-credits-27d981e5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
-      "_bread-crumbs-eaf8b415.js",
+      "_branch-layout-64ca66b9.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
       "resources/js/Pages/branch/components/account-settings-tab.jsx",
       "resources/js/Pages/account_expenses/components/account-expenses-table.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_iconBase-91a5c3ab.js",
-      "_account-services-13cc3a0f.js",
-      "_credits-services-bb251ce3.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_iconBase-94d31c31.js",
+      "_account-services-fc073ead.js",
+      "_credits-services-07338361.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/account-credits.jsx"
   },
   "resources/js/Pages/branch/account-expenses.jsx": {
-    "file": "assets/account-expenses-2cf55863.js",
+    "file": "assets/account-expenses-2813862b.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
-      "_bread-crumbs-eaf8b415.js",
-      "_create-expenses-e01bad91.js",
-      "_credits-services-bb251ce3.js",
-      "_skeleton-loader-cb02462d.js",
+      "_branch-layout-64ca66b9.js",
+      "_bread-crumbs-fcf137bf.js",
+      "_create-expenses-542da90d.js",
+      "_credits-services-07338361.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/branch_expenses/components/sales-chart.jsx",
       "resources/js/Pages/branch_expenses/components/branch-search-expenses.jsx",
       "resources/js/Pages/branch_expenses/components/credits-charge-table.jsx",
       "resources/js/Pages/branch_expenses/components/branch-expenses-table.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_iconBase-91a5c3ab.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_account-services-13cc3a0f.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_iconBase-94d31c31.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_account-services-fc073ead.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "_records-services-8c083049.js",
       "resources/js/Pages/branch_expenses/components/create-charge-credit.jsx",
       "resources/js/Pages/branch_expenses/components/show-receipts.jsx"
@@ -897,155 +912,155 @@
     "src": "resources/js/Pages/branch/account-expenses.jsx"
   },
   "resources/js/Pages/branch/account-logs.jsx": {
-    "file": "assets/account-logs-ba527d41.js",
+    "file": "assets/account-logs-331078de.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
-      "_bread-crumbs-eaf8b415.js",
+      "_branch-layout-64ca66b9.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
       "resources/js/Pages/branch/components/account-settings-tab.jsx",
       "_history-services-2b7776b0.js",
       "resources/js/Pages/branch/components/account-history.jsx",
       "resources/js/Pages/branch/components/account-history2.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_iconBase-91a5c3ab.js",
-      "_account-services-13cc3a0f.js"
+      "_skeleton-loader-efe0ba36.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_iconBase-94d31c31.js",
+      "_account-services-fc073ead.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/account-logs.jsx"
   },
   "resources/js/Pages/branch/bakers-report.jsx": {
-    "file": "assets/bakers-report-b8e46c65.js",
+    "file": "assets/bakers-report-9226b225.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
+      "_branch-layout-64ca66b9.js",
       "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-table.jsx",
       "resources/js/Pages/branch/components/production-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
+      "_skeleton-loader-efe0ba36.js",
       "_records-services-8c083049.js",
-      "_search-44165072.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_moment-c511fdcc.js",
+      "_search-0e3c4a69.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-edit.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_pencil-icon-0e380139.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_pencil-icon-3de4c194.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/branch_bakers_report/components/move-to-bread-report-form.jsx",
-      "_move-icon-301b9e73.js",
+      "_move-icon-e3604fc6.js",
       "resources/js/Pages/branch_bakers_report/components/move-to-another-branch.jsx",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js"
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/bakers-report.jsx"
   },
   "resources/js/Pages/branch/branch_sales_history.jsx": {
-    "file": "assets/branch_sales_history-942c88e7.js",
+    "file": "assets/branch_sales_history-7a8074ba.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
-      "_moment-c511fdcc.js",
+      "_branch-layout-64ca66b9.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch/components/production-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/branch_history/components/branch-history-table.jsx",
       "resources/js/Pages/branch_history/components/branch-search-history.jsx",
       "_history-services-2b7776b0.js",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js"
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/branch_sales_history.jsx"
   },
   "resources/js/Pages/branch/bread-production.jsx": {
-    "file": "assets/bread-production-498755c2.js",
+    "file": "assets/bread-production-ec68f458.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
+      "_branch-layout-64ca66b9.js",
       "resources/js/Pages/branch_bakers_production/components/bread-table.jsx",
-      "_recipes-services-3a581f18.js",
+      "_recipes-services-1d6f9ae2.js",
       "resources/js/Pages/branch/components/production-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_raw-materials-services-b72a0613.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_raw-materials-services-975bebc8.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
       "resources/js/Pages/branch_bakers_production/components/create-production-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_plus-icon-baf7651f.js",
-      "_ingredients-services-097df2d1.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_plus-icon-30220570.js",
+      "_ingredients-services-49e04f93.js",
       "_records-services-8c083049.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js"
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/bread-production.jsx"
   },
   "resources/js/Pages/branch/bread-report.jsx": {
-    "file": "assets/bread-report-31c4c718.js",
+    "file": "assets/bread-report-cb4e18dc.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
+      "_branch-layout-64ca66b9.js",
       "resources/js/Pages/branch_bread_report/components/branch-bread-report-table.jsx",
       "_records-services-8c083049.js",
       "resources/js/Pages/branch/components/production-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_moment-c511fdcc.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_bread_report/components/move-to-sales-report-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_move-icon-301b9e73.js",
-      "_exclamation-icon-e1195478.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_move-icon-e3604fc6.js",
+      "_exclamation-icon-01d9f900.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/branch_bread_report/components/branch-bread-report-edit.jsx",
-      "_pencil-icon-0e380139.js",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js"
+      "_pencil-icon-3de4c194.js",
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/bread-report.jsx"
   },
   "resources/js/Pages/branch/components/account-history.jsx": {
-    "file": "assets/account-history-54f56a5e.js",
+    "file": "assets/account-history-2049fbb2.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1053,7 +1068,7 @@
     "src": "resources/js/Pages/branch/components/account-history.jsx"
   },
   "resources/js/Pages/branch/components/account-history2.jsx": {
-    "file": "assets/account-history2-b5350aaf.js",
+    "file": "assets/account-history2-02bc7f9d.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1061,7 +1076,7 @@
     "src": "resources/js/Pages/branch/components/account-history2.jsx"
   },
   "resources/js/Pages/branch/components/account-settings-tab.jsx": {
-    "file": "assets/account-settings-tab-457ca16b.js",
+    "file": "assets/account-settings-tab-8109ea91.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1069,18 +1084,18 @@
     "src": "resources/js/Pages/branch/components/account-settings-tab.jsx"
   },
   "resources/js/Pages/branch/components/production-tabs.jsx": {
-    "file": "assets/production-tabs-def16833.js",
+    "file": "assets/production-tabs-84913493.js",
     "imports": [
       "resources/js/app.jsx",
-      "_clock-icon-8b8c2455.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_clock-icon-af8cab06.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/components/production-tabs.jsx"
   },
   "resources/js/Pages/branch/components/selecta-tabs.jsx": {
-    "file": "assets/selecta-tabs-8961bd6f.js",
+    "file": "assets/selecta-tabs-d1c9cf4e.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1088,222 +1103,222 @@
     "src": "resources/js/Pages/branch/components/selecta-tabs.jsx"
   },
   "resources/js/Pages/branch/dashboard.jsx": {
-    "file": "assets/dashboard-2403f5e1.js",
+    "file": "assets/dashboard-2e692b00.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Dropdown-dd1a1116.js",
-      "_branch-layout-0b080b06.js",
+      "_Dropdown-8d4344cc.js",
+      "_branch-layout-64ca66b9.js",
       "resources/js/Pages/branch_analytics/components/branch-analytics-search.jsx",
       "resources/js/Pages/branch_analytics/components/branch-line-chart.jsx",
       "resources/js/Pages/branch_analytics/components/branch-bar-chart.jsx",
       "_records-services-8c083049.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_index-f71e4b0f.js"
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_index-0e200d20.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/dashboard.jsx"
   },
   "resources/js/Pages/branch/raw-materials.jsx": {
-    "file": "assets/raw-materials-a97bcd88.js",
+    "file": "assets/raw-materials-486bf51e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
+      "_branch-layout-64ca66b9.js",
       "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-table.jsx",
-      "_raw-materials-services-b72a0613.js",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_moment-c511fdcc.js",
+      "_raw-materials-services-975bebc8.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-update-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_pencil-icon-0e380139.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_pencil-icon-3de4c194.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/raw-materials.jsx"
   },
   "resources/js/Pages/branch/sales-report.jsx": {
-    "file": "assets/sales-report-3a27d6a4.js",
+    "file": "assets/sales-report-a7a55886.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
+      "_branch-layout-64ca66b9.js",
       "resources/js/Pages/branch_sales_report/components/branch-sales-report-table.jsx",
       "_records-services-8c083049.js",
       "resources/js/Pages/branch/components/production-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/branch_sales_report/components/branch-sales-report-search-date.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_moment-c511fdcc.js",
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_sales_report/components/branch-sales-report-edit.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_pencil-icon-0e380139.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_pencil-icon-3de4c194.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/sales-report.jsx"
   },
   "resources/js/Pages/branch/selecta.jsx": {
-    "file": "assets/selecta-01aaf223.js",
+    "file": "assets/selecta-a4fb64e7.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
+      "_branch-layout-64ca66b9.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-table.jsx",
-      "_selecta-services-9dffa43f.js",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_selecta-services-43a08df6.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/branch/components/selecta-tabs.jsx",
-      "_bread-crumbs-eaf8b415.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_moment-c511fdcc.js",
+      "_bread-crumbs-fcf137bf.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-remaining-form.jsx",
-      "_loading-icon-0145f98c.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_loading-icon-cb83ab3c.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-edit-form.jsx",
-      "_pencil-icon-0e380139.js",
-      "_exclamation-icon-e1195478.js",
-      "_check-icon-c3db5f8d.js",
-      "_iconBase-91a5c3ab.js"
+      "_pencil-icon-3de4c194.js",
+      "_exclamation-icon-01d9f900.js",
+      "_check-icon-2697b205.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/selecta.jsx"
   },
   "resources/js/Pages/branch/selecta_history.jsx": {
-    "file": "assets/selecta_history-7ec68b54.js",
+    "file": "assets/selecta_history-22fb2575.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
-      "_moment-c511fdcc.js",
-      "_selecta-services-9dffa43f.js",
-      "_skeleton-loader-cb02462d.js",
+      "_branch-layout-64ca66b9.js",
+      "_moment-854efd96.js",
+      "_selecta-services-43a08df6.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/branch/components/selecta-tabs.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-history-table.jsx",
       "resources/js/Pages/branch_selecta/components/branch-selecta-search-date-history.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_iconBase-91a5c3ab.js"
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/selecta_history.jsx"
   },
   "resources/js/Pages/branch/selecta_records.jsx": {
-    "file": "assets/selecta_records-8450439f.js",
+    "file": "assets/selecta_records-3cd644f3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
-      "_moment-c511fdcc.js",
-      "_selecta-services-9dffa43f.js",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_branch-layout-64ca66b9.js",
+      "_moment-854efd96.js",
+      "_selecta-services-43a08df6.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/branch/components/selecta-tabs.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-search-date.jsx",
       "resources/js/Pages/branch_selecta/components/branch-selecta-records-table.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_iconBase-91a5c3ab.js",
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_iconBase-94d31c31.js",
       "resources/js/Pages/branch_selecta/components/branch-select-edit-record.jsx",
-      "_pencil-icon-0e380139.js",
-      "_loading-icon-0145f98c.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_pencil-icon-3de4c194.js",
+      "_loading-icon-cb83ab3c.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/selecta_records.jsx"
   },
   "resources/js/Pages/branch/settings.jsx": {
-    "file": "assets/settings-38f70e7e.js",
+    "file": "assets/settings-913fdfbb.js",
     "imports": [
       "resources/js/app.jsx",
-      "_branch-layout-0b080b06.js",
-      "_bread-crumbs-eaf8b415.js",
+      "_branch-layout-64ca66b9.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_accounts/components/account-profile.jsx",
       "resources/js/Pages/account_settings/components/edit-form.jsx",
       "resources/js/Pages/branch/components/account-settings-tab.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_database-icon-4b4783e7.js",
-      "_iconBase-91a5c3ab.js",
-      "_account-services-13cc3a0f.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_database-icon-6f5852e3.js",
+      "_iconBase-94d31c31.js",
+      "_account-services-fc073ead.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch/settings.jsx"
   },
   "resources/js/Pages/branch_accounts/components/account-profile.jsx": {
-    "file": "assets/account-profile-f066b99a.js",
+    "file": "assets/account-profile-8e1228c5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-services-13cc3a0f.js",
-      "_useDispatch-3338ceec.js"
+      "_account-services-fc073ead.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_accounts/components/account-profile.jsx"
   },
   "resources/js/Pages/branch_accounts/components/account-table.jsx": {
-    "file": "assets/account-table-1727312b.js",
+    "file": "assets/account-table-34bc1a58.js",
     "imports": [
       "resources/js/app.jsx",
-      "_eyes-icon-8da42a93.js",
+      "_eyes-icon-301cd51b.js",
       "resources/js/Pages/branch_accounts/components/branch-account-delete.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_account-services-13cc3a0f.js",
-      "_useDispatch-3338ceec.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_account-services-fc073ead.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_accounts/components/account-table.jsx"
   },
   "resources/js/Pages/branch_accounts/components/account-tabs.jsx": {
-    "file": "assets/account-tabs-04f13c4c.js",
+    "file": "assets/account-tabs-36d68ded.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1311,45 +1326,45 @@
     "src": "resources/js/Pages/branch_accounts/components/account-tabs.jsx"
   },
   "resources/js/Pages/branch_accounts/components/branch-account-delete.jsx": {
-    "file": "assets/branch-account-delete-bf28ee42.js",
+    "file": "assets/branch-account-delete-45b44cef.js",
     "imports": [
       "resources/js/app.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_account-services-13cc3a0f.js",
-      "_useDispatch-3338ceec.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_account-services-fc073ead.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_accounts/components/branch-account-delete.jsx"
   },
   "resources/js/Pages/branch_accounts/page.jsx": {
-    "file": "assets/page-ea1e2f63.js",
+    "file": "assets/page-35f72264.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/branch_accounts/components/account-table.jsx",
-      "_search-44165072.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
-      "_account-services-13cc3a0f.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_eyes-icon-8da42a93.js",
+      "_bread-crumbs-fcf137bf.js",
+      "_account-services-fc073ead.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_eyes-icon-301cd51b.js",
       "resources/js/Pages/branch_accounts/components/branch-account-delete.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_accounts/page.jsx"
   },
   "resources/js/Pages/branch_analytics/components/branch-analytics-sales.jsx": {
-    "file": "assets/branch-analytics-sales-2b865f6e.js",
+    "file": "assets/branch-analytics-sales-055baac8.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1357,447 +1372,483 @@
     "src": "resources/js/Pages/branch_analytics/components/branch-analytics-sales.jsx"
   },
   "resources/js/Pages/branch_analytics/components/branch-analytics-search.jsx": {
-    "file": "assets/branch-analytics-search-481759c1.js",
+    "file": "assets/branch-analytics-search-241c9aa4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_useDispatch-3338ceec.js"
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_analytics/components/branch-analytics-search.jsx"
   },
   "resources/js/Pages/branch_analytics/components/branch-bar-chart.jsx": {
-    "file": "assets/branch-bar-chart-841872df.js",
+    "file": "assets/branch-bar-chart-baa44260.js",
     "imports": [
       "resources/js/app.jsx",
-      "_index-f71e4b0f.js"
+      "_index-0e200d20.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_analytics/components/branch-bar-chart.jsx"
   },
   "resources/js/Pages/branch_analytics/components/branch-line-chart.jsx": {
-    "file": "assets/branch-line-chart-8e8d62ea.js",
+    "file": "assets/branch-line-chart-407cd573.js",
     "imports": [
       "resources/js/app.jsx",
-      "_index-f71e4b0f.js"
+      "_index-0e200d20.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_analytics/components/branch-line-chart.jsx"
   },
   "resources/js/Pages/branch_analytics/page.jsx": {
-    "file": "assets/page-ecf41544.js",
+    "file": "assets/page-90fbd54a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_skeleton-loader-cb02462d.js",
+      "_administrator-layout-52b410e4.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_analytics/components/branch-line-chart.jsx",
       "resources/js/Pages/branch_analytics/components/branch-bar-chart.jsx",
       "resources/js/Pages/branch_analytics/components/branch-analytics-search.jsx",
       "_records-services-8c083049.js",
       "resources/js/Pages/branch_expenses/components/sales-chart.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
-      "_index-f71e4b0f.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
+      "_index-0e200d20.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_analytics/page.jsx"
   },
-  "resources/js/Pages/branch_bakers_production/components/branch-bakers-production-tabs.jsx": {
-    "file": "assets/branch-bakers-production-tabs-2063e86b.js",
+  "resources/js/Pages/branch_attendance/components/attendance-table.jsx": {
+    "file": "assets/attendance-table-050a3799.js",
     "imports": [
       "resources/js/app.jsx",
-      "_clock-icon-8b8c2455.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_loading-icon-c303e7b8.js",
+      "_attendance-services-af0f906c.js",
+      "_check-icon-2697b205.js",
+      "_exclamation-icon-01d9f900.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/branch_attendance/components/attendance-table.jsx"
+  },
+  "resources/js/Pages/branch_attendance/page.jsx": {
+    "file": "assets/page-33f3427d.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_administrator-layout-52b410e4.js",
+      "resources/js/Pages/_components/sidebar-branches.jsx",
+      "_bread-crumbs-fcf137bf.js",
+      "resources/js/Pages/branch_attendance/components/attendance-table.jsx",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
+      "_loading-icon-c303e7b8.js",
+      "_attendance-services-af0f906c.js",
+      "_check-icon-2697b205.js",
+      "_exclamation-icon-01d9f900.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/branch_attendance/page.jsx"
+  },
+  "resources/js/Pages/branch_bakers_production/components/branch-bakers-production-tabs.jsx": {
+    "file": "assets/branch-bakers-production-tabs-ca878b47.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_clock-icon-af8cab06.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_production/components/branch-bakers-production-tabs.jsx"
   },
   "resources/js/Pages/branch_bakers_production/components/bread-table.jsx": {
-    "file": "assets/bread-table-a266ddfa.js",
+    "file": "assets/bread-table-debb3137.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/branch_bakers_production/components/create-production-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_plus-icon-baf7651f.js",
-      "_ingredients-services-097df2d1.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_plus-icon-30220570.js",
+      "_ingredients-services-49e04f93.js",
       "_records-services-8c083049.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_production/components/bread-table.jsx"
   },
   "resources/js/Pages/branch_bakers_production/components/create-production-form.jsx": {
-    "file": "assets/create-production-form-46db2975.js",
+    "file": "assets/create-production-form-54030ac6.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_plus-icon-baf7651f.js",
-      "_ingredients-services-097df2d1.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_plus-icon-30220570.js",
+      "_ingredients-services-49e04f93.js",
       "_records-services-8c083049.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_production/components/create-production-form.jsx"
   },
   "resources/js/Pages/branch_bakers_production/page.jsx": {
-    "file": "assets/page-2fbb7e59.js",
+    "file": "assets/page-8fca74cc.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/branch_bakers_production/components/bread-table.jsx",
-      "_recipes-services-3a581f18.js",
+      "_recipes-services-1d6f9ae2.js",
       "resources/js/Pages/branch_bakers_production/components/branch-bakers-production-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_raw-materials-services-b72a0613.js",
-      "_search-44165072.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_raw-materials-services-975bebc8.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
+      "_bread-crumbs-fcf137bf.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
       "resources/js/Pages/branch_bakers_production/components/create-production-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_plus-icon-baf7651f.js",
-      "_ingredients-services-097df2d1.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_plus-icon-30220570.js",
+      "_ingredients-services-49e04f93.js",
       "_records-services-8c083049.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js",
-      "_use-resolve-button-type-81bb4e53.js"
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js",
+      "_use-resolve-button-type-8276605f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_production/page.jsx"
   },
   "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-edit.jsx": {
-    "file": "assets/branch-bakers-report-edit-2e5ef0df.js",
+    "file": "assets/branch-bakers-report-edit-b010b065.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
       "_records-services-8c083049.js",
-      "_pencil-icon-0e380139.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_pencil-icon-3de4c194.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-edit.jsx"
   },
   "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-table.jsx": {
-    "file": "assets/branch-bakers-report-table-17b62b85.js",
+    "file": "assets/branch-bakers-report-table-855436d1.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-edit.jsx",
       "resources/js/Pages/branch_bakers_report/components/move-to-bread-report-form.jsx",
       "resources/js/Pages/branch_bakers_report/components/move-to-another-branch.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
       "_records-services-8c083049.js",
-      "_pencil-icon-0e380139.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_move-icon-301b9e73.js",
-      "_branches-services-7dd5a948.js"
+      "_pencil-icon-3de4c194.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_move-icon-e3604fc6.js",
+      "_branches-services-c82cb97c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-table.jsx"
   },
   "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-tabs.jsx": {
-    "file": "assets/branch-bakers-report-tabs-3fe7b982.js",
+    "file": "assets/branch-bakers-report-tabs-ad295c62.js",
     "imports": [
       "resources/js/app.jsx",
-      "_clock-icon-8b8c2455.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_clock-icon-af8cab06.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-tabs.jsx"
   },
   "resources/js/Pages/branch_bakers_report/components/move-to-another-branch.jsx": {
-    "file": "assets/move-to-another-branch-bd23ba10.js",
+    "file": "assets/move-to-another-branch-f848f9aa.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
+      "_x-mark-icon-74cd7f9d.js",
       "_records-services-8c083049.js",
-      "_branches-services-7dd5a948.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_branches-services-c82cb97c.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_report/components/move-to-another-branch.jsx"
   },
   "resources/js/Pages/branch_bakers_report/components/move-to-bread-report-form.jsx": {
-    "file": "assets/move-to-bread-report-form-42848cc4.js",
+    "file": "assets/move-to-bread-report-form-7c460d1e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
       "_records-services-8c083049.js",
-      "_move-icon-301b9e73.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_move-icon-e3604fc6.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_report/components/move-to-bread-report-form.jsx"
   },
   "resources/js/Pages/branch_bakers_report/page.jsx": {
-    "file": "assets/page-0b6e5cc3.js",
+    "file": "assets/page-2bf460b2.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-table.jsx",
       "_records-services-8c083049.js",
       "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_moment-c511fdcc.js",
+      "_bread-crumbs-fcf137bf.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_bakers_report/components/branch-bakers-report-edit.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_pencil-icon-0e380139.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_pencil-icon-3de4c194.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/branch_bakers_report/components/move-to-bread-report-form.jsx",
-      "_move-icon-301b9e73.js",
+      "_move-icon-e3604fc6.js",
       "resources/js/Pages/branch_bakers_report/components/move-to-another-branch.jsx",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js",
-      "_use-resolve-button-type-81bb4e53.js"
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js",
+      "_use-resolve-button-type-8276605f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bakers_report/page.jsx"
   },
   "resources/js/Pages/branch_bread_report/components/branch-bread-report-edit.jsx": {
-    "file": "assets/branch-bread-report-edit-ee9c4fbd.js",
+    "file": "assets/branch-bread-report-edit-741e2d49.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
       "_records-services-8c083049.js",
-      "_pencil-icon-0e380139.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_pencil-icon-3de4c194.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bread_report/components/branch-bread-report-edit.jsx"
   },
   "resources/js/Pages/branch_bread_report/components/branch-bread-report-table.jsx": {
-    "file": "assets/branch-bread-report-table-5a2f7f31.js",
+    "file": "assets/branch-bread-report-table-b468ab68.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_bread_report/components/move-to-sales-report-form.jsx",
       "resources/js/Pages/branch_bread_report/components/branch-bread-report-edit.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
       "_records-services-8c083049.js",
-      "_move-icon-301b9e73.js",
-      "_exclamation-icon-e1195478.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_pencil-icon-0e380139.js"
+      "_move-icon-e3604fc6.js",
+      "_exclamation-icon-01d9f900.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_pencil-icon-3de4c194.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bread_report/components/branch-bread-report-table.jsx"
   },
   "resources/js/Pages/branch_bread_report/components/branch-bread-report-tabs.jsx": {
-    "file": "assets/branch-bread-report-tabs-78ebb7a4.js",
+    "file": "assets/branch-bread-report-tabs-010db414.js",
     "imports": [
       "resources/js/app.jsx",
-      "_clock-icon-8b8c2455.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_clock-icon-af8cab06.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bread_report/components/branch-bread-report-tabs.jsx"
   },
   "resources/js/Pages/branch_bread_report/components/move-to-sales-report-form.jsx": {
-    "file": "assets/move-to-sales-report-form-4eb9fb06.js",
+    "file": "assets/move-to-sales-report-form-e3fbb2ee.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
       "_records-services-8c083049.js",
-      "_move-icon-301b9e73.js",
-      "_exclamation-icon-e1195478.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_move-icon-e3604fc6.js",
+      "_exclamation-icon-01d9f900.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bread_report/components/move-to-sales-report-form.jsx"
   },
   "resources/js/Pages/branch_bread_report/page.jsx": {
-    "file": "assets/page-bf4b06c8.js",
+    "file": "assets/page-3a419d9e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/branch_bread_report/components/branch-bread-report-table.jsx",
       "_records-services-8c083049.js",
       "resources/js/Pages/branch_bread_report/components/branch-bread-report-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_moment-c511fdcc.js",
+      "_bread-crumbs-fcf137bf.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_bread_report/components/move-to-sales-report-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_move-icon-301b9e73.js",
-      "_exclamation-icon-e1195478.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_move-icon-e3604fc6.js",
+      "_exclamation-icon-01d9f900.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/branch_bread_report/components/branch-bread-report-edit.jsx",
-      "_pencil-icon-0e380139.js",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js",
-      "_use-resolve-button-type-81bb4e53.js"
+      "_pencil-icon-3de4c194.js",
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js",
+      "_use-resolve-button-type-8276605f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_bread_report/page.jsx"
   },
   "resources/js/Pages/branch_expenses/components/branch-expenses-table.jsx": {
-    "file": "assets/branch-expenses-table-7aa18ed6.js",
+    "file": "assets/branch-expenses-table-fa088f43.js",
     "imports": [
       "resources/js/app.jsx",
-      "_create-expenses-e01bad91.js",
+      "_create-expenses-542da90d.js",
       "resources/js/Pages/branch_expenses/components/show-receipts.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_account-services-13cc3a0f.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_account-services-fc073ead.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_expenses/components/branch-expenses-table.jsx"
   },
   "resources/js/Pages/branch_expenses/components/branch-search-expenses.jsx": {
-    "file": "assets/branch-search-expenses-25d6e6ae.js",
+    "file": "assets/branch-search-expenses-b432c671.js",
     "imports": [
       "resources/js/app.jsx",
-      "_useDispatch-3338ceec.js"
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_expenses/components/branch-search-expenses.jsx"
   },
   "resources/js/Pages/branch_expenses/components/create-charge-credit.jsx": {
-    "file": "assets/create-charge-credit-050edbad.js",
+    "file": "assets/create-charge-credit-7795499a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_account-services-13cc3a0f.js",
-      "_credits-services-bb251ce3.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_account-services-fc073ead.js",
+      "_credits-services-07338361.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_expenses/components/create-charge-credit.jsx"
   },
   "resources/js/Pages/branch_expenses/components/credits-charge-table.jsx": {
-    "file": "assets/credits-charge-table-78cdedd2.js",
+    "file": "assets/credits-charge-table-42bf16a3.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/branch_expenses/components/create-charge-credit.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_account-services-13cc3a0f.js",
-      "_credits-services-bb251ce3.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_account-services-fc073ead.js",
+      "_credits-services-07338361.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_expenses/components/credits-charge-table.jsx"
   },
   "resources/js/Pages/branch_expenses/components/domination.jsx": {
-    "file": "assets/domination-567a8069.js",
+    "file": "assets/domination-bc5dc7b8.js",
     "imports": [
       "resources/js/app.jsx",
-      "_useDispatch-3338ceec.js"
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_expenses/components/domination.jsx"
   },
   "resources/js/Pages/branch_expenses/components/sales-chart.jsx": {
-    "file": "assets/sales-chart-c01cbde4.js",
+    "file": "assets/sales-chart-e44f1986.js",
     "imports": [
       "resources/js/app.jsx",
       "_records-services-8c083049.js"
@@ -1806,48 +1857,48 @@
     "src": "resources/js/Pages/branch_expenses/components/sales-chart.jsx"
   },
   "resources/js/Pages/branch_expenses/components/show-receipts.jsx": {
-    "file": "assets/show-receipts-d17dfaa9.js",
+    "file": "assets/show-receipts-a77085ea.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_expenses/components/show-receipts.jsx"
   },
   "resources/js/Pages/branch_expenses/page.jsx": {
-    "file": "assets/page-06c275aa.js",
+    "file": "assets/page-87546db2.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_skeleton-loader-cb02462d.js",
+      "_administrator-layout-52b410e4.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_expenses/components/branch-expenses-table.jsx",
       "resources/js/Pages/branch_expenses/components/branch-search-expenses.jsx",
       "resources/js/Pages/branch_expenses/components/credits-charge-table.jsx",
-      "_create-expenses-e01bad91.js",
-      "_credits-services-bb251ce3.js",
+      "_create-expenses-542da90d.js",
+      "_credits-services-07338361.js",
       "resources/js/Pages/branch_expenses/components/sales-chart.jsx",
       "resources/js/Pages/branch_expenses/components/domination.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
       "resources/js/Pages/branch_expenses/components/show-receipts.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_hidden-95bf9ddf.js",
-      "_account-services-13cc3a0f.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_hidden-5f273b7b.js",
+      "_account-services-fc073ead.js",
       "resources/js/Pages/branch_expenses/components/create-charge-credit.jsx",
       "_records-services-8c083049.js"
     ],
@@ -1855,7 +1906,7 @@
     "src": "resources/js/Pages/branch_expenses/page.jsx"
   },
   "resources/js/Pages/branch_history/components/branch-history-table.jsx": {
-    "file": "assets/branch-history-table-ba8c4932.js",
+    "file": "assets/branch-history-table-bda20079.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1863,362 +1914,362 @@
     "src": "resources/js/Pages/branch_history/components/branch-history-table.jsx"
   },
   "resources/js/Pages/branch_history/components/branch-history-tabs.jsx": {
-    "file": "assets/branch-history-tabs-22620b32.js",
+    "file": "assets/branch-history-tabs-3c739607.js",
     "imports": [
       "resources/js/app.jsx",
-      "_clock-icon-8b8c2455.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_clock-icon-af8cab06.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_history/components/branch-history-tabs.jsx"
   },
   "resources/js/Pages/branch_history/components/branch-search-history.jsx": {
-    "file": "assets/branch-search-history-be592c73.js",
+    "file": "assets/branch-search-history-a31988ab.js",
     "imports": [
       "resources/js/app.jsx",
       "_history-services-2b7776b0.js",
-      "_useDispatch-3338ceec.js"
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_history/components/branch-search-history.jsx"
   },
   "resources/js/Pages/branch_history/page.jsx": {
-    "file": "assets/page-b401d0a5.js",
+    "file": "assets/page-33de2118.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/branch_history/components/branch-history-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_history/components/branch-history-table.jsx",
       "_history-services-2b7776b0.js",
       "resources/js/Pages/branch_history/components/branch-search-history.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js"
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_history/page.jsx"
   },
   "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-table.jsx": {
-    "file": "assets/branch-raw-materials-table-58d881ff.js",
+    "file": "assets/branch-raw-materials-table-0bb6ba6a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-update-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_raw-materials-services-b72a0613.js",
-      "_pencil-icon-0e380139.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_raw-materials-services-975bebc8.js",
+      "_pencil-icon-3de4c194.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-table.jsx"
   },
   "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-update-form.jsx": {
-    "file": "assets/branch-raw-materials-update-form-c3cb0a44.js",
+    "file": "assets/branch-raw-materials-update-form-9a6b0a57.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_raw-materials-services-b72a0613.js",
-      "_pencil-icon-0e380139.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_raw-materials-services-975bebc8.js",
+      "_pencil-icon-3de4c194.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-update-form.jsx"
   },
   "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-update.jsx": {
-    "file": "assets/branch-raw-materials-update-81324d5b.js",
+    "file": "assets/branch-raw-materials-update-08498552.js",
     "imports": [
       "resources/js/app.jsx",
-      "_useDispatch-3338ceec.js",
+      "_useDispatch-cb55bb16.js",
       "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-update-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_raw-materials-services-b72a0613.js",
-      "_pencil-icon-0e380139.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_raw-materials-services-975bebc8.js",
+      "_pencil-icon-3de4c194.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-update.jsx"
   },
   "resources/js/Pages/branch_raw_materials/page.jsx": {
-    "file": "assets/page-3e547d71.js",
+    "file": "assets/page-869522c5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-table.jsx",
-      "_raw-materials-services-b72a0613.js",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_raw-materials-services-975bebc8.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_moment-c511fdcc.js",
+      "_bread-crumbs-fcf137bf.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_raw_materials/components/branch-raw-materials-update-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_pencil-icon-0e380139.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_pencil-icon-3de4c194.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_raw_materials/page.jsx"
   },
   "resources/js/Pages/branch_sales_report/components/branch-sales-report-edit.jsx": {
-    "file": "assets/branch-sales-report-edit-729dc057.js",
+    "file": "assets/branch-sales-report-edit-43d7afa5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_pencil-icon-0e380139.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_pencil-icon-3de4c194.js",
       "_records-services-8c083049.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_sales_report/components/branch-sales-report-edit.jsx"
   },
   "resources/js/Pages/branch_sales_report/components/branch-sales-report-search-date.jsx": {
-    "file": "assets/branch-sales-report-search-date-8d0c41e8.js",
+    "file": "assets/branch-sales-report-search-date-230f2ba6.js",
     "imports": [
       "resources/js/app.jsx",
       "_records-services-8c083049.js",
-      "_useDispatch-3338ceec.js"
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_sales_report/components/branch-sales-report-search-date.jsx"
   },
   "resources/js/Pages/branch_sales_report/components/branch-sales-report-table.jsx": {
-    "file": "assets/branch-sales-report-table-7edb9c7e.js",
+    "file": "assets/branch-sales-report-table-aa27034e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_sales_report/components/branch-sales-report-edit.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_pencil-icon-0e380139.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_pencil-icon-3de4c194.js",
       "_records-services-8c083049.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_sales_report/components/branch-sales-report-table.jsx"
   },
   "resources/js/Pages/branch_sales_report/components/branch-sales-report-tabs.jsx": {
-    "file": "assets/branch-sales-report-tabs-d367c818.js",
+    "file": "assets/branch-sales-report-tabs-38aca171.js",
     "imports": [
       "resources/js/app.jsx",
-      "_clock-icon-8b8c2455.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_clock-icon-af8cab06.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_sales_report/components/branch-sales-report-tabs.jsx"
   },
   "resources/js/Pages/branch_sales_report/page.jsx": {
-    "file": "assets/page-ef3d4694.js",
+    "file": "assets/page-bb13e020.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/branch_sales_report/components/branch-sales-report-table.jsx",
       "_records-services-8c083049.js",
       "resources/js/Pages/branch_sales_report/components/branch-sales-report-tabs.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_sales_report/components/branch-sales-report-search-date.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_moment-c511fdcc.js",
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_sales_report/components/branch-sales-report-edit.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_pencil-icon-0e380139.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_clock-icon-8b8c2455.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js",
-      "_use-resolve-button-type-81bb4e53.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_pencil-icon-3de4c194.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_clock-icon-af8cab06.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js",
+      "_use-resolve-button-type-8276605f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_sales_report/page.jsx"
   },
   "resources/js/Pages/branch_selecta/components/branch-select-edit-record.jsx": {
-    "file": "assets/branch-select-edit-record-6e470d4e.js",
+    "file": "assets/branch-select-edit-record-b2139c64.js",
     "imports": [
       "resources/js/app.jsx",
-      "_pencil-icon-0e380139.js",
-      "_selecta-services-9dffa43f.js",
-      "_loading-icon-0145f98c.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_pencil-icon-3de4c194.js",
+      "_selecta-services-43a08df6.js",
+      "_loading-icon-cb83ab3c.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/components/branch-select-edit-record.jsx"
   },
   "resources/js/Pages/branch_selecta/components/branch-selecta-edit-form.jsx": {
-    "file": "assets/branch-selecta-edit-form-9aba2fc2.js",
+    "file": "assets/branch-selecta-edit-form-72f21281.js",
     "imports": [
       "resources/js/app.jsx",
-      "_pencil-icon-0e380139.js",
-      "_selecta-services-9dffa43f.js",
-      "_loading-icon-0145f98c.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_pencil-icon-3de4c194.js",
+      "_selecta-services-43a08df6.js",
+      "_loading-icon-cb83ab3c.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/components/branch-selecta-edit-form.jsx"
   },
   "resources/js/Pages/branch_selecta/components/branch-selecta-history-table.jsx": {
-    "file": "assets/branch-selecta-history-table-b9146e45.js",
+    "file": "assets/branch-selecta-history-table-3ea3381e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js"
+      "_moment-854efd96.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/components/branch-selecta-history-table.jsx"
   },
   "resources/js/Pages/branch_selecta/components/branch-selecta-records-table.jsx": {
-    "file": "assets/branch-selecta-records-table-e58edf62.js",
+    "file": "assets/branch-selecta-records-table-497cd33f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_selecta/components/branch-select-edit-record.jsx",
-      "_pencil-icon-0e380139.js",
-      "_selecta-services-9dffa43f.js",
-      "_loading-icon-0145f98c.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_pencil-icon-3de4c194.js",
+      "_selecta-services-43a08df6.js",
+      "_loading-icon-cb83ab3c.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/components/branch-selecta-records-table.jsx"
   },
   "resources/js/Pages/branch_selecta/components/branch-selecta-remaining-form.jsx": {
-    "file": "assets/branch-selecta-remaining-form-43bd952a.js",
+    "file": "assets/branch-selecta-remaining-form-9e340311.js",
     "imports": [
       "resources/js/app.jsx",
-      "_database-icon-4b4783e7.js",
-      "_loading-icon-0145f98c.js",
-      "_selecta-services-9dffa43f.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_database-icon-6f5852e3.js",
+      "_loading-icon-cb83ab3c.js",
+      "_selecta-services-43a08df6.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/components/branch-selecta-remaining-form.jsx"
   },
   "resources/js/Pages/branch_selecta/components/branch-selecta-search-date-history.jsx": {
-    "file": "assets/branch-selecta-search-date-history-bab6ed71.js",
+    "file": "assets/branch-selecta-search-date-history-16e8e9bb.js",
     "imports": [
       "resources/js/app.jsx",
-      "_selecta-services-9dffa43f.js",
-      "_useDispatch-3338ceec.js"
+      "_selecta-services-43a08df6.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/components/branch-selecta-search-date-history.jsx"
   },
   "resources/js/Pages/branch_selecta/components/branch-selecta-search-date.jsx": {
-    "file": "assets/branch-selecta-search-date-7568b986.js",
+    "file": "assets/branch-selecta-search-date-664da3b8.js",
     "imports": [
       "resources/js/app.jsx",
-      "_selecta-services-9dffa43f.js",
-      "_useDispatch-3338ceec.js"
+      "_selecta-services-43a08df6.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/components/branch-selecta-search-date.jsx"
   },
   "resources/js/Pages/branch_selecta/components/branch-selecta-table.jsx": {
-    "file": "assets/branch-selecta-table-bda9f561.js",
+    "file": "assets/branch-selecta-table-24588004.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-remaining-form.jsx",
       "resources/js/Pages/branch_selecta/components/branch-selecta-edit-form.jsx",
-      "_exclamation-icon-e1195478.js",
-      "_check-icon-c3db5f8d.js",
-      "_database-icon-4b4783e7.js",
-      "_loading-icon-0145f98c.js",
-      "_selecta-services-9dffa43f.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_pencil-icon-0e380139.js"
+      "_exclamation-icon-01d9f900.js",
+      "_check-icon-2697b205.js",
+      "_database-icon-6f5852e3.js",
+      "_loading-icon-cb83ab3c.js",
+      "_selecta-services-43a08df6.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_pencil-icon-3de4c194.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/components/branch-selecta-table.jsx"
   },
   "resources/js/Pages/branch_selecta/components/tab.jsx": {
-    "file": "assets/tab-dfb40364.js",
+    "file": "assets/tab-4e679848.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -2226,146 +2277,146 @@
     "src": "resources/js/Pages/branch_selecta/components/tab.jsx"
   },
   "resources/js/Pages/branch_selecta/page.jsx": {
-    "file": "assets/page-6914f52e.js",
+    "file": "assets/page-8e9a579a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-table.jsx",
-      "_selecta-services-9dffa43f.js",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_selecta-services-43a08df6.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_selecta/components/tab.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_moment-c511fdcc.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-remaining-form.jsx",
-      "_database-icon-4b4783e7.js",
-      "_loading-icon-0145f98c.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_database-icon-6f5852e3.js",
+      "_loading-icon-cb83ab3c.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/branch_selecta/components/branch-selecta-edit-form.jsx",
-      "_pencil-icon-0e380139.js",
-      "_exclamation-icon-e1195478.js",
-      "_check-icon-c3db5f8d.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js"
+      "_pencil-icon-3de4c194.js",
+      "_exclamation-icon-01d9f900.js",
+      "_check-icon-2697b205.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/page.jsx"
   },
   "resources/js/Pages/branch_selecta/page_history.jsx": {
-    "file": "assets/page_history-29073b7b.js",
+    "file": "assets/page_history-507a2f56.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_selecta-services-9dffa43f.js",
-      "_skeleton-loader-cb02462d.js",
+      "_administrator-layout-52b410e4.js",
+      "_selecta-services-43a08df6.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_selecta/components/tab.jsx",
       "resources/js/Pages/branch_selecta/components/branch-selecta-history-table.jsx",
       "resources/js/Pages/branch_selecta/components/branch-selecta-search-date-history.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
-      "_moment-c511fdcc.js"
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
+      "_moment-854efd96.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/page_history.jsx"
   },
   "resources/js/Pages/branch_selecta/page_records.jsx": {
-    "file": "assets/page_records-193b5b72.js",
+    "file": "assets/page_records-60869b5a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_moment-c511fdcc.js",
-      "_selecta-services-9dffa43f.js",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_administrator-layout-52b410e4.js",
+      "_moment-854efd96.js",
+      "_selecta-services-43a08df6.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_bread-crumbs-eaf8b415.js",
+      "_bread-crumbs-fcf137bf.js",
       "resources/js/Pages/branch_selecta/components/tab.jsx",
       "resources/js/Pages/branch_selecta/components/branch-selecta-records-table.jsx",
       "resources/js/Pages/branch_selecta/components/branch-selecta-search-date.jsx",
-      "_useDispatch-3338ceec.js",
-      "_squire-icon-469d41ab.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js",
-      "_iconBase-91a5c3ab.js",
+      "_useDispatch-cb55bb16.js",
+      "_squire-icon-3a27aa60.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js",
+      "_iconBase-94d31c31.js",
       "resources/js/Pages/branch_selecta/components/branch-select-edit-record.jsx",
-      "_pencil-icon-0e380139.js",
-      "_loading-icon-0145f98c.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_hidden-95bf9ddf.js"
+      "_pencil-icon-3de4c194.js",
+      "_loading-icon-cb83ab3c.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branch_selecta/page_records.jsx"
   },
   "resources/js/Pages/branches/page.jsx": {
-    "file": "assets/page-4d4c0b7f.js",
+    "file": "assets/page-911b55d2.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/_components/sidebar-branches.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_use-resolve-button-type-81bb4e53.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_use-resolve-button-type-8276605f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/branches/page.jsx"
   },
   "resources/js/Pages/breads/components/bread-create-form.jsx": {
-    "file": "assets/bread-create-form-efe1f901.js",
+    "file": "assets/bread-create-form-bbec94df.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_breads-services-7212532c.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_breads-services-96435f7b.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/breads/components/bread-create-form.jsx"
   },
   "resources/js/Pages/breads/components/bread-delete.jsx": {
-    "file": "assets/bread-delete-a79e6e08.js",
+    "file": "assets/bread-delete-aacd3a39.js",
     "imports": [
       "resources/js/app.jsx",
-      "_sweetalert2.all-f665d82e.js",
-      "_breads-services-7212532c.js",
-      "_useDispatch-3338ceec.js"
+      "_sweetalert2.all-9b305cf4.js",
+      "_breads-services-96435f7b.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/breads/components/bread-delete.jsx"
   },
   "resources/js/Pages/breads/components/bread-dropdown.jsx": {
-    "file": "assets/bread-dropdown-fe8707cf.js",
+    "file": "assets/bread-dropdown-d2771555.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -2373,647 +2424,649 @@
     "src": "resources/js/Pages/breads/components/bread-dropdown.jsx"
   },
   "resources/js/Pages/breads/components/bread-edit-form.jsx": {
-    "file": "assets/bread-edit-form-13815395.js",
+    "file": "assets/bread-edit-form-42bbd0fb.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_pencil-icon-0e380139.js",
-      "_input-bea1ffe2.js",
-      "_breads-services-7212532c.js",
-      "_loading-icon-0145f98c.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_pencil-icon-3de4c194.js",
+      "_input-e7403343.js",
+      "_breads-services-96435f7b.js",
+      "_loading-icon-cb83ab3c.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/breads/components/bread-edit-form.jsx"
   },
   "resources/js/Pages/breads/components/bread-table.jsx": {
-    "file": "assets/bread-table-ddc0c93f.js",
+    "file": "assets/bread-table-636d3927.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/breads/components/bread-create-form.jsx",
       "resources/js/Pages/breads/components/bread-edit-form.jsx",
       "resources/js/Pages/breads/components/bread-delete.jsx",
-      "_recipes-services-3a581f18.js",
-      "_trash-icon-9cabf65f.js",
-      "_useDispatch-3338ceec.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_breads-services-7212532c.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_pencil-icon-0e380139.js",
-      "_loading-icon-0145f98c.js",
-      "_sweetalert2.all-f665d82e.js"
+      "_recipes-services-1d6f9ae2.js",
+      "_loading-icon-c303e7b8.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_useDispatch-cb55bb16.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_breads-services-96435f7b.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_pencil-icon-3de4c194.js",
+      "_loading-icon-cb83ab3c.js",
+      "_sweetalert2.all-9b305cf4.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/breads/components/bread-table.jsx"
   },
   "resources/js/Pages/breads/page.jsx": {
-    "file": "assets/page-46db4083.js",
+    "file": "assets/page-f6d268cf.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/breads/components/bread-table.jsx",
-      "_breads-services-7212532c.js",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_breads-services-96435f7b.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-controls.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_moment-c511fdcc.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/breads/components/bread-create-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/breads/components/bread-edit-form.jsx",
-      "_pencil-icon-0e380139.js",
-      "_loading-icon-0145f98c.js",
+      "_pencil-icon-3de4c194.js",
+      "_loading-icon-cb83ab3c.js",
       "resources/js/Pages/breads/components/bread-delete.jsx",
-      "_sweetalert2.all-f665d82e.js",
-      "_recipes-services-3a581f18.js",
-      "_trash-icon-9cabf65f.js",
-      "_account-icons-711e48ad.js"
+      "_sweetalert2.all-9b305cf4.js",
+      "_recipes-services-1d6f9ae2.js",
+      "_loading-icon-c303e7b8.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_account-icons-a57cd32b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/breads/page.jsx"
   },
   "resources/js/Pages/ingredients/components/ingredients-delete.jsx": {
-    "file": "assets/ingredients-delete-4d94b95c.js",
+    "file": "assets/ingredients-delete-f9af37c6.js",
     "imports": [
       "resources/js/app.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_ingredients-services-097df2d1.js",
-      "_useDispatch-3338ceec.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_ingredients-services-49e04f93.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/ingredients/components/ingredients-delete.jsx"
   },
   "resources/js/Pages/ingredients/components/ingredients-edit.jsx": {
-    "file": "assets/ingredients-edit-5818b1d1.js",
+    "file": "assets/ingredients-edit-8cc6139c.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_pencil-icon-0e380139.js",
-      "_trash-icon-9cabf65f.js",
-      "_input-bea1ffe2.js",
-      "_raw-materials-services-b72a0613.js",
-      "_ingredients-services-097df2d1.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_pencil-icon-3de4c194.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_input-e7403343.js",
+      "_raw-materials-services-975bebc8.js",
+      "_ingredients-services-49e04f93.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/ingredients/components/ingredients-edit.jsx"
   },
   "resources/js/Pages/ingredients/components/ingredients-show.jsx": {
-    "file": "assets/ingredients-show-3b0d053c.js",
+    "file": "assets/ingredients-show-b44ada84.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_eyes-icon-8da42a93.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_eyes-icon-301cd51b.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/ingredients/components/ingredients-show.jsx"
   },
   "resources/js/Pages/ingredients/components/ingredients-table.jsx": {
-    "file": "assets/ingredients-table-7b5912c0.js",
+    "file": "assets/ingredients-table-271626cb.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/ingredients/components/ingredients-show.jsx",
       "resources/js/Pages/ingredients/components/ingredients-edit.jsx",
       "resources/js/Pages/ingredients/components/ingredients-delete.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_eyes-icon-8da42a93.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_pencil-icon-0e380139.js",
-      "_trash-icon-9cabf65f.js",
-      "_input-bea1ffe2.js",
-      "_raw-materials-services-b72a0613.js",
-      "_ingredients-services-097df2d1.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_useDispatch-3338ceec.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_eyes-icon-301cd51b.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_pencil-icon-3de4c194.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_input-e7403343.js",
+      "_raw-materials-services-975bebc8.js",
+      "_ingredients-services-49e04f93.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/ingredients/components/ingredients-table.jsx"
   },
   "resources/js/Pages/ingredients/components/ingredients-tabs.jsx": {
-    "file": "assets/ingredients-tabs-b8ade281.js",
+    "file": "assets/ingredients-tabs-d5a3ed73.js",
     "imports": [
       "resources/js/app.jsx",
-      "_index.esm-f0d9e263.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_index.esm-3f38f8a4.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/ingredients/components/ingredients-tabs.jsx"
   },
   "resources/js/Pages/ingredients/page.jsx": {
-    "file": "assets/page-c6810331.js",
+    "file": "assets/page-edb01736.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_ingredients-services-097df2d1.js",
+      "_administrator-layout-52b410e4.js",
+      "_ingredients-services-49e04f93.js",
       "resources/js/Pages/ingredients/components/ingredients-table.jsx",
-      "_skeleton-loader-cb02462d.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/ingredients/components/ingredients-tabs.jsx",
-      "_search-44165072.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-controls.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
       "resources/js/Pages/ingredients/components/ingredients-show.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_eyes-icon-8da42a93.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_eyes-icon-301cd51b.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/ingredients/components/ingredients-edit.jsx",
-      "_pencil-icon-0e380139.js",
-      "_trash-icon-9cabf65f.js",
-      "_input-bea1ffe2.js",
-      "_raw-materials-services-b72a0613.js",
-      "_sweetalert2.all-f665d82e.js",
+      "_pencil-icon-3de4c194.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_input-e7403343.js",
+      "_raw-materials-services-975bebc8.js",
+      "_sweetalert2.all-9b305cf4.js",
       "resources/js/Pages/ingredients/components/ingredients-delete.jsx",
-      "_index.esm-f0d9e263.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js",
-      "_account-icons-711e48ad.js"
+      "_index.esm-3f38f8a4.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js",
+      "_account-icons-a57cd32b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/ingredients/page.jsx"
   },
   "resources/js/Pages/raw_materials/components/raw-materials-add.jsx": {
-    "file": "assets/raw-materials-add-fe868061.js",
+    "file": "assets/raw-materials-add-0ec282c3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_plus-icon-baf7651f.js",
-      "_ingredients-services-097df2d1.js",
-      "_input-bea1ffe2.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_plus-icon-30220570.js",
+      "_ingredients-services-49e04f93.js",
+      "_input-e7403343.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/raw_materials/components/raw-materials-add.jsx"
   },
   "resources/js/Pages/raw_materials/components/raw-materials-create.jsx": {
-    "file": "assets/raw-materials-create-fe01e4aa.js",
+    "file": "assets/raw-materials-create-a38c3ac4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_raw-materials-services-b72a0613.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_raw-materials-services-975bebc8.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/raw_materials/components/raw-materials-create.jsx"
   },
   "resources/js/Pages/raw_materials/components/raw-materials-delete.jsx": {
-    "file": "assets/raw-materials-delete-7a6f131a.js",
+    "file": "assets/raw-materials-delete-e7b2e902.js",
     "imports": [
       "resources/js/app.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_raw-materials-services-b72a0613.js",
-      "_useDispatch-3338ceec.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_raw-materials-services-975bebc8.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/raw_materials/components/raw-materials-delete.jsx"
   },
   "resources/js/Pages/raw_materials/components/raw-materials-edit.jsx": {
-    "file": "assets/raw-materials-edit-f0e6a7d1.js",
+    "file": "assets/raw-materials-edit-3db20bce.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_pencil-icon-0e380139.js",
-      "_raw-materials-services-b72a0613.js",
-      "_input-bea1ffe2.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_pencil-icon-3de4c194.js",
+      "_raw-materials-services-975bebc8.js",
+      "_input-e7403343.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/raw_materials/components/raw-materials-edit.jsx"
   },
   "resources/js/Pages/raw_materials/components/raw-materials-form.jsx": {
-    "file": "assets/raw-materials-form-7312cf58.js",
+    "file": "assets/raw-materials-form-593cda80.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_ingredients-services-097df2d1.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_ingredients-services-49e04f93.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/raw_materials/components/raw-materials-form.jsx"
   },
   "resources/js/Pages/raw_materials/components/raw-materials-table.jsx": {
-    "file": "assets/raw-materials-table-c7feaa50.js",
+    "file": "assets/raw-materials-table-065b9e3f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/raw_materials/components/raw-materials-form.jsx",
       "resources/js/Pages/raw_materials/components/raw-materials-edit.jsx",
       "resources/js/Pages/raw_materials/components/raw-materials-delete.jsx",
       "resources/js/Pages/raw_materials/components/raw-materials-create.jsx",
       "resources/js/Pages/raw_materials/components/raw-materials-add.jsx",
-      "_ingredients-services-097df2d1.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_pencil-icon-0e380139.js",
-      "_raw-materials-services-b72a0613.js",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_plus-icon-baf7651f.js"
+      "_ingredients-services-49e04f93.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_pencil-icon-3de4c194.js",
+      "_raw-materials-services-975bebc8.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_plus-icon-30220570.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/raw_materials/components/raw-materials-table.jsx"
   },
   "resources/js/Pages/raw_materials/components/raw-materials-tabs.jsx": {
-    "file": "assets/raw-materials-tabs-e66fbe71.js",
+    "file": "assets/raw-materials-tabs-39b815b4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_index.esm-f0d9e263.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_index.esm-3f38f8a4.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/raw_materials/components/raw-materials-tabs.jsx"
   },
   "resources/js/Pages/raw_materials/page.jsx": {
-    "file": "assets/page-61b54c3d.js",
+    "file": "assets/page-4e6baad8.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_raw-materials-services-b72a0613.js",
+      "_administrator-layout-52b410e4.js",
+      "_raw-materials-services-975bebc8.js",
       "resources/js/Pages/raw_materials/components/raw-materials-table.jsx",
-      "_skeleton-loader-cb02462d.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/raw_materials/components/raw-materials-tabs.jsx",
-      "_search-44165072.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-controls.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_moment-c511fdcc.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/raw_materials/components/raw-materials-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_ingredients-services-097df2d1.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_ingredients-services-49e04f93.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/raw_materials/components/raw-materials-edit.jsx",
-      "_pencil-icon-0e380139.js",
+      "_pencil-icon-3de4c194.js",
       "resources/js/Pages/raw_materials/components/raw-materials-delete.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
       "resources/js/Pages/raw_materials/components/raw-materials-create.jsx",
       "resources/js/Pages/raw_materials/components/raw-materials-add.jsx",
-      "_plus-icon-baf7651f.js",
-      "_index.esm-f0d9e263.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js",
-      "_account-icons-711e48ad.js"
+      "_plus-icon-30220570.js",
+      "_index.esm-3f38f8a4.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js",
+      "_account-icons-a57cd32b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/raw_materials/page.jsx"
   },
   "resources/js/Pages/recipes/components/recipes-add-ingredients.jsx": {
-    "file": "assets/recipes-add-ingredients-f4cbc700.js",
+    "file": "assets/recipes-add-ingredients-261b4121.js",
     "imports": [
       "resources/js/app.jsx",
-      "_ingredients-services-097df2d1.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_pencil-icon-0e380139.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_ingredients-services-49e04f93.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_pencil-icon-3de4c194.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/recipes/components/recipes-add-ingredients.jsx"
   },
   "resources/js/Pages/recipes/components/recipes-change-ingredients.jsx": {
-    "file": "assets/recipes-change-ingredients-2639fa83.js",
+    "file": "assets/recipes-change-ingredients-bae9e2bf.js",
     "imports": [
       "resources/js/app.jsx",
-      "_ingredients-services-097df2d1.js",
-      "_useDispatch-3338ceec.js"
+      "_ingredients-services-49e04f93.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/recipes/components/recipes-change-ingredients.jsx"
   },
   "resources/js/Pages/recipes/components/recipes-show-ingredients.jsx": {
-    "file": "assets/recipes-show-ingredients-fde44781.js",
+    "file": "assets/recipes-show-ingredients-5f96eab4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_eyes-icon-8da42a93.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_eyes-icon-301cd51b.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/recipes/components/recipes-show-ingredients.jsx"
   },
   "resources/js/Pages/recipes/components/recipes-table.jsx": {
-    "file": "assets/recipes-table-1c6db6c7.js",
+    "file": "assets/recipes-table-67c2098c.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/Pages/recipes/components/recipes-add-ingredients.jsx",
       "resources/js/Pages/recipes/components/recipes-show-ingredients.jsx",
-      "_ingredients-services-097df2d1.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_pencil-icon-0e380139.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_eyes-icon-8da42a93.js"
+      "_ingredients-services-49e04f93.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_pencil-icon-3de4c194.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_eyes-icon-301cd51b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/recipes/components/recipes-table.jsx"
   },
   "resources/js/Pages/recipes/components/recipes-tabs.jsx": {
-    "file": "assets/recipes-tabs-6347249b.js",
+    "file": "assets/recipes-tabs-be9678b9.js",
     "imports": [
       "resources/js/app.jsx",
-      "_index.esm-f0d9e263.js",
-      "_index.esm-5540f020.js",
-      "_iconBase-91a5c3ab.js"
+      "_index.esm-3f38f8a4.js",
+      "_index.esm-cf821160.js",
+      "_iconBase-94d31c31.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/recipes/components/recipes-tabs.jsx"
   },
   "resources/js/Pages/recipes/page.jsx": {
-    "file": "assets/page-7c634a08.js",
+    "file": "assets/page-9d465875.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_recipes-services-3a581f18.js",
+      "_administrator-layout-52b410e4.js",
+      "_recipes-services-1d6f9ae2.js",
       "resources/js/Pages/recipes/components/recipes-table.jsx",
-      "_skeleton-loader-cb02462d.js",
+      "_skeleton-loader-efe0ba36.js",
       "resources/js/Pages/recipes/components/recipes-tabs.jsx",
-      "_search-44165072.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-controls.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
       "resources/js/Pages/recipes/components/recipes-add-ingredients.jsx",
-      "_ingredients-services-097df2d1.js",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_pencil-icon-0e380139.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_ingredients-services-49e04f93.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_pencil-icon-3de4c194.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/recipes/components/recipes-show-ingredients.jsx",
-      "_eyes-icon-8da42a93.js",
-      "_index.esm-f0d9e263.js",
-      "_iconBase-91a5c3ab.js",
-      "_index.esm-5540f020.js",
-      "_account-icons-711e48ad.js"
+      "_eyes-icon-301cd51b.js",
+      "_index.esm-3f38f8a4.js",
+      "_iconBase-94d31c31.js",
+      "_index.esm-cf821160.js",
+      "_account-icons-a57cd32b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/recipes/page.jsx"
   },
   "resources/js/Pages/selecta/components/create-selecta-form.jsx": {
-    "file": "assets/create-selecta-form-f4731abd.js",
+    "file": "assets/create-selecta-form-7b47dd72.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_loading-icon-0145f98c.js",
-      "_selecta-services-9dffa43f.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_loading-icon-cb83ab3c.js",
+      "_selecta-services-43a08df6.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/selecta/components/create-selecta-form.jsx"
   },
   "resources/js/Pages/selecta/components/delete-selecta.jsx": {
-    "file": "assets/delete-selecta-9ca63846.js",
+    "file": "assets/delete-selecta-da7682f0.js",
     "imports": [
       "resources/js/app.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_selecta-services-9dffa43f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_useDispatch-3338ceec.js"
+      "_trash-icon-6dc9e5cb.js",
+      "_selecta-services-43a08df6.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_useDispatch-cb55bb16.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/selecta/components/delete-selecta.jsx"
   },
   "resources/js/Pages/selecta/components/selecta-table.jsx": {
-    "file": "assets/selecta-table-dd4190e2.js",
+    "file": "assets/selecta-table-daf598a4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_moment-c511fdcc.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/selecta/components/create-selecta-form.jsx",
       "resources/js/Pages/selecta/components/delete-selecta.jsx",
       "resources/js/Pages/selecta/components/update-select-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_loading-icon-0145f98c.js",
-      "_selecta-services-9dffa43f.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
-      "_pencil-icon-0e380139.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_loading-icon-cb83ab3c.js",
+      "_selecta-services-43a08df6.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
+      "_pencil-icon-3de4c194.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/selecta/components/selecta-table.jsx"
   },
   "resources/js/Pages/selecta/components/update-select-form.jsx": {
-    "file": "assets/update-select-form-b01e3953.js",
+    "file": "assets/update-select-form-464f4184.js",
     "imports": [
       "resources/js/app.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_loading-icon-0145f98c.js",
-      "_selecta-services-9dffa43f.js",
-      "_pencil-icon-0e380139.js",
-      "_useDispatch-3338ceec.js",
-      "_transition-ecf15cca.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js"
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_loading-icon-cb83ab3c.js",
+      "_selecta-services-43a08df6.js",
+      "_pencil-icon-3de4c194.js",
+      "_useDispatch-cb55bb16.js",
+      "_transition-8fbb313c.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/selecta/components/update-select-form.jsx"
   },
   "resources/js/Pages/selecta/page.jsx": {
-    "file": "assets/page-695ac59c.js",
+    "file": "assets/page-df1a88bd.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
-      "_selecta-services-9dffa43f.js",
+      "_administrator-layout-52b410e4.js",
+      "_selecta-services-43a08df6.js",
       "resources/js/Pages/selecta/components/selecta-table.jsx",
-      "_skeleton-loader-cb02462d.js",
-      "_search-44165072.js",
+      "_skeleton-loader-efe0ba36.js",
+      "_search-0e3c4a69.js",
       "resources/js/Pages/_components/sidebar-controls.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_moment-c511fdcc.js",
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_moment-854efd96.js",
       "resources/js/Pages/selecta/components/create-selecta-form.jsx",
-      "_x-mark-icon-a6cf0dfc.js",
-      "_input-bea1ffe2.js",
-      "_loading-icon-0145f98c.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js",
-      "_dialog-793596d4.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
+      "_x-mark-icon-74cd7f9d.js",
+      "_input-e7403343.js",
+      "_loading-icon-cb83ab3c.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js",
+      "_dialog-ad4f0c03.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
       "resources/js/Pages/selecta/components/delete-selecta.jsx",
-      "_trash-icon-9cabf65f.js",
-      "_sweetalert2.all-f665d82e.js",
+      "_trash-icon-6dc9e5cb.js",
+      "_sweetalert2.all-9b305cf4.js",
       "resources/js/Pages/selecta/components/update-select-form.jsx",
-      "_pencil-icon-0e380139.js",
-      "_account-icons-711e48ad.js"
+      "_pencil-icon-3de4c194.js",
+      "_account-icons-a57cd32b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/selecta/page.jsx"
   },
   "resources/js/Pages/settings/components/DeleteUserForm.jsx": {
-    "file": "assets/DeleteUserForm-3a4c825e.js",
+    "file": "assets/DeleteUserForm-5805f9d3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_SecondaryButton-868c8236.js",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_transition-ecf15cca.js"
+      "_SecondaryButton-8c19459b.js",
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_transition-8fbb313c.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/settings/components/DeleteUserForm.jsx"
   },
   "resources/js/Pages/settings/components/UpdatePasswordForm.jsx": {
-    "file": "assets/UpdatePasswordForm-a8421c52.js",
+    "file": "assets/UpdatePasswordForm-6d3a7c0a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js"
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/settings/components/UpdatePasswordForm.jsx"
   },
   "resources/js/Pages/settings/components/UpdateProfileInformationForm.jsx": {
-    "file": "assets/UpdateProfileInformationForm-7c329447.js",
+    "file": "assets/UpdateProfileInformationForm-a10f93a2.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js",
-      "_transition-ecf15cca.js",
-      "_open-closed-8292dd2d.js"
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js",
+      "_transition-8fbb313c.js",
+      "_open-closed-e1999277.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/settings/components/UpdateProfileInformationForm.jsx"
   },
   "resources/js/Pages/settings/page.jsx": {
-    "file": "assets/page-ade81653.js",
+    "file": "assets/page-8a4099c3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_administrator-layout-323b050b.js",
+      "_administrator-layout-52b410e4.js",
       "resources/js/Pages/settings/components/DeleteUserForm.jsx",
       "resources/js/Pages/settings/components/UpdatePasswordForm.jsx",
       "resources/js/Pages/settings/components/UpdateProfileInformationForm.jsx",
-      "_squire-icon-469d41ab.js",
-      "_useDispatch-3338ceec.js",
-      "_store-icon-330df8fd.js",
-      "_branches-services-7dd5a948.js",
-      "_SecondaryButton-868c8236.js",
-      "_dialog-793596d4.js",
-      "_open-closed-8292dd2d.js",
-      "_keyboard-23378de6.js",
-      "_hidden-95bf9ddf.js",
-      "_transition-ecf15cca.js",
-      "_TextInput-4aa2a67b.js",
-      "_InputLabel-5037b042.js",
-      "_PrimaryButton-baeb0c82.js"
+      "_squire-icon-3a27aa60.js",
+      "_useDispatch-cb55bb16.js",
+      "_store-icon-6351df1f.js",
+      "_branches-services-c82cb97c.js",
+      "_SecondaryButton-8c19459b.js",
+      "_dialog-ad4f0c03.js",
+      "_open-closed-e1999277.js",
+      "_keyboard-4c58af20.js",
+      "_hidden-5f273b7b.js",
+      "_transition-8fbb313c.js",
+      "_TextInput-e0b7be1c.js",
+      "_InputLabel-aa9217ce.js",
+      "_PrimaryButton-71763f3f.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/settings/page.jsx"
@@ -3089,6 +3142,8 @@
       "resources/js/Pages/branch_analytics/components/branch-bar-chart.jsx",
       "resources/js/Pages/branch_analytics/components/branch-line-chart.jsx",
       "resources/js/Pages/branch_analytics/page.jsx",
+      "resources/js/Pages/branch_attendance/components/attendance-table.jsx",
+      "resources/js/Pages/branch_attendance/page.jsx",
       "resources/js/Pages/branch_bakers_production/components/branch-bakers-production-tabs.jsx",
       "resources/js/Pages/branch_bakers_production/components/bread-table.jsx",
       "resources/js/Pages/branch_bakers_production/components/create-production-form.jsx",
@@ -3107,7 +3162,7 @@
       "resources/js/Pages/branch_expenses/components/branch-expenses-table.jsx",
       "resources/js/Pages/branch_expenses/components/branch-search-expenses.jsx",
       "resources/js/Pages/branch_expenses/components/create-charge-credit.jsx",
-      "_create-expenses-e01bad91.js",
+      "_create-expenses-542da90d.js",
       "resources/js/Pages/branch_expenses/components/credits-charge-table.jsx",
       "resources/js/Pages/branch_expenses/components/domination.jsx",
       "resources/js/Pages/branch_expenses/components/sales-chart.jsx",
@@ -3175,7 +3230,7 @@
       "resources/js/Pages/settings/components/UpdateProfileInformationForm.jsx",
       "resources/js/Pages/settings/page.jsx"
     ],
-    "file": "assets/app-439bd4e4.js",
+    "file": "assets/app-41cc0b88.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   },
