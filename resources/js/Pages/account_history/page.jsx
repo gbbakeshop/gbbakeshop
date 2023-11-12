@@ -11,14 +11,24 @@ export default function AccountHistoryPage(props) {
     const {auth} =props 
     const [data,setData] = useState([])
     const { url } = usePage();
+    const [find, setFind] = useState("production");
+    const [loading, setLoading] = useState(true);
     const userid = url.split("/")[4]??auth.user.id;
 
     useEffect(() => {
-     get_user_histories(userid)
-     .then(res=>{
-          setData(res)
-     })
-    }, []);
+        setLoading(true)
+     if (find == "selecta") {
+         get_user_histories(userid, "selecta").then((res) => {
+             setData(res);
+             setLoading(false);
+         });
+     } else {
+         get_user_histories(userid, "production").then((res) => {
+             setData(res);
+             setLoading(false);
+         });
+     }
+ }, [find]);
     return (
         <AdministratorLayout>
             <SidebarBranches />
@@ -26,6 +36,24 @@ export default function AccountHistoryPage(props) {
                 <Breadcrumbs />
                 <AccountProfile />
                 <AccountTabs />
+                <div className="m-2 ">
+                    <button
+                        class={`${
+                            find == "production" ? "bg-red-500 text-white" : ""
+                        } mr-4 hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded`}
+                        onClick={() => setFind("production")}
+                    >
+                        Production History
+                    </button>
+                    <button
+                        class={`${
+                            find == "selecta" ? "bg-red-500 text-white" : ""
+                        } hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded`}
+                        onClick={() => setFind("selecta")}
+                    >
+                        Selecta History
+                    </button>
+                </div>
                 <BranchAccountHistory data={data}/>
             </div>
         </AdministratorLayout>

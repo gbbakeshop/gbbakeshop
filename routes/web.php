@@ -143,6 +143,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
                 return Inertia::render('account_settings/page');
             })->name('account_settings');
 
+            Route::get('{userid}/attendance', function () {
+                return Inertia::render('account_attendance/page');
+            })->name('account_attendance');
+
         });
 
 
@@ -211,6 +215,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/branch/logs', function () {
         return Inertia::render('branch/account-logs');
     })->name('b_logs');
+
+    Route::get('/branch/attendance', function () {
+        return Inertia::render('branch/account-attendance');
+    })->name('b_attendance');
 
     Route::get('/branch/expenses', function () {
         return Inertia::render('branch/account-expenses');

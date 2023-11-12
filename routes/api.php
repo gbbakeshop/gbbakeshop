@@ -103,6 +103,11 @@ Route::get('/get_branch_period/{period}/{branchid}','App\Http\Controllers\Record
 Route::post('/get_branch_history','App\Http\Controllers\HistoryController@get_branch_history');
 
 
+Route::post('/get_account_attendance','App\Http\Controllers\AttendanceController@get_account_attendance');
+Route::post('/get_branch_attendance','App\Http\Controllers\AttendanceController@get_branch_attendance');
+Route::post('/check_attendance','App\Http\Controllers\AttendanceController@check_attendance');
+
+
 
 
 

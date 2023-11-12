@@ -1,0 +1,1 @@
+import{a as o}from"./app-439bd4e4.js";function e(){return o("svg",{xmlns:"http://www.w3.org/2000/svg",fill:"none",viewBox:"0 0 24 24",strokeWidth:"1.5",stroke:"currentColor",className:"w-6 h-6",children:o("path",{strokeLinecap:"round",strokeLinejoin:"round",d:"M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"})})}export{e as M};
