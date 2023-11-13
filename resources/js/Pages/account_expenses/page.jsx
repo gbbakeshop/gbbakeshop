@@ -11,10 +11,11 @@ export default function AccountExpensesPage(props) {
         <AdministratorLayout>
             <SidebarBranches />
             <div className="flex flex-col w-full p-4 overflow-auto h-screen ">
-                <Breadcrumbs />
+                <image width={1000} src="public/images/1699152060_1682346813188.png" />
+                {/* <Breadcrumbs />
                 <AccountProfile />
                 <AccountTabs /><br />
-                <AccountExpensesTable />
+                <AccountExpensesTable /> */}
             </div>
         </AdministratorLayout>
     );
