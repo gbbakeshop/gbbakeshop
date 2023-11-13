@@ -31,7 +31,7 @@ class ExpensesController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->storeAs('images', $imageName, 'public'); 
+                $image->move(storage_path('app/public/images'), $imageName);
                 UploadImage::create([
                     'expenses_id'=>$expenses->id,
                     'file_name'=> $imageName,
