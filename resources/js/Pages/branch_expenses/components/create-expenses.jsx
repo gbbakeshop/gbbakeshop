@@ -152,7 +152,7 @@ export default function CreateExpenses({branchid}) {
                                             </div>
                                             <div className="relative mt-6 flex-1 px-4 sm:px-6">
                                                 <form
-                                                    enctype="multipart/form-data"
+                                                    encType="multipart/form-data"
                                                     name="form"
                                                     ref={ref}
                                                     onSubmit={submitHandler}
