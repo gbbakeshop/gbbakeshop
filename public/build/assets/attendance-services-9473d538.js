@@ -1,0 +1,1 @@
+import{k as t}from"./app-755926e6.js";async function s(a){return(await t.post("/api/get_account_attendance",a)).data.status}async function c(a){return(await t.post("/api/get_branch_attendance",a)).data.status}async function o(a){return(await t.post("/api/check_attendance",a)).data}export{c as a,o as c,s as g};

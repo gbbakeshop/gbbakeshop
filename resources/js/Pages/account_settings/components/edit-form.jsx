@@ -61,6 +61,7 @@ export default function BranchSettingsEditForm({ data, positions }) {
         e.preventDefault();
         dispatch(isSetResponse(loading()));
         const formData = new FormData(ref1.current);
+     
         const newData = {
             userid: data.id,
             name: formData.get("name"),
@@ -68,6 +69,7 @@ export default function BranchSettingsEditForm({ data, positions }) {
             position: formData.get("position"),
             address: formData.get("address"),
         };
+        
         update_personal_information(newData).then((res) => {
             dispatch(isRandomhandler());
             dispatch(isSetResponse(res));
@@ -178,7 +180,7 @@ export default function BranchSettingsEditForm({ data, positions }) {
                                                             res.name ===
                                                             data.position
                                                         }
-                                                        value={data.position}
+                                                        defaultValue={data.position}
                                                     >
                                                         {res.name}
                                                     </option>

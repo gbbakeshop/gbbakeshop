@@ -211,6 +211,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('branch/settings');
     })->name('b_settings');
 
+    Route::get('/branch/branch_attendance', function () {
+        return Inertia::render('branch/branch-attendance');
+    })->name('b_branch_attendance');
+
 
     Route::get('/branch/credits', function () {
         return Inertia::render('branch/account-credits');
