@@ -134,7 +134,7 @@ EOT;
     {
         $this->write(
             sprintf(
-                "            <li className=\"%s\">%s</li>\n",
+                "            <li class=\"%s\">%s</li>\n",
                 $success ? 'success' : 'defect',
                 $name,
             ),

@@ -12,7 +12,7 @@ const classes = computed(() =>
 </script>
 
 <template>
-    <Link :href="href" :className="classes">
+    <Link :href="href" :class="classes">
         <slot />
     </Link>
 </template>
